@@ -1,0 +1,460 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="./main.js"></script>
+
+
+
+    <!-- Next part is for new coomands -->
+  <!-- Next part is for new coomands -->
+  <script>
+    window.MathJax = {
+      tex: {
+        macros: {
+          sen: "\\operatorname{sen}",
+          seg: ["\\overrightarrow{#1}", 1],
+          id: "\\operatorname{id}",
+        },
+        tags: "ams", /* this part is for numbered equations */
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 7 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+
+
+</style>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="./style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header"> 
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Cálculo I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Informacion_General.html"> Información</a> </li>
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Notas.html"> Notas  </a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+    
+    <title> Semana 1  </title>
+    
+    </head>
+
+    <body class="fondo-body" >
+      <h1 class="page-title-practica">Notas</h1> 
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Teorema de Bolzano</h1>
+        <p>
+         Sea \(f:[a,b]\to \mathbb{R}\) una función continua en todo \([a,b]\) y supongamos
+         que \(f(a)\) y \(f(b)\) tienen signos opuestos.  Entonces existe  al menos un
+         \(c\) en \([a,b]\) tal que \(f(c)=0\).
+        </p>
+        <center>
+          <img src="./Imagenes/Teorema_Bolzano.png" alt="Bolzano" width="35%" height="auto">
+        </center>
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Definicion</h1>
+        
+         <p>
+          Un punto \(c\) que satisface \(f(c)=0\), se le conoce como una <b>raíz de \(f\)</b>.
+         </p>
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Ejercicio</h1>
+         <p>
+          Sea \(f:[0,1]\to \mathbb{R}\) una función continua en todo \([0,1]\).
+          Supón además que \(0\leq f(x) \leq 1\), para toda \(x\).
+          Demuestra que existe \(c\in [0,1]\) tal que
+          \[f(c)=c.\]       
+        </p>
+       
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion"> Definicion</h1>
+        
+       <p>
+         Un punto \(c\), en el dominio de una función \(f\), que satisface
+         \(f(c)=c\), se le conoce como un <b>punto fijo de la función</b>.       
+       </p>
+     </div>
+
+
+
+     <div class="ejercicio-resuelto-box"><h1 class="title-definicion"> Teorema de Rolle </h1>
+        <p>
+          Sea \(f:[a,b] \to \mathbb{R}\) una función tal que:
+          <ol>
+            <li>
+            \(f\) es continua en \([a,b]\);
+            </li>
+            <li>
+              \(f\) es diferenciable en \((a,b)\).
+            </li>
+          </ol>
+          Si \(f(a)=f(b)\) entonces existe al menos un \(c\in (a,b)\) tal que \(f'(c)=0\).
+        </p>
+        <center>
+          <img src="./Imagenes/Teorema_Rolle.png" alt="EjerParaBolzano" width="30%" height="auto">
+        </center>
+      </div>
+
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion"> Teorema de Valor Medio </h1>
+        <p>
+          Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+          diferenciable en  \((a,b)\).
+          Existe \(c\in (a,b)\) tal que
+          \[
+          \frac{f(b)-f(a)}{b-a}=f'(c)
+          \]
+          o equivalentemente
+          \[
+          f(b)-f(a)=f'(c)(b-a).
+          \]      
+        </p>
+        <center>
+          <img src="./Imagenes/Teorema_Valor_Medio.png" alt="EjerParaBolzano" width="60%" height="auto">
+        </center>
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Ejercicio </h2>
+        <p>
+          Sea \(f:[a,b] \to \mathbb{R}\)
+          continua en \([a,b]\) y diferenciable en \((a,b)\). Demuestra que
+          \(f\) es constante en \([a,b]\) si y sólo si \(f'=0\) en \([a,b]\).
+        </p>
+      </div>
+
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Ejercicio </h2>
+        <p>
+          Utiliza el Teorema de Valor
+          Intermedio para probar las siguientes desigualdades
+          <ol>
+            <li>
+              \(|\sin(a)-\sin(b)| \leq |a-b|\)
+            </li>
+            <li>
+              \(|\sin(2x)-\sin(x)| \leq |x|\)
+            </li>
+          </ol>
+        </p>
+      </div>
+
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion"> Teorema de Valor Medio de Cauchy </h1>
+        <p>
+          Sean \(f,g:[a,b] \to \mathbb{R}\) continuas en \([a,b]\) y diferenciables en
+          \((a,b)\). Entonces existe
+          \(c\in (a,b)\) tal que
+          \[
+          f'(c)[g(b)-g(a)]=g'(c)[f(b)-f(a)]
+          \]      
+        </p>
+       
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Teorema [Prueba de crecimiento/decrecimiento]</h1>
+            <p>Sea $f$ una función continua sobre $[a,b]$ y diferenciable sobre $(a,b)$.
+              <ol>
+                  <li> Si $f^{'}(x) > 0$ para toda $x$ en $(a,b)$, entonces $f$ es creciente en $[a,b]$.</li>
+                  <li> Si $f^{'}(x) < 0$ para toda $x$ en $(a,b)$, entonces $f$ es decreciente en $[a,b]$.</li>
+                  <li> Si $f^{'}(x) = 0$ para toda $x$ en $(a,b)$, entonces $f$ es constante en $[a,b]$.</li>
+              </ol>
+          </p>
+          <p>
+            <center>
+              <img src="./Imagenes/Prueba_crecimiento_drecrecimiento.png" alt="EjerParaBolzano" width="30%" height="auto">
+            </center>
+          </p>
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Ejercicio</h1>
+        <p>Determine los intervalos sobre los cuales $f(x) =  x^3 - 3x^2 - 24x$ es creciente y los intervalos
+          sobre los cuales $f$ es decreciente.
+          
+      </p>
+  </div>
+
+
+
+
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Criterio de la primera derivada para extremos locales</h1>
+         <p>Sea \(f:[a,b] \to \mathbb{R}\) continua en \([a,b]\). Supongamos que \(f\) es
+          diferenciable en \(I \subset [a,b]\), una vecindad agujereada de \(c \in [a,b]\).
+          Demuestra:
+          <ol>
+            <li>
+              Si \(f'(x)>0\) para \(x< c\), \(x\in I\) y \(f'(x) < 0\) para \(x >c\), \(x\in I\)
+              entonces \(f\) tiene un máximo local en \(c\).
+              <p>
+                <center>
+                  <img src="./Imagenes/cpd1.png" alt="EjerParaBolzano" width="35%" height="auto">
+                  <img src="./Imagenes/cpd22.png" alt="EjerParaBolzano" width="33%" height="auto">
+                </center>
+              </p>
+            </li>
+            
+            <li>
+              Si \(f'(x)< 0\) para \(x< c\), \(x\in I\) y \(f'(x)>0\) para \(x>c\), \(x\in I\)
+              entonces \(f\) tiene un mínimo local  en \(c\).
+              <p>
+                <center>
+                  <img src="./Imagenes/cpd2.png" alt="EjerParaBolzano" width="35%" height="auto">
+                  <img src="./Imagenes/cpd11.png" alt="EjerParaBolzano" width="33%" height="auto">
+                </center>
+              </p>
+            </li>
+          </ol>
+         </p>
+         <!-- <p>
+          <center>
+            <img src="./Imagenes/cpd.png" alt="EjerParaBolzano" width="85%" height="auto">
+          </center>
+        </p> -->
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Observación</h1>
+        <p>En la siguiente figurase se ilustra cuál sería el caso cuando $f^{'}(c)$ no cambia de signo en un 
+           punto crítico $c$. En  $a)$ e $b)$ se muestra una tangente horizontal en $(c,f(c))$ y $f^{'}(c) = 0$
+          pero $f (c)$ no es ni máximo ni mínimo relativo. Mientras que en $c)$ se muestra una tangente vertical 
+          en $(c, f (c))$ y así $f^{'}(c)$ no existe, pero de nuevo $f(c)$ no es un extremo local porque $f^{'}(c)$ 
+          no cambia de signo en el punto crítico $c$.</p>
+             <p>
+               <center>
+                 <img src="./Imagenes/cpd3.png" alt="" width="95%" height="auto">
+               </center>
+             </p>
+           </li>
+      </div>
+
+
+
+     <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Definición</h1>
+
+     <p>Sea $f$ derivable en un intervalo abierto I. Se dice que $f$ es <b>cóncava hacia arriba</b> (<b>cóncava</b>) en $I$,
+       si $f^{'}$ es creciente en $I$; y decimos que $f$ es <b>cóncava hacia abajo</b> (<b>convexa</b>) en $I$, si 
+       $f^{'}$ es decreciente en $I$.
+      </p>
+      <p>En otras palabras, si las pendientes de las rectas tangentes a la gráfica de \( f \) 
+        crecen (decrecen) cuando \( x \) crece sobre \( (a,b) \), entonces la gráfica de \( f \) 
+        es cóncava hacia arriba (abajo) sobre el intervalo. Si las pendientes crecen (decrecen) 
+        cuando \( x \) crece, entonces esto significa que las rectas tangentes giran en sentido 
+        contrario al de las manecillas del reloj sobre el intervalo. La gráfica de una función 
+        \( f \) es cóncava hacia arriba (hacia abajo) sobre un intervalo si la gráfica en cualquier 
+        punto se encuentra por arriba (abajo) de las rectas tangentes.</p>
+      <p>
+        
+        <center>
+          <img src="./Imagenes/concavidades.png" alt="" width="90%" height="auto">
+        </center>
+      </p>
+      <!-- <p> <ol>
+        <li>
+            Sea \( f \) diferenciable sobre un intervalo abierto \( I \). 
+            Si la gráfica de \( f \) es cóncava <i>hacia arriba</i> en \( I \), 
+            entonces la gráfica de \( f \) yace <i>sobre</i> todas sus rectas tangentes en \( I \). 
+            
+        </li>
+        <li>
+            Sea \( f \) diferenciable en un intervalo abierto \( I \). 
+            Si la gráfica de \( f \) es cóncava <i>hacia abajo</i> en \( I \), 
+            entonces la gráfica de \( f \) yace <i>debajo de</i> todas sus rectas tangentes en \( I \). 
+            
+        </li>
+    </ol></p> -->
+     </div>
+     
+     <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Observación</h1>
+
+      <p>Si $f^{''}(c)=0$, entonces el criterio de la segunda derivada falla.
+        Esto es, $f$ quizá tenga un máximo relativo, un mínimo relativo o ninguno de los dos. 
+        En tales casos, se puede utilizar el criterio de la primera derivada.
+       </p>
+      </div>
+
+     <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Criterio de la primera derivada para concavidad.</h1>
+      <p>Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+        diferenciable en \((a,b)\).
+        
+        <ol>
+        
+        <li>
+          Si \(f'\) es monótona creciente en \((a,b)\) entonces \(f\) es
+          cóncava hacia arriba en \([a,b]\).
+        </li>
+        <li>
+          Si \(f'\) es monótona decreciente en \((a,b)\) entonces \(f\) es
+          cóncava hacia abajo en \([a.b]\).
+        </li>
+        </ol>
+        </p>
+  
+      </div>
+
+      
+      <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Criterio de la segunda derivada para concavidad.
+      </h1>
+        <p>Sea \(f:[a,b]\to \mathbb{R}\) una función continua en \([a,b]\) y
+          diferenciable en \((a,b)\) y tal que
+          \(f''\) existe  en \((a,b)\).
+          
+          <ol>
+          
+          <li>
+            Si \(f^{''} >0\)  en \((a,b)\) entonces \(f\) es cóncava hacia arriba en \([a,b]\).
+          </li>
+          <li>
+            Si \(f^{''}< 0\) en \((a,b)\) entonces \(f\) es cóncava hacia abajo en \([a.b]\).
+          </li>
+          </ol>
+          </p>
+         
+        </div>
+
+        <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Definicion</h1>
+          <p>Sea $f$ continua sobre un intervalo $(a,b)$ que contiene al número $c$. Un punto 
+            $(c, f(c))$ es un <b>punto de inflexión</b> de la gráfica de $f$ si en $(c, f(c))$ hay una recta tangente 
+            y la gráfica cambia de concavidad en este punto
+          </p>
+          <p>
+            <center>
+              <img src="./Imagenes/puntos_inflexion.png" alt="" width="80%" height="auto">
+            </center>
+          </p>
+          
+        </div>
+
+
+        <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Teorema</h1>
+          <p>Si $(c, f (c))$ es un punto de inflexión para la gráfica de una función $f$, entonces 
+            $f^{''}(c)$ 0 $f^{''}(c)$ no existe.
+          </p>
+        </div>
+
+        <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Criterio de la segunda derivada para extremos locales</h1>
+          <p>
+            Supongamos que \(f\) está definida en una vecindad de \(c\) y \(f''\) existe
+            y es continua.
+            <ol>
+              <li>
+                Si \(f'(c)=0\) y \(f''(c)>0\) entonces \(f\) tiene un mínimo local en \(c\).
+              </li>
+              <li>
+                Si \(f'(c)=0\) y \(f''(c)< 0\) entonces \(f\) tiene un máximo local en \(c\).
+              </li>
+            </ol>
+          </p>
+          <p>
+            <center>
+              <img src="./Imagenes/concavidad_abajo.png" alt="" width="30%" height="auto">
+              <img src="./Imagenes/concavidad_arriba.png" alt="" width="30%" height="auto">
+              <img src="./Imagenes/csd.png" alt="" width="30%" height="auto">
+
+            </center>
+          </p>
+          
+     </div>
+
+<!-- 
+     <div class="ejercicio-resuelto-box"><h1 class="title-definicion">Criterio de la segunda derivada para extremos locales</h1>
+        <p>
+          Supongamos que \(f\) está definida en una vecindad de \(c\) y \(f''\) existe
+          y es continua.
+          <ol>
+            <li>
+              Si \(f'(c)=0\) y \(f''(c)>0\) entonces \(f\) tiene un mínimo local en \(c\).
+            </li>
+            <li>
+              Si \(f'(c)=0\) y \(f''(c)< 0\) entonces \(f\) tiene un máximo local en \(c\).
+            </li>
+          </ol>
+        </p>
+        <p>
+          <center>
+            <img src="./Imagenes/concavidad_abajo.png" alt="" width="30%" height="auto">
+            <img src="./Imagenes/concavidad_arriba.png" alt="" width="30%" height="auto">
+            <img src="./Imagenes/csd.png" alt="" width="30%" height="auto">
+
+          </center>
+        </p>
+      
+     </div> -->
+
+    
+
+
+
+  
+
+    
+    <!-- <div class="resp-box flexbox">    -->
+        <!-- <h1 class="title"> Introducción</h1> -->
+
+  <!-- <h1 class="number-subtitle"> Modelo relacional </h1> (sistema de gestión de bases de datos relacionales)? </h1>  -->
+
+
+</body>

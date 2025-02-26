@@ -1,0 +1,222 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="./main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="./style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+    .lista{
+        counter-reset: listaCounter 0 sublistaCounter 1 subsublistaCounter 1 subsubsublistaCounter 1;
+      }
+    /* .sublista{
+        counter-reset: sublistaCounter 1  SubsublistaCounter;
+      } */
+    </style>
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Cálculo I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Informacion_General.html"> Información</a> </li>
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Notas.html"> Notas  </a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+            
+      <title>Cálculo I</title>
+      </head>  
+          
+      <body class="fondo-body" >
+          
+        <div class="info-profesor-box">
+            <!-- <div class="informacion_profesor">  -->
+              <div class="title_nombre">Profesor: Pablo Jorge Hernández Hernández</div>
+              <div class="subtitle_nombre">Instituto de Investigación de Matemáticas y Actuaría (IIMA)</div>
+              <div class="subtitle_nombre">Cubículo #5</div>            
+            <!-- </div> -->
+        </div>
+
+
+      <div class="info-box" style = "font-family: 'Oldenburg', cursive;">
+        <center><h1 class="title">Temario</h1></center>
+
+        <ol class="lista">
+          <li>Números reales</li>
+            <ol class="sublista">
+              <li>Axiomas de campo y propiedades básicas</li>
+              <li>Axiomas de orden y desigualdades</li>
+              <li>Valor Absoluto</li>
+              <li>Axioma del supremo</li>
+            </ol>
+          <li>Funciones</li>
+            <ol class="sublista">
+              <li>Operaciones básicas entre funciones</li>
+              <li>Funciones crecientes y decrecientes</li>
+              <li>Funciones inyectivas, suprayectivas y función inversa</li>
+              <li>Gráficas de funciones y otros subconjuntos del plano</li>
+            </ol>
+          <li>Límite de funciones</li>
+            <ol class="sublista">
+              <li>Límites</li>
+              <li>Suma, producto y cociente de límites</li>
+              <li>Límites laterales</li>
+              <li>Límites infinitos y límites en el infinito</li>
+            </ol>
+          <li>Funciones continuas</li>
+            <ol class="sublista">
+              <li>Funciones continuas</li>
+              <li>Continuidad lateral</li>
+              <li>Máximos y mínimos de funciones continuas y el teorema del valor intermedio</li>
+              <li>Consecuencias del teorema del valor intermedio</li>
+              <li>Continuidad uniforme</li>
+            </ol>
+          <li>Funciones derivables</li>
+            <ol class="sublista">
+              <li>Derivabilidad</li>
+              <li>Derivación</li>
+              <li>La regla de la cadena</li>
+            </ol>
+          <li>Aplicaciones de la derivada</li>
+            <ol class="sublista">
+              <li>El teorema del valor medio</li>
+              <li>Criterio de la primera y segunda derivada</li>
+              <li>Regla de L'Hôpital</li>
+              <li>Convexidad y concavidad</li>
+              <li>Teorema de la función inversa</li>
+            </ol>
+        </ol>
+        
+          
+<!-- 
+          <ol class="lista">
+            <li>Elemento 1</li>
+            <ol class="sublista">
+              <li>subelemento</li>
+              <ol class="subsublista">
+                <li>subelemento</li>
+                <li>subelemento</li>
+                <li>subelemento</li>
+                <li>subelemento</li>
+              </ol>
+              <li>subelemento</li>
+              <ol class="subsublista">
+                <li>subelemento</li>
+                <li>subelemento</li>
+                <li>subelemento</li>
+                <li>subelemento</li>
+              </ol>
+              <li>subelemento</li>
+              <li>subelemento</li>
+            </ol>
+            <li>Elemento 2</li>
+            <ol class="sublista">
+              <li>subelemento</li>
+              <li>subelemento</li>
+              <li>subelemento</li>
+              <li>subelemento</li>
+            </ol>
+            <li>Elemento 3</li>
+          </ol> -->
+        
+      
+      </div>
+
+        
+      <div class="info-box"  style = "font-family: 'Oldenburg', cursive;">
+        <center><h1 class="title">Bibliografía</h1></center>
+        <br>
+        <b><font >Libros básicos</font></b>
+        <ol class="lista">
+            <li>Apostol T.M. (2001) Calculus, Volumen I, México: Reverté.</li>
+            <li>Arizmendi H., Carrillo H., Lara M. (1987) Cálculo. Primer Curso, México: Addison Wesley.</li>
+            <li>Banach S. (1991) Cálculo Diferencial e Integral, México: UTHEHA.</li>
+            <li>Courant R., John F. (1974) Introducción al Cálculo y Análisis, México: Editorial Limusa.</li>
+            <li>Spivak, M. (2014) Cálculo Infinitesimal, México: Editorial Reverté.</li>
+            <li>Thomas G.B., Finney R.L. (1987) Cálculo con Geometría Analítica, México: Addison-Wesley.</li>
+        </ol>
+        
+        <b><font >Libros de consulta</font></b>
+        <ol class="lista">
+            <li>Banner A. (2007) The Calculus Lifesaver, New Jersey: Princeton University Press.</li>
+            <li>Hasser B., La Salle P., Sullivan A. (1992) Análisis Matemático: Curso de Introducción, Vol. 1, México: Editorial Trillas.</li>
+            <li>Kuratowski K. (1970) Introducción al Cálculo, México: Limusa-Wiley.</li>
+            <li>Silverman R.A. (1989) Esencial Calculus with Applications, New York: Dover Publications, Inc.</li>
+            <li>Stewart J. (2008) Calculus, México: Thomson Brooks/Cole.</li>
+            <li>Thompson S.P. (2008) Calculus Made Easy, New York: Macmillan Company.</li>
+        </ol>
+        
+  </div>
+
+
+      </body>
+  </html>

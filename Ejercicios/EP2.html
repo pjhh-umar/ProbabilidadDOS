@@ -1,0 +1,1846 @@
+
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\$', '\$']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 2 sectionCounter EjercicioResueltoCounter 1;
+        
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 2;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+    <!-- Top Menu  -->
+    
+          
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Cálculo I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+      
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header>
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Informacion_General.html"> Información</a> </li>
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Notas.html"> Notas  </a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/CalculoUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+       
+        
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+            
+      <title>Ejercicios propuestos segundo examen parcial </title>
+      </head>  
+
+
+
+      <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos Segundo Examen Parcial </h1>   
+
+    <!-- <div class="ejercicio-box"><h1 class="title"> Archivos</h1> 
+      <div class="links-box" style = "font-family: 'Oldenburg', cursive; font-size: 150%;">
+        <a href="../Archivos/EP1-GrupoA.xlsx" download> EP1-GrupoA.xlsx</a><br>
+        <a href="../Archivos/EP1-GrupoC.xlsx" download> EP1-GrupoC.xlsx</a>
+      </div>
+      </div> -->
+
+        
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sea $a\in \mathbb{R}^{+}$ arbitrario pero fijo. Utiliza el principio de inducción para probar que para todo 
+          $n\in \mathbb{N}$, se satisface la desigualdad: 
+          $$a<(1+a)^n$$.
+         </p>
+  
+       </div>
+    
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Si $A,B \subseteq \mathbb{R}$ son conjuntos no vacios acotados superiormente y $\gamma \in \mathbb{R}$ arbitrario pero fijo,
+          prueba que los siguientes conjuntos son acotados superiormente.
+           <ol>
+            <li>$A \cup B$</li>
+            <li>$A \cap B$</li>
+            <li>$\gamma + B :=\left\{\gamma + b\, \big|\,b \in B \right\}$.</li>
+            <li>Para $\gamma \in \mathbb{R}^{+} \cup \{0\}$, $\gamma \cdot B :=\left\{ \gamma \cdot b\, \big|\,b \in B \right\}$.   ¿Podemos concluir lo mismo si  $\gamma < 0$?</li>
+            <li>$A + B :=\left\{ a + b\, \big|\,a\in A, b\in B\right\}$</li>
+            <!-- <li>$A \cdot B \colon =\left\{a\cdot b\, \big|\,a\in A, b\in B \right\} $</li> -->
+           </ol>
+        </p>
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Si $A,B \subseteq \mathbb{R}$ son conjuntos no vacios acotados inferiormente y $\gamma \in \mathbb{R}$ arbitrario pero fijo,
+          prueba que los siguientes conjuntos son acotados inferiormente.
+           <ol>
+            <li>$A \cup B$</li>
+            <li>$A \cap B$</li>
+            <li>$\gamma + B :=\left\{\gamma + b\, \big|\,b \in B \right\}$.</li>
+            <li>Para $\gamma \in \mathbb{R}^{+}\cup \{0\}$, $\gamma \cdot B :=\left\{ \gamma \cdot b\, \big|\,b \in B \right\}$.  ¿Podemos concluir lo mismo si  $\gamma < 0$?</li>
+            <li>$A + B :=\left\{ a + b\, \big|\,a\in A, b\in B\right\}$</li>
+            <!-- <li>$A \cdot B \colon =\left\{a\cdot b\, \big|\,a\in A, b\in B \right\} $</li> -->
+           </ol>
+        </p>
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Si $A,B \subseteq \mathbb{R}$ son conjuntos no vacios acotados superiormente. ¿Qué puedes decir de 
+          $A\setminus B$
+        </p>
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+        <p>Prueba que el supremo (infimo) de un conjunto (en caso de existir) es único, es decir,
+           demuestra que si $\alpha$ y $\beta$ son dos números que satisfacen las dos condiciones de la
+           definición del supremo (infimo) de un conjunto $A$ entonces  $\alpha=\beta$.
+        </p>
+        <center>
+          <button class="respButton hvr-grow"> Respuesta para el supremo </button>
+          <div class="resp-box flexbox">
+            <iframe width="95%" height="90%" class="video"
+            src="https://www.youtube.com/embed/Q_pPfMeg_eI?si=5mHbmZNlbVM7tdGc" title="YouTube video player" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </center>
+    
+        </div>
+              
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sea $A = \left\{ x\in \mathbb{R}\,\big| \, x \geq 0 \right\}$.</p>
+        <p>
+          <ol>
+            <li>Prueba que $A$ es acotado inferiormente pero no es acotado superiormente.</li>
+            <li>Prueba que $\inf(A)$ existe y que $\inf(A) = 0$.</li>
+          </ol>
+         <p>Justifica clara y detalladamente tu respuesta.</p>
+       </div>
+
+       <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sea $A = \left\{ x\in \mathbb{R}\,\big| \, x > 0 \right\}$.</p>
+        <p>
+          <ol>
+            <li>¿$A$ es acotado inferiormente?</li>
+            <li>¿$A$ es acotado superiormente?</li>
+            <li>¿Existe $\inf(A)$ ? En caso de existir darlo.</li>
+            <li>¿Existe $\sup(A)$?</li>
+          </ol>
+         <p>Justifica clara y detalladamente tu respuesta.</p>
+       </div>
+      
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+       Determine si el conjunto $\left\{ x\in \mathbb{R}\,\big| \, x^{2} - x + 1  < 0\right\}$ esta acotado superior 
+       o inferiormente. Justificar clara y detalladamente tu respuesta.
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        Determine si el conjunto $\left\{ x\in \mathbb{R} \, \big|\, 3x + 5 < 4x -7 \right\}$ esta acotado superior 
+        o inferiormente. Justificar clara y detalladamente tu respuesta.
+       </div>
+
+       
+
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+        <p>
+          Considera el conjunto
+          \[
+          A=\left\{ \frac{1}{n}: n=1,2,\dots \right\}
+          \]
+  
+          Demuestra que $\inf(A)=0$.
+  
+          <!-- Sugerencia: usa el <a href="#Ejer:LemaInfimo1/n">Ejercicio 2.12</a>. -->
+          </p>
+          <center>
+            <button class="respButton hvr-grow">Demostración</button>
+            <div class="resp-box flexbox">
+              <iframe width="95%" height="90%" class="video"
+              src="https://www.youtube.com/embed/niIVPTI8r3c?si=Zyqs5cYV8ZhtPodc" title="YouTube video player" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </center>
+      </div>
+
+
+       <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sea $A\colon = \displaystyle{\left \{ \frac{1}{2n} \,\, \big|\,\, n \in \mathbb{N}  \right\}} \subseteq \mathbb{R}$. 
+         Prueba que $\inf(A) = 0$        
+        </p>
+       </div>
+ 
+       <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+         <p>Sea $A\colon = \displaystyle{\left \{ 1 +  \frac{1}{n} \,\, \big|\,\, n \in \mathbb{N}  \right\}} \subseteq \mathbb{R}$. 
+          Prueba que $\inf(A) = 1$        
+         </p>
+        </div>
+
+        <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+          <p>Usando el axioma del supremo  demuestra que $\mathbb{N}$ no tiene
+            cota superior.
+          </p>
+          <center>
+            <button class="respButton hvr-grow">Demostración</button>
+            <div class="resp-box flexbox">
+              <iframe width="95%" height="90%" class="video"
+              src="https://www.youtube.com/embed/NOLZOPFQYaY?si=OLR2GyGHRTwfJcWG" title="YouTube video player" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </center>
+          </div>
+
+       <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $A$ un subconjunto no vacio de $\mathbb{R}$ acotado superiormente. 
+          Si existe $M\in A$ tal que $M$ es una cota superior de $A$, prueba que $\sup(A) = M$.
+        </p>
+       </div>
+
+       <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $A$ un subconjunto no vacio de $\mathbb{R}$ acotado inferiormente. 
+          Si existe $m\in A$ tal que $m$ es una cota inferior de $A$, prueba que $\inf(A) = m$.
+        </p>
+       </div>
+
+
+       <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Demuestra que el supremo e infimo de un conjunto (en caso de existir) no necesariamente
+          pertenecen al conjunto. (Da un ejemplo)
+
+        </p>
+       </div>
+
+  
+       <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $a,b \in \mathbb{R}$ con $a < b$. Prueba que $\inf((a,b)), \sup((a,b))$ existen y que 
+          $\inf((a,b)) = a$ y $\sup((a,b)) = b$
+        </p>
+       </div>
+
+
+       
+
+       <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $A$ un subconjunto no vacio de $\mathbb{R}$ y $u \in \mathbb{R}$. Prueba que las siguientes proposiciones 
+          son equivalentes. 
+          <ol>
+            <li>$u$ es una cota superior de $A$</li>
+            <li>Si $t \in \mathbb{R}$ con $t>u$, entonces $t \not \in A$</li>
+          </ol>
+        </p>
+       </div>
+
+      
+
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sea $A,B \subseteq \mathbb{R}$ dos conjuntos no vacios tales que
+          que $A \subseteq B$. Prueba las siguientes proposiciones
+        </p>
+      <ol>
+      <li> Si $B$ está acotado superiormente también $A$ y $\sup(A) \leq \sup(B)$.</li>
+      <li> Si $B$ está acotado inferiormente también $A$ y $\inf(B)\leq \inf(A).$</li>
+      </ol>
+      </div>
+
+
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>
+          Sean $A, B \subseteq \mathbb{R}$ dos conjuntos no vacíos y  acotados superior e inferiormente. Si
+          $\inf(A)= \inf(B)$ y $\sup(A) = \sup(B)$, ¿Es cierto que $A=B$? Pruebalo o da un contraejemplo.
+        </p>
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $A$ un subconjunto no vacio de $\mathbb{R}$ acotado inferiormente. 
+          Si  $\inf(A) > 0$ prueba las siguientes proposiciones
+          <li>El conjunto $\tilde{A} := \left\{ \displaystyle{\frac{1}{a}}\, \big|\,a \in A \right\}$ esta
+            bien definido. Esto es, prueba que $a\not = 0$ para todo $a \in A$.
+          </li>
+          <!-- <li>El conjunto $\tilde{A}$ esta acotado superiormente.</li>
+          <li>Existe $\sup(\tilde{A})$.</li> -->
+          <li>$\sup{(\tilde{A})} = \displaystyle{\frac{1}{\inf(A)}}$
+          </li>
+            
+        </p>
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sea $B\colon = \displaystyle{\left \{ \frac{n}{n+1} \,\, \big|\,\, n \in \mathbb{N}  \right\}} \subseteq \mathbb{R}$. 
+        Prueba que $\sup(B) = 1$        
+        </p>
+      </div>
+      
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sean $A,B \subseteq \mathbb{R}$ no vacios, $\gamma \in \mathbb{R}$ y $\beta \in \mathbb{R}^+$,
+          arbitrarios pero fijos. Prueba las siguientes proposiciones:
+        </p>
+        <p>
+          <ol>
+            <li>Si $A$ está acotado superiormente, entonces $\beta \cdot A$ también esta acotado
+              superiormente, existe $\sup(\beta \cdot A)$ y $$\sup(\beta \cdot A) = \beta \sup(A)$$</li>
+            <li>Si $A$ está acotado superiormente, entonces $\gamma +  A$ también esta acotado
+              superiormente, existe $\sup(\gamma + A)$ y $$\sup(\gamma + A) = \gamma + \sup(A)$$
+            </li>
+            <li>Si $A$ y $B$ están acotados superiormente, entonces $A +B$ también esta acotado
+              superiormente, existe $\sup(A + B)$ y $$\sup( A + B) = \sup(A) + \sup(B)$$
+            </li>
+            <li>Si $A$ y $B$ están acotados superiormente, entonces $A  \cup B$ también esta acotado
+              superiormente, existe $\sup(A \cup B)$ y $$\sup( A \cup B) = \max\{\sup(A), \sup(B)\}$$
+            </li>
+          </ol>
+        </p>
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sean $A \subseteq \mathbb{R}$ no vacio  y $\lambda \in \mathbb{R}$,
+          arbitrario pero fijo. Prueba que 
+        </p>
+        $$
+        \sup(\lambda A) = \begin{cases} 
+          \lambda \sup A & \text{si } \lambda \geq 0, \\ 
+          \lambda \inf A & \text{si } \lambda < 0. 
+          \end{cases}
+          $$
+        
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sean $A,B \subseteq \mathbb{R}$ no vacios, $\gamma \in \mathbb{R}$ y $\beta \in \mathbb{R}^+$,
+          arbitrarios pero fijos. Prueba las siguientes proposiciones:
+        </p>
+        <p>
+          <ol>
+            <li>Si $A$ está acotado inferiormente, entonces $\beta \cdot A$ también esta acotado
+              inferiormente, existe $\inf(\beta \cdot A)$ y $$\inf(\beta \cdot A) = \beta \inf(A)$$</li>
+            <li>Si $A$ está acotado inferiormente, entonces $\gamma +  A$ también esta acotado
+              inferiormente, existe $\inf(\gamma + A)$ y $$\inf(\gamma + A) = \gamma + \inf(A)$$
+            </li>
+            <li>Si $A$ y $B$ están acotados inferiormente, entonces $A +B$ también esta acotado
+              inferiormente, existe $\inf(A + B)$ y $$\inf( A + B) = \inf(A) + \inf(B)$$
+            </li>
+            <li>
+              Si $A$ y $B$ están acotados inferiormente, entonces $A \cup B$ también esta acotado
+              inferiormente, existe $\inf(A \cup  B)$ y 
+              $$\inf(A \cup B) = \min\{\inf A, \inf B\}$$
+            </li>
+          </ol>
+        </p>
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-practica" id="Ejer:unicidad_raiz_cuadrada_positivo"> Ejercicio resuelto</h1>
+      
+        <p>Sea $a>0$. Prueba que existe un único $\alpha >0$ tal que $\alpha^2=a$. Esto es,
+          todo número real positivo tiene una única raíz cuadrada no negativa.
+        </p>
+        <center>
+          <button class="respButton hvr-grow">Demostración</button>
+          <div class="resp-box flexbox">
+            <iframe width="95%" height="90%" class="video"
+            src="https://www.youtube.com/embed/EtfvdikwfPo?si=rTqlaekrrhcVmCj2" title="YouTube video player" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </center>
+        </div>
+
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+      
+        <p>Sea $n\in \mathbb{N}$, $n > 2$ arbitrario pero fijo  y
+        $a>0$. Define 
+        $$S=\{ x \geq 0: x^n \leq a\}.$$
+        Prueba que $1+a$ es cota superior de $S$.
+        </p>
+        
+      </div>
+      
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+      
+        <p>Prueba que  para todo número real $a>0$ y
+          todo natural $n\geq 2$, existe un único real positivo, denotado por 
+          $\sqrt[n]{a}$, tal que $(\sqrt[n]{a})^n=a$.
+        </p>
+        <p>
+          <b>Sugerencia:</b> Sigue la misma  idea utilizada que el <a href="#Ejer:unicidad_raiz_cuadrada_positivo">Ejercicio resuelto 2.5</a>.
+        </p>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica"> Ejercicio </h1>
+        <p>Sean $a,b \in \mathbb{R}$. Prueba que $ |a| < |b| $ si y sólo si 
+          $a^{2} < b^{2}$.
+        </p>
+        <!-- <p><b>Sugerencia:</b> Utiliza el ejercicio anterior.</p> -->
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica"> Ejercicio </h1>
+        <p>Sean $a,b > 0$. Prueba que si $a < b $, entonces
+          $\sqrt{a} < \sqrt{b}$.
+        </p>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica"> Ejercicio </h1>
+        <p>Sean $a,b > 0$ y $n \in \mathbb{N}$ con $n\geq 2$. Si $a < b $, prueba que
+          $0 < \sqrt[n]{a}< \sqrt[n]{b}$.
+        </p>
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sea $A \subseteq \mathbb{R}^{+}$ un conjunto no vacío y acotado superiormente. Define el conjunto
+          \[
+          A^2:=\{a^2: a\in A\}.
+          \]
+          Prueba que $A^2$ está acotado superiormente y
+          \[
+          \sup(A^2)=(\sup(A))^2.
+          \]
+         </p>
+         <!-- <p>
+           Sugerencia: Utiliza el ejercicio anterior.
+         </p> -->
+         
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $A$ y $B$ dos conjuntos de números reales no vacios y acotados superiormente. Si  para todo 
+          $a \in A$ existe $b\in B$  tal que $a \leq  b$, prueba que $\sup(A) \leq  \sup(B)$.
+        </p>
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $A,B, C$ dos conjuntos de números reales no vacios y acotados superiormente. Si  para cualesquiera 
+          $a \in A$ y $b \in B$ existe $c\in C$  tal que $a + b  \leq  c$, prueba que $\sup(A) + \sup(B) \leq \sup(C) $.
+        </p>
+      </div>
+
+
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Prueba que el conjunto de los números reales no es acotado superiormente, i.e. demuestra que 
+          no existe $z \in \mathbb{R}$ tal que $x \leq z$ para todo $x \in \mathbb{R}$.</p>
+        
+      </div>
+      
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Prueba que  el conjunto de los números reales no es acotado inferiormente, i.e. prueba que 
+          no existe $z \in \mathbb{R}$ tal que $x \geq z$ para todo $x \in \mathbb{R}$.
+        </p>
+        
+      </div>
+      
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Si $0 < a < b$, prueba que $a < \sqrt{ab} < \displaystyle{\frac{a + b}{2}} < b$.</p>
+        <p>A $\sqrt{ab}$ se le llama el <b>Media Geométrica</b> de $a$ y $b$, y a 
+          $ \displaystyle{\frac{a + b}{2}}$ se le llama el <b>media Aritmética</b> de $a$ y $b$.</p>
+      </div>
+      
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $a,b,c,d \in \mathbb{R}^{+}$ tales que $\displaystyle{\frac{a}{b} < \frac{c}{d}}$. Prueba que 
+          $$\displaystyle{\frac{a}{b} < \frac{a + c}{b+ d} < \frac{c}{d}}$$
+        </p>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sea $ m \in \mathbb{N}, \, m > 1 $ arbitrario pero fijo. Prueba que para todo $n \in \mathbb{N}$, se satisface 
+          $ m^n \geq n $.
+        </p>
+        <p><b>Sugerencia:</b> Utiliza el Principio de Inducción Matemática o  la desigualdad de Bernoulli.</p>
+      </div>
+      
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p><p>Sea $ m \in \mathbb{N}, \, m > 1 $ arbitrario pero fijo. Pruébese que para todo $ \varepsilon > 0 $,
+          existe $ n \in \mathbb{N} $ tal que $\displaystyle{\frac{1}{m^n}} < \varepsilon $.</p>
+      </div>
+      <!-- 
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Dados $ a, b \in \mathbb{R} $ con $ a \leq b $, pruébese que $ a \leq \frac{a + b}{2} \leq b $. Si la primera desigualdad es estricta, entonces las otras también lo son.</p>
+      </div>
+      
+
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Demuestre que si $a, b \in \mathbb{R}$, entonces $a^2 + b^2 = 0 \Leftrightarrow a = 0 = b$.</p>
+      </div> -->
+   
+      
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $a, b \in \mathbb{R}$, prueba que se satisfacen las siguientes propiedades:</p>
+        <ol class="two-column">
+          <li>$|-a| = |a|$.</li><br>
+          <li>$|a^2| = |a|^2$.</li><br>
+          <li>$|a^2| = a^2$.</li><br>
+          <li>$\sqrt{a^2} = |a|$.</li><br>
+          <li>$|a - b| = |b - a|$.</li><br>
+          <li>$|ab| = |a|\cdot |b|$.</li><br>
+          
+          <!-- <li>$|a - b| \leq |a| + |b|$.</li><br> -->
+          <!-- <li>$||a| - |b|| \leq |a - b|$.</li><br> -->
+          <li>Si $a \neq 0$, entonces $\displaystyle{\left| \frac{1}{a} \right| = \frac{1}{|a|}}$.</li><br>
+          <li>Si $a \neq 0$, entonces $\displaystyle{\left| \frac{b}{a} \right| = \frac{|b|}{|a|}}$.</li><br>
+        </ol>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $x,y\in \mathbb{R}$. Prueba que $|x - y | \leq |x| + |y|$.
+        </p>
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sean $x,y\in \mathbb{R}$. Prueba que $||x| - |y| | \leq |x - y|$.
+        </p>
+        <p>Esta desigualdad es conocida como la <b>Desigualdad inversa del Triángulo</b></p>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sea $a\in \mathbb{R}$ tal que $a \geq 0$. Prueba las siguientes proposiciones:</p>
+        <ol>
+          <li>$|x|\leq a$ si y sólo si $-a \leq x \leq a$</li><br>
+          <li>$|x|\geq a$ si y sólo si $x \geq a$ ó $x \leq -a $ </li>
+        </ol>
+      </div>
+
+      <div class="ejercicio-resuelto-box"><h1 class="title-practica" id="Ejer:SandwichDesigualdades"> Ejercicio resuelto</h1>
+        <p>
+          Sean $a,b,c \in \mathbb{R}$ tales que $a< b< c$. Demuestra que para todo
+          $L\in \mathbb{R}$:
+        \[
+        |b-L| \leq |a-L|+|c-L|.
+        \]
+      </p>
+  
+        <!-- <p>
+          Sugerencia: considera los casos $L\leq a$,
+          $a< L < c $ y $c \leq L$ junto con la desigualdad del triángulo.
+        </p> -->
+        <center>
+          <button class="respButton hvr-grow">Demostración</button>
+          <div class="resp-box flexbox">
+            <iframe width="95%" height="90%" class="video"
+            src="https://www.youtube.com/embed/pcmgRNyOOtw?si=9O-MYtaEW40Fg1HH" title="YouTube video player" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </center>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sea $x,y\in \mathbb{R}$. Prueba que $|xy | = x y$ si y sólo si $x$ y $y$ tienen el mismo signo.</p>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sea $x,y\in \mathbb{R}$. Prueba que $|x + y | = |x| + |y|$ si y sólo si $xy \geq 0$.</p>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Utiliza el Principio de Inducción Matemática para probar que  si $x_1, x_2, \dots, x_n \in \mathbb{R}$, entonces
+           $$|x_1 + x_2 + \cdots + x_n| \leq |x_1| + |x_2| + \cdots + |x_n|.$$</p>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Demostrar usando el Principio de Inducción Matemática que $\displaystyle{\frac{1}{2^{n}} < \frac{1}{n}}$ para todo $n \in \mathbb{N}$.</p>
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sea $x>0$. Prueba que existe $N\in \mathbb{N}$ tal que $\displaystyle{\frac{1}{2^{N}} < x}$.</p>
+      </div>
+      
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Sea $\delta >0$ y $x,y \in \mathbb{R}$. Prueba que $|x - y | \leq \delta$ si y sólo si  $y - \delta \leq x \leq y +\delta$</p>
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Resuélvanse las  siguientes desigualdades:</p>
+        <ol class="two-column">
+          <li>$3x + 5 < x - 7$</li><br>
+          <li>$x - 3 > 0$</li><br>
+          <li>$(x + 1)(x - 2) < 0$</li><br>
+          <li>$(x - 1)(x + 1) > 0$</li><br>
+          <li>$x^2 - 2 \leq 1$</li><br>
+          <li>$x(x + 1) \geq 0$</li><br>
+          <li>$(x - 5)^2(x + 10) \geq 0$</li><br>
+          <li>$3(x - 1)(x - 4) \geq 0$</li><br>
+          <li>$(x + 1)(x + 2) \geq 0$</li><br>
+          <li>$5(x + 1)(x - 2) < 0$</li><br>
+          <li>$x^2 + 3x + 3 > 0$</li><br>
+          <li>$5(x - 2)^2 > 0$</li><br>
+          <li>$3x^2 + 10 + 3 \geq 0$</li><br>
+          <li>$-x^2 + 2x - x \leq 0$</li><br>
+          <li>$\displaystyle{\frac{7}{x - 1} - \frac{6}{x^2 - 1}} < 5$</li><br>
+          <li>$\displaystyle{\frac{6}{x + 3} + \frac{1}{x - 2} > 0}$</li><br>
+        </ol>
+      </div>
+
+         
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Determinar el conjunto solución de cada una de las siguientes desigualdades:</p>
+        <ol class="two-column">
+          <li>$|x| < 15$</li><br>
+          <li>$|-x| < 2$</li><br>
+          <li>$|x - 3| < 1$</li><br>
+          <li>$|x + 4| \leq 3$</li><br>
+          <li>$|5x - 1| < \displaystyle{\frac{3}{5}}$</li><br>
+          <li>$|x + 1| \leq 1$</li><br>
+          <li>$\displaystyle{\frac{3}{5}x + \frac{3}{5}} < 45$</li><br>
+          <li>$|9x - 2| \leq 9$</li>
+        </ol>
+      </div>
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Determinar el conjunto solución de cada una de las siguientes desigualdades:</p>
+        <ol class="two-column">
+          <!-- <li>$|x^2 - 6x - 2| = 0$.</li><br> -->
+          <!-- <li>$|x^2 + 1| = 0$.</li><br> -->
+          <li>$|4x - 6| = 3x - 7$.</li><br>
+          <li>$|x+1| - |x-1| = 0$</li><br>
+          <li>$|x+1| +|x-1| = 2$</li><br>
+          <li>$|x+1|\cdot|x-1| = 1$</li>
+        </ol>
+      </div>
+      
+
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Resuélvanse las  siguientes desigualdades:</p>
+        <ol class="two-column">
+          <li>$|x^2 - 2| < 1$</li><br>
+          <li>$\displaystyle{\frac{|2x + 1|}{3 - 2x} \leq 1}$</li><br>
+          <li>$\displaystyle{\frac{|x - 5|}{x + 3} < 2}$</li><br>
+          <li>$|x - 3| > 7$</li><br>
+          <li>$\displaystyle{\frac{|x + 1|}{2 + x} < 4}$</li><br>
+          <li>$\displaystyle{\frac{|x|}{6 - 5x} \leq 2}$</li><br>
+          <li>$\displaystyle{\frac{|x + 1|}{3x - 2} \leq 5}$</li><br>
+          <li>$|2 + 5x| \leq 7$</li><br>
+          <li>$|4x - 2| \leq 10$</li><br>
+          <li>$|x(x + 1)| < |x + 4|$</li><br>
+        </ol>
+      </div>
+      
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Demuéstrese que si $|x| < 1$, entonces:</p>
+        <ol class="two-column">
+          <li>$\left|\displaystyle{\frac{x + 1}{x - 2}}\right| < 2$</li>
+          <li>$\displaystyle{\left|  \frac{x - 2}{x + 3}\right| < \frac{3}{2} }$</li>
+        </ol>
+      </div>
+      
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Demuéstrese que si $|x - 2| < 1$, entonces $|x^2 - 4| < 5$.</p>
+      </div>
+      
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Demuéstrese que si $|x - 2| < 0.1$, entonces $|x^2 - 4| < 0.41$.</p>
+      </div>
+      
+      <div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Demuéstrese que si $|x - 2| < a$, entonces $|x^2 - 4| < 4a + a^2$.</p>
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Sean $x,y \in \mathbb{R}$  dos números reales arbitrarios pero fijos. Prueba que $x=y$  si y sólo si 
+          para todo $\varepsilon > 0$ se satisface $|x - y | < \varepsilon$</p>
+       
+      </div>
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>
+           Sean $a,b,\alpha, \beta\in \mathbb{R}$
+           tales que $a\leq \alpha \leq b$ y $a\leq \beta \leq b $.
+           Demuestra que  $|\alpha-\beta | \leq b-a$.
+         </p>
+       </div>
+     
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>
+         Demuestra que si $a,b,c\in \mathbb{R}^+$ satisfacen $abc=8$ entonces
+         $a+b+ c\geq 6$ y $ab+bc+ac\geq 12$.
+       </p>
+       <p>
+         <b>Sugerencia:</b> Utiliza la desigualdad de Korovkin.
+       </p>
+       </div>
+
+
+      <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+        <p>Demuestra que si $b_1, \cdots, b_n \in \mathbb{R}^+$ entonces
+  
+            \[
+            \frac{b_1}{b_2}+\frac{b_2}{b_3}+\frac{b_3}{b_4}+ \cdots+ \frac{b_{n-1}}{b_n}+\frac{b_n}{b_1}\geq n
+            \]
+          </p>
+          <p>
+            <b>Sugerencia:</b> Usa la desigualdad de Korovkin.
+          </p>
+        </div>
+
+        <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+           Las estimaciones usando desigualdades pueden usarse
+           para resolver problemas de máximos y mínimos. La derivada
+           ayudará a resolver estos problemas de una mejor manera,
+           pero este es una muestra de los problemas que se abordaremos 
+           más adelante.
+         </p>
+         <p>
+           Prueba:
+         </p>
+         <ol>
+           <li>
+             para todo $x\in \mathbb{R}$
+             \[
+             \frac{x^2}{1+x^4}\leq \frac{1}{2}
+             \]
+   
+            <p><b>Sugerencia:</b> Reescribir
+             $\displaystyle{\frac{x^2}{1+x^4} = \frac{1}{\displaystyle{\frac{1}{x^2}}+ x^2}}$
+             y usar la desigualdad de Korovkin en el denominador.
+            </p>
+           </li>
+   
+           <li>
+             Considera la función
+             $f:\mathbb{R} \to \mathbb{R}$ dada por
+             $f(x)=\displaystyle{\frac{x^2}{1+x^4}}$. Encuentra los  puntos
+             $x_{0} \in \mathbb{R}$ donde la función alcanza su máximo,
+             es decir $x_{0}$ debe de satisfacer
+             \[
+             f(x) \leq f(x_{0}) \quad \textrm{ para todo $x\in \mathbb{R}$}
+             \]
+   
+             <p><b>Sugerencia:</b> Recuerda cuando se da la igualdad en
+             la desigualdad de Korovkin.
+             </p>
+           </li>
+         </ol>
+         </div>
+
+        <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+          <p>
+            Considera la función $f:[-2,2] \to \mathbb{R}$ dada por
+            \begin{eqnarray*}
+            f(x)=\left\{
+              \begin{array}{cc}
+              -1 &  -2 \leq x  < 0, \\
+               1 &   0 \leq x  < 2 .\\
+              \end{array}
+              \right.
+            \end{eqnarray*}
+            Nota: $f$ no está definida para $x< -2$ ó para $x>2$.
+          </p>
+          <p>
+            <ol>
+              <li> Dibuja la gráfica de $f$ y determina su rango.</li><br>
+              <li> Define $g(x)=f(4x)$. Describe
+              el dominio y el rango de $g$ y dibuja su gráfica.</li><br>
+              <li> Define $h(x)=f(x+2)$. Describe
+              el dominio y el rango de $h$ y dibuja su gráfica.</li><br>
+              <li> Define $k(x)= g(x)+h(x)$. Describe
+              el dominio y el rango de $k$ y dibuja su gráfica.</li>
+            </ol>
+          </p> 
+          <center>
+            <button class="respButton hvr-grow"> Solución</button>
+            <div class="resp-box flexbox">
+              <iframe width="95%" height="90%" class="video"
+              src="https://www.youtube.com/embed/PI7BFxuh_80?si=Gba2ITu4dLGiEAIa" title="YouTube video player" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </center>
+        </div>
+
+        <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+           Las estimaciones usando desigualdades pueden usarse
+           para resolver problemas de máximos y mínimos. La derivada
+           ayudará a resolver estos problemas de manera más ordenada,
+           pero este es una muestra de los problemas de que se
+           veran más adelante
+         </p>
+         <p>
+           
+         </p>
+         <ol>
+           <li>
+            Prueba que para todo $x\in \mathbb{R}$
+             \[
+             \frac{x^2}{1+x^4}\leq \frac{1}{2}
+             \]
+   
+             <p><b>Sugerencia:</b> Reescribir
+             $\displaystyle{\frac{x^2}{1+x^4} = \frac{1}{\displaystyle{\frac{1}{x^2}}+ x^2}}$
+             y utiliza la desigualdad de Korovkin en el denominador.
+            </p> 
+           </li>
+   
+           <li>
+             Considera la función
+             $f:\mathbb{R} \to \mathbb{R}$ definida como
+             $f(x)=\displaystyle{\frac{x^2}{1+x^4}}$. Encuentra los  puntos
+             $x_{0} \in \mathbb{R}$ donde la función alcanza su máximo,
+             es decir $x_{0}$ debe de satisfacer
+             \[
+             f(x) \leq f(x_{0}) \quad \textrm{ para todo $x\in \mathbb{R}$}
+             \]
+   
+             <p><b>Sugerencia:</b> Recuerda cuando se da la igualdad en
+             la desigualdad de Korovkin.
+            </p>
+           </li>
+         </ol>
+         </div>
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+           Esta es otra demostración de la desigualdad de Bernoulli.
+          </p>
+   
+          <ol>
+            <li> Demuestra que para $n\in \mathbb{N}$ y $y>-1$
+              \[
+              (1+y)^{1/n}\leq 1+\frac{y}{n}
+              \]
+              <p><b>Sugerencia:</b> En la desigualdad Aritmético-Geométrica
+              toma $a_1=1+y$ y $a_2=\cdots =a_n=1$.</p>
+            </li>
+    
+            <li>
+              Luego, demuestra que si $x>-\frac{1}{n}$ entonces
+              \[
+              (1+x)^n\geq 1+nx
+              \]
+    
+              <p><b>Sugerencia:</b> Considera $y=nx$ en la desigualdad del inciso anterior,
+              además puedes usar que  si $0 \leq a \leq b  $ entonces
+              $a^n \leq b^n$.
+              </p>
+            </li>
+          </ol>
+         </div>
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+            Considera la función $f:[0,3] \to \mathbb{R}$ dada por
+            \begin{eqnarray*}
+            f(x)=\left\{
+              \begin{array}{cc}
+              -1 &  0 \leq x  < 1 \\
+                0 &   1 \leq x  < 2 \\
+                2   &  2 \leq x \leq 3
+              \end{array}
+              \right.
+            \end{eqnarray*}
+          </p>
+          <p><b>Observación:</b> La función $f$ no está definida para $x< 0$ ó para $x>3$.</p>
+          <p>
+            <ol>
+              <li> Dibuja la gráfica de $f$ y determina su rango.</li><br>
+              <li> Define $g(x)=f(3x)$. Describe
+              el dominio y el rango de $g$ y dibuja su gráfica.</li><br>
+              <li> Define $h(x)=f(x-3)$. Describe
+              el dominio y el rango de $h$ y dibuja su gráfica.</li><br>
+              <li> Define $k(x)= g(x)+h(x)$. Describe
+              el dominio y el rango de $g$ y dibuja su gráfica.</li>
+            </ol>
+          </p>
+         </div>
+
+
+      
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+            Determina el dominio de las siguientes funciones:
+          </p>
+          <ol class="two-column">
+            <!-- <li> $f(x)=\sqrt{\frac{4-x^2}{x^2-5x^6}}+\sqrt{\frac{4x}{x^2+1}}$ </li> -->
+            <li>$f(x)= \displaystyle{\frac{8}{x}}$</li><br>
+            <li>$f(x)= \displaystyle{\frac{4}{4x^{2} + 4x}}$</li><br> 
+            <li> $f(x)= \displaystyle{\frac{x(x-1)(x-5)}{x^2+2x}}+\displaystyle{\frac{1}{(x^2-9)^2}}$ </li><br>
+            <li>$f(x)=\sqrt{x^2-9}+\sqrt{4-x^2}$ </li><br>
+            <li>$ f(x) = \sqrt{-2x + 25} $</li><br>
+            <li>$ f(x) = \displaystyle{\frac{x - 4}{x^2 - 6x - 16}} $</li>
+          </ol>
+         </div>
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>Para cada una de las condiciones dadas, encuentra todos los polinomios $p(x)$,
+              de grado menor o igual a 2 que satisfacen las condiciones dadas.
+            </p>
+            <ol>
+              <!-- <li> $p(0)=p(1)=p(2)=3$. </li> -->
+              <li>  $p(0)=p(1)$.      </li>
+              <li> $p(5x)=5p(x)$. </li>
+              <li>  $p(x-1)=p(x+1)$. </li>
+            </ol>
+         </div>
+
+
+         <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+          <p>
+            Demuestra que si $f:\mathbb{R}\to \mathbb{R}$ es al mismo
+            tiempo una función par y una función impar entonces $f$ es la
+            función constante cero.
+          </p>
+          <center>
+            <button class="respButton hvr-grow"> Solución</button>
+            <div class="resp-box flexbox">
+              <iframe width="95%" height="90%" class="video"
+              src="https://www.youtube.com/embed/hq4J_mOX3d4?si=b9yX91mRTfanEE5A" title="YouTube video player"  
+               allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </center>
+        </div>
+
+
+        <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+          <p>
+            Sea $F:\mathbb{R}\to \mathbb{R}$ una función arbitraria.
+            Supon que se puede escribir $F$ de dos formas:
+          </p>
+          \[
+          F=f+g\quad \textrm{y} \quad F=h+k,
+          \]
+          <p>
+            donde $f,h:\mathbb{R}$ son funciones pares y
+            $g,k:\mathbb{R}\to \mathbb{R}$ son funciones impares.
+          </p>
+
+          <p>
+            Demuestra que $f=h$ y $g=k$.
+          </p>
+          <p>
+            <b>Sugerencia:</b> Usa el ejercicio anterior.
+          </p>
+          <center>
+            <button class="respButton hvr-grow"> Solución</button>
+              <div class="resp-box" >
+                <iframe width="95%" height="90%" class="video"
+                src="https://www.youtube.com/embed/Ocg4LMah0Ys?si=50vwSqP2njqm2Bm1" title="YouTube video player"  
+                allowfullscreen="true"> 
+                </iframe>
+              </div>
+          </center>
+        </div> 
+        
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+            Sea $f:D \to \mathbb{R}$ una función arbitraria definida en $D \subseteq \mathbb{R}$. Define
+          </p>
+          \[
+          f_{\textrm{par}}(x):= \frac{f(x)+ f(-x) }{2}
+          \]
+          \[
+          f_{\textrm{impar}}(x):=
+          \frac{f(x)-f(-x)}{2}
+          \]
+          <p>
+          Demuestra que:
+          <ol>
+            <li>$f_{\textrm{par}}$ es una función par, $f_{\textrm{impar}}$
+              es una función impar.</li><br>
+            <li>$f=f_{\textrm{par}}+f_{\textrm{impar}}$.</li>
+          </ol>
+         </div>
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+            Sean $m,b \in \mathbb{R}$ fijos y arbitrarios con $m\ne 0$.
+            Considera la función
+            $f(x)=mx+b$, con $x\in \mathbb{R}$.
+          </p>
+          <ol>
+            <li>Demuestra que $f$ es estrictamente creciente
+            si y sólo si $m>0$</li><br>
+            <li>Demuestra que $f$ es estrictamente decreciente si y sólo si $m < 0 $.</li>
+          </ol>
+          </p>
+         </div>
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+            Considera las funciones potencias,
+            $f_n:\mathbb{R}\to \mathbb{R} $,
+            $f(x)=x^n$, $n\in \mathbb{N}$.
+          </p>
+          <p>
+            Demuestra que, para todo
+            $n \geq 1$ , $f_n$ es estrictamente creciente en
+            todo $[0,\infty)$.
+          </p>    
+         </div>
+         
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+            Sea $\emptyset \ne I \subseteq \mathbb{R}$
+            un invervalo y sean $f,g: I \to \mathbb{R}$ dos funciones.
+            Demuestra que
+            </p>
+            <ol>
+              <li> Si $f$ y $g$ son monótonas crecientes(decrecientes)
+                entonces $f+g$ es monótona creciente (decreciente).
+              </li><br>
+              <li> Si $f$ y $g$ son estrictamente crecientes(decrecientes) entonces
+                $f+g$ es estrictamente creciente (decreciente).
+              </li><br>
+              <li> Si $f$ y $g$ son monótonas crecientes y ademáas
+                suponemos $f(x) \geq 0$ y $g(x) \geq 0$ para todo $x\in I$,
+                demuestra que la función producto $fg$ es monótona creciente.
+              </li>
+            </ol>
+         </div>
+
+         
+         <div class="ejercicio-box"><h1 class="number-title-practica" id="Eqn:Resolvent"> Ejercicio</h1>
+          <p>Este ejercicio generaliza la diferencia de cuadrados
+            y diferencia de cubos.
+          </p>
+
+          <p>Demuestra que para cualesquiera $a,b \in \mathbb{R}$ y $n \geq 2$:
+        \[
+        a^n-b^n=(a-b)\left( \sum_{k=0}^{n-1} a^kb^{n-1-k} \right)
+        \]
+      </p>
+         </div>
+         <div class="ejercicio-box"><h1 class="number-title-practica" id="Ejer:DiferenciaRaices"> Ejercicio</h1>
+          <p>
+            Sean $x,y\in \mathbb{R}$ tales que  $0\leq y < x$.
+          </p>
+    
+        <ol>
+          <li>Prueba que:
+            \[
+            \sqrt{x}-\sqrt{y}=\frac{x-y}{\sqrt{x}+\sqrt{y}}
+            \]
+          </li>
+          <p><b>Sugerencia:</b> Usa diferencia de cuadrados.</p>
+    
+          <li> El inciso anterior se generaliza como sigue:
+            Para $n \in \mathbb{N}$, con $n \geq 3$, demuestra
+    
+            \[
+            \sqrt[n]{x}-\sqrt[n]{y}=\frac{x-y}{\displaystyle{\sum_{k=0}^{n-1} x^{\frac{k}{n}}y^{\frac{n-1-k}{n}}} }.
+            \]
+    
+            <p><b>Sugerencia:</b> Usa el <a href="#Eqn:Resolvent">Ejercicio 2.69</a>.</p>
+          </li>
+         </div>
+         
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>Sea $n\in \mathbb{N}$ con $n \geq 2$ arbitrario pero fijo. Considera la correspondiente función 
+            <b>raíz $n$-ésima</b>, $g_n:[0,\infty) \to \mathbb{R},$ dada por:
+            $$g_n(x) := \sqrt[n]{x}$$
+            Demuestra que la función $g_n$ es estrictamente creciente en $[0,\infty)$.
+            </p>
+            <p>
+              <b>Sugerencia:</b> Usa el ejercicio anterior.
+            </p>
+         </div>
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>Usando las simetrias de las funciones potencia y usando
+            el hecho de que son estrictamente crecientes en $[0,\infty)$
+            demuestra que:
+          </p>
+          <ol>
+            <li>
+              Para $n \geq 1$ y $n$ impar, $f_n(x):=x^n$ es estrictamente
+              creciente en todo $\mathbb{R}$.
+            </li><br>
+            <li>
+              Para $n \geq 1$ y $n$ par, $f_n(x):=x^n$ es estrictamente decreciente en
+              $(-\infty, 0]$ y estrictamente creciente en $[0,\infty)$.
+            </li>
+          </ol>
+         </div>
+
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+            Sea $A \subseteq \mathbb{R}$ distinto del vacío y
+            $f:A \to \mathbb{R}$ estrictamente decreciente  en $A$.
+            Prueba que $f$ es inyectiva en $A$.
+          </p> 
+         </div>
+
+         <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+            <p>
+              Prueba que la función  $g(x)=\sqrt{x}$, es concava
+              hacia abajo en $[0,\infty)$.
+            </p>
+            
+            
+              <button class="respButton hvr-grow"> Demostración</button>
+                <div class="resp-box">
+                <div class="respuesta-box">
+                  <p>
+                     Fijamos $0 \leq x_0 < x_1$.
+                  </p>
+                  <p>
+                    Para $t\in (0,1)$, definimos $x_t=tx_0+(1-t)x_1$. Debemos probar:
+                  </p>
+                  \[
+                  t\sqrt{x_0}+ (1-t)\sqrt{x_1} \leq \sqrt{x_t}
+                  \]
+        
+                  <p>
+                    Escribiendo $\sqrt{x_t}=t\sqrt{x_t}+(1-t)\sqrt{x_t}$, la desigualdad
+                    anterior es equivalente a probar (pasando lo que tiene
+                    $1-t$ del lado izquierdo y los que tienen $t$ del derechoß):
+                  </p>
+                  \begin{equation}\label{Eqn:AuxEjerRaizConcavaAbajo}
+                 (1-t) (\sqrt{x_1} - \sqrt{x_t}) \leq  t(\sqrt{x_t}-\sqrt{x_0})
+                  \end{equation}
+        
+                  <p>
+                    Ahora usamos el <a href="#Ejer:DiferenciaRaices">Ejercicio 2.70</a>
+                    para obtener
+                    \begin{eqnarray*}
+                    \sqrt{x_t}-\sqrt{x_0}=\frac{x_t-x_0}{\sqrt{x_t}+ \sqrt{x_0}} \\
+                    \sqrt{x_1}-\sqrt{x_t}=\frac{x_t-x_1}{\sqrt{x_1}+ \sqrt{x_t}}
+                    \end{eqnarray*}
+                    por lo que podemos substituir estas expresiones en
+                    \eqref{Eqn:AuxEjerRaizConcavaAbajo} para obtener
+                    \begin{equation}\label{Eqn:Aux2EjerRaizConcavaAbajo}
+                    (1-t)\frac{x_1-x_t}{\sqrt{x_1}+\sqrt{x_t}} \leq
+                    t \frac{x_t-x_0}{\sqrt{x_t}+\sqrt{x_0}}
+                    \end{equation}
+                    Un cálculo directo muestra que
+                    \[
+                    x_1-x_t=t(x_1-x_0), \quad x_t-x_0=(1-t)(x_1-x_0)
+                    \]
+                    Por lo tanto, se puede substituir esto en  \eqref{Eqn:Aux2EjerRaizConcavaAbajo}
+                    para llegar a
+                    \[
+                    t(1-t)\frac{x_1-x_0}{\sqrt{x_1}+\sqrt{x_t}} \leq
+                    t(1-t)\frac{x_1-x_0}{\sqrt{x_t}+\sqrt{x_0}}
+                    \]
+                    la cual se simplifica  a
+                    \begin{equation}\label{Eqn:Aux3EjerRaizConcavaAbajo}
+                    \frac{1}{\sqrt{x_1}+\sqrt{x_t}} \leq \frac{1}{\sqrt{x_t}+\sqrt{x_0}}
+                    \end{equation}
+                  </p>
+                  <p>
+                    Recapitulando hemos encontrado que \eqref{Eqn:AuxEjerRaizConcavaAbajo}
+                    es equivalente a \eqref{Eqn:Aux3EjerRaizConcavaAbajo}. Así, lo
+                    que resta probar es \eqref{Eqn:Aux3EjerRaizConcavaAbajo}. Para
+                    probar ésta última tenemos $x_0< x_1$ implica $\sqrt{x_0} < \sqrt{x_1}$
+                    (al ser la función raíz estrictamente
+                    creciente). Si sumamos
+                    $\sqrt{x_t}$ en ambos lados de la desigualdad enterior tenemos
+                    \[
+                    \sqrt{x_0}+\sqrt{x_t} < \sqrt{x_1}+\sqrt{x_t}
+                    \]
+                    y si scamos inversos multiplicativos concluimos
+                    \[
+                    \frac{1}{\sqrt{x_1}+\sqrt{x_t}} < \frac{1}{\sqrt{x_0}+\sqrt{x_t}}
+                    \]
+                    lo cual prueba \eqref{Eqn:Aux3EjerRaizConcavaAbajo}.
+                  </p>
+                </div>
+                </div>
+         </div>
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+            Prueba que la función $f(x)=x^2$,  es cóncava hacia arriba en
+            $[0,\infty)$.
+          </p>
+          <p><b>Sugerencia:</b> Usa una idea similar al ejercicio anterior.
+          </p>
+         </div>
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+          <p>
+            Sea $I \subset \mathbb{R}$ un intervalo
+            y $f,g:I \to \mathbb{R}$ dos funciones.
+          </p>
+          <ol>
+            <li> Prueba que si ambas $f$ y $g$ son
+              cóncavas hacia abajo y $\alpha >0$ entonces
+              la función $f+\alpha g$ también es cóncava hacia abajo.</li><br>
+            <li> Enuncia y prueba un resultado similar al inciso anterior
+              si ahora se supone que $f$ y $g$ son conavas
+              hacia arriba.</li><br>
+              <li>
+                Si $f$ es cóncava hacia arriba prueba que
+                $-f$ es cóncava hacia abajo.
+              </li>
+          </ol>
+         </div>
+
+         <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+          <p>
+            Sean $I,J\subseteq \mathbb{R}$ dos intervalos y
+             $g:I \to \mathbb{R}$ y $f:J\to \mathbb{R}$ dos funciones
+            tales que:
+            <ul>
+              <li> la composición $g\circ f$ tiene sentido,
+              </li>
+              <li> $g$ es cóncava hacia abajo y monótona creciente,
+              </li>
+              <li>
+                $f$ es cóncava hacia abajo.
+              </li>
+            </ul>
+            Prueba que $g\circ f$ es cóncava hacia abajo.
+          </p>
+          <button class="respButton hvr-grow"> Demostración</button>
+                <div class="resp-box">
+                <div class="respuesta-box">
+                  <p>
+                    Usamos la definición para probar directamente que
+                    $f\circ g$ es cóncava hacia abajo.
+                  </p>
+                  <p>
+                    Tomamos $x_0,x_1\in J$ con $x_0< x_1$. Debemos de
+                    probar que
+                    \begin{equation}\label{Eqn:AuxEjerCompoConcavas}
+                    (1-t)(g\circ f)(x_0)+t (g\circ f)(x_1) \leq (g\circ f)((1-t)x_0+tx_1).
+                    \end{equation}
+                  </p>
+                  <p>
+                    Usando que $f$ es cóncava hacia abajo tenemos
+                    \[
+                    (1-t)f(x_0)+tf(x_1) \leq f((1-t)x_0+tx_1).
+                    \]
+                    Aplicando $g$ a ambos lados de la desigualdad y tomando en
+                    cuenta de que es monótona creciente llegamos a
+                    \[
+                    g((1-t)f(x_0)+tf(x_1)) \leq g(f((1-t)x_0+tx_1)).
+                    \]
+                    Pero, al ser $g$ cóncava hacia abajo
+                    \[
+                    (1-t)g(f(x_0))+ tg(f(x_1)) \leq  g((1-t)f(x_0)+tf(x_1)),
+                    \]
+                    por lo tanto se concluye de las dos desigualdades anteriores que
+                    \[
+                    (1-t)g(f(x_0))+ tg(f(x_1)) \leq g(f((1-t)x_0+tx_1)),
+                    \]
+                    lo cual prueba \eqref{Eqn:AuxEjerCompoConcavas}.
+                  </p>
+                </div>
+                </div>
+         </div>
+
+         <div class="nota-box">
+          <h1 class="number-title-practica">Ejercicio</h1>
+          <p>
+            Para cada uno de los siguientes ejercicios da una prueba utilizando la definición de límite 
+             (en términos de $\varepsilon-\delta$) para cada límite dado.
+            <ol class="two-column">
+              <li> $\displaystyle{\lim_{{x \to 2}}} 10 = 10$</li><br>
+              <li>$\displaystyle{\lim_{x \to 0} (2x - 1) = -1}$</li><br>
+              <li>$\displaystyle{\lim_{x \to 21} (3x - 1) = -64}$</li><br>
+              <li> $\displaystyle{\lim_{{t \to 5}}} (t^2 - 16) = 9$</li><br>
+              <!-- <li>$\displaystyle{\lim_{x \to 1} \sqrt{2x} = \sqrt{2}}$</li><br> 
+              <li>$\displaystyle{\lim_{x \to 4} \frac{\sqrt{2x} - 1}{\sqrt{x - 3}} = \sqrt{7}}$</li><br>
+              <li>$\displaystyle{\lim_{x \to 1} \frac{14x^2 - 20x + 6}{x - 1} = 8}$</li><br>
+              <li>$\displaystyle{\lim_{x \to 1} \frac{10x^3 - 26x^2 + 22x - 6}{(x - 1)^2} = 4}$</li><br>-->
+              <li>$\displaystyle{\lim_{x \to 1} (2x^2 + 1) = 3}$</li><br>
+              <li>$\displaystyle{\lim_{x \to 1} (x^2 - 2x - 1) = 2}$</li><br>
+              <li>$\displaystyle{\lim_{x \to 0} x^4 = 0}$</li><br>
+              <li> $\displaystyle{\lim_{x \to 1} 2x = 1}$</li><br>
+              <li> $\displaystyle{\lim_{p \to 4} p^2 + p + 5 = 25}$</li><br> 
+              <li> $\displaystyle{\lim_{{t \to \frac{1}{3}}} (6t - 3) = - 1 }$</li>
+              <!-- <li> $\displaystyle{\lim_{{x \to 2}}} (3x^3 - 4x^2 + 2x - 3)$</li><br> 
+              <li> $\displaystyle{\lim_{{r \to 9}}} \frac{{4r - 3}}{{11}}$</li><br>
+              <li> $\displaystyle{\lim_{{x \to -6}}} \frac{{x^2 + 6}}{{x - 6}}$</li><br>
+              -->
+              <!-- <li> $\displaystyle{\lim_{{y \to 15}}} \sqrt{y + 3}$</li><br>
+              <li> $\displaystyle{\lim_{{x \to 4}}} \frac{{x^2 - 9x + 20}}{{x^2 - 3x - 4}}$</li><br>
+              <li> $\displaystyle{\lim_{{t \to 0}}} \frac{{t^3 + 3t^2}}{{t^3 - 4t^2}}$</li><br> 
+              <li> $\displaystyle{\lim_{{t \to 2}}} \frac{{t^2 - 4}}{{t - 2}}$</li><br> 
+              <li> $\displaystyle{\lim_{{x \to 0}}} \frac{{x^2 - 2x}}{{x}}$</li><br> 
+              <li> $\displaystyle{\lim_{{x \to 0}}} \sqrt{13^2 - 12^2} + (6 - 4)^2 \times 8 - \sqrt{(10 - 8)^2}$</li><br>
+              <li> $\displaystyle{\lim_{{x \to 2}}} \frac{{3x^2 - x - 10}}{{x^2 + 5x - 14}}$</li><br>
+              <li> $\displaystyle{\lim_{{x \to -4}}} \frac{{x^2 + 2x - 8}}{{x^2 + 5x + 4}}$</li><br>
+              <li> $\displaystyle{\lim_{{x \to 0}}} \frac{{(x + 2)^2 - 4}}{{x}}$</li><br> -->
+            </ol>
+          </p>
+        </div>
+
+        <div class="nota-box">
+          <h1 class="number-title-practica">Ejercicio</h1>
+          <p>
+            Para cada uno de los siguientes ejercicios da una prueba utilizando la definición de límite 
+             (en términos de $\varepsilon-\delta$) para cada límite dado.
+            <ol class="two-column">
+              <li>$\displaystyle{\lim_{x \to 5} \frac{x^2 - 25}{x - 5} = 10}$</li><br>
+              <li>$\displaystyle{\lim_{x \to 0} \frac{2x^2 - x}{x} = -1}$</li><br>
+              <li>$\displaystyle{\lim_{x \to 5} \frac{2x^2 - 11x + 5}{x - 5} = 9}$</li><br>
+              <!-- <li>$\displaystyle{\lim_{x \to 1} \sqrt{2x} = \sqrt{2}}$</li><br> 
+              <li>$\displaystyle{\lim_{x \to 4} \frac{\sqrt{2x} - 1}{\sqrt{x - 3}} = \sqrt{7}}$</li><br>
+              <li>$\displaystyle{\lim_{x \to 1} \frac{14x^2 - 20x + 6}{x - 1} = 8}$</li><br>
+              <li>$\displaystyle{\lim_{x \to 1} \frac{10x^3 - 26x^2 + 22x - 6}{(x - 1)^2} = 4}$</li><br>-->
+              <li> $\displaystyle{\lim_{{t \to 3}} \frac{t - 2}{t - 5} = -\frac{1}{2}}$</li><br>   
+              <li> $\displaystyle{\lim_{{h \to 0}}} \frac{h}{{h^2 - 7h + 1}} = 0$</li><br>
+              <!-- <li> $\displaystyle{\lim_{{x \to 2}}} (3x^3 - 4x^2 + 2x - 3)$</li><br> 
+              <li> $\displaystyle{\lim_{{r \to 9}}} \frac{{4r - 3}}{{11}}$</li><br>
+              <li> $\displaystyle{\lim_{{x \to -6}}} \frac{{x^2 + 6}}{{x - 6}}$</li><br>-->
+              <li> $\displaystyle{\lim_{{z \to 0}}} \frac{{z^2 - 5z - 4}}{{z^2 + 1}} = -4$</li><br>
+              <!-- <li> $\displaystyle{\lim_{{y \to 15}}} \sqrt{y + 3}$</li><br>
+              <li> $\displaystyle{\lim_{{p \to 4}}} \sqrt{p^2 + p + 5}$</li><br> -->
+              <li> $\displaystyle{\lim_{{x \to -2}}} \frac{{x^2 + 2x}}{{x + 2}} = -2$</li><br>
+              <li> $\displaystyle{\lim_{{x \to -2}}} \frac{{x^2 - 2x}}{{x}} = -4$</li><br>
+              <li> $\displaystyle{\lim_{{x \to 2}}} \frac{{x^2 - x - 2}}{{x - 2}}=3$</li><br>
+              <li> $\displaystyle{\lim_{{x \to 3}}} \frac{{x^2 - x - 6}}{{x - 3}}=5$</li><br>
+              <li> $\displaystyle{\lim_{{x \to 3}}} \displaystyle{\frac{x - 3}{x^2 - 9} = \frac{1}{6}}$</li><br>
+              <!-- <li> $\displaystyle{\lim_{{x \to 4}}} \frac{{x^2 - 9x + 20}}{{x^2 - 3x - 4}}$</li><br>
+              <li> $\displaystyle{\lim_{{t \to 0}}} \frac{{t^3 + 3t^2}}{{t^3 - 4t^2}}$</li><br> 
+              <li> $\displaystyle{\lim_{{t \to 2}}} \frac{{t^2 - 4}}{{t - 2}}$</li><br> 
+              <li> $\displaystyle{\lim_{{x \to 0}}} \frac{{x^2 - 2x}}{{x}}$</li><br> 
+              <li> $\displaystyle{\lim_{{x \to 0}}} \sqrt{13^2 - 12^2} + (6 - 4)^2 \times 8 - \sqrt{(10 - 8)^2}$</li><br>
+              <li> $\displaystyle{\lim_{{x \to 2}}} \frac{{3x^2 - x - 10}}{{x^2 + 5x - 14}}$</li><br>
+              <li> $\displaystyle{\lim_{{x \to -4}}} \frac{{x^2 + 2x - 8}}{{x^2 + 5x + 4}}$</li><br>
+              <li> $\displaystyle{\lim_{{x \to 0}}} \frac{{(x + 2)^2 - 4}}{{x}}$</li><br> -->
+            </ol>
+          </p>
+        </div>
+
+        <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+          <p>
+            Sea $f$ una función definida en una
+            vecindad agujereada de
+            $a$, $\hat{B}_{r}(a)$,  y tal que $\displaystyle{\lim_{x\to a}}f(x)=L$.
+              Demuestra que existe $\delta > 0 $ tal que para todo $x\in \hat{B}_{r}(a)$
+              se satisface 
+              $$|f(x)| \leq 1+|L|.$$
+            
+            </p>
+            <button class="respButton hvr-grow"> Demostración</button>
+                <div class="resp-box">
+                <div class="respuesta-box">
+
+                    <p>
+                      Por hipótesis
+                      \[
+                      \lim_{x\to x_0} f(x)=L
+                      \]
+                      Por definición de límite aplicado a 
+                      $\varepsilon=1$ existe una $\delta >0$ tal que,
+                      para toda $x$ con $0<|x-x_0| < \delta$ se satisface
+                      $|f(x)-L|< 1$.
+                    </p>
+
+                    <p>
+                      Por la desigualdad inversa del
+                      triángulo </a> tenemos
+                      \[
+                      |f(x)-L| \geq ||f(x)|-|L||,
+                      \]
+                      por lo que
+                      \[
+                      1> ||f(x)|-|L||, \quad \textrm{para toda $x$
+                      con $0< |x-x_0| < \delta$}.
+                      \]
+                      Si abrimos el último valor absoluto llegamos a
+                      \[
+                      -1< |f(x)|-|L|< 1 \Rightarrow |f(x)|< 1+|L|.
+                      \]
+                    </p>
+                    <p>
+                      Por lo tanto, en la vecindad perforada
+                      $V:=B_\delta(x_0)\setminus \{x_0\}$ se satisface
+                      \[
+                      |f(x)|< 1+|L|, \quad \textrm{para toda $x\in V$.}
+                      \]
+                    </p>
+                    </div>
+                </div>
+          </div>
+
+
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>
+              Sea $f\colon A \to \mathbb{R}$ una función. Pruba que $f$ es acotada en $A$ si y sólo si existe 
+              $K>0$ tal que $|f(x)| \leq K$ para todo $x \in A$.
+            </p>
+          </div>
+
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>
+              Sea $f$ una función definida en una
+              vecindad agujereada  de
+              $a$, $\hat{B}_{r}(a)$, y tal que $\displaystyle{\lim_{x\to a}}f(x)=L$.
+                Demuestra que existe $\delta >0$ tal que $f$ es acotada en $\hat{B}_{\delta}(a)$.
+            </p>
+          </div>
+
+          <div class="ejercicio-resuelto-box" id="Ejer:LimitLawsLinearComb"><h1 class="title-practica"> Ejercicio resuelto</h1>
+            <p> Sea $f$ una función definida en una vecindad agujereada  de
+              $a$, $\hat{B}_{r}(a)$,  tal que $|\displaystyle{\lim_{x\to x_0}}f(x)=L$. Demuestra
+              que para todo $n \in \mathbb{N}$
+              \[
+              \lim_{x\to x_0} \left( f(x)\right)^n=L^n.
+              \]
+  
+              En particular, nota que $\displaystyle{\lim_{x\to x_0}} x^n=x_0^n$.
+              </p>
+              
+              <!-- <p>
+              <b>Sugerencia:</b> usa el ejercicio <a href="#Ejer:LimitLawProduct">Ejercicio 5.13</a>
+              e inducción.
+            </p> -->
+            <button class="respButton hvr-grow"> Solución</button>
+              <div class="resp-box" >
+                <iframe width="95%" height="90%" class="video"
+                src="https://www.youtube.com/embed/QQHr2fAkzAw?si=YYnHfDtrWkc4Xqba" title="YouTube video player"  
+                allowfullscreen="true"> 
+                </iframe>
+              </div>
+           </div>
+
+           <div class="ejercicio-box" ><h1 class="number-title-practica" id="Ejer:LimitLawPoly"> Ejercicio</h1>
+            <p> Sea
+              $p(x)=\displaystyle{\sum_{k=0}^n a_kx^k}$ un polinomio en la variable $x$ de grado $n$.
+               Demuestra que, para todo $x_0 \in \mathbb{R}$
+              \[
+              \lim_{x\to x_0}p(x)=\sum_{k=0}^na_kx_0^k=p(x_0).
+              \]
+            </p>
+            <p><b>Sugerencia:</b> Usa el ejercicio
+            <a href="#Ejer:LimitLawsLinearComb">Ejercicio resuelto 2.13</a> y los resultados obtenidos en clase 
+            sobre el límite de una suma y el límite de un escalar por una función.
+            </p>
+            
+            
+          </div>
+
+          <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
+            <p>Sea $g$ una función definida en una vecindad agujereada de $a$, $\hat{B}_{r}(a)$, tal que  
+              $\displaystyle{\lim_{x\to a}}g(x)=L$ con $L\ne 0$. Demuestra que existe $\delta >0 $ 
+              tal que $\displaystyle{\frac{|L|}{2} } < |g(x)|$, para todo $x\in \hat{B}_{\delta}(a)$.
+            </p>
+            <button class="respButton hvr-grow"> Demostración</button>
+            <div class="resp-box">
+            <div class="respuesta-box">
+              <p>
+                Ya que $L\ne 0$, el número $\displaystyle{\frac{|L|}{2}}$ es positivo
+                y aplicando la definición de límite a $\varepsilon= \displaystyle{\frac{|L|}{2}}$
+                podemos asegurar la existencia de una $\delta > 0$ tal que para toda
+                $x$ que satisface $0<|x-x_0|< \delta $ se cumple
+                \[
+                |g(x)-L| < \frac{|L|}{2}
+                \]
+                Luego, de  la desigualdad inversa del triángulo se 
+                tiene que  $||g(x)|-|L|| \leq |g(x)-L|$, por lo que
+                abriendo el valor absoluto $||g(x)|-|L|| < \frac{|L|}{2}$, resulta
+                \[
+                -\frac{|L|}{2} < |g(x)|-L
+                \Rightarrow -\frac{|L|}{2}+L=\frac{|L|}{2} < |g(x)|.
+                \]
+              </p>
+              
+              <p>
+                Por lo tanto, para todo 
+                $x\in \hat{B}_\delta(a)$  se satisface
+                \[
+                \frac{|L|}{2} < |G(x)|.
+                \]
+              </p>
+            </div>
+            </div>
+          </div>
+
+          <div class="ejercicio-box"><h1 class="title-practica"> Ejercicio</h1>
+            <p>Sea $g$ una función definida en una vecindad agujereada de $a$, $\hat{B}_{r}(a)$,  tal que  
+              $\displaystyle{\lim_{x\to a}}g(x)=L$ con $L\ne 0$. Demuestra que existe $\delta >0 $ 
+              tal que $g(x)\neq 0$, para todo $x\in \hat{B}_{\delta}(a)$.
+            </p>
+          </div>
+            
+          
+            
+          
+          <div class="ejercicio-resuelto-box" ><h1 class="title-practica" id="Ejer:LimitLawQuotients"> Ejercicio resuelto</h1>
+            <p>
+            Sea $g$ una
+            función definida
+            en una vecindad agujereada $\hat{B}_{r}(a)$ de $a$, tal que $\displaystyle{\lim_{x\to a}} g(x) = L$
+            con $L \ne 0$. Demuestra que
+            $\displaystyle{\lim_{x\to a} \frac{1}{g(x)}=\frac{1}{L}}$.
+            </p>
+            <button class="respButton hvr-grow"> Solución</button>
+                <div class="resp-box" >
+                  <iframe width="95%" height="90%" class="video"
+                  src="https://www.youtube.com/embed/IMw5pmleFDc?si=dKqud3tTMNzgWa7m" title="YouTube video player"  
+                  allowfullscreen="true"> 
+                  </iframe>
+                </div>
+          
+            </div>
+        
+            <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+              <p>
+                Sean $p(x)$ y $q(x)$ dos polinomios.
+                Si $q(x_0)\ne 0$,
+                demuestra que
+                \[
+                \lim_{x\to x_0}\frac{p(x)}{q(x)}=\frac{p(x_0)}{q(x_0)}
+                \]
+                </p>
+                <p>
+                  <b>Sugerencia:</b> Usa el resultado obtenido en clase sobre el límite de un producto de funciones,
+                  <a href="#Ejer:LimitLawPoly"> Ejercicio 2.80</a> y
+                  <a href="#Ejer:LimitLawQuotients">Ejercicio resuelto 2.15</a>.
+                </p>
+            </div>
+
+            <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+              <p>Sean $f$ y $g$ dos funciones definidas en una vecindad agujereada de $a$, $\hat{B}_{r}(a)$, tales que 
+                $\displaystyle{\lim_{x \to a} f(x) = L_{1}}$ y $\displaystyle{\lim_{x \to a} g(x) = L_{2}}$ 
+                con  $ L_{2} \neq 0$, prueba que
+                \[
+                \lim_{x\to a} \left( \frac{f(x)}{g(x)} \right)= \frac{\displaystyle{\lim_{x\to a} f(x)}}{\displaystyle{\lim_{x\to a} g(x)}} = \frac{L_{1}}{L_{2}}
+                \]
+                </p>
+            </div>
+            
+            <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+              <p>
+                Considera la función $f(x)=\sqrt{x}$
+                para $x \geq 0$.
+                </p>
+                <ol>
+                <li>Para
+                $\varepsilon > 0 $ encuentra una $\delta >0$
+                tal que si
+                \[
+                |x-4|<\delta \Rightarrow |f(x)-2|< \varepsilon.
+                \]
+                <p><b>Sugerencia:</b>  Utiliza el
+                <a href="#Ejer:DiferenciaRaices">Ejercicio 2.70</a>
+                para encontrar una vecindad agujerada de $4$ donde
+                se cumpla  $|f(x)-2|\leq c |x-4|$.
+                </p>
+                </li>
+                <li>
+                  Generaliza el ejercicio anterior probando que para
+                  toda $a>0$ se cumple
+                  \[
+                  \lim_{x\to a} f(x)=f(a).
+                  \]
+                </li>
+          
+                </ol>
+            </div>
+            
+            <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+              <p>
+                Sea $f$ una función definida en una vecindad agujereada
+                de $a$, $\hat{B}_{r}(a)$.
+                </p>
+                <p>
+                Si existen constantes $m,M \in \mathbb{R}$ tales que
+                $m  \leq f(x) \leq M$ para todo $x\in \hat{B}_{r}(a)$ y que existe
+                $\lim_{x\to a} f(x)$. Prueba que 
+                \[m \leq \lim_{x\to a} f(x) \leq M.\]
+                </p>
+            </div>
+            
+            <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+              <p>
+                Sea $f$ una función definida en una
+                vecindad agujereada de
+                $a$, $\hat{B}_{r}(a)$, tal que $f(x) \geq 0$ para todo $x \in \hat{B}_{r}(a)$ y tal que
+                $\displaystyle{\lim_{x\to a}} f(x) = L > 0$. Prueba que 
+                $$\lim_{x\to a} \sqrt{f(x)} = \sqrt{ \lim_{x\to a}  f(x)} = \sqrt{L}.$$
+              </p>
+
+
+                <!-- <p><b>Observación:</b> En general, se puede probar que:
+                  
+                  <ol>
+                    <li>Si $n \in \mathbb{N}$ con $n$ par y $f(x)>0$ para to, entonces 
+                  $$\lim_{x\to a} \left( \sqrt[n]{f(x)} \right) = \sqrt[n]{ \lim_{x\to a}  f(x)} = \sqrt[n]{L}.$$
+                    </li>
+                    <li>
+
+                    </li>
+                  </ol>
+                </p> -->
+          </div>
+
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>Sea $n$ un número entero positivo par. Si $f$ es una función definida en una
+              vecindad agujereada de $a$, $\hat{B}_{r}(a)$, tal que $f(x) \geq 0$ para todo $x \in \hat{B}_{r}(a)$
+              tal que $\displaystyle{\lim_{x\to a}} f(x) = L > 0$. Prueba que 
+              $$\lim_{x\to a} \sqrt[n]{f(x)} = \sqrt[n]{ \lim_{x\to a}  f(x)} = \sqrt[n]{L}.$$
+            </p>
+          </div>
+
+
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>Sea $n$ un número entero positivo impar. Si $f$ es una función definida en una
+              vecindad agujereada de $a$, $\hat{B}_{r}(a)$, tal que $\displaystyle{\lim_{x\to a}} f(x) = L$. 
+              Prueba que  $$\lim_{x\to a} \sqrt[n]{f(x)} = \sqrt[n]{ \lim_{x\to a}  f(x)} = \sqrt[n]{L}.$$
+            </p>
+          </div>
+
+
+          <div class="nota-box">
+            <h1 class="number-title-practica">Ejercicio</h1>
+            <p>
+              Determinar una condición sobre $|x - 1|$ que asegure:
+              <ol>
+                <li>$\displaystyle{|x^2 - 1| < \frac{1}{2}}$</li><br>
+                <li>$\displaystyle{|x^2 - 1| < \frac{1}{10^3}}$</li><br>
+                <li>$\displaystyle{|x^2 - 1| < \frac{1}{n}} \text{ para } n \in \mathbb{N} \text{ dada.}$</li><br>
+                <li>$\displaystyle{|x^3 - 1| < \frac{1}{n}} \text{ para } n \in \mathbb{N} \text{ dada.}$</li><br>
+              </ol>
+            </p>
+          </div>
+          
+          <div class="nota-box">
+            <h1 class="number-title-practica">Ejercicio</h1>
+            <p>
+              Determinar una condición sobre $|x - 4|$ que asegure:
+              <ol>
+                <li>$\displaystyle{|\sqrt{x} - 2| < \frac{1}{2}}$</li><br>
+                <li>$\displaystyle{|\sqrt{x} - 2| < 10^{-2}}$</li><br>
+              </ol>
+            </p>
+          </div>
+          
+          <div class="nota-box">
+            <h1 class="number-title-practica">Ejercicio</h1>
+            <p>
+              Sea $f$ una función definida en una vencidad agujerada de $a$, $\hat{B}_{r}(a)$.
+               Demostrar que $\displaystyle{\lim_{x \to a} f(x) = L}$ si y sólo si 
+               $\displaystyle{\lim_{x \to a} |f(x) - L| = 0}$.
+            </p>
+          </div>
+
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>Sean $f$ y $g$ dos funciones definidas en una vecindad agujereada de $a$, $\hat{B}_{r}(a)$. 
+              Si existen $M >0$ y $\rho >0$ tales que  $|f(x)| \leq M$ para todo $x \in \hat{B}_{\rho}(a)$, y 
+              $\displaystyle{\lim_{x \to a} g(x) = 0}$, prueba que 
+              \[
+              \lim_{x\to a}  \left( f(x) \cdot g(x) \right)  = 0
+              \]
+              </p>
+          </div>
+
+          <div class="nota-box">
+            <h1 class="number-title-practica">Ejercicio</h1>
+            <p>
+              Sea $f$ una función definida en una vencidad agujerada de $a$, $\hat{B}_{r}(a)$.
+               Demostrar que $\displaystyle{\lim_{x \to c} f(x) = L}$ si y sólo si 
+               $\displaystyle{\lim_{x \to 0} f(x + c) = L}$.
+            </p>
+          </div>
+          
+          <!-- <div class="nota-box">
+            <h1 class="number-title-practica">Ejercicio</h1>
+            <p>
+              Sea $I := (0, a)$, donde $a > 0$, y sea $g(x) := x^2$ para $x \in I$. Para cualesquier puntos $x, c \in I$, demostrar que $\displaystyle{|g(x) - c^2| \leq 2a |x - c|}$. Usar esta desigualdad para demostrar que $\displaystyle{\lim_{x \to c} x^2 = c^2}$ para cualquier $c \in I$.
+            </p>
+          </div> -->
+          
+          <div class="nota-box">
+            <h1 class="number-title-practica">Ejercicio</h1>
+            <p>Sea $f$ una función definida en una vencidad agujerada de $a$, $\hat{B}_{r}(a)$. Si existe $\rho>0$ y constantes $K, L$ tales que para todo $x \in \hat{B}_{\rho}(a)$, 
+              $$|f(x) - L| \leq K |x - c|$$ Prueba que $\displaystyle{\lim_{x \to a} f(x) = L}$.
+            </p>
+          </div>
+
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>Sean $f$ y $g$ dos funciones definidas en una vecindad agujereada de $a$, $\hat{B}_{r}(a)$, 
+              tales que $\displaystyle{\lim_{x \to a} f(x) = L}$. Si existe $\rho >0$ tal que 
+              $g(x) = f(x)$ para todo $x \in \hat{B}_{\rho}(a)$, entonces 
+              \[
+              \lim_{x\to a}  f(x) = \lim_{x\to a} g(x)  = L
+              \]
+              </p>
+          </div>
+
+
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>Sean $f$ y $g$ dos funciones definidas en una vecindad agujereada de $a$, $\hat{B}_{r}(a)$. 
+              Si existe $\rho >0$ tal que  $0 \leq f(x) \leq g(x)$ para todo $x \in \hat{B}_{\rho}(a)$ y 
+              $\displaystyle{\lim_{x \to a} g(x) = 0}$, prueba que 
+              \[
+              \lim_{x\to a}  f(x) = 0
+              \]
+              </p>
+          </div>
+
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>Sean $f$ una función definida en una vecindad agujereada de $a$, $\hat{B}_{r}(a)$, y $L\in \mathbb{R}$.
+              En términos de $\varepsilon-\delta$ que significa que $\displaystyle{\lim_{x \to a} f(x) \neq L}$.
+            </p>
+          </div>
+
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>Encuentre ejemplos de dos funciones $f$ y $g$ definidas en una vecindad agujereada de $a$, $\hat{B}_{r}(a)$,
+              para demostrar que
+            </p>
+            <ol>
+              <li>Si $\displaystyle{\lim_{x \to a} \left(f(x) + g(x) \right)}$, existe esto no implica que exista 
+                $\displaystyle{\lim_{x \to a} f(x) }$  o $\displaystyle{\lim_{x \to a} g(x) }$ </li><br>
+                <li>Si $\displaystyle{\lim_{x \to a} \left(f(x) \cdot g(x) \right)}$, existe esto no implica que 
+                  exista $\displaystyle{\lim_{x \to a} f(x) }$  o $\displaystyle{\lim_{x \to a} g(x) }$ </li>
+            </ol>
+          </div>
+
+          
+          <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+            <p>Sean $f$ y $g$ dos funciones definidas en una vecindad agujereada de $a$, $\hat{B}_{r}(a)$. 
+              Si  $\displaystyle{  \lim_{x\to a} \left(f(x)\cdot g(x) \right)} = 1$ y $\displaystyle{\lim_{x \to a} g(x) = 0}$, prueba que  $\displaystyle{\lim_{x\to a}  f(x)}$ no existe.
+              </p>
+          </div>
+
+          
+<!-- 
+         
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+         </div>
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+         </div>
+
+         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
+         </div>
+
+-->
+
+      
+   <!-- Donde aparecerá la fecha de la última modificación -->
+   <footer>
+    <center>
+     <p id="ultima-actualizacion"></p>
+    </center>
+</footer>
+<script>
+  // Obtenemos la fecha y hora de la última modificación del documento
+  const fechaModificacion = new Date(document.lastModified);
+  
+  // Opciones para formatear la fecha (por ejemplo, DD/MM/AAAA)
+  const opcionesFecha = { day: '2-digit', month: '2-digit', year: 'numeric' };
+  const fechaFormateada = fechaModificacion.toLocaleDateString('es-ES', opcionesFecha);
+
+  // Obtenemos la hora (HH:MM:SS)
+  const horaFormateada = fechaModificacion.toLocaleTimeString('es-ES', {
+      hour: '2-digit', minute: '2-digit'
+  });
+
+  // Insertamos la fecha y la hora en el elemento con el ID "ultima-modificacion"
+  document.getElementById("ultima-actualizacion").textContent = `Última actualización: ${fechaFormateada}`;
+</script>
+
+
+    
+    
+
+</body>
