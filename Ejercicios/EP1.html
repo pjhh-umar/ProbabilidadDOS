@@ -116,6 +116,31 @@
       <div class="nota-box">
         <h1 class="number-title-practica">Ejercicio</h1>
         <p>
+            Sean $X$ y $Y$ variables aleatorias con función de distribución conjunta $F(x,y)$. Demuestre que para cualesquiera números reales $a < b$ y $c < d$,
+            $$\mathbb{P}(a < X \leq b, c < Y \leq d) = F(b,d) + F(a,c) - F(a,d) - F(b,c).$$
+            </ol>
+        </p>
+    </div>
+    
+    <div class="nota-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>
+            Sean $X_1, X_2$ y $X_3$ variables aleatorias con función de distribución conjunta $F(x_1, x_2, x_3)$. Demuestre que para cualesquiera números reales $a_1 < b_1$, $a_2 < b_2$ y $a_3 < b_3$,
+            \[
+            \begin{align*}
+                \mathbb{P}(a_1 < X_1 \leq b_1, a_2 < X_2 \leq b_2, a_3 < X_3 \leq b_3) &= F(b_1, b_2, b_3) - F(a_1, b_2, b_3) - F(b_1, a_2, b_3) - F(b_1, b_2, a_3) \\
+                &\quad + F(a_1, a_2, b_3) + F(a_1, b_2, a_3) + F(b_1, a_2, a_3) \\
+                &\quad - F(a_1, a_2, a_3).
+            \end{align*}
+            \]
+            
+                
+        </p>
+    </div>
+    
+      <div class="nota-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>
             Demuestra que las siguientes funciones son funciones de distribución.
             <ol class>
                 <li>$\displaystyle{ F(x,y) = \begin{cases} (1 - e^{-x})\displaystyle{\left(\frac{1}{2} + \frac{1}{\pi} \tan^{-1} y\right)}, & \text{para } x > 0, \ y \in \mathbb{R}.\\ 0 & \text{d.o.f} \end{cases}}  $</li><br>
@@ -200,30 +225,7 @@
       </p>
   </div>
   
-  <div class="nota-box">
-      <h1 class="number-title-practica">Ejercicio</h1>
-      <p>
-          Sean $X$ y $Y$ variables aleatorias con función de distribución conjunta $F(x,y)$. Demuestre que para cualesquiera números reales $a < b$ y $c < d$,
-          $$\mathbb{P}(a < X \leq b, c < Y \leq d) = F(b,d) + F(a,c) - F(a,d) - F(b,c).$$
-          </ol>
-      </p>
-  </div>
-  
-  <div class="nota-box">
-      <h1 class="number-title-practica">Ejercicio</h1>
-      <p>
-          Sean $X_1, X_2$ y $X_3$ variables aleatorias con función de distribución conjunta $F(x_1, x_2, x_3)$. Demuestre que para cualesquiera números reales $a_1 < b_1$, $a_2 < b_2$ y $a_3 < b_3$,
-          \[
-          \begin{align*}
-              \mathbb{P}(a_1 < X_1 \leq b_1, a_2 < X_2 \leq b_2, a_3 < X_3 \leq b_3) &= F(b_1, b_2, b_3) - F(a_1, b_2, b_3) - F(b_1, a_2, b_3) - F(b_1, b_2, a_3) \\
-              &\quad + F(a_1, a_2, b_3) + F(a_1, b_2, a_3) + F(b_1, a_2, a_3) \\
-              &\quad - F(a_1, a_2, a_3).
-          \end{align*}
-          \]
-          
-              
-      </p>
-  </div>
+
   
 <!-- 
 <div class="info-box"> <h2 class="title"> Definición</h2>
