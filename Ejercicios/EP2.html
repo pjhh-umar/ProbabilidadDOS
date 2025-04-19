@@ -3,9 +3,7 @@
 
 <html lang="es">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!-- Following part is mathjax, for latex-->
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- This part is for jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,24 +11,31 @@
     <!-- This part is to load main.js -->
     <script type="text/javascript" src="../main.js"></script>
 
+<!-- Primero define la configuración de MathJax -->
+<script>
+  window.MathJax = {
+    tex: {
+      /*packages: {'[+]': ['dsfont']},*/
+      macros: {
+        sen: "\\operatorname{sen}",
+        seg: ["\\overrightarrow{#1}", 1],
+        id: "\\operatorname{id}",
+        /*indicator: "\\mathds{1}"*/
+      },
+      tags: "ams",
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+    /*loader: {
+      load: ['[tex]/dsfont']
+    } */
+  };
+</script>
+ 
+<!-- Luego carga MathJax -->
+<script id="MathJax-script" async 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 
-    
-
-
-    <!-- Next part is for new coomands -->
-    <script>
-      window.MathJax = {
-        tex: {
-          macros: {
-            sen: "\\operatorname{sen}",
-            seg: ["\\overrightarrow{#1}", 1],
-            id: "\\operatorname{id}",
-          },
-          tags: "ams", /* this part is for numbered equations */
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
-      };
-    </script>
 
     
     <!-- This part restart counter of cards to start at n+1 -->
@@ -98,7 +103,7 @@
           </nav>
        
         
-        <!-- 
+        <!--  
           <nav class="small-nav" align=right>
             <button onclick="myFunction()">Claro/Obscuro 
           </nav> 
@@ -113,35 +118,35 @@
 
         <div class="nota-box">
           <h1 class="number-title-practica"> Ejercicio</h1> 
+          <p>Sean \( X \) y \( Y \) variables aleatorias que denotan el número de autos y autobuses, 
+            respectivamente, formados en un semáforo en un momento dado. La función de probabilidad conjunta 
+            de las variables aleatorias $X$ y $Y$ está dada por la siguiente tabla:
+          </p>
           <p>
-              Sean \( X \) y \( Y \) variables aleatorias que denotan el número de autos y autobuses, respectivamente, formados en un semáforo en un momento dado. La función de densidad conjunta está dada por la siguiente tabla:
-      
-              <br><br>
-      
-              <strong>Distribución conjunta de las v.a. \( X \) y \( Y \)</strong>
-      
-              <table border="1" cellpadding="5" cellspacing="0">
-                  <thead>
-                      <tr>
-                          <th>y \ x</th>
-                          <th>0</th>
-                          <th>1</th>
-                          <th>2</th>
-                          <th>3</th>
-                          <th>4</th>
-                          <th>5</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr><td>0</td><td>0.025</td><td>0.050</td><td>0.125</td><td>0.150</td><td>0.100</td><td>0.050</td></tr>
-                      <tr><td>1</td><td>0.015</td><td>0.030</td><td>0.075</td><td>0.090</td><td>0.060</td><td>0.030</td></tr>
-                      <tr><td>2</td><td>0.010</td><td>0.020</td><td>0.050</td><td>0.060</td><td>0.040</td><td>0.020</td></tr>
-                  </tbody>
+            <table class="tabla-probabilidades">
+                <thead>
+                  <tr>
+                    <th colspan="7" class="titulo-tp">Distribución del vector aleatorio \( (X, Y) \)</th>
+                  </tr>
+                  <tr>
+                    <th class="diagonal-tp">$Y \backslash X$</th>
+                    <th class="encabezado-x-tp">0</th>
+                    <th class="encabezado-x-tp">1</th>
+                    <th class="encabezado-x-tp">2</th>
+                    <th class="encabezado-x-tp">3</th>
+                    <th class="encabezado-x-tp">4</th>
+                    <th class="encabezado-x-tp">5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="encabezado-y-tp">0</td><td>0.025</td><td>0.050</td><td>0.125</td><td>0.150</td><td>0.100</td><td>0.050</td></tr>
+                  <tr><td class="encabezado-y-tp">1</td><td>0.015</td><td>0.030</td><td>0.075</td><td>0.090</td><td>0.060</td><td>0.030</td></tr>
+                  <tr><td class="encabezado-y-tp">2</td><td>0.010</td><td>0.020</td><td>0.050</td><td>0.060</td><td>0.040</td><td>0.020</td></tr>
+                </tbody>
               </table>
-      
-              <br><br>
-      
-              Calcule las siguientes probabilidades:
+          </p>
+          
+          <p>Calcula las siguientes probabilidades:
               <ol class="two-column">
                   <li> \( \displaystyle{\mathbb{P}(X = 4,\ Y = 0)} \) </li><br>
                   <li> \( \displaystyle{\mathbb{P}(X = 5)} \) </li><br>
@@ -154,336 +159,107 @@
       <div class="nota-box">
         <h1 class="number-title-practica"> Ejercicio</h1> 
         <p>
-            En un proyecto sociológico se estudian familias con 0, 1 y 2 hijos. Se sabe que la cantidad de hijos en una familia ocurre con las siguientes frecuencias:
-            <br><br>
+            En un proyecto de ciencias sociales se estudian familias con 0, 1 y 2 hijos. Se sabe que la cantidad
+            de hijos en una familia ocurre con las siguientes frecuencias:
+            <center>
             <strong>0 hijos:</strong> 30%;&nbsp;&nbsp;
             <strong>1 hijo:</strong> 40%;&nbsp;&nbsp;
             <strong>2 hijos:</strong> 30%.
+            </center>
+            Se elige una familia al azar de la población objetivo, y sea \( X \) la variable aleatoria 
+            que representa el número de hijos en la familia y \( Y \) la variable aleatoria que 
+            representa el número de niños entre esos hijos. Supón que \( \displaystyle{P(\text{niño}) = 0.5} \) y \( \displaystyle{P(\text{niña}) = 0.5} \).
             <br><br>
-            Se elige una familia al azar de la población objetivo, y sea \( X \) la variable aleatoria que representa el número de hijos en la familia y \( Y \) la variable aleatoria que representa el número de niños entre esos hijos. Supón que \( \displaystyle{P(\text{niño}) = 0.5} \) y \( \displaystyle{P(\text{niña}) = 0.5} \).
-            <br><br>
-            Calcular la función de densidad de probabilidad conjunta \( \displaystyle{f_{X,Y}(x, y) = \mathbb{P}(X = x,\ Y = y)} \), para \( \displaystyle{0 \leq y \leq x} \) y \( \displaystyle{x = 0,\ 1,\ 2} \).
+            Encuentra la función de probabilidad \( \displaystyle{f_{X,Y}(x, y) }\), para \( \displaystyle{0 \leq y \leq x} \) y \( \displaystyle{x = 0,\ 1,\ 2} \).
         </p> 
     </div>
-    
+
+
     <div class="nota-box">
-      <h1 class="number-title-practica"> Ejercicio</h1> 
-      <p> 
-        Sea que las variables aleatorias \( X \) y \( Y \) tienen la función de densidad conjunta dada por:
-        <br><br>
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>Sean \( X \) y \( Y \) dos variables aleatorias tales que:</p>
+    
+      <p>
         \[
-        \displaystyle{ f_{X,Y}(x, y) = x + y, \quad 0 < x < 1, \quad 0 < y < 1 }
+        \begin{aligned}
+        \mathbb{P}(X = 0, Y = 1) &= \frac{1}{5} \\
+        \mathbb{P}(X = 0, Y = 2) &= \frac{1}{5} \\
+        \mathbb{P}(X = 1, Y = 0) &= \frac{1}{5} \\
+        \mathbb{P}(X = 1, Y = 1) &= \frac{1}{5} \\
+        \mathbb{P}(X = 1, Y = 2) &= \frac{1}{5}
+        \end{aligned}
         \]
-        <br>
-        <ol class="two-column"> 
-          <li>Calcula la probabilidad \( \displaystyle{ P(X < Y) } \). </li><br>
-          <li><b>Hint:</b> ¿Puedes adivinar la respuesta sin hacer ningún cálculo? </li><br>
-        </ol> 
-      </p> 
-    </div>
-    
-    <div class="nota-box">
-      <h1 class="number-title-practica"> Ejercicio</h1> 
-      <p> 
-        Sea que las variables aleatorias \( X \) y \( Y \) tienen la función de densidad conjunta dada por:
-        <br><br>
-        \[
-        \displaystyle{ f_{X,Y}(x, y) = \frac{6}{7} \left( x^2 + \frac{xy}{2} \right), \quad 0 < x \leq 1, \quad 0 < y \leq 2 }
-        \]
-        <br>
-        <ol class="two-column"> 
-          <li>Demuestra que \( \displaystyle{ f_{X,Y} } \) es, en efecto, una función de densidad. </li><br>
-          <li>Calcula la probabilidad \( \displaystyle{ P(X > Y) } \). </li><br>
-        </ol> 
-      </p> 
-    </div>
-    
-    <div class="nota-box">
-      <h1 class="number-title-practica"> Ejercicio</h1> 
-      <p> 
-        Sea que las variables aleatorias \( X \) y \( Y \) tienen la función de densidad conjunta dada por:
-        <br><br>
-        \[
-        \displaystyle{ f_{X,Y}(x, y) = e^{-x - y}, \quad x > 0, \quad y > 0 }
-        \]
-        <br>
-        <ol class="two-column"> 
-          <li>Calcula la probabilidad \( \displaystyle{ P(X \leq Y \leq c) } \), en términos de \( \displaystyle{ c } \), para algún \( \displaystyle{ c > 0 } \). </li><br>
-          <li>Encuentra el valor numérico de la parte (i) para \( \displaystyle{ c = \log 2 } \), donde \( \log \) es, como siempre, el logaritmo natural. </li><br>
-        </ol> 
-      </p> 
-    </div>
-    
-      
-
-        <div class="nota-box">
-          <h1 class="number-title-practica"> Ejercicio</h1> 
-          <p>
-              El número de clientes formándose para ser atendidos en dos ventanillas en un banco local está representado por las variables aleatorias \( X \) y \( Y \), que pueden tomar los valores \( 0, 1, 2, 3 \). La distribución conjunta de \( X \) y \( Y \) está dada por la siguiente tabla:
-      
-              <br><br>
-      
-              <strong>Distribución conjunta de las v.a. \( X \) y \( Y \)</strong>
-      
-              <table border="1" cellpadding="5" cellspacing="0">
-                  <thead>
-                      <tr>
-                          <th>y / x</th>
-                          <th>0</th>
-                          <th>1</th>
-                          <th>2</th>
-                          <th>3</th>
-                          <th><strong>Totales</strong></th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr><td>0</td><td>0.05</td><td>0.21</td><td>0</td><td>0</td><td>0.26</td></tr>
-                      <tr><td>1</td><td>0.20</td><td>0.26</td><td>0.08</td><td>0</td><td>0.54</td></tr>
-                      <tr><td>2</td><td>0</td><td>0.06</td><td>0.07</td><td>0.02</td><td>0.15</td></tr>
-                      <tr><td>3</td><td>0</td><td>0</td><td>0.03</td><td>0.02</td><td>0.05</td></tr>
-                      <tr><td><strong>Totales</strong></td><td>0.25</td><td>0.53</td><td>0.18</td><td>0.04</td><td>1</td></tr>
-                  </tbody>
-              </table>
-      
-              <br><br>
-      
-              Utilice la tabla para resolver lo siguiente:
-              <ol class="two-column">
-                  <li> Calcule \( \displaystyle{F_{X,Y}(2, 1)} \). </li><br>
-                  <li> Calcule \( \displaystyle{\mathbb{P}(2 \leq X \leq 3,\ 0 \leq Y \leq 2)} \). </li><br>
-              </ol>
-          </p> 
-      </div>
-
-      <div class="nota-box">
-        <h1 class="number-title-practica">Ejercicio</h1>
-        <p>Sean \( X \) y \( Y \) dos variables aleatorias tales que:</p>
-      
-        <p>
-          \[
-          \begin{aligned}
-          \mathbb{P}(X = 0, Y = 1) &= \frac{1}{5} \\
-          \mathbb{P}(X = 0, Y = 2) &= \frac{1}{5} \\
-          \mathbb{P}(X = 1, Y = 0) &= \frac{1}{5} \\
-          \mathbb{P}(X = 1, Y = 1) &= \frac{1}{5} \\
-          \mathbb{P}(X = 1, Y = 2) &= \frac{1}{5}
-          \end{aligned}
-          \]
-        </p>
-      
-        <ol>
-          <li>Encuentra la ley de probabilidad y la función de distribución acumulada (c.d.f.) de \( X \).</li><br>
-          <li>Encuentra la ley de probabilidad y la c.d.f. de \( Y \).</li><br>
-          <li>¿Son \( X \) y \( Y \) independientes?</li><br>
-          <li>Encuentra la ley de probabilidad y la c.d.f. de la variable aleatoria \( X + Y \).</li><br>
-        </ol>
-      </div>
-
-      <div class="nota-box">
-        <h1 class="number-title-practica">Ejercicio</h1>
-        <p>
-          Sea \( (X, Y) \) un vector aleatorio con función de densidad conjunta
-          \[
-          f(x, y) = \frac{1}{6} \mathbf{1}_{[0,2] \times [0,3]}(x, y).
-          \]
-        </p>
-        <p>
-          <ol>
-            <li>Verifica que \( f \) es una densidad válida.</li><br>
-            <li>Calcula la probabilidad:
-              \[
-              \mathbf{P}(1 \leq X \leq 3,\ -1 \leq Y \leq 2).
-              \]
-            </li>
-          </ol>
-        </p>
-      </div>
-      
-      <div class="nota-box">
-        <h1 class="number-title-practica">Ejercicio</h1>
-        <p>
-          Sea \( \lambda > 0 \), y sea \( (X, Y) \) un vector aleatorio con densidad conjunta en \( \mathbb{R}^2 \) dada por:
-          \[
-          f(x, y) = C \, \mathbf{1}_{\{x \geq 0,\ |y| \leq x\}} \, e^{-\lambda x}.
-          \]
-        </p>
-        <p>
-          <ol>
-            <li>¿Para qué valores de \( C \) la función \( f \) es una densidad válida?</li><br>
-            <li>Encuentra las distribuciones marginales de \( X \) y \( Y \). Calcula la media, varianza y covarianza de las variables \( X \) y \( Y \).</li>
-          </ol>
-        </p>
-      </div>
-      
-      <div class="nota-box">
-        <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          Sea que las variables aleatorias \( X \) y \( Y \) tienen la función de densidad conjunta dada por:
-          <br><br>
-          \[
-          \displaystyle{ f_{X,Y}(x, y) = e^{-x - y}, \quad x > 0, \quad y > 0 }
-          \]
-          <br>
-          Calcula las siguientes probabilidades:
-          <ol class="two-column"> 
-            <li>\( \displaystyle{ P(X \leq x) } \)</li><br>
-            <li>\( \displaystyle{ P(Y \leq y) } \)</li><br>
-            <li>\( \displaystyle{ P(X < Y) } \)</li><br>
-            <li>\( \displaystyle{ P(X + Y \leq 3) } \)</li><br>
-          </ol> 
-          <b>Hint:</b> Para el inciso (iii), dibuja el conjunto para el cual \( \displaystyle{ 0 < x < y } \), y para el inciso (iv), dibuja el conjunto para el cual \( \displaystyle{ 0 < x + y \leq 3 } \).
-        </p> 
-      </div>
-      
-      <div class="nota-box">
-        <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          Sean \( X \) y \( Y \) variables aleatorias con función de densidad conjunta dada por:
-          <br><br>
-          \[
-          \displaystyle{ f_{X,Y}(x, y) = \frac{2}{c^2}, \quad 0 < x \leq y < c }
-          \]
-          <br>
-          Determina la constante \( \displaystyle{ c } \).
-          <br><br>
-          <b>Hint:</b> Dibuja el conjunto para el cual \( \displaystyle{ 0 < x \leq y < c } \).
-        </p> 
-      </div>
-      
-      <div class="nota-box">
-        <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          La función de densidad conjunta de \( X \) y \( Y \) está dada por:
-          <br><br>
-          \[
-          \displaystyle{ f_{X,Y}(x, y) = cye^{-xy/2}, \quad 0 < y < x }
-          \]
-          <br>
-          Determina la constante \( \displaystyle{ c } \).
-          <br><br>
-          <b>Hint:</b> Dibuja el conjunto para el cual \( \displaystyle{ x > y > 0 } \).
-        </p> 
-      </div>
-      
-      <div class="nota-box">
-        <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          La función de densidad conjunta de \( X \) y \( Y \) está dada por:
-          <br><br>
-          \[
-          \displaystyle{ f_{X,Y}(x, y) = xy^2, \quad 0 < x \leq c_1, \quad 0 < y \leq c_2 }
-          \]
-          <br>
-          Determina la condición que deben satisfacer \( \displaystyle{ c_1 } \) y \( \displaystyle{ c_2 } \) para que \( \displaystyle{ f_{X,Y} } \) sea una función de densidad.
-          <br><br>
-          <b>Hint:</b> Solo se puede encontrar una relación entre \( \displaystyle{ c_1 } \) y \( \displaystyle{ c_2 } \); no se pueden determinar por separado.
-        </p> 
-      </div>
-      
-      <div class="nota-box">
-        <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          La función de densidad conjunta de \( X \) y \( Y \) está dada por:
-          <br><br>
-          \[
-          \displaystyle{ f_{X,Y}(x, y) = cx, \quad x > 0, \quad y > 0, \quad 1 \leq x + y < 2 }
-          \]
-          <br>
-          Determina la constante \( \displaystyle{ c } \).
-          <br><br>
-          <b>Hint:</b> El siguiente diagrama, Figura 7.6, debería facilitar los cálculos. El rango del par \( \displaystyle{ (x, y) } \) es el área sombreada.
-        </p> 
-      </div>
-      
-      <div class="nota-box">
-        <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          Las variables aleatorias \( X \) y \( Y \) tienen función de densidad conjunta dada por:
-          <br><br>
-          \[
-          \displaystyle{ f_{X,Y}(x, y) = c(y^2 - x^2)e^{-y}, \quad -y < x < y, \quad 0 < y < \infty }
-          \]
-          <br>
-          Determina la constante \( \displaystyle{ c } \).
-          <br><br>
-          <b>Hint:</b> Sabemos que \( \displaystyle{ \int_0^\infty y e^{-y} dy = 1 } \), y las integrales restantes se pueden calcular recursivamente.
-        </p> 
-      </div>
-      
-      <div class="nota-box">
-        <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          Sean \( X \) y \( Y \) variables aleatorias distribuidas uniformemente sobre el triángulo \( OAC \) (ver Figura 7.7), y sea \( \displaystyle{ U = X^2 + Y^2 } \) la distancia al cuadrado del punto \( (X, Y) \) al origen en dicho triángulo.
-          <ol class="two-column"> 
-            <li>Calcula \( \displaystyle{ EU } \) en términos de \( \displaystyle{ C } \) (sin hallar la f.d.p. de \( \displaystyle{ U } \)).</li><br>
-            <li>Encuentra el valor numérico de \( \displaystyle{ EU } \) para \( \displaystyle{ C = 1 } \).</li><br>
-          </ol>
-        </p> 
-      </div>
-      
-      <div class="nota-box">
-        <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          Sean \( X \) y \( Y \) dos variables aleatorias para las cuales:
-          <br><br>
-          \[
-          \displaystyle{ P(X > x, Y > y) = P(X > x)P(Y > y) }, \quad \text{para todo } x, y
-          \]
-          <br>
-          Entonces se cumple que:
-          <br><br>
-          \[
-          \displaystyle{ P(X \leq x, Y \leq y) = P(X \leq x)P(Y \leq y) }
-          \]
-          <br>
-          <b>Remark:</b> Lo mismo es válido para cualquier número finito de variables aleatorias, aunque su justificación no se aborda aquí.
-        </p> 
-      </div>
-      
-      
-
-
-        <div class="nota-box"><h1 class="number-title-practica"> Ejercicio</h1>
-          <p></p>
-          <ol>
-            <li></li>
-          </ol>
-        </div>
-    
-    
-    <div class="info-box"> <h2 class="title"> Definición</h2>
-      <p></p>
-      </div>
-    
-    </div>
-    
-    <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
-      <p>P
       </p>
-      <center>
-        <button class="respButton hvr-grow"> Respuesta para el supremo </button>
-        <div class="resp-box flexbox">
-          <iframe width="95%" height="90%" class="video"
-          src="" title="YouTube video player" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </center>
     
-      </div>
-          
-<!-- 
-         
+      <ol>
+        <li>Encuentra la función de probabilidad marginal y la función de distribución acumulada  de 
+          la variable aleatoria  \( X \).</li><br>
+          <li>Encuentra la función de probabilidad marginal y la función de distribución acumulada  de 
+            la variable aleatoria  \( Y \).</li><br>
+        <li>¿Son \( X \) y \( Y \) variables aleatorias independientes?</li><br>
+        <!-- <li>Encuentra la ley de probabilidad y la c.d.f. de la variable aleatoria \( X + Y \).</li><br> -->
+      </ol>
+    </div>
 
-         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
-         </div>
+    <div class="nota-box">
+      <h1 class="number-title-practica"> Ejercicio</h1> 
+      <p>
+          El número de clientes formándose para ser atendidos en dos ventanillas en un banco local está 
+          representado por las variables aleatorias \( X \) y \( Y \), que pueden tomar los valores 
+          \( 0, 1, 2, 3 \). La distribución de probabilidad conjunta  de las variables aleatorias 
+          \( X \) y \( Y \) está dada por la siguiente tabla:
+      </p>  
 
-         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
-         </div>
+        <p>
+          <table class="tabla-probabilidades">
+            <thead>
+              <tr>
+                <th colspan="6" class="titulo-tp">Distribución conjunta de las v.a. \( X \) y \( Y \)</th>
+              </tr>
+              <tr>
+                <th class="diagonal-tp">$Y \backslash X$</th>
+                <th class="encabezado-x-tp">0</th>
+                <th class="encabezado-x-tp">1</th>
+                <th class="encabezado-x-tp">2</th>
+                <th class="encabezado-x-tp">3</th>
+                <th class="encabezado-x-tp"><strong>Totales</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="encabezado-y-tp">0</td><td>0.05</td><td>0.21</td><td>0</td><td>0</td><td>0.26</td></tr>
+              <tr><td class="encabezado-y-tp">1</td><td>0.20</td><td>0.26</td><td>0.08</td><td>0</td><td>0.54</td></tr>
+              <tr><td class="encabezado-y-tp">2</td><td>0</td><td>0.06</td><td>0.07</td><td>0.02</td><td>0.15</td></tr>
+              <tr><td class="encabezado-y-tp">3</td><td>0</td><td>0</td><td>0.03</td><td>0.02</td><td>0.05</td></tr>
+              <tr><td class="encabezado-y-tp"><strong>Totales</strong></td><td>0.25</td><td>0.53</td><td>0.18</td><td>0.04</td><td>1</td></tr>
+            </tbody>
+          </table>
+          </p>
+          <p>
+              Utilice la tabla para resolver lo siguiente:
+            <ol>
+                <li> Calcule \( \displaystyle{F_{X,Y}(2, 1)} \). </li><br>
+                <li> Calcule \( \displaystyle{\mathbb{P}(2 \leq X \leq 3,\ 0 \leq Y \leq 2)} \). </li><br>
+            </ol>
+          </p> 
+     </div>
 
-         <div class="ejercicio-box"><h1 class="number-title-practica"> Ejercicio</h1>
-         </div>
+     <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>Considera la función 
+        $$ f(x, y) = \begin{cases}\displaystyle{\left(\frac{1}{2}\right)^{x+y}} &  (x,y) \in \mathbb{N} \times \mathbb{N}\\ 0 &  \text{d.o.f}.  \end{cases} $$
+        definida para \( x, y \in \mathbb{N} \), e idénticamente cero fuera de este conjunto discreto. 
+        Demuestra que $f$ es una función de probabilidad conjunta.
+      </p>
+      <p>
+        Sugerencia: 
+        \[
+          \sum_{x, y = 1}^{\infty} f(x, y) = \sum_{x, y = 1}^{\infty} \frac{1}{2^{x+y}} 
+          = \left( \sum_{x = 1}^{\infty} \frac{1}{2^x} \right)^2 = 1.
+        \]
+      </p>
+    </div>
+    
 
--->
 
       
    <!-- Donde aparecerá la fecha de la última modificación -->

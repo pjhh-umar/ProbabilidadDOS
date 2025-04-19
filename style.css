@@ -1312,51 +1312,62 @@ font-weight: 600;
 
 
 /*//// tables //////*/
-
-.tabla-funciones {
-  /* font-family: arial, sans-serif; */
-  /* font-size: 90%; */
-  font-style: normal;
-  font-weight: 500;
-  /* padding: 0%; */
-  /* font-family: "Muli"; */
-  /* font-family: 'Pangolin', cursive; */
-  /* font-family: 'Cabin Sketch', cursive; */
-  font-family: "Bitter", serif;
-  /*font-family: 'Hina Mincho', serif; */
-  /* font-family: 'Jacques Francois Shadow', cursive; */
-  /* margin-top: 2.5%;
-  margin-bottom: 2.5%; */
-  /* content:" "; */
-  /* color: rgb(0, 77, 179); */
-  color: rgb(0, 0, 0); 
+.tabla-probabilidades{
+  margin: auto;
   text-align: justify;
-  /* display: inline; */
   border-collapse: collapse;
-  width: auto;
   max-width: 100%;
-  
+  font-family: "Bitter", serif;
+  font-style: normal;
+  /* font-weight: 500; */
+  color: rgb(0, 0, 0); 
+  width: auto;
+  /* border-collapse: collapse; */
+  word-wrap: break-word; /* Permite que las palabras se ajusten y no desborden */
+  padding: 0px;
 }
 
 
+/* Título centrado */
+.titulo-tp{
+  text-align: center;
+  font-size: normal;
+  font-weight: bold;
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+}
+
+.encabezado-x-tp,
+.encabezado-y-tp {
+  background-color: rgb(230, 242, 255); /* Color claro tipo encabezado */
+  font-weight: 500;
+  text-align: center;
+  font-family: "Bitter", serif;
+  /* font-family: 'Hina Mincho', serif; */
+   /* font-family: "Muli"; */
+  /* font-family: 'Pangolin', cursive; */
+  /* font-family: 'Cabin Sketch', cursive; */
+  /* font-family: 'Jacques Francois Shadow', cursive; */
+  font-size: normal;
+  color: rgb(0, 0, 0);
+  border: 1.5px solid rgb(3, 89, 165);  
+  padding: 0px;
+}
+
+.diagonal-tp {
+  background-color: rgb(221, 221, 220);
+}
 
 .nombre-funcion {
   text-align: center;
 }
-
-
-
-.nombre-funcion2 {
-  text-align: left;
-}
-
 
 .nombre-funcion a{ 
   padding: 10px;
   font-weight: 500;
   /*color:  rgba(14, 137, 253, 0.801);*/
   color:  rgb(255, 0, 0); 
-
 }
 
 .nombre-funcion a:visited{
@@ -1364,57 +1375,18 @@ font-weight: 600;
   /* color:  rgba(14, 137, 253, 0.801); */
 }
 
-.tabla-funciones thead{
-  font-size: 125%;
-  /* font-weight: 600; */
-  /* padding: 0%; */
-  /* font-family: "Muli"; */
-  /* font-family: 'Pangolin', cursive; */
-  /* font-family: 'Cabin Sketch', cursive; */
-  font-family: 'Hina Mincho', serif;
-  /* font-family: 'Jacques Francois Shadow', cursive; */
-  /* margin-top: 2.5%;
-  margin-bottom: 2.5%; */
-  /* content:" "; */
-  /* color: rgb(0, 77, 179); */
-  color: rgb(0, 0, 0); 
-  /* text-align: center; */
-  border-collapse: collapse;
-  /* display: inline; */
- }
-
-table {
-  
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 100%;
-}
-
-th{
-  border: 1.7px solid rgb(3, 89, 165); 
-  text-align: center;
-  padding: 9px;
-  word-wrap: break-word; /* Permite que las palabras se ajusten y no desborden */
-       
-  /* background-color: rgb(247, 16, 16); */
-}
-
-
- thead tr:nth-child(even) {
+ /* thead tr:nth-child(even) {
   background-color: rgb(221, 221, 220);
  }
 
 thead tr:nth-child(odd) {
   background-color: rgb(252, 252, 244);
+} */
 
-}
-
-
-td{
-  border: 1.7px solid rgb(3, 89, 165);  
-  text-align: justify;
-  padding: 8px;
+td,th{
+  border: 1.5px solid rgb(3, 89, 165);  
+  text-align: center;
+  padding: 5px;
   word-wrap: break-word; /* Permite que las palabras se ajusten y no desborden */
 }
 
@@ -1427,12 +1399,10 @@ tbody tr:nth-child(odd) {
   background-color: rgb(196, 231, 255);
 }
 
-
-@media (max-width: 600px) 
-  th, td {
-      font-size: 14px;
-  }
-
+@media{
+  max-width: 600px;
+}
+  
 .four-column{
   columns: 4;
   /*grid-template-columns: repeat(2, 1fr);*/
