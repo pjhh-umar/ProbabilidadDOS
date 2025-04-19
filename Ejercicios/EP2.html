@@ -246,18 +246,88 @@
      <div class="nota-box">
       <h1 class="number-title-practica">Ejercicio</h1>
       <p>Considera la función 
-        $$ f(x, y) = \begin{cases}\displaystyle{\left(\frac{1}{2}\right)^{x+y}} &  (x,y) \in \mathbb{N} \times \mathbb{N}\\ 0 &  \text{d.o.f}.  \end{cases} $$
-        definida para \( x, y \in \mathbb{N} \), e idénticamente cero fuera de este conjunto discreto. 
+        $$ f(x, y) = \begin{cases}\displaystyle{\left(\frac{1}{2}\right)^{x+y}} &  (x,y) \in \mathbb{N} \times \mathbb{N}\\[0.25cm] 0 &  \text{d.o.f}.  \end{cases} $$
         Demuestra que $f$ es una función de probabilidad conjunta.
       </p>
-      <p>
+      <!-- <p>
         Sugerencia: 
         \[
           \sum_{x, y = 1}^{\infty} f(x, y) = \sum_{x, y = 1}^{\infty} \frac{1}{2^{x+y}} 
           = \left( \sum_{x = 1}^{\infty} \frac{1}{2^x} \right)^2 = 1.
         \]
+      </p> -->
+    </div>
+
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>Sean \( X \) y \( Y \) dos variables aleatorias, y sean \( x \) y \( y \) cualesquiera números reales.
+         Diga cual de las siguientes proposiciones es Verdadero o Falso. Justifica apropiadamente tu respuesta.
+        </p>
+    
+      <ol>
+        <li>
+          \( \displaystyle{ P(X > x, Y > y) = 1 - P(X \leq x, Y \leq y) } \).
+        </li><br>
+        <li>
+          \( \displaystyle{ P(X \leq x, Y \leq y) \leq P(X \leq x) } \).
+        </li><br>
+        <li>
+          \( \displaystyle{ P(X \leq x) = P(X \leq x, Y \leq x) + P(X \leq x, Y > x) } \).
+        </li><br>
+        <li>
+          \( \displaystyle{ P(X + Y \leq x) \leq P(X \leq x) } \).
+        </li><br>
+        <li>
+          \( \displaystyle{ P(XY < 0) \leq P(X < 0) } \).
+        </li><br>
+      </ol>
+    </div>
+
+     
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>
+        Demuestre que para cualquier vector aleatorio \( (X, Y) \) y para cualquier valor real de \( u \),
+        <br><br>
+        \( \displaystyle{ F_{X,Y}(u,u) = F_{X \lor Y}(u) } \),
+        <br><br>
+        es decir, la función de distribución del máximo de dos variables aleatorias es la distribución conjunta evaluada en la diagonal.  
+        Extienda este resultado al caso \( n \)-dimensional.
       </p>
     </div>
+    
+    
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>
+        Sea \( (X, Y) \) un vector con función de distribución \( F(x, y) \), y con distribuciones marginales \( F(x) \) y \( F(y) \), respectivamente. Demuestre que para todo \( x \) y \( y \) en \( \mathbb{R} \),
+        <br><br>
+        \( \displaystyle{ F(x) + F(y) - 1 \leq F(x, y) \leq \sqrt{F(x)F(y)} } \).
+      </p>
+    </div>
+    
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>
+        <strong>Cotas de Fréchet.</strong> Sea \( (X, Y) \) un vector con función de distribución \( F(x, y) \), y con distribuciones marginales \( F(x) \) y \( F(y) \), respectivamente.  
+        Demuestre que para todo \( x \) y \( y \) en \( \mathbb{R} \),
+        <br><br>
+        \( \displaystyle{ \max\{ F(x) + F(y) - 1, 0 \} \leq F(x, y) \leq \min\{ F(x), F(y) \} } \).
+      </p>
+    </div>
+    
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>
+        Considere el espacio \( \Omega = (0,1) \times (0,1) \) junto con la \( \sigma \)-álgebra \( \mathcal{B}((0,1) \times (0,1)) \) y \( P \) la medida de probabilidad uniforme sobre \( \Omega \).  
+        Sea \( (X, Y) \) el vector aleatorio definido sobre este espacio de probabilidad dado por
+        <br><br>
+        \( \displaystyle{ X(\omega_1, \omega_2) = \omega_1 \land \omega_2 } \) y \( \displaystyle{ Y(\omega_1, \omega_2) = \omega_1 \lor \omega_2 } \).
+        <br><br>
+        Demuestre que \( (X, Y) \) es efectivamente un vector aleatorio y encuentre su función de distribución.
+      </p>
+    </div>
+   
     
 
 
