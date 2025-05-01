@@ -235,10 +235,10 @@
           </table>
           </p>
           <p>
-              Utilice la tabla para resolver lo siguiente:
-            <ol>
-                <li> Calcule \( \displaystyle{F_{X,Y}(2, 1)} \). </li><br>
-                <li> Calcule \( \displaystyle{\mathbb{P}(2 \leq X \leq 3,\ 0 \leq Y \leq 2)} \). </li><br>
+              Utilice la tabla para calcular lo siguiente:
+            <ol class="two-column">
+                <li>\( \displaystyle{F_{X,Y}(2, 1)} \). </li><br>
+                <li>\( \displaystyle{\mathbb{P}(2 \leq X \leq 3,\ 0 \leq Y \leq 2)} \). </li><br>
             </ol>
           </p> 
      </div>
@@ -286,13 +286,11 @@
      
     <div class="nota-box">
       <h1 class="number-title-practica">Ejercicio</h1>
-      <p>
-        Demuestre que para cualquier vector aleatorio \( (X, Y) \) y para cualquier valor real de \( u \),
-        <br><br>
-        \( \displaystyle{ F_{X,Y}(u,u) = F_{X \lor Y}(u) } \),
-        <br><br>
+      <p>Sea \( (X, Y) \) un vector aleatorio. Demuestre que para cualquier
+        \( u \in \mathbb{R} \), se satisface
+        $$\displaystyle{ F_{X,Y}(u,u) = F_{X \lor Y}(u) },$$ 
         es decir, la función de distribución del máximo de dos variables aleatorias es la distribución conjunta evaluada en la diagonal.  
-        Extienda este resultado al caso \( n \)-dimensional.
+        Enuncia este resultado al caso \( n \)-dimensional.
       </p>
     </div>
     
@@ -300,19 +298,22 @@
     <div class="nota-box">
       <h1 class="number-title-practica">Ejercicio</h1>
       <p>
-        Sea \( (X, Y) \) un vector con función de distribución \( F(x, y) \), y con distribuciones marginales \( F(x) \) y \( F(y) \), respectivamente. Demuestre que para todo \( x \) y \( y \) en \( \mathbb{R} \),
-        <br><br>
-        \( \displaystyle{ F(x) + F(y) - 1 \leq F(x, y) \leq \sqrt{F(x)F(y)} } \).
+        Sea \( (X, Y) \) un vector aleatorio con función de distribución \( F(x, y) \), 
+        y distribuciones marginales \( F_X(x) \) y \( F_Y(y) \), respectivamente.
+        Demuestra que para cualesquiera \( x,y \in \mathbb{R} \), se verifican las siguientes 
+        desigualdades
+        $$\displaystyle{ F_X(x) + F_Y(y) - 1 \leq F(x, y) \leq \sqrt{F_X(x)F_Y(y)} }$$
       </p>
     </div>
     
     <div class="nota-box">
       <h1 class="number-title-practica">Ejercicio</h1>
       <p>
-        <strong>Cotas de Fréchet.</strong> Sea \( (X, Y) \) un vector con función de distribución \( F(x, y) \), y con distribuciones marginales \( F(x) \) y \( F(y) \), respectivamente.  
+        Sea \( (X, Y) \) un vector aleatorio con función de distribución \( F(x, y) \), 
+        y distribuciones marginales \( F_X(x) \) y \( F_Y(y) \), respectivamente.  
         Demuestre que para todo \( x \) y \( y \) en \( \mathbb{R} \),
-        <br><br>
-        \( \displaystyle{ \max\{ F(x) + F(y) - 1, 0 \} \leq F(x, y) \leq \min\{ F(x), F(y) \} } \).
+        $$\displaystyle{ \max\{ F(x) + F(y) - 1, 0 \} \leq F(x, y) \leq \min\{ F(x), F(y) \} }$$
+        Estas cotas de la función de distribución conjunta $F(x,y)$ son llamadas <strong>cotas de Fréchet.</strong>
       </p>
     </div>
     
@@ -328,8 +329,6 @@
       </p>
     </div>
    
-    
-
     <div class="nota-box">
       <h1 class="number-title-practica"> Ejercicio</h1> 
       <p> Sean \( X \) y \( Y \)  variables aleatorias con función de densidad conjunta
@@ -367,7 +366,7 @@
     <div class="nota-box">
       <h1 class="number-title-practica"> Ejercicio</h1> 
       <p> 
-        Sea que las variables aleatorias \( X \) y \( Y \) tienen la función de densidad conjunta dada por:
+        Supongamos que las variables aleatorias \( X \) y \( Y \) tienen la función de densidad conjunta dada por:
         <br><br>
         \[
         \displaystyle{ f_{X,Y}(x, y) = e^{-x - y}, \quad x > 0, \quad y > 0 }
@@ -539,8 +538,8 @@
           \[
           \displaystyle{ P(X \leq x, Y \leq y) = P(X \leq x)P(Y \leq y) }
           \]
-          <br>
-          <b>Remark:</b> Lo mismo es válido para cualquier número finito de variables aleatorias, aunque su justificación no se aborda aquí.
+          <!-- <br>
+          <b>Remark:</b> Lo mismo es válido para cualquier número finito de variables aleatorias, aunque su justificación no se aborda aquí. -->
         </p> 
       </div>
       
