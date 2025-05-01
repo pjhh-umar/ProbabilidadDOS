@@ -286,7 +286,7 @@
      
     <div class="nota-box">
       <h1 class="number-title-practica">Ejercicio</h1>
-      <p>Sea \( (X, Y) \) un vector aleatorio. Demuestre que para cualquier
+      <p>Sea \( (X, Y) \) un vector aleatorio. Demuestra que para cualquier
         \( u \in \mathbb{R} \), se satisface
         $$\displaystyle{ F_{X,Y}(u,u) = F_{X \lor Y}(u) },$$ 
         es decir, la función de distribución del máximo de dos variables aleatorias es la distribución conjunta evaluada en la diagonal.  
@@ -311,7 +311,7 @@
       <p>
         Sea \( (X, Y) \) un vector aleatorio con función de distribución \( F(x, y) \), 
         y distribuciones marginales \( F_X(x) \) y \( F_Y(y) \), respectivamente.  
-        Demuestre que para todo \( x \) y \( y \) en \( \mathbb{R} \),
+        Demuestra que para todo \( x \) y \( y \) en \( \mathbb{R} \),
         $$\displaystyle{ \max\{ F(x) + F(y) - 1, 0 \} \leq F(x, y) \leq \min\{ F(x), F(y) \} }$$
         Estas cotas de la función de distribución conjunta $F(x,y)$ son llamadas <strong>cotas de Fréchet.</strong>
       </p>
@@ -320,12 +320,12 @@
     <div class="nota-box">
       <h1 class="number-title-practica">Ejercicio</h1>
       <p>
-        Considere el espacio \( \Omega = (0,1) \times (0,1) \) junto con la \( \sigma \)-álgebra \( \mathcal{B}((0,1) \times (0,1)) \) y \( P \) la medida de probabilidad uniforme sobre \( \Omega \).  
-        Sea \( (X, Y) \) el vector aleatorio definido sobre este espacio de probabilidad dado por
-        <br><br>
-        \( \displaystyle{ X(\omega_1, \omega_2) = \omega_1 \land \omega_2 } \) y \( \displaystyle{ Y(\omega_1, \omega_2) = \omega_1 \lor \omega_2 } \).
-        <br><br>
-        Demuestre que \( (X, Y) \) es efectivamente un vector aleatorio y encuentre su función de distribución.
+        Considera el espacio \( \Omega = (0,1) \times (0,1) \) junto con la
+        \( \sigma \)-álgebra \( \mathcal{B}((0,1) \times (0,1)) \) y \( \mathbb{P} \)
+        la medida de probabilidad uniforme sobre \( \Omega \). Sea \( (X, Y) \) 
+        el vector aleatorio definido sobre este espacio de probabilidad dado por
+        $$\displaystyle{ X(\omega_1, \omega_2) = \omega_1 \land \omega_2 } \text{ y } \displaystyle{ Y(\omega_1, \omega_2) = \omega_1 \lor \omega_2 }.$$
+        Demuestra que \( (X, Y) \) es efectivamente un vector aleatorio y encuentra su función de distribución.
       </p>
     </div>
    
@@ -337,12 +337,8 @@
         \[
         \displaystyle{ f_{X,Y}(x, y) = x + y, \quad 0 < x < 1, \quad 0 < y < 1 }
         \]
-        <br>
-        <ol> 
-          <li>Calcula la probabilidad \( \displaystyle{ P(X < Y) } \). <br>
-            <!-- <b>Hint:</b> ¿Puedes adivinar la respuesta sin hacer ningún cálculo?  -->
-          </li><br>
-        </ol> 
+        Calcula la probabilidad \( \displaystyle{ \mathbb{P}(X < Y) } \).
+        
       </p> 
     </div>
 
@@ -365,42 +361,36 @@
     
     <div class="nota-box">
       <h1 class="number-title-practica"> Ejercicio</h1> 
-      <p> 
-        Supongamos que las variables aleatorias \( X \) y \( Y \) tienen la función de densidad conjunta dada por:
-        <br><br>
+      <p>Supongamos que el vector aleatorio \( (X, Y) \) tiene función de densidad conjunta dada por:
         \[
-        \displaystyle{ f_{X,Y}(x, y) = e^{-x - y}, \quad x > 0, \quad y > 0 }
+        \displaystyle{ f_{X,Y}(x, y) = \begin{cases} e^{-x - y}, &  x > 0, y > 0\\ 0, &\text{ d.o.f. }  \end{cases}}
         \]
-        <br>
         <ol> 
-          <li>Calcula la probabilidad \( \displaystyle{ P(X \leq Y \leq c) } \), en términos de \( \displaystyle{ c } \), para algún \( \displaystyle{ c > 0 } \). </li><br>
-          <li>Encuentra el valor numérico de la parte (i) para \( \displaystyle{ c = \log 2 } \), donde \( \log \) es, como siempre, el logaritmo natural. </li><br>
+          <li>Sea $c \in \mathbb{R}$ arbitrario pero fijo. Calcula la probabilidad 
+            \( \displaystyle{ P(X \leq Y \leq c) } \), en términos de 
+            \( \displaystyle{ c } \). </li><br>
+          <li>Encuentra el valor numérico de la parte 1, para \( \displaystyle{ c = \mathrm{ln}(2) } \),
+            donde \( \mathrm{ln}(\cdot) \) es el logaritmo natural. </li><br>
         </ol> 
       </p> 
     </div>
-    
-      
 
-
-      <div class="nota-box">
-        <h1 class="number-title-practica">Ejercicio</h1>
-        <p>
-          Sea \( (X, Y) \) un vector aleatorio con función de densidad conjunta
-          \[
-          f(x, y) = \frac{1}{6} \mathbf{1}_{[0,2] \times [0,3]}(x, y).
-          \]
-        </p>
-        <p>
-          <ol>
-            <li>Verifica que \( f \) es una densidad válida.</li><br>
-            <li>Calcula la probabilidad:
-              \[
-              \mathbf{P}(1 \leq X \leq 3,\ -1 \leq Y \leq 2).
-              \]
-            </li>
-          </ol>
-        </p>
-      </div>
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p><p>Considera la función $f \colon \mathbb{R}^{2} \to \mathbb{}$ dada por:
+        \[
+        f(x, y) = \frac{1}{6} \mathbf{1}_{[0,2] \times [0,3]}(x, y).
+        \]
+        <ol>
+          <li>Verifica que \( f \) es una densidad sobre $\mathbb{R}^{2}$.</li><br>
+          <li>Calcula la probabilidad:
+            \[
+            \mathbf{P}(1 \leq X \leq 3,\ -1 \leq Y \leq 2).
+            \]
+          </li>
+        </ol>
+      </p>
+    </div>
       
       <div class="nota-box">
         <h1 class="number-title-practica">Ejercicio</h1>
