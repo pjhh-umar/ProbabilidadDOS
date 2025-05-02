@@ -471,6 +471,8 @@
           \]
           Determina la condición que deben satisfacer \( \displaystyle{ c_1 } \) y
           \( \displaystyle{ c_2 } \) para que \( \displaystyle{ f } \) sea una función de densidad sobre $\mathbb{R}^2$.
+        </p>
+        <p>
           <b>Sugerencia:</b> Solo se puede encontrar una relación entre \( \displaystyle{ c_1 } \) y \( \displaystyle{ c_2 } \); no se pueden determinar por separado.
         </p> 
       </div>
@@ -494,15 +496,14 @@
         <h1 class="number-title-practica"> Ejercicio</h1> 
         <p> 
           Las variables aleatorias \( X \) y \( Y \) tienen función de densidad conjunta dada por:
-          <br><br>
           \[
-          \displaystyle{ f_{X,Y}(x, y) = c(y^2 - x^2)e^{-y}, \quad -y < x < y, \quad 0 < y < \infty }
+          \displaystyle{ f_{X,Y}(x, y) = \begin{cases} c(y^2 - x^2)e^{-y}, & 0 < y < \infty, -y < x < y,  \\ 0, & \text{d.o.f} \end{cases}}
           \]
-          <br>
           Determina la constante \( \displaystyle{ c } \).
-          <br><br>
+          </p>
+          <p>
           <b>Sugerencia:</b> Sabemos que \( \displaystyle{ \int_0^\infty y e^{-y} dy = 1 } \), y las integrales restantes se pueden calcular recursivamente.
-        </p> 
+          </p> 
       </div>
       
       <!-- <div class="nota-box">
@@ -518,17 +519,13 @@
       
       <div class="nota-box">
         <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          Sean \( X \) y \( Y \) dos variables aleatorias para las cuales:
-          <br><br>
+        <p>Sean \( X \) y \( Y \) dos variables aleatorias tales que para cualesquiera $x,y$ se satisface:
           \[
-          \displaystyle{ P(X > x, Y > y) = P(X > x)P(Y > y) }, \quad \text{para todo } x, y
+          \displaystyle{ \mathbb{P}(X > x, Y > y) = \mathbb{P}(X > x)\mathbb{P}(Y > y) }.
           \]
-          <br>
-          Entonces se cumple que:
-          <br><br>
+          Demuestra que para cualesquiera $x,y$ se satisface:
           \[
-          \displaystyle{ P(X \leq x, Y \leq y) = P(X \leq x)P(Y \leq y) }
+          \displaystyle{ \mathbb{P}(X \leq x, Y \leq y) = \mathbb{P}(X \leq x)\mathbb{P}(Y \leq y) }.
           \]
           <!-- <br>
           <b>Remark:</b> Lo mismo es válido para cualquier número finito de variables aleatorias, aunque su justificación no se aborda aquí. -->
@@ -536,8 +533,7 @@
       </div>
       
       
-
-
+<!--   
         <div class="nota-box"><h1 class="number-title-practica"> Ejercicio</h1>
           <p></p>
           <ol>
@@ -545,7 +541,7 @@
           </ol>
         </div>
     
-    
+  
     <div class="info-box"> <h2 class="title"> Definición</h2>
       <p></p>
       </div>
@@ -564,7 +560,7 @@
         </div>
       </center>
     
-      </div>
+      </div> -->
           
 <!-- 
          
