@@ -377,44 +377,47 @@
 
     <div class="nota-box">
       <h1 class="number-title-practica">Ejercicio</h1>
-      <p><p>Considera la función $f \colon \mathbb{R}^{2} \to \mathbb{}$ dada por:
+      <p>Considera la función $f \colon \mathbb{R}^{2} \to \mathbb{R}$ dada por:
         \[
         f(x, y) = \frac{1}{6} \mathbf{1}_{[0,2] \times [0,3]}(x, y).
         \]
         <ol>
           <li>Verifica que \( f \) es una densidad sobre $\mathbb{R}^{2}$.</li><br>
-          <li>Calcula la probabilidad:
+          <li>Sea $(X,Y)$ un vector aleatorio con función $f$, donde $f$ esta dada como antes.
+            Calcula la probabilidad:
             \[
-            \mathbf{P}(1 \leq X \leq 3,\ -1 \leq Y \leq 2).
+            \mathbf{P}(1 \leq X \leq 3,-1 \leq Y \leq 2).
             \]
           </li>
         </ol>
       </p>
     </div>
       
-      <div class="nota-box">
-        <h1 class="number-title-practica">Ejercicio</h1>
-        <p>
-          Sea \( \lambda > 0 \), y sea \( (X, Y) \) un vector aleatorio con densidad conjunta en \( \mathbb{R}^2 \) dada por:
-          \[
-          f(x, y) = C \, \mathbf{1}_{\{x \geq 0,\ |y| \leq x\}} \, e^{-\lambda x}.
-          \]
-        </p>
-        <p>
-          <ol>
-            <li>¿Para qué valores de \( C \) la función \( f \) es una densidad válida?</li><br>
-            <li>Encuentra las distribuciones marginales de \( X \) y \( Y \). Calcula la media, varianza y covarianza de las variables \( X \) y \( Y \).</li>
-          </ol>
-        </p>
-      </div>
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>
+        Sea \( \lambda > 0 \), considera la función $f \colon \mathbb{R}^{2} \to \mathbb{R}$ 
+        dada por:
+        \[
+        f(x, y) = C \cdot \mathbf{1}_{\{x \geq 0,\ |y| \leq x\}} \, e^{-\lambda x}.
+        \]
+        <ol>
+          <li>¿Para qué valores de \( C \) la función \( f \) es una densidad sobre $\mathbb{R}^{2}?$</li><br>
+          <li>Sea \( (X, Y) \) un vector aleatorio con densidad conjunta en \( \mathbb{R}^2 \) dada
+             por $f$. Encuentra las distribuciones marginales de \( X \) y \( Y \). 
+          </li><br>
+        <li>Calcula la media, varianza y covarianza de las variables \( X \) y \( Y \).</li>
+             
+        </ol>
+      </p>
+    </div>
       
       <div class="nota-box">
         <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          Sea que las variables aleatorias \( X \) y \( Y \) tienen la función de densidad conjunta dada por:
+        <p>Sea \((X,Y) \)  un vector aleatorio con función de densidad conjunta dada por:
           <br><br>
           \[
-          \displaystyle{ f_{X,Y}(x, y) = e^{-x - y}, \quad x > 0, \quad y > 0 }
+          \displaystyle{ f_{X,Y}(x, y) = \begin{cases}  e^{-x - y}, & x > 0, \quad y > 0\\ 0, & \text{d.o.f}.\end{cases} }
           \]
           <br>
           Calcula las siguientes probabilidades:
@@ -424,7 +427,8 @@
             <li>\( \displaystyle{ P(X < Y) } \)</li><br>
             <li>\( \displaystyle{ P(X + Y \leq 3) } \)</li><br>
           </ol> 
-          <b>Hint:</b> Para el inciso (iii), dibuja el conjunto para el cual \( \displaystyle{ 0 < x < y } \), y para el inciso (iv), dibuja el conjunto para el cual \( \displaystyle{ 0 < x + y \leq 3 } \).
+          <b>Sugerencia:</b> Para el inciso 3, dibuja el conjunto para el cual 
+          \( \displaystyle{ 0 < x < y } \), y para el inciso 4, dibuja el conjunto para el cual \( \displaystyle{ 0 < x + y \leq 3 } \).
         </p> 
       </div>
       
@@ -434,12 +438,12 @@
           Sean \( X \) y \( Y \) variables aleatorias con función de densidad conjunta dada por:
           <br><br>
           \[
-          \displaystyle{ f_{X,Y}(x, y) = \frac{2}{c^2}, \quad 0 < x \leq y < c }
+          \displaystyle{ f_{X,Y}(x, y) = \begin{cases} \displaystyle{\frac{2}{c^2}}, & 0 < x \leq y < c \\ 0, & \text{d.o.f.}\end{cases}}
           \]
           <br>
           Determina la constante \( \displaystyle{ c } \).
           <br><br>
-          <b>Hint:</b> Dibuja el conjunto para el cual \( \displaystyle{ 0 < x \leq y < c } \).
+          <b>Sugerencia:</b> Dibuja el conjunto para el cual \( \displaystyle{ 0 < x \leq y < c } \).
         </p> 
       </div>
       
@@ -449,27 +453,25 @@
           La función de densidad conjunta de \( X \) y \( Y \) está dada por:
           <br><br>
           \[
-          \displaystyle{ f_{X,Y}(x, y) = cye^{-xy/2}, \quad 0 < y < x }
+          \displaystyle{ f_{X,Y}(x, y) = \begin{cases} cye^{-\frac{xy}{2}}, &  0 < y < x \\ 0, & \text{d.o.f.}\end{cases}}
+          
           \]
           <br>
           Determina la constante \( \displaystyle{ c } \).
           <br><br>
-          <b>Hint:</b> Dibuja el conjunto para el cual \( \displaystyle{ x > y > 0 } \).
+          <b>Sugerencia:</b> Dibuja el conjunto para el cual \( \displaystyle{ x > y > 0 } \).
         </p> 
       </div>
       
       <div class="nota-box">
         <h1 class="number-title-practica"> Ejercicio</h1> 
-        <p> 
-          La función de densidad conjunta de \( X \) y \( Y \) está dada por:
-          <br><br>
+        <p>Considera la función $f \colon \mathbb{R}^{2} \to \mathbb{R}$ dada por:
           \[
-          \displaystyle{ f_{X,Y}(x, y) = xy^2, \quad 0 < x \leq c_1, \quad 0 < y \leq c_2 }
+          \displaystyle{ f(x, y) = xy^2, \quad 0 < x \leq c_1, \quad 0 < y \leq c_2 }
           \]
-          <br>
-          Determina la condición que deben satisfacer \( \displaystyle{ c_1 } \) y \( \displaystyle{ c_2 } \) para que \( \displaystyle{ f_{X,Y} } \) sea una función de densidad.
-          <br><br>
-          <b>Hint:</b> Solo se puede encontrar una relación entre \( \displaystyle{ c_1 } \) y \( \displaystyle{ c_2 } \); no se pueden determinar por separado.
+          Determina la condición que deben satisfacer \( \displaystyle{ c_1 } \) y
+          \( \displaystyle{ c_2 } \) para que \( \displaystyle{ f } \) sea una función de densidad sobre $\mathbb{R}^2$.
+          <b>Sugerencia:</b> Solo se puede encontrar una relación entre \( \displaystyle{ c_1 } \) y \( \displaystyle{ c_2 } \); no se pueden determinar por separado.
         </p> 
       </div>
       
@@ -484,7 +486,7 @@
           <br>
           Determina la constante \( \displaystyle{ c } \).
           <br><br>
-          <b>Hint:</b> El siguiente diagrama, Figura 7.6, debería facilitar los cálculos. El rango del par \( \displaystyle{ (x, y) } \) es el área sombreada.
+          <b>Sugerencia:</b> El siguiente diagrama, Figura 7.6, debería facilitar los cálculos. El rango del par \( \displaystyle{ (x, y) } \) es el área sombreada.
         </p> 
       </div> -->
       
@@ -499,7 +501,7 @@
           <br>
           Determina la constante \( \displaystyle{ c } \).
           <br><br>
-          <b>Hint:</b> Sabemos que \( \displaystyle{ \int_0^\infty y e^{-y} dy = 1 } \), y las integrales restantes se pueden calcular recursivamente.
+          <b>Sugerencia:</b> Sabemos que \( \displaystyle{ \int_0^\infty y e^{-y} dy = 1 } \), y las integrales restantes se pueden calcular recursivamente.
         </p> 
       </div>
       
