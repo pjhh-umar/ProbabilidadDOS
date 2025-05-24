@@ -166,13 +166,29 @@
       La función de densidad conjunta de las variables aleatorias \( X \) y \( Y \) está dada por:<br><br>
       $$\displaystyle{ f_{X,Y}(x, y) = \frac{1}{2} y e^{-x y}, \quad 0 < x < \infty, \quad 0 < y < 2 } $$.
       
-      <ol class="two-column">
+      <ol>
         <li>Determine la función de densidad marginal \( f_Y (y)\).</li><br>
-        <li>Determine la función de densidad condicional \( f_{X|Y}(\cdot \mid y) \), y evalúela en \( y = 1/2 \).</li><br>
-        <li>Calcule la esperanza condicional \( \displaystyle{ E(X \mid Y = y) } \), y evalúela en \( y = 1/2 \).</li>
+        <li>Determine la función de densidad condicional \( f_{X|Y}(\cdot \mid y) \), y calcula \( f_{X|Y}(\cdot \mid 2) \).</li><br>
+        <li>Calcule la esperanza condicional \( \displaystyle{ E(X \mid Y = y) } \), y calcula \( \displaystyle{ E(X \mid Y = 2) } \)</li>
       </ol>
     </p>
   </div>
+
+  <div class="nota-box">
+    <h1 class="number-title-practica">Ejercicio</h1>
+    <p>Supón que la variable aleatoria $Y$ tiene distribución Poisson con parámetro \( \lambda >0 \), 
+      y que la distribución condicional de la variable aleatoria $X$, dado \( Y = y \), es binomial 
+      con parámetros \( y \) y \( p \) con $p>0$, es decir, 
+      \( X \mid Y = y \sim \text{Binomial}(y, p) \).
+    </p>
+    <p>Demuestra que:
+    <ol>
+      <li> La función de densidad de probabilidad marginal de \( X \), es decir, \( f_X \), sigue una distribución de Poisson con parámetro \( \lambda p \).</li><br>
+      <li>La función de densidad de probabilidad condicional \( f_{Y \mid X}(\cdot \mid x) \) es Poisson con parámetro \( \lambda q \), donde \( q = 1 - p \), definida sobre el conjunto \( \{x, x + 1, \ldots\} \).</li>
+    </ol>
+    </p>
+    </div>
+
 
 
   <div class="nota-box"><h1 class="number-title-practica"> Ejercicio</h1>
