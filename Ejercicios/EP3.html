@@ -189,22 +189,152 @@
     </p>
     </div>
 
-
-
-  <div class="nota-box"><h1 class="number-title-practica"> Ejercicio</h1>
-    <p></p>
-    <ol>
-      <li></li>
-    </ol>
+    <div class="nota-box">
+    <h1 class="number-title-practica"> Ejercicio</h1>
+    <p> 
+      Si \( X \) y \( Y \) son variables aleatorias discretas, muestra que 
+      \[
+      \displaystyle{ \sum_x p_{X|Y}(x|y) = 1 }
+      \]
+      para todo \( y \) tal que \( \displaystyle{ p_Y(y) > 0 } \).
+    </p>
   </div>
 
+  <div class="nota-box">
+    <h1 class="number-title-practica"> Ejercicio</h1>
+    <p> Sea lanza una moneda continuamente con probabilidad de obtener cara igual a \( p \).
+      Sea \( X_1 \) la variable aleatoria que indica el primer lanzamamiento en el que se obtuvo cara, 
+      y \( X_2 \) variables aleatorias geométricas independientes con el mismo parámetro \( p > 0 \). 
+      Encuentra el valor de:
+      <br><br>
+      \[
+      \displaystyle{ P(X_1 = i \mid X_1 + X_2 = n) }
+      \]
+      <br>
+      <b>Hint:</b> Supón que una moneda con . Si la segunda cara ocurre en el lanzamiento número \( n \), ¿cuál es la probabilidad condicional de que la primera cara haya ocurrido en el lanzamiento número \( i \), para \( i = 1, \ldots, n-1 \)? Verifica tu suposición analíticamente.
+    </p>
+  </div>
+
+  <div class="nota-box">
+    <h1 class="number-title-practica"> Ejercicio</h1>
+    <p> 
+      La función de masa de probabilidad conjunta de \( X \) y \( Y \), \( p(x, y) \), está dada por:
+      <br><br>
+      \[
+      \begin{aligned}
+      &p(1,1) = \frac{1}{9}, && p(2,1) = \frac{1}{3}, && p(3,1) = \frac{1}{9}, \\
+      &p(1,2) = \frac{1}{9}, && p(2,2) = 0, && p(3,2) = \frac{1}{18}, \\
+      &p(1,3) = 0, && p(2,3) = \frac{1}{6}, && p(3,3) = \frac{1}{9}
+      \end{aligned}
+      \]
+      <br>
+      Calcula \( \displaystyle{ E[X \mid Y = i] } \) para \( i = 1, 2, 3 \).
+    </p>
+  </div>
+
+  <div class="nota-box">
+    <h1 class="number-title-practica"> Ejercicio</h1>
+    <p> 
+      En el ejercicio anterior, ¿son \( X \) y \( Y \) variables aleatorias independientes?
+    </p>
+  </div>
+
+  <div class="nota-box">
+    <h1 class="number-title-practica"> Ejercicio</h1>
+    <p> 
+      Una urna contiene tres bolas blancas, seis rojas y cinco negras. Se seleccionan al azar seis bolas de la urna. Sean \( X \) y \( Y \) el número de bolas blancas y negras seleccionadas, respectivamente. Calcula la función de masa de probabilidad condicional de \( X \) dado que \( Y = 3 \). También calcula \( \displaystyle{ E[X \mid Y = 1] } \).
+    </p>
+  </div>
+
+  <div class="nota-box">
+    <h1 class="number-title-practica"> Ejercicio</h1>
+    <p> 
+      Repite el ejercicio anterior pero bajo la suposición de que al seleccionar una bola se anota su color y luego se devuelve a la urna antes de la siguiente selección.
+    </p>
+  </div>
+
+  <div class="nota-box">
+    <h1 class="number-title-practica"> Ejercicio</h1>
+    <p> 
+      Sea \( p(x, y, z) \) la función de masa de probabilidad conjunta de las variables aleatorias \( X \), \( Y \) y \( Z \), dada por:
+      <br><br>
+      \[
+      \begin{aligned}
+      &p(1,1,1) = \frac{1}{8}, && p(2,1,1) = \frac{1}{4}, \\
+      &p(1,1,2) = \frac{1}{8}, && p(2,1,2) = \frac{3}{16}, \\
+      &p(1,2,1) = \frac{1}{16}, && p(2,2,1) = 0, \\
+      &p(1,2,2) = 0, && p(2,2,2) = \frac{1}{4}
+      \end{aligned}
+      \]
+    </p>
+  </div>
+
+
+ 
+
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>
+        Sean \( \displaystyle{X} \) y \( \displaystyle{Y} \) variables aleatorias que representan el número de autos y autobuses, respectivamente, formados en un semáforo en un momento dado. Supón que su función de probabilidad conjunta está dada por la siguiente tabla:
+      </p>
+      <p>
+        <table class="tabla-probabilidades">
+          <thead>
+            <tr>
+              <th colspan="6" class="titulo-tp">Distribución conjunta de las v.a. \( X \) y \( Y \)</th>
+            </tr>
+            <tr>
+              <th class="diagonal-tp">\( Y \backslash X \)</th>
+              <th class="encabezado-x-tp">0</th>
+              <th class="encabezado-x-tp">1</th>
+              <th class="encabezado-x-tp">2</th>
+              <th class="encabezado-x-tp">3</th>
+              <th class="encabezado-x-tp"><strong>Totales</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="encabezado-y-tp">0</td><td>0.05</td><td>0.21</td><td>0</td><td>0</td><td>0.26</td>
+            </tr>
+            <tr>
+              <td class="encabezado-y-tp">1</td><td>0.20</td><td>0.26</td><td>0.08</td><td>0</td><td>0.54</td>
+            </tr>
+            <tr>
+              <td class="encabezado-y-tp">2</td><td>0</td><td>0.06</td><td>0.07</td><td>0.02</td><td>0.15</td>
+            </tr>
+            <tr>
+              <td class="encabezado-y-tp">3</td><td>0</td><td>0</td><td>0.03</td><td>0.02</td><td>0.05</td>
+            </tr>
+            <tr>
+              <td class="encabezado-y-tp"><strong>Totales</strong></td><td>0.25</td><td>0.53</td><td>0.18</td><td>0.04</td><td>1</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <p>
+        <ol>
+          <li>Calcula \( \displaystyle{\mathbb{E}(X)} \), \( \displaystyle{\mathbb{E}(Y)} \), \( \displaystyle{\mathrm{Var}(X)} \) y \( \displaystyle{\mathrm{Var}(Y)} \).</li><br>
+          <li>Calcula \( \displaystyle{\mathrm{Cov}(X, Y)} \) y \( \displaystyle{\rho(X, Y)} \).</li><br>
+          <li>Determina el tipo de correlación entre las variables aleatorias \( \displaystyle{X} \) y \( \displaystyle{Y} \).</li><br>
+        </ol>
+      </p>
+    </div>
+
+    <div class="info-box"> <h2 class="title"> Definición</h2>
+    <p>Considera las variables aleatorias $X$ y $Y$ definidas como en el ejercicio
+      <a href="EP2.html#Ejercicio:girl&boy"> Ejercicio 2.2</a>
+    </p>
+    <ol>
+          <li>Calcula \( \displaystyle{\mathbb{E}(X)} \), \( \displaystyle{\mathbb{E}(Y)} \), \( \displaystyle{\mathrm{Var}(X)} \) y \( \displaystyle{\mathrm{Var}(Y)} \).</li><br>
+          <li>Calcula \( \displaystyle{\mathbb{E}(XY)} \) y \( \displaystyle{\mathrm{Cov}(X, Y)} \).</li><br>
+          <li>Calcula \( \displaystyle{\rho(X,Y)} \)</li><br>
+          <li>Determina el tipo de correlación, si existe, que presentan las variables aleatorias \( \displaystyle{X} \) y \( \displaystyle{Y} \).</li><br>
+        </ol>
+    </div>
+
+    </div>
+
 <!-- 
-<div class="info-box"> <h2 class="title"> Definición</h2>
-<p></p>
-</div>
-
-</div>
-
 <div class="ejercicio-resuelto-box"><h1 class="title-practica"> Ejercicio resuelto</h1>
 <p>P
 </p>
