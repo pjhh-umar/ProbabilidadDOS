@@ -247,16 +247,19 @@
       Una urna contiene tres bolas blancas, seis rojas y cinco negras.
       Se seleccionan al azar seis bolas de la urna. Sean \( X \) y \( Y \)
       el número de bolas blancas y negras seleccionadas, respectivamente. 
-      Calcula la función de masa de probabilidad condicional de \( X \) 
-      dado que \( Y = 3 \). 
-      También calcula \( \displaystyle{ \mathbb{E}[X \mid Y = 1] } \).
+      <ol>
+        <li>Calcula la función de masa de probabilidad condicional de \( X \) 
+      dado que \( Y = 3 \). </li><br>
+        <li>Calcula \( \displaystyle{ \mathbb{E}[X \mid Y = 1] } \).</li>
+      </ol>
     </p>
   </div>
 
   <div class="nota-box">
     <h1 class="number-title-practica"> Ejercicio</h1>
     <p> 
-      Repite el ejercicio anterior pero bajo la suposición de que al seleccionar una bola se anota su color y luego se devuelve a la urna antes de la siguiente selección.
+      Repite el ejercicio anterior pero bajo la suposición de que al seleccionar una bola se anota su color 
+      y luego se devuelve a la urna antes de la siguiente selección.
     </p>
   </div>
 
@@ -273,6 +276,12 @@
       &p(1,2,2) = 0, && p(2,2,2) = \frac{1}{4}
       \end{aligned}
       \]
+    </p>
+    <p>Calcula
+      <ol>
+        <li>$\mathbb{E}[X \mid Y = 1]$</li><br>
+        <li>$\mathbb{E}[X \mid Y = 1, Z = 1]$</li>
+      </ol>
     </p>
   </div>
 
@@ -365,8 +374,7 @@
     <p>
       Sea \( (X, Y) \) un vector con función de densidad 
       \( \displaystyle{f(x,y) = \frac{1}{2} (x+y) e^{-x -y}} \), para \(  x, y >0  \), 
-      cuya gráfica aparece enseguida. Comprueba que en efecto $f(x,y)$ es una función 
-      de densidad y calcule
+      cuya gráfica aparece enseguida.
     </p>
     
     <center><img src="../Imagenes/ejercicio_densidad2.png" alt="Logo_UMAR" width="20%" height="auto"></center>
@@ -410,10 +418,11 @@
   <h1 class="number-title-practica">Ejercicio</h1>
   <p>
     Sea \( (X, Y) \) un vector con distribución uniforme en el conjunto \( \{1, \ldots, 6\} \times \{1, \ldots, 6\} \). Calcule:
-    <ol class="two-column">
+    <ol>
       <li>\( \displaystyle{\mathbb{P}(X = Y)} \)</li><br>
       <li>\( \displaystyle{\mathbb{P}(X + Y \leq 6)} \)</li><br>
-      <li>\( \displaystyle{f_X(x)} \) y \( \displaystyle{f_Y(y)} \)</li><br>
+      <li>\( \displaystyle{f_X(x)} \) </li><br>
+      <li>\( \displaystyle{f_Y(y)} \)</li><br>
       <li>\( \displaystyle{E(X \mid X + Y = 6)} \)</li>
     </ol>
   </p>
@@ -468,6 +477,13 @@
       </p>
     </div>
 
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      Sea $(X,Y)$ un vector aleatorio absolutamente continuo. Prueba que 
+      $$\mathbb{E}[X] = \int_{\mathbb{R}} \mathbb{E}[X\mid Y = y ] f_{Y}(y) dy$$
+    </div>
+
+
 
     <div class="nota-box">
       <h1 class="number-title-practica">Ejercicio</h1>
@@ -508,24 +524,36 @@
           </tbody>
         </table>
         </p>
-        <p>
-        <ol>
-          <li>Calcula \( \displaystyle{\mathbb{E}(X)} \), \( \displaystyle{\mathbb{E}(Y)} \), \( \displaystyle{\mathrm{Var}(X)} \) y \( \displaystyle{\mathrm{Var}(Y)} \).</li><br>
-          <li>Calcula \( \displaystyle{\mathrm{Cov}(X, Y)} \) y \( \displaystyle{\rho(X, Y)} \).</li><br>
-          <li>Determina el tipo de correlación entre las variables aleatorias \( \displaystyle{X} \) y \( \displaystyle{Y} \).</li><br>
+      <p>Calcula
+        <ol class="two-column">
+              <li>\( \displaystyle{\mathbb{E}(X)} \).</li><br>
+              <li>\( \displaystyle{\mathbb{E}(Y)} \).</li><br>
+              <li>\( \displaystyle{\mathrm{Var}(X)} \).</li><br>
+              <li>\( \displaystyle{\mathrm{Var}(Y)} \).</li><br>
+              <li>\( \displaystyle{\mathbb{E}(XY)} \).</li><br>
+              <li>\( \displaystyle{\mathrm{Cov}(X, Y)} \).</li><br>
+              <li>\( \displaystyle{\rho(X,Y)} \)</li><br>
+              <li>Determina el tipo de correlación, si existe, que presentan las variables aleatorias \( \displaystyle{X} \) y \( \displaystyle{Y} \).</li>
         </ol>
       </p>
     </div>
 
-    <div class="info-box"> <h2 class="title"> Definición</h2>
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
       <p>Considera las variables aleatorias $X$ y $Y$ definidas como en el <a href="EP2.html#Ejercicio:girl&boy"> Ejercicio 2.2</a>
       </p>
-      <ol>
-            <li>Calcula \( \displaystyle{\mathbb{E}(X)} \), \( \displaystyle{\mathbb{E}(Y)} \), \( \displaystyle{\mathrm{Var}(X)} \) y \( \displaystyle{\mathrm{Var}(Y)} \).</li><br>
-            <li>Calcula \( \displaystyle{\mathbb{E}(XY)} \) y \( \displaystyle{\mathrm{Cov}(X, Y)} \).</li><br>
-            <li>Calcula \( \displaystyle{\rho(X,Y)} \)</li><br>
-            <li>Determina el tipo de correlación, si existe, que presentan las variables aleatorias \( \displaystyle{X} \) y \( \displaystyle{Y} \).</li><br>
-          </ol>
+      <p>Calcula
+        <ol class="two-column">
+              <li>\( \displaystyle{\mathbb{E}(X)} \).</li><br>
+              <li>\( \displaystyle{\mathbb{E}(Y)} \).</li><br>
+              <li>\( \displaystyle{\mathrm{Var}(X)} \).</li><br>
+              <li>\( \displaystyle{\mathrm{Var}(Y)} \).</li><br>
+              <li>\( \displaystyle{\mathbb{E}(XY)} \).</li><br>
+              <li>\( \displaystyle{\mathrm{Cov}(X, Y)} \).</li><br>
+              <li>\( \displaystyle{\rho(X,Y)} \)</li><br>
+              <li>Determina el tipo de correlación, si existe, que presentan las variables aleatorias \( \displaystyle{X} \) y \( \displaystyle{Y} \).</li>
+        </ol>
+      </p>
     </div>
 
 
