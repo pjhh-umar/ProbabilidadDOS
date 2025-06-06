@@ -483,6 +483,39 @@
       $$\mathbb{E}[X] = \int_{\mathbb{R}} \mathbb{E}[X\mid Y = y ] f_{Y}(y) dy$$
     </div>
 
+      <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      Sea $(X,Y)$ un vector aleatorio discreto. Prueba que 
+      $$\mathbb{E}[X] = \sum_{y} \mathbb{E}[X\mid Y = y ] \mathbb{P}[Y = y]$$
+    </div>
+
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+    <p>Sam leerá un capítulo de su libro de probabilidad o un capítulo de su libro de historia.
+      Si el número de errores tipográficos en un capítulo de su libro de probabilidad sigue una distribución de Poisson con media $2$,
+      y el número de errores tipográficos en un capítulo de su libro de historia sigue una distribución de Poisson con media $5$,
+      entonces, suponiendo que Sam tiene la misma probabilidad de elegir cualquiera de los dos libros,
+      ¿Cuál es el número esperado de errores tipográficos que Sam encontrará?
+    </p>
+    </div>
+
+    <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>Sean $n,m \in \mathbb{N}$ arbitrarios pero fijos. 
+        Si $X_1, \ldots, X_{n}$ y $ Y_1, Y_2, \ldots, Y_{m}$ son variables aleatorias, 
+        prueba que 
+        $$ \mathrm{Cov}\left( \displaystyle{\sum_{i=1}^n X_{i}}, \displaystyle{\sum_{j=1}^m Y_{j}} \right) = \sum_{i=1}^n \sum_{j=1}^m \mathrm{Cov}( X_i, Y_j)$$
+        </p>
+    </div> 
+
+     <div class="nota-box">
+      <h1 class="number-title-practica">Ejercicio</h1>
+      <p>Sean $n\in \mathbb{N}$ arbitrario pero fijo. 
+        Si $X_1, \ldots, X_{n}$ son variables aleatorias mutuamente independientes, 
+        prueba que 
+        $$ \mathrm{Var}\left( \displaystyle{\sum_{i=1}^n X_{i}} \right) = \mathrm{Var}\left( \displaystyle{\sum_{i=1}^n X_{i}} \right)$$
+        </p>
+    </div> 
 
 
     <div class="nota-box">
@@ -555,6 +588,96 @@
         </ol>
       </p>
     </div>
+
+    <div class="nota-box">
+      <h1 class="number-title-practica"> Ejercicio</h1>
+      <p>La función de densidad de $X,Y$ es
+        $$f(x,y) = \frac{1}{y} e^{y + \frac{x}{y}}, \,\,  0 < x,y < \infty$$
+      </p>
+       <p>Calcula
+        <ol class="two-column">
+              <li>\( \displaystyle{\mathbb{E}(X)} \).</li><br>
+              <li>\( \displaystyle{\mathbb{E}(Y)} \).</li><br>
+              <li>\( \displaystyle{\mathrm{Var}(X)} \).</li><br>
+              <li>\( \displaystyle{\mathrm{Var}(Y)} \).</li><br>
+              <li>\( \displaystyle{\mathbb{E}(XY)} \).</li><br>
+              <li>\( \displaystyle{\mathrm{Cov}(X, Y)} \).</li><br>
+              <li>\( \displaystyle{\rho(X,Y)} \)</li><br>
+              <li>Determina el tipo de correlación, si existe, que presentan las variables aleatorias \( \displaystyle{X} \) y \( \displaystyle{Y} \).</li>
+        </ol>
+      </p>
+    </div>
+
+    <div class="nota-box">
+      <h1 class="number-title-practica"> Ejercicio</h1>
+      <p> Si $X \sim \mathrm{Bin}(n_1,p)$ y $Y \sim \mathrm{Bin}(n_2,p)$
+         son variables aleatorias independientes, encuentra la función 
+         de masa de probabilidad codicional de $X_1$ dado que $X + Y = n$.   </p>
+    </div>
+
+      <div class="nota-box">
+      <h1 class="number-title-practica"> Ejercicio</h1>
+      <p> Si $X \sim \mathrm{Poisson}(\lambda_1)$ y $X \sim \mathrm{Poisson}(\lambda_2,p)$
+         son variables aleatorias independientes, encuentra la función 
+         de densidad codicional de $X$ dado que $X + X = n$.   </p>
+    </div>
+
+    <!-- <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    La densidad conjunta de \( X \) y \( Y \) está dada por
+    <br><br>
+    \[
+    \displaystyle{f(x, y) = \frac{e^{-y}}{y}, \quad 0 < x < y, \quad 0 < y < \infty}
+    \]
+    <br>
+    Calcule \( \displaystyle{E[X^2 \mid Y = y]} \).
+  </p>
+</div> -->
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Las variables aleatorias \( X \) y \( Y \) se dice que tienen una <b>distribución normal bivariada</b> 
+    si su función de densidad conjunta está dada por:
+    <br><br>
+    \[
+    \displaystyle{
+    f_{X,Y}(x, y) = \frac{1}{2 \pi \sigma_x \sigma_y \sqrt{1 - \rho^2}} 
+    \exp \left\{ 
+    -\frac{1}{2(1 - \rho^2)} 
+    \left[ 
+    \left( \frac{x - \mu_x}{\sigma_x} \right)^2 
+    - \frac{2\rho(x - \mu_x)(y - \mu_y)}{\sigma_x \sigma_y} 
+    + \left( \frac{y - \mu_y}{\sigma_y} \right)^2 
+    \right] 
+    \right\}
+    }, \, \, -\infty < x,y < \infty 
+    \]
+    <br>
+    donde \( \sigma_x,\sigma_y,\mu_x,\mu_y \), y \( \rho \) son constantes tales que \(  \sigma_x, \sigma_y \in \mathbb{R}^+  \),  \(\mu_y, \mu_y \in \mathbb{R} \) y \( -1 < \rho < 1 \) 
+    
+    <ol>
+      <li>
+        Demuestre que \( X \) está distribuida normalmente con media \( \mu_x \) y varianza \( \sigma_x^2 \), y que \( Y \) está distribuida normalmente con media \( \mu_y \) y varianza \( \sigma_y^2 \).
+      </li><br>
+      <li>
+        Demuestre que la densidad condicional de \( X \) dado que \( Y = y \) es normal con media 
+        \[
+        \displaystyle{\mu_x + (\rho \sigma_x / \sigma_y)(y - \mu_y)}
+        \]
+        y varianza 
+        \[
+        \displaystyle{\sigma_x^2(1 - \rho^2)}.
+        \]
+      </li><br>
+      <li>Prueba que $\rho = \rho(X,Y)$, i.e.
+        $$\displaystyle{\rho = \frac{E[(X - \mu_x)(Y - \mu_y)]}{\sigma_x \sigma_y} = \frac{\text{Cov}(X, Y)}{\sigma_x \sigma_y}}. $$
+        $rho$ es el coeficiente de correlacion entre $X$ y $Y$.
+      </li>
+    </ol>
+  </p>
+</div>
 
 
 
