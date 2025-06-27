@@ -679,6 +679,176 @@
   </p>
 </div>
 
+<hr>
+
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+Un dado justo se lanza de forma independiente 10 veces. Calcula la probabilidad de que las caras 
+#1 a #6 aparezcan el siguiente número de veces, respectivamente: 2, 1, 3, 1, 2 y 1.
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Para un vector aleatorio con distribución multinomial, todas las distribuciones marginales y condicionales
+     son también multinomial.
+   </p>
+   <p>Sea $X= (X_1, \ldots, X_k)$ un vector aleatorio con distribución multinomial con parametros $n$ y 
+    $p_1, \ldots, p_k $ y $1 \leq s < k$ arbitrario pero fijo.
+   </p>
+
+   <ol>
+    <li>
+      Si $Y = n - (X_{1} +  \ldots, X_{s})$
+     y $q = 1 - (p_{1} + \ldots + p_{s})$, entonces el vector aleatorio $( X_{1}, X_{2}, \ldots, X_{s}, Y)$ 
+     tiene distribución multinomial con parámetros $n$ y $p_1, \ldots, p_k, q$
+    </li><br>
+    <li>
+      La distribución condicional de $X_{s+1}, \ldots, X_{k}$ dado que $X_{1} = x_1, X_{2} = x_2,\ldots, X_s = x_s$
+      es multinomial con parametros $n-r$ y $\displaystyle{\frac{p_{s+1}}{q}, \ldots, \frac{p_{k}}{q}}$ donde $r = x_1 + \cdots + x_s$
+    </li>
+   </ol>
+     
+   <p><b>Observación:</b> En este resultado las $s$ variables aleatorias no necesariamente tienen que ser las primeras
+    $s$, si no cualesquiera $s$ variables aleatorias, por ejemplo $X_{i_1}, X_{i_2}, \ldots, X_{i_s}$, y entonces
+    $Y= n - (X_{i_1} + X_{i_2} + \ldots + X_{i_s})$ y $q= 1 - (p_{i_1} + \ldots + p_{i_s})$. Enuncia el resultado para 
+    el este elección arbitraria de $s$ variables aleatorias.
+   </p>
+</div>
+
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+Un dado justo se lanza de forma independiente 10 veces. Para cada $i=1,\ldots, 6$ sea $X_{i}$ que denota el número de ocurrencias
+de la cara $i$. Calcula
+<ol>
+  <li> $\mathbb{P}(X_2 = X_4 = X_6 = 2)$</li><br>
+  <li> $\mathbb{P}(X_1 = X_3 = 1, X_5 = 2 \vert X_2 = X_4 = X_6 = 2 )$</li>
+</ol>
+</div>
+
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>En un experimento genético, se cruzan dos variedades diferentes de una cierta especie y
+     una característica específica de la descendencia solo puede ocurrir en tres niveles, A, B y C. 
+     Según un modelo propuesto, las probabilidades para A, B y C son $\displaystyle{\frac{1}{12}$, $\frac{3}{12}}$ y $\displaystyle{\frac{8}{12}}$,
+    respectivamente. De 60 descendientes, calcula:
+  </p>
+  <ol>
+    <li>La probabilidad de que 6, 18 y 36 caigan en los niveles A, B y C, respectivamente.</li><br>
+    <li>La probabilidad (condicional) de que 6 y 18 caigan en los niveles A y B, respectivamente, dado que 36 han caído en el nivel C.</li>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>En una tienda de televisores, se sabe que el 25% de los clientes comprará un televisor de la marca A, el 40% comprará un televisor de la marca B, y el 35% solo estará mirando (no comprará). Para un grupo de 10 clientes:</p>
+  <ol>
+    <li>¿Cuál es la probabilidad de que 2 compren un televisor de la marca A, 3 compren un televisor de la marca B, y 5 no compren ninguno?</li>
+    <li>Si se sabe que 6 clientes no compraron un televisor, ¿cuál es la probabilidad (condicional) de que 1 del resto compre un televisor de la marca A y 3 compren un televisor de la marca B?</li>
+  </ol>
+</div>
+
+<div class="definicion-box"><h1 class="title-definicion"> Definición </h1>
+  <p>Sean $X,Y$ variables aleatorias. Se define la <b>función generadora de momentos del vector aleatorio $(X,Y)$</b>, denotado por 
+    $M_{X,Y}(t_1, t_2)$ como:
+$$
+M_{X,Y}(t_1, t_2) = \mathbb{E}\left(e^{t_1X + t_2Y}\right), \,\text{ donde }\, (t_1, t_2)\in B_{r}((0,0)) \subseteq \mathbb{R}^2 \text{ con } r >0
+$$
+Así, para el caso discreto y el continuo, tenemos, respectivamente:
+$$M_{X,Y}(t_1, t_2) = \sum_{x_i, y_j } e^{t_1x_i + t_2y_j} f_{X,Y}(x_i, y_j), \label{eq:fgm_conjunta_discreta} $$
+
+$$M_{X,Y}(t_1, t_2) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{t_1x + t_2y} f_{X,Y}(x, y)dx\, dy. \label{eq:fgm_conjunta_continua} $$
+La función $M_{X,Y}(t_1,t_2)$ así definida también es llamada <b>función generadora de momentos conjunta de 
+las variables aleatorias $X$ e $Y$</b>.
+</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>El número de clientes formados para ser atendidos frente a dos ventanillas en tu banco local se representa con las variables aleatorias \( X \) y \( Y \).
+    Supón que las variables aleatorias \( X \) y \( Y \) sólo pueden tomar los valores 0, 1, 2 y 3. Las probabilidades conjuntas  están expresadas  
+    en la siguiente tabla:
+  </p>
+
+  <table class="tabla-probabilidades">
+    <thead>
+      <tr>
+        <th colspan="6" class="titulo-tp">Distribución conjunta de las v.a. \( X \) y \( Y \)</th>
+      </tr>
+      <tr>
+        <th class="diagonal-tp">\( Y \backslash X \)</th>
+        <th class="encabezado-x-tp">0</th>
+        <th class="encabezado-x-tp">1</th>
+        <th class="encabezado-x-tp">2</th>
+        <th class="encabezado-x-tp">3</th>
+        <th class="encabezado-x-tp"><strong>Totales</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="encabezado-y-tp">0</td>
+        <td>0.05</td><td>0.21</td><td>0</td><td>0</td><td>0.26</td>
+      </tr>
+      <tr>
+        <td class="encabezado-y-tp">1</td>
+        <td>0.20</td><td>0.26</td><td>0.08</td><td>0</td><td>0.54</td>
+      </tr>
+      <tr>
+        <td class="encabezado-y-tp">2</td>
+        <td>0</td><td>0.06</td><td>0.07</td><td>0.02</td><td>0.15</td>
+      </tr>
+      <tr>
+        <td class="encabezado-y-tp">3</td>
+        <td>0</td><td>0</td><td>0.03</td><td>0.02</td><td>0.05</td>
+      </tr>
+      <tr>
+        <td class="encabezado-y-tp"><strong>Totales</strong></td>
+        <td>0.25</td><td>0.53</td><td>0.18</td><td>0.04</td><td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Calcula $M_{X,Y}(t_1, t_2)$</p>
+</div>
+
+<div class="nota-box"><h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $X,Y$ variables aleatorias. Prueba las siguientes propiedades:</p>
+  <p>
+    <ol>
+      <li>\(\displaystyle{ M_{X,Y}(0, 0) = 1 }\) </li><br>
+      
+      <li>Las funciones generadoras de momentos marginales de las variables aleatorias \( X \) y \( Y \)
+         se obtienen a partir de la función generadora de momentos conjunta de \( X \) y \( Y \), es decir, 
+        \[
+        \displaystyle{ M_{X,Y}(t_1, 0) = M_X(t_1), \quad M_{X,Y}(0, t_2) = M_Y(t_2) }
+        \]<br>
+        
+      </li><br>
+
+      <li>Para  constantes \( c_1, c_2, d_1, d_2 \), se satisface: <br><br>
+        \[
+        \displaystyle{ M_{c_1X + d_1, c_2Y + d_2}(t_1, t_2) = e^{d_1t_1 + d_2t_2} M_{X,Y}(c_1t_1, c_2t_2) }
+        \]
+      </li><br>
+
+      <li>Siempre que se pueda intercambiar el orden de derivación y esperanza. Se cumple lo siguiente :<br><br>
+        $$\displaystyle{ \left. \frac{\partial}{\partial t_1} M_{X,Y}(t_1, t_2) \right|_{t_1 = t_2 = 0} = E[X]}$$
+        <br>
+        $$\displaystyle{\left. \frac{\partial}{\partial t_2} M_{X,Y}(t_1, t_2) \right|_{t_1 = t_2 = 0} = E[Y] }$$
+        <br>
+        $$\displaystyle{ \left. \frac{\partial^2}{\partial t_1 \partial t_2} M_{X,Y}(t_1, t_2) \right|_{t_1 = t_2 = 0} = E[XY] }$$
+        
+      </li>
+    </ol>
+  </p>
+</div>
+
+
+
+
+
+
 
 
 <!-- 
