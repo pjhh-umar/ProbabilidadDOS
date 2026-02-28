@@ -51,8 +51,8 @@ html, body{
   font-family: "Bitter", serif;
   font-optical-sizing: auto;
   line-height: 1.4em;
-  font-weight: 400;
-  font-size: 115%;
+  /* font-weight: 400; */
+  font-size: 100%;
   font-style: normal;
   /*"Quicksand";    */
   /* font-family: 'Noto Serif Tangut', serif; */
@@ -220,7 +220,6 @@ width: auto;
   }
 
 
-
 .title{
   font-size: 180%;
   font-weight: 800; 
@@ -248,27 +247,6 @@ width: auto;
   line-height: 1.5em;
 }
 
-.titulo {
-  font-size: 160%;
-  font-weight: 600;
-  margin: 0 0 5em 0;
-  padding: 1%;
-  text-align: center;
-  font-family: 'EB Garamond', serif;
-  color: rgb(3, 89, 165);
-  display: inline;
-}
-
-.subtitulo {
-  font-size: 150%;
-  font-weight: 600;
-  margin: 0 0 5em 0;
-  padding: 1%;
-  text-align: center;
-  font-family: 'EB Garamond', serif;
-  color: rgb(3, 89, 165);
-  display: inline;
-}
 .subtitle{
   font-size: 130%;
   font-weight: 600; 
@@ -532,15 +510,15 @@ body.card{
           }
 
 h1.page-title{
-  font-size: 140%;
+  font-size: 120%;
   text-align: center;
   /* font-family: "Muli"; */
   font-family: 'Gelasio', serif;
   /* font-family: 'IM Fell English', serif; */
   /* content:" "; */
-  margin-top: 1%;
-  margin-bottom: 0.25%;
-  padding: 0%;
+  /* margin-top: 1%; */
+  margin-bottom: 10px;
+  padding: 5px;
   width: 100%;
   /* color: rgba(255, 0, 0, 0.789); */
   /* color:  rgb(0,0,128);  */
@@ -706,8 +684,6 @@ h1.number-title::before{
   content: counter(temaCounter)"."counter(sectionCounter)".";
 }
 
-
-
 h2.number-title{
   font-size: 160%;
   font-weight: 600;
@@ -776,44 +752,12 @@ h1.number-title-practica{
   /* color: rgb(3, 89, 165);  */
 }
 
-
-
 h1.number-title-practica::after{
   /* font-family: "Roboto"; */
   font-family: 'Hina Mincho', serif;  
   counter-increment: sectionCounter;
   content: " " counter(temaCounter)"."counter(sectionCounter) ".";
 }
-
-
-h1.title-ejercicio-resuelto{
-  font-size: 160%;
-  margin-top: -1.75%;
-  padding: 0.25%;
-  text-align: center;
-  font-weight: 800;
-  /* font-family: "Muli"; */
-  font-family: 'Hina Mincho', serif;
-  /* color: rgb(169, 90, 0); */
-  color: rgb(0, 78, 148); 
-
-  
-  /* font-size: 33px; */
-  /* color: rgb(0, 124, 191);  */
-  
-  /* color: rgb(3, 89, 165);  */
-}
-
-
-
-h1.title-ejercicio-resuelto::after{
-  /* font-family: "Roboto"; */
-  font-family: 'Hina Mincho', serif;  
-  counter-increment: resueltoCounter;
-  content: " " counter(temaCounter)"."counter(resueltoCounter) ".";
-}
-
-
 
 h1.title-practica{
   font-size: 160%;
@@ -833,11 +777,12 @@ h1.title-practica{
   /* color: rgb(3, 89, 165);  */
 }
 
-/* h1.title-practica::after{
+h1.title-practica::after{
+  /* font-family: "Roboto"; */
   font-family: 'Hina Mincho', serif;  
   counter-increment: EjercicioResueltoCounter;
   content: " " counter(temaCounter)"."counter(EjercicioResueltoCounter) ".";
-} */
+}
 
 h1.title-definicion{
   font-size: 160%;
@@ -860,18 +805,24 @@ h1.title-definicion{
 /*/////////////// for body boxes  /////////////////////*/
 
 .info-box{
-  /* background:  rgb(218, 237, 245); */
-    background: rgb(252, 252, 244);
+    /*background:  rgb(218, 237, 245);
+    */background: rgb(252, 252, 244);
     color: black;
     border-radius: 20px;
-    padding: 50px;
+    padding: 25px;
     border: 0px solid  rgb(218,165,32);
-    margin: auto; 
-    margin-top: 50px;
-    font-size: 20px;
-    width: 85%;
+    margin: auto;
+    /* margin-top: 25px; */
+    margin-bottom: 50px;
+    /* font-family: 'Oldenburg', cursive; */
+    /*font-size: 20px;
+    */width: 85%;
     box-shadow: 0px 0px 10px 0px  rgb(218,165,32);
     text-align: justify;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
 }
 
 .links-box{
@@ -879,14 +830,15 @@ h1.title-definicion{
     background: rgb(252, 252, 244);
     display: flex;
     flex-direction: column;
-    margin-bottom: 2.5%;
     color: black;
     border-radius: 20px;
-    padding: 10px;
+    padding: 25px;
     border: 0px solid  rgb(218,165,32);
     margin: auto; 
-    margin-top: 50px; 
-    font-size: 25px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    font-size: 105%;
+    font-family: 'Oldenburg', cursive;
     width: 90%;
     box-shadow: 0px 0px 10px 0px  rgb(218,165,32);
     align-items: center;
@@ -914,12 +866,13 @@ h1.title-definicion{
     background: rgb(252, 252, 244);
     color: black;
     border-radius: 20px;
-    padding: 50px;
+    padding: 25px;
     border: 0px solid  rgb(218,165,32);
     margin: auto; 
-    margin-top: 50px;
-    font-size: 20px;
-    font-size: 21.5px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    font-size: 101%;
+    /* font-size: 21.5px; */
     width: 85%;
     box-shadow: 0px 0px 10px 0px  rgb(218,165,32);
       
@@ -949,56 +902,45 @@ h1.title-definicion{
 .definicion-box{
  /* background:  rgb(218, 237, 245); */
  background: rgba(255, 87, 40, 0.038);
-  color: black;
-  border-radius: 20px;
-  /*padding: 5%;
-  */padding: 25px;
-  /*border: 0px solid  rgb(218,165,32);
-  */
-  border: 0px solid rgb(0, 78, 148); 
-  margin: auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  font-size: 85%;
-  /*text-align: justify;*/
-  /*font-size: 110%;*/
-  /*font-weight: 600;*/
-  /*justify-content: space-evenly;*/
-  width: 90%;
-  /*box-shadow: 0px 0px 10px 0px  rgb(218,165,32);*/
-    box-shadow: 0px 0px 10px 0px rgb(0, 166, 255); 
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+ color: black;
+ border-radius: 20px;
+ padding: 25px;
+ border: 1px solid rgb(255, 54, 40);
+ margin: auto;
+ margin-bottom: 50px;
+ margin-top: 50px;
+ text-align: justify;
+ font-size: 85%;
+ /* font-weight: 600; */
+ /* justify-content: space-evenly; */
+ width: 90%;
+ box-shadow: 0px 0px 10px 0px  rgb(255, 86, 40);
 }
 
 .ejercicio-box{
-  background:  rgba(218, 165, 32, 0.052);
-  /*background: rgba(0, 166, 255, 0.03);
-  */
-  color: black;
-  border-radius: 20px;
-  /*padding: 5%;
-  */padding: 25px;
-  /*border: 0px solid  rgb(218,165,32);
-  */
-  border: 0px solid rgb(0, 78, 148); 
-  margin: auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  font-size: 85%;
-  /*text-align: justify;*/
-  /*font-size: 110%;*/
-  /*font-weight: 600;*/
-  /*justify-content: space-evenly;*/
-  width: 90%;
-  /*box-shadow: 0px 0px 10px 0px  rgb(218,165,32);*/
-    box-shadow: 0px 0px 10px 0px rgb(0, 166, 255); 
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+    background:  rgba(218, 165, 32, 0.052);
+    /*background: rgba(0, 166, 255, 0.03);
+    */color: black;
+    border-radius: 20px;
+    /*padding: 5%;
+    */padding: 25px;
+    /*border: 0px solid  rgb(218,165,32);
+    */border: 1px solid  rgb(218, 165, 32);
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    /*font-size: 20px;
+    */text-align: justify;
+    /*font-size: 110%;
+    *//*font-weight: 600;
+    *//*justify-content: space-evenly;
+    */width: 90%;
+    /*box-shadow: 0px 0px 10px 0px  rgb(218,165,32);
+    */box-shadow: 0px 0px 10px 0px  rgb(255, 217, 0);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 .ejercicio-resuelto-box{
@@ -1012,7 +954,7 @@ h1.title-definicion{
   margin-bottom: 50px;
   margin-top: 50px;
   text-align: justify;
-  font-size: 85%; 
+  font-size: 85%;
   /* font-weight: 600; */
   /* justify-content: space-evenly; */
   width: 90%;
@@ -1043,34 +985,23 @@ h1.title-definicion{
   /*padding: 5%;
   */padding: 25px;
   /*border: 0px solid  rgb(218,165,32);
-  */
-  border: 0px solid rgb(0, 78, 148); 
+  */border: 1px solid  rgb(218, 165, 32);
   margin: auto;
   margin-bottom: 50px;
   margin-top: 50px;
-  font-size: 85%;
-  /*text-align: justify;*/
+  /* font-size: 85%; */
+  /* text-align: justify; */
   /*font-size: 110%;*/
-  /*font-weight: 600;*/
-  /*justify-content: space-evenly;*/
-  width: 90%;
-  /*box-shadow: 0px 0px 10px 0px  rgb(218,165,32);*/
-    box-shadow: 0px 0px 10px 0px rgb(0, 166, 255); 
+  /*font-weight: 600;
+  *//*justify-content: space-evenly;
+  */width: 90%;
+  /*box-shadow: 0px 0px 10px 0px  rgb(218,165,32);
+  */box-shadow: 0px 0px 10px 0px  rgb(255, 217, 0);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
-
-/* .nota-box {
-  color: black;
-  border: 0px solid rgb(0, 78, 148); 
-  margin: 50px auto;
-  font-size: 105%;
-  text-align: justify;
-  width: 90%;
-  box-shadow: 0px 0px 10px 0px rgb(0, 166, 255); 
-} */
 
 .nota-boxRespaldo{
   /* background:  rgb(218, 237, 245); */
@@ -1389,51 +1320,62 @@ font-weight: 600;
 
 
 /*//// tables //////*/
-
-.tabla-funciones {
-  /* font-family: arial, sans-serif; */
-  /* font-size: 90%; */
-  font-style: normal;
-  font-weight: 500;
-  /* padding: 0%; */
-  /* font-family: "Muli"; */
-  /* font-family: 'Pangolin', cursive; */
-  /* font-family: 'Cabin Sketch', cursive; */
-  font-family: "Bitter", serif;
-  /*font-family: 'Hina Mincho', serif; */
-  /* font-family: 'Jacques Francois Shadow', cursive; */
-  /* margin-top: 2.5%;
-  margin-bottom: 2.5%; */
-  /* content:" "; */
-  /* color: rgb(0, 77, 179); */
-  color: rgb(0, 0, 0); 
+.tabla-probabilidades{
+  margin: auto;
   text-align: justify;
-  /* display: inline; */
   border-collapse: collapse;
-  width: auto;
   max-width: 100%;
-  
+  font-family: "Bitter", serif;
+  font-style: normal;
+  /* font-weight: 500; */
+  color: rgb(0, 0, 0); 
+  width: auto;
+  /* border-collapse: collapse; */
+  word-wrap: break-word; /* Permite que las palabras se ajusten y no desborden */
+  padding: 0px;
 }
 
 
+/* Título centrado */
+.titulo-tp{
+  text-align: center;
+  font-size: normal;
+  font-weight: bold;
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+}
+
+.encabezado-x-tp,
+.encabezado-y-tp {
+  background-color: rgb(230, 242, 255); /* Color claro tipo encabezado */
+  font-weight: 500;
+  text-align: center;
+  font-family: "Bitter", serif;
+  /* font-family: 'Hina Mincho', serif; */
+   /* font-family: "Muli"; */
+  /* font-family: 'Pangolin', cursive; */
+  /* font-family: 'Cabin Sketch', cursive; */
+  /* font-family: 'Jacques Francois Shadow', cursive; */
+  font-size: normal;
+  color: rgb(0, 0, 0);
+  border: 1.5px solid rgb(3, 89, 165);  
+  padding: 0px;
+}
+
+.diagonal-tp {
+  background-color: rgb(221, 221, 220);
+}
 
 .nombre-funcion {
   text-align: center;
 }
-
-
-
-.nombre-funcion2 {
-  text-align: left;
-}
-
 
 .nombre-funcion a{ 
   padding: 10px;
   font-weight: 500;
   /*color:  rgba(14, 137, 253, 0.801);*/
   color:  rgb(255, 0, 0); 
-
 }
 
 .nombre-funcion a:visited{
@@ -1441,57 +1383,18 @@ font-weight: 600;
   /* color:  rgba(14, 137, 253, 0.801); */
 }
 
-.tabla-funciones thead{
-  font-size: 125%;
-  /* font-weight: 600; */
-  /* padding: 0%; */
-  /* font-family: "Muli"; */
-  /* font-family: 'Pangolin', cursive; */
-  /* font-family: 'Cabin Sketch', cursive; */
-  font-family: 'Hina Mincho', serif;
-  /* font-family: 'Jacques Francois Shadow', cursive; */
-  /* margin-top: 2.5%;
-  margin-bottom: 2.5%; */
-  /* content:" "; */
-  /* color: rgb(0, 77, 179); */
-  color: rgb(0, 0, 0); 
-  /* text-align: center; */
-  border-collapse: collapse;
-  /* display: inline; */
- }
-
-table {
-  
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 100%;
-}
-
-th{
-  border: 1.7px solid rgb(3, 89, 165); 
-  text-align: center;
-  padding: 9px;
-  word-wrap: break-word; /* Permite que las palabras se ajusten y no desborden */
-       
-  /* background-color: rgb(247, 16, 16); */
-}
-
-
- thead tr:nth-child(even) {
+ /* thead tr:nth-child(even) {
   background-color: rgb(221, 221, 220);
  }
 
 thead tr:nth-child(odd) {
   background-color: rgb(252, 252, 244);
+} */
 
-}
-
-
-td{
-  border: 1.7px solid rgb(3, 89, 165);  
-  text-align: justify;
-  padding: 8px;
+td,th{
+  border: 1.5px solid rgb(3, 89, 165);  
+  text-align: center;
+  padding: 5px;
   word-wrap: break-word; /* Permite que las palabras se ajusten y no desborden */
 }
 
@@ -1504,12 +1407,10 @@ tbody tr:nth-child(odd) {
   background-color: rgb(196, 231, 255);
 }
 
-
-@media (max-width: 600px) 
-  th, td {
-      font-size: 14px;
-  }
-
+@media{
+  max-width: 600px;
+}
+  
 .four-column{
   columns: 4;
   /*grid-template-columns: repeat(2, 1fr);*/
@@ -1666,14 +1567,6 @@ ol li::marker{
   content: " "
 }
 
-
-.mi-banner {
-  width: 100%; /* Ocupar todo el ancho de la página */
-  height: 100px; /* Ajusta la altura según necesites */
-  background-image: url('tu-imagen.jpg'); /* Ruta de la imagen */
-  background-repeat: repeat-x; /* Repetir solo horizontalmente */
-  background-size: auto 100px; /* Ajustar la altura de la imagen */
-}
 
 hr{
     border: none; /* Quita el borde predeterminado */
