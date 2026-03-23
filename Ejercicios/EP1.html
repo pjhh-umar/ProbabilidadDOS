@@ -113,7 +113,140 @@
 
     <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos primer examen parcial</h1>   
 
+      <div class="nota-box"> 
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Verifca que cada una de las siguientes funciones es una función de densidad:</p>
+        <p>
+        <ol>
+            <li>$ f(x)=
+              \begin{cases}
+                (n+1)x^n, & \text{si } x\in(0,1),\\[2mm]
+                0, & \text{en otro caso},
+                \end{cases}$
+              donde  $n$ es un entero no negativo.
+            </li><br>
+            <li>
+               $f(x)=\begin{cases}
+                (n-1)x^{-n}, & \text{si } x\in(1,\infty),\\[2mm]
+                0, & \text{en otro caso},
+                \end{cases}
+               $
+               donde  $n\in\{2,3,\dots\}$.
+            </li><br>
+            <li>
+            $f(x)=
+            \begin{cases}
+            \lambda e^{-\lambda x} & \text{si } x>0,\\
+            0 & \text{en otro caso},
+            \end{cases}
+            \quad \text{en donde } \lambda>0 \text{ y }
+            f(x)=\displaystyle{\frac{1}{\sqrt{2\pi}}}e^{-\frac{1}{2}x^2}
+            \quad \text{para cualquier } x\in\mathbb{R}.$
+            </li><br>
+            <li>
+            $f(x)=
+              \begin{cases}
+              \dfrac{1}{3}, & \text{si } x\in(0,1),\\[2mm]
+              \dfrac{1}{6}, & \text{si } x\in(2,3),\\[2mm]
+              \dfrac{1}{2}, & \text{si } x\in(4,5),\\[2mm]
+              0, & \text{en otro caso}.
+              \end{cases}
+            $
+          </li><br>
+          </p>
+          </ol> 
+        
+      </div>
+
+
       <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Las siguientes son funciones de densidad discretas:
+  </p>
+
+  <ol>
+
+    <li>
+      $f(x)=
+      \begin{cases}
+      c r^x & \text{si } x\in\{0,\ldots,N\},\\
+      0 & \text{en otro caso},
+      \end{cases}$
+      <br>
+      en donde $r>0$, $N\in\mathbb{N}$ y 
+      $c=\displaystyle{\frac{1}{\sum_{x=0}^{N} r^x}}=
+      \begin{cases}
+      \displaystyle{\frac{1}{N+1}} & \text{si } r=1,\\
+      \displaystyle{\frac{1-r}{1-r^{N+1}}} & \text{si } r\neq 1.
+      \end{cases}$
+    </li><br>
+
+    <li>
+      $f(x)=
+      \begin{cases}
+      c r^x & \text{si } x\in\{0,1,\ldots\},\\
+      0 & \text{en otro caso},
+      \end{cases}$
+      <br>
+      en donde $0< r < 1$ y 
+      $ c=\displaystyle{\frac{1}{\sum_{x=0}^{\infty} r^x}}=1-r.$
+    </li><br>
+
+    <li>
+      $f(x)=
+      \begin{cases}
+      c r^{\sqrt{x}} & \text{si } x\in\mathbb{N},\\
+      0 & \text{en otro caso},
+      \end{cases}$
+      <br>
+      en donde $0< r < 1$ y 
+      $c=\displaystyle{\frac{1}{\sum_{x=0}^{\infty} r^{\sqrt{x}}}}.$
+    </li><br>
+
+    <li>
+      $f(x)=
+      \begin{cases}
+      \displaystyle{\frac{c}{x^2}} & \text{si } x\in\mathbb{N},\\
+      0 & \text{en otro caso},
+      \end{cases}$
+      <br>
+      en donde $k\in\{2,3,\ldots\}$ y 
+      $c=\displaystyle{\frac{1}{\sum_{x=1}^{\infty} \frac{1}{x^2}}}
+      =\displaystyle{\frac{6}{\pi^2}}.$
+    </li><br>
+
+    <li>
+      $f(x)=
+      \begin{cases}
+      \displaystyle{\frac{1}{x(x+1)}} & \text{si } x\in\mathbb{N},\\
+      0 & \text{en otro caso}.
+      \end{cases}$
+    </li><br>
+
+    <li>
+      $f(x)=
+      \begin{cases}
+      \displaystyle{\frac{1}{2^k}} & \text{si } x=2^k,\; k\in\mathbb{N},\\
+      0 & \text{en otro caso}.
+      \end{cases}$
+    </li><br>
+
+    <li>
+      $f(x)=
+      \begin{cases}
+      \displaystyle{\frac{1}{k(k+1)2^k}} & \text{si } x=2^k,\; k\in\mathbb{N},\\
+      \displaystyle{1-\sum_{k=1}^{\infty}\frac{1}{k(k+1)2^k}} & \text{si } x=0,\\
+      0 & \text{en otro caso}.
+      \end{cases}$
+    </li><br>
+
+  </ol>
+</div>
+
+      
+
+      <!-- <div class="nota-box">
         <h1 class="number-title-practica">Ejercicio</h1>
         <p>
             Sean $X$ y $Y$ variables aleatorias con función de distribución conjunta $F(x,y)$. Demuestre que para cualesquiera números reales $a < b$ y $c < d$,
@@ -217,7 +350,7 @@
           <li>Sea \( X \sim \text{Bernoulli} \left( \displaystyle{\frac{1}{3}} \right) \) y \( Y = 4X - 2 \). Calcule la función de distribución conjunta \( F_{X,Y} \).</li><br>        
         <li>Sea \( X \sim \text{Bernoulli} \left( \displaystyle{\frac{1}{4}} \right) \) y \( Y = -7X \). Calcule la función de distribución conjunta \( F_{X,Y} \).</li><br>
     </p>
-</div>
+</div> -->
 
 <!-- <div class="nota-box">
     <h1 class="number-title-practica"> Ejercicio</h1> 
