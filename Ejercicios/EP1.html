@@ -182,6 +182,114 @@
     </li> -->
   </ol>
 </div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Realiza una exploración analítica de la distribución normal, denotada por 
+    $\mathcal{N}(\mu,\sigma^2)$, donde $\mu \in \mathbb{R}$ y $\sigma^2>0$. 
+    En tu desarrollo, explica con claridad su origen, su interpretación, su función de densidad, 
+    su función de distribución, sus propiedades fundamentales y algunas de sus medidas descriptivas 
+    más importantes.
+  </p>
+
+  <ol>
+    <li>
+      <!-- <strong>Origen y motivación.</strong> -->
+      Explica en qué contextos aparece la distribución normal y por qué es uno de los modelos más
+      importantes en probabilidad y estadística. 
+    </li>
+
+    <li>
+      <!-- <strong>Definición y parámetros.</strong> -->
+      Escribe la función de densidad de una variable aleatoria $X \sim \mathcal{N}(\mu,\sigma^2)$:
+      $$f_{X}(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right), \qquad x \in \mathbb{R}.$$
+      Explica el significado de los parámetros $\mu$ y $\sigma^2$. Describe cómo cambia la gráfica de la densidad cuando se modifica $\mu$ y cómo cambia cuando se modifica $\sigma^2$.
+    </li>
+
+    <li>
+      Sea $X \sim \mathcal{N}(\mu,\sigma^2)$ y $f_{X}(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right), \qquad x \in \mathbb{R}.$ 
+      su función de densidad. Muestra utilizando algun software par graficar como 
+      cambia la gráfica de la densidad cuando se modifica $\mu$ y cómo cambia cuando se modifica $\sigma^2$.
+      
+    </li>
+
+    <li>
+      <!-- <strong>Función de densidad y no negatividad.</strong> -->
+      Explica por qué en este caso se habla de <i>función de densidad</i> y no de <i>función de masa de probabilidad</i>. Justifica que $f(x)\geq 0$ para todo $x \in \mathbb{R}$ y verifica que
+      $$\int_{-\infty}^{\infty} f(x)\,dx = 1.$$
+    </li>
+
+    <li>
+      <!-- <strong>Función de distribución.</strong> -->
+      Define la función de distribución acumulada
+      $$F(x)=\mathbb{P}(X\leq x).$$
+      Explica cómo se expresa en el caso normal y por qué, en general, no puede escribirse mediante una fórmula elemental cerrada. Introduce la notación de la distribución normal estándar:
+      $$\Phi(z)=\int_{-\infty}^{z}\frac{1}{\sqrt{2\pi}}e^{-t^2/2}\,dt.$$
+    </li>
+
+    <li>
+      <!-- <strong>Estandarización.</strong> -->
+      Si $X \sim \mathcal{N}(\mu,\sigma^2)$, demuestra que la variable
+      $$Z=\frac{X-\mu}{\sigma}$$
+      tiene distribución normal estándar, es decir, $Z \sim \mathcal{N}(0,1)$. Explica por qué este resultado es fundamental para calcular probabilidades en cualquier distribución normal.
+    </li>
+
+    <li>
+      <!-- <strong>Esperanza y varianza.</strong> -->
+      Demuestra que si $X \sim \mathcal{N}(\mu,\sigma^2)$, entonces
+      $$\mathbb{E}[X]=\mu \qquad \text{y} \qquad \mathrm{Var}(X)=\sigma^2.$$
+      Puedes hacerlo a partir de la definición o usando la función generadora de momentos.
+    </li>
+
+    <li>
+      <!-- <strong>Simetría, media, mediana y moda.</strong> -->
+      Explica por qué la distribución normal es simétrica respecto a $\mu$. A partir de esta simetría, justifica que la media, la mediana y la moda coinciden, es decir,
+      $$\text{media}=\text{mediana}=\text{moda}=\mu.$$
+    </li>
+
+    <li>
+      <!-- <strong>Percentiles y cuantiles.</strong> -->
+      Define formalmente el $p$-ésimo cuantil de una variable aleatoria continua. Explica cómo se obtienen los cuantiles de una distribución normal a partir de la función $\Phi$. Describe también la relación entre percentiles, cuantiles y estandarización.
+    </li>
+
+    <li>
+      <!-- <strong>Probabilidades en intervalos.</strong> -->
+      Explica cómo se calculan probabilidades del tipo
+      $$\mathbb{P}(a \leq X \leq b), \qquad \mathbb{P}(X>a), \qquad \mathbb{P}(X<b)$$
+      cuando $X \sim \mathcal{N}(\mu,\sigma^2)$. Escribe cada una en términos de la función $\Phi$.
+    </li>
+
+  <!--
+    <li>
+      <strong>Transformaciones lineales.</strong>
+      Sea $X \sim \mathcal{N}(\mu,\sigma^2)$ y sean $a,b \in \mathbb{R}$ con $a\neq 0$. Demuestra que la variable
+      $$Y=aX+b$$
+      también tiene distribución normal. Determina su media y su varianza.
+    </li>
+
+    <li>
+      <strong>Propiedad reproductiva.</strong>
+      Sean $X \sim \mathcal{N}(\mu_1,\sigma_1^2)$ y $Y \sim \mathcal{N}(\mu_2,\sigma_2^2)$ variables aleatorias independientes. Demuestra que
+      $$X+Y \sim \mathcal{N}(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2).$$
+      Explica la importancia de esta propiedad en aplicaciones probabilísticas y estadísticas.
+    </li>
+
+    <li>
+      <strong>Regla empírica.</strong>
+      Explica el significado de las aproximaciones
+      $$\mathbb{P}(\mu-\sigma \leq X \leq \mu+\sigma),$$
+      $$\mathbb{P}(\mu-2\sigma \leq X \leq \mu+2\sigma),$$
+      $$\mathbb{P}(\mu-3\sigma \leq X \leq \mu+3\sigma).$$
+      Comenta por qué estas probabilidades son útiles para interpretar datos aproximadamente normales.
+    </li> -->
+
+    <li>
+      <!-- <strong>Generalidades y relevancia.</strong> -->
+      Describe al menos cuatro propiedades importantes de la distribución normal. Entre ellas, incluye su soporte, su simetría, el papel de sus parámetros, su relación con la normal estándar y su importancia en teoría y aplicaciones.
+    </li>
+  </ol>
+</div>
       
       <div class="nota-box"> 
         <h1 class="number-title-practica">Ejercicio</h1>
