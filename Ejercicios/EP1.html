@@ -113,6 +113,76 @@
 
     <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos primer examen parcial</h1>   
 
+    <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Realiza una exploración analítica de la distribución Poisson, denotada por $\text{Poisson}(\lambda)$ 
+    con $\lambda>0$. En tu desarrollo, explica con claridad su origen, su interpretación como modelo de conteo, su función de masa de probabilidad, su función de distribución, sus propiedades fundamentales y algunas de sus medidas descriptivas más importantes.
+  </p>
+
+  <ol>
+    <!-- <strong>Origen y motivación.</strong><br> -->
+    
+    <li>
+      Explica en qué tipo de situaciones aparece la distribución Poisson y por qué se utiliza para
+      modelar el número de ocurrencias de un evento en un intervalo de tiempo, espacio, longitud o área.
+    </li>
+    <li>
+      Demuestra que puede obtenerse como caso límite de la distribución Binomial. En particular, si $X_n \sim \text{Binomial}(n,p)$, con $n \to \infty$, $p \to 0$ y $np=\lambda>0$ constante, prueba que para todo $x \in \mathbb{N}_{0}$ se cumple:
+      $$\lim_{n\to\infty}\binom{n}{x}p^x(1-p)^{n-x}=\frac{e^{-\lambda}\lambda^x}{x!}.$$
+    </li>
+
+    <!-- <strong>Función de masa de probabilidad.</strong><br> -->
+    <li>
+      
+      Escribe la función de masa de probabilidad de una variable aleatoria $X \sim \text{Poisson}(\lambda)$:
+      $$\mathbb{P}(X=x)=\frac{e^{-\lambda}\lambda^x}{x!}, \qquad x \in \mathbb{N}_{0}.$$
+      Explica por qué en este caso se habla de <i>función de masa de probabilidad</i> y no de <i>función de densidad</i>. Además, verifica que esta función cumple las condiciones básicas de una función de masa: no negatividad y normalización, es decir,
+      $$\sum_{x=0}^{\infty}\frac{e^{-\lambda}\lambda^x}{x!}=1.$$
+    </li>
+
+    <!-- <strong>Función de distribución.</strong><br> -->
+    <li>
+      Define la función de distribución acumulada
+      $$F(x)=\mathbb{P}(X\leq x).$$
+      Escribe su expresión para el caso Poisson y explica por qué se trata de una función escalonada. Describe su comportamiento y señala cómo se relaciona con la función de masa de probabilidad.
+    </li>
+
+     <!-- <strong>Esperanza, media y varianza.</strong><br> -->
+    <li>
+     
+      Si $X \sim \text{Poisson}(\lambda)$, demuestra que
+      $$\mathbb{E}[X]=\lambda \qquad \text{y} \qquad \mathrm{Var}(X)=\lambda.$$
+      Explica por qué esta distribución se caracteriza por tener media y varianza iguales. 
+      En este ejercicio puedes apoyarte de gráficas en Python. 
+    </li>
+
+    <!-- <strong>Moda y mediana.</strong><br> -->
+    <!-- <li>
+      
+      Define la moda de una variable aleatoria discreta y determina los valores de $x$ que maximizan la probabilidad $\mathbb{P}(X=x)$. Indica para qué valores de $\lambda$ la distribución tiene una sola moda y para cuáles tiene dos modas. Después, explica qué se entiende por mediana en una distribución discreta y comenta por qué, en el caso Poisson, en general no existe una fórmula cerrada simple para obtenerla exactamente.
+    </li> -->
+
+    <!-- <strong>Percentiles y cuantiles.</strong> -->
+    <!-- <li>
+      Define formalmente el $p$-ésimo cuantil de una variable aleatoria discreta. Explica cómo se obtiene en la distribución Poisson a partir de la función de distribución acumulada. Señala por qué los cuantiles, percentiles y la mediana deben interpretarse con cuidado en distribuciones discretas.
+    </li> -->
+
+    <!-- <strong>Propiedades fundamentales y generalidades.</strong> -->
+    <li>
+      Describe al menos tres propiedades importantes de la distribución Poisson. Entre ellas, incluye su soporte, el papel del parámetro $\lambda$, la forma general de la distribución cuando $\lambda$ cambia y la interpretación probabilística de dicho parámetro.
+    </li>
+
+    <!-- <strong>Propiedad reproductiva.</strong> -->
+    <!-- <li>
+      
+      Sean $X \sim \text{Poisson}(\lambda_1)$ y $Y \sim \text{Poisson}(\lambda_2)$ variables aleatorias independientes. Demuestra, usando convolución discreta o funciones generadoras, que
+      $$X+Y \sim \text{Poisson}(\lambda_1+\lambda_2).$$
+      Explica la importancia de esta propiedad en problemas de conteo.
+    </li> -->
+  </ol>
+</div>
+      
       <div class="nota-box"> 
         <h1 class="number-title-practica">Ejercicio</h1>
         <p>Verifca que cada una de las siguientes funciones es una función de densidad:</p>
