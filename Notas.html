@@ -14,33 +14,42 @@
     <!-- This part is to load main.js -->
     <script type="text/javascript" src="./main.js"></script>
 
-
-
-    <!-- Next part is for new coomands -->
     <script>
-      window.MathJax = {
-        tex: {
-          macros: {
-            sen: "\\operatorname{sen}",
-            seg: ["\\overrightarrow{#1}", 1]
-          },
-          tags: "ams" /* this part is for numbered equations */
-        }
-      };
-    </script>
+  window.MathJax = {
+    tex: {
+      packages: {'[+]': ['dsfont']},
+      macros: {
+        sen: "\\operatorname{sen}",
+        seg: ["\\overrightarrow{#1}", 1],
+        id: "\\operatorname{id}",
+      },
+      tags: "ams",
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+    /*loader: {
+      load: ['[tex]/dsfont']
+    } */
+  };
+</script>
 
-    <!-- This part is for using single $ for latex input, instead of \(\) -->
-    <script>
-        MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-            },
-        svg: {
-            fontCache: 'global'
-        }
-    };
-    </script>
-    
+<script>
+  function toggleRespuestas(btn) {
+    var respuestas = btn.nextElementSibling;
+    if (respuestas.style.display === "none" || respuestas.style.display === "") {
+      respuestas.style.display = "block";
+      btn.textContent = "Ocultar";
+    } else {
+      respuestas.style.display = "none";
+      btn.textContent = "Solución";
+    }
+  }
+</script>
+ 
+<!-- Luego carga MathJax -->
+<script id="MathJax-script" async 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
     .lista{
@@ -87,7 +96,101 @@
 
   <body class="fondo-body" ><h1 class="page-title"> Notas</h1>  
 
-    <div class="links-box"  style = "font-family: 'Oldenburg', cursive; font-size: 200%;">
+  <div class="teorema-box">
+  <h1 class="title-practica">Teorema Teorema (Cambio de variable para densidades en una dimensión) - Versión 1</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea $X:\Omega\to\mathbb{R}$ una variable aleatoria con densidad $f$.
+    Sea $h:D\subset\mathbb{R}\to\mathbb{R}$, donde $D$ es un conjunto abierto, y suponga que se satisfacen las siguientes hipótesis:
+  </p>
+
+  <ol>
+    <li>$h$ es diferenciable en su dominio $D$.</li><br>
+    <li>$h$ es inyectiva; es decir, si $h(x)=h(y)$, entonces $x=y$.</li><br>
+    <li>El soporte de $f$ (o de $X$),
+      $$\mathrm{Supp}(f)=\{x;f(x)>0\},$$
+      está contenido en $D$.
+    </li><br>
+  </ol>
+
+  <p>
+    Entonces la densidad de la variable aleatoria $Y=h(X)$ está dada por
+    $$f_Y(y)=\left|\displaystyle{\frac{1}{h'(h^{-1}(y))}}\right|\,f(h^{-1}(y))\,\mathbf{1}_{h(D)}(y)$$
+    para todos los puntos $y$ tales que $f$ es continua en $h^{-1}(y)$.
+  </p>
+</div>
+
+  <div class="teorema-box">
+  <h1 class="title-practica">Teorema (Cambio de variable para densidades en una dimensión) - Versión 2</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea $X:\Omega\to\mathbb{R}$ una variable aleatoria absolutamente continua con densidad $f_X$.
+    Sea $I\subseteq\mathbb{R}$ un intervalo y sea $g:I\to\mathbb{R}$ una función de clase $C^1$ tal que:
+  </p>
+
+  <ol>
+    <li>$\mathbb{P}(X\in I)=1$.</li><br>
+    <li>$g$ es estrictamente monótona en $I$.</li><br>
+    <li>$g'(x)\neq 0$ para todo $x\in I$.</li><br>
+  </ol>
+
+  <p>
+    Defínase la variable aleatoria
+    $$Y=g(X).$$
+  </p>
+
+  <p>
+    Entonces $Y$ es absolutamente continua y su densidad está dada por
+    $$f_Y(y)=f_X\big(g^{-1}(y)\big)\left|\frac{d}{dy}g^{-1}(y)\right|\mathbf{1}_{g(I)}(y), \qquad y\in\mathbb{R}.$$
+  </p>
+
+  <p>
+    Equivalentemente, para $y\in g(I)$,
+    $$f_Y(y)=\frac{f_X(x)}{|g'(x)|}, \qquad \text{donde } x=g^{-1}(y),$$
+    y para $y\notin g(I)$,
+    $$f_Y(y)=0.$$
+  </p>
+</div>
+    
+<div class="teorema-box">
+  <h1 class="title-practica">Corolario</h1>
+
+  <p>
+    Sea $X$ una variable aleatoria con densidad $f$ y sea
+    $$Y=aX+b$$
+    con $a\neq 0$. Entonces la densidad de $Y$ está dada por
+    $$f_Y(y)=\frac{1}{|a|}\,f\!\left(\frac{y-b}{a}\right).$$
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Resuelve las siguientes integrales (ejemplo):
+  </p>
+  
+  <ol class="two-column">
+    <li>$2 + 3$</li>
+    <li>$3-2$</li>
+  </ol>
+
+  <button class="btn-toggle-respuestas" onclick="toggleRespuestas(this)">Solución</button>
+  
+  <div class="respuestas-container">
+    <h3>Soluciones:</h3>
+    <ol class="two-column">
+      <li>$5$</li>
+      <li>$-1$</li>
+    </ol>
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class="links-box"  style = "font-family: 'Oldenburg', cursive; font-size: 200%;"> -->
     <!-- <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Semanas/Semana1.html" target="_blank">Semana 1</a> 
     <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Semanas/Semana2.html" target="_blank">Semana 2</a> 
     <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Semanas/Semana3.html" target="_blank">Semana 3</a> 
@@ -103,7 +206,7 @@
     <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Semanas/Semana14.html" target="_blank">Semana 14</a>  -->
 
 
-</div>
+<!-- </div> -->
 
 
   </body>
