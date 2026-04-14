@@ -108,6 +108,142 @@
 
     <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos primer examen parcial</h1>   
 
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Realiza una exploración analítica de la distribución Poisson, denotada por $\text{Poisson}(\lambda)$, con $\lambda>0$. En tu desarrollo, explica con claridad su origen, su interpretación como modelo de conteo, su función de masa de probabilidad, su función de distribución, sus propiedades fundamentales y algunas de sus medidas descriptivas más importantes.
+  </p>
+
+  <ol>
+    <li>
+      Explica en qué tipos de situaciones aparece la distribución Poisson y por qué se utiliza para modelar el número de ocurrencias de un evento en un intervalo de tiempo, espacio, longitud o área.
+    </li>
+
+    <li>
+      Demuestra que la distribución Poisson puede obtenerse como caso límite de la distribución Binomial. En particular, si $X_n \sim \text{Binomial}(n,p)$, con $n \to \infty$, $p \to 0$ y $np=\lambda>0$ constante, prueba que para todo $x \in \mathbb{N}_{0}$ se cumple:
+      $$\lim_{n\to\infty}\binom{n}{x}p^x(1-p)^{n-x}=\frac{e^{-\lambda}\lambda^x}{x!}.$$
+    </li>
+
+    <li>
+      Escribe la función de masa de probabilidad de una variable aleatoria $X \sim \text{Poisson}(\lambda)$:
+      $$\mathbb{P}(X=x)=\frac{e^{-\lambda}\lambda^x}{x!}, \qquad x \in \mathbb{N}_{0}.$$
+      Explica por qué en este caso se habla de <i>función de masa de probabilidad</i> y no de <i>función de densidad</i>. Además, verifica que esta función satisface las condiciones básicas de una función de masa: no negatividad y normalización, es decir,
+      $$\sum_{x=0}^{\infty}\frac{e^{-\lambda}\lambda^x}{x!}=1.$$
+    </li>
+
+    <li>
+      Define la función de distribución acumulada
+      $$F(x)=\mathbb{P}(X\leq x).$$
+      Escribe su expresión en el caso Poisson y explica por qué se trata de una función escalonada. Describe su comportamiento y señala cómo se relaciona con la función de masa de probabilidad.
+    </li>
+    <li>
+      Si $X \sim \text{Poisson}(\lambda)$, demuestra que
+      $$\mathbb{E}[X]=\lambda \qquad \text{y} \qquad \mathrm{Var}(X)=\lambda.$$
+      Explica por qué esta distribución se caracteriza por tener media y varianza iguales. 
+    </li>
+
+    <!-- <li>
+      Describe al menos tres propiedades importantes de la distribución Poisson. Entre ellas, incluye su soporte, el papel del parámetro $\lambda$, la forma general de la distribución cuando $\lambda$ cambia y la interpretación probabilística de dicho parámetro.
+      En este ejercicio puedes apoyarte en gráficas elaboradas en Python.
+    </li> -->
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Realiza una exploración analítica de la distribución normal, denotada por $\mathcal{N}(\mu,\sigma^2)$, donde $\mu \in \mathbb{R}$ y $\sigma^2>0$. En tu desarrollo, explica con claridad su origen, su interpretación, su función de densidad, su función de distribución, sus propiedades fundamentales y algunas de sus medidas descriptivas más importantes.
+  </p>
+
+  <ol>
+    <li>
+      Explica en qué contextos aparece la distribución normal y por qué es uno de los modelos más importantes en probabilidad y estadística.
+    </li>
+
+    <li>
+      Considera la función de densidad de una variable aleatoria $X \sim \mathcal{N}(\mu,\sigma^2)$:
+      $$f_{X}(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right), \qquad x \in \mathbb{R}.$$
+      Utiliza algún software para graficar esta densidad y explica la interpretación de los parámetros $\mu$ y $\sigma^2$. Describe cómo cambia la gráfica cuando se modifica $\mu$ y cómo cambia cuando se modifica $\sigma^2$.
+    </li>
+
+    <li>
+      Explica por qué en este caso se habla de <i>función de densidad</i> y no de <i>función de masa de probabilidad</i>. Justifica que $f_X(x)\geq 0$ para todo $x \in \mathbb{R}$ y verifica que
+      $$\int_{-\infty}^{\infty} f_X(x)\,dx = 1.$$
+    </li>
+
+    <li>
+      Considera la función de distribución acumulada
+      $$F(x)=\mathbb{P}(X\leq x).$$
+      Expresa su forma general y explica por qué, en general, no puede escribirse mediante una fórmula elemental cerrada.
+    </li>
+
+    <li>
+      Introduce y explica brevemente el caso particular de la distribución normal estándar:
+      $$\Phi(z)=\int_{-\infty}^{z}\frac{1}{\sqrt{2\pi}}e^{-t^2/2}\,dt.$$
+    </li>
+
+    <li>
+      Si $X \sim \mathcal{N}(\mu,\sigma^2)$, demuestra que la variable
+      $$Z=\frac{X-\mu}{\sigma}$$
+      tiene distribución normal estándar, es decir, $Z \sim \mathcal{N}(0,1)$. Explica por qué este resultado es fundamental para calcular probabilidades en una distribución normal general.
+    </li>
+
+    <li>
+      Demuestra que si $X \sim \mathcal{N}(\mu,\sigma^2)$, entonces
+      $$\mathbb{E}[X]=\mu \qquad \text{y} \qquad \mathrm{Var}(X)=\sigma^2.$$
+    </li>
+
+    <li>
+      Utiliza la simetría de la distribución normal para justificar que la media, la mediana y la moda coinciden. Es decir,
+      $$\text{media}=\text{mediana}=\text{moda}=\mu.$$
+    </li>
+  </ol>
+</div>
+      
+      <div class="nota-box"> 
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <p>Verifca que cada una de las siguientes funciones es una función de densidad:</p>
+        <p>
+        <ol>
+            <li>$ f(x)=
+              \begin{cases}
+                (n+1)x^n, & \text{si } x\in(0,1),\\[2mm]
+                0, & \text{en otro caso},
+                \end{cases}$<br>
+              donde  $n$ es un entero no negativo.
+            </li><br>
+            <li>
+               $f(x)=\begin{cases}
+                (n-1)x^{-n}, & \text{si } x\in(1,\infty),\\[2mm]
+                0, & \text{en otro caso},
+                \end{cases}
+               $
+               donde  $n\in\{2,3,\dots\}$.
+            </li><br>
+            <li>
+            $f(x)=
+            \begin{cases}
+            \lambda e^{-\lambda x} & \text{si } x>0,\\
+            0 & \text{en otro caso},
+            \end{cases}
+            \quad \text{en donde } \lambda>0 \text{ y }
+            f(x)=\displaystyle{\frac{1}{\sqrt{2\pi}}}e^{-\frac{1}{2}x^2}
+            \quad \text{para cualquier } x\in\mathbb{R}.$
+            </li><br>
+            <li>
+            $f(x)=
+              \begin{cases}
+              \dfrac{1}{3}, & \text{si } x\in(0,1),\\[2mm]
+              \dfrac{1}{6}, & \text{si } x\in(2,3),\\[2mm]
+              \dfrac{1}{2}, & \text{si } x\in(4,5),\\[2mm]
+              0, & \text{en otro caso}.
+              \end{cases}
+            $
+          </li><br>
+          </p>
+          </ol> 
+        
+      </div>
 
 
       <div class="nota-box">
