@@ -1,0 +1,237 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="./main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="./style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    <script>
+  function toggleRespuestas(btn) {
+    var respuestas = btn.nextElementSibling;
+    if (respuestas.style.display === "none" || respuestas.style.display === "") {
+      respuestas.style.display = "block";
+      btn.textContent = "Ocultar";
+    } else {
+      respuestas.style.display = "none";
+      btn.textContent = "Mostrar Respuestas";
+    }
+  }
+</script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Notas Probabilidad II</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Examenes.html"> Archivos </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadDOS/Links.html"> Links</a> </li> -->
+          </ul>
+          </nav>
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+          
+      <title>Notas</title>
+      </head>  
+
+      <body class="fondo-body" ><h1 class="page-title"> Notas</h1>  
+
+      <div class="definicion-box">
+  <h1 class="title-practica">Definición (Matriz jacobiana de una transformación)</h1>
+
+  <p>
+    Sea $U\subseteq \mathbb{R}^{n}$ un conjunto abierto y sea $\varphi:U\to\mathbb{R}^{m}$ una transformación dada por
+    $$\varphi(x)=\bigl(\varphi_1(x),\varphi_2(x),\ldots,\varphi_m(x)\bigr),$$
+    donde cada función componente $\varphi_i:U\to\mathbb{R},\qquad i=1,\ldots,m,$ es una función real de $n$ variables.
+    Para $x=(x_1,\ldots,x_n)\in U$, supóngase que existen todas las derivadas parciales 
+    $$\frac{\partial \varphi_i}{\partial x_j}(x),
+    \qquad i=1,\ldots,m,\quad j=1,\ldots,n.$$
+  </p>
+
+  <p>
+    La <strong>matriz jacobiana</strong> de $\varphi$ en el punto $x$ se define como la matriz de tamaño $m\times n$ dada por
+    $$
+    J_{\varphi}(x)
+    =
+    \begin{pmatrix}
+    \dfrac{\partial \varphi_1}{\partial x_1}(x) &
+    \dfrac{\partial \varphi_1}{\partial x_2}(x) &
+    \cdots &
+    \dfrac{\partial \varphi_1}{\partial x_n}(x)
+    \\[6pt]
+    \dfrac{\partial \varphi_2}{\partial x_1}(x) &
+    \dfrac{\partial \varphi_2}{\partial x_2}(x) &
+    \cdots &
+    \dfrac{\partial \varphi_2}{\partial x_n}(x)
+    \\[6pt]
+    \vdots & \vdots & \ddots & \vdots
+    \\[6pt]
+    \dfrac{\partial \varphi_m}{\partial x_1}(x) &
+    \dfrac{\partial \varphi_m}{\partial x_2}(x) &
+    \cdots &
+    \dfrac{\partial \varphi_m}{\partial x_n}(x)
+    \end{pmatrix}.$$
+  </p>
+
+  <p>
+    Es decir, la entrada ubicada en el renglón $i$ y la columna $j$ de la matriz jacobiana está dada por
+    $$
+    \bigl(J_{\varphi}(x)\bigr)_{ij}
+    =
+    \frac{\partial \varphi_i}{\partial x_j}(x),
+    \qquad i=1,\ldots,m,\quad j=1,\ldots,n.
+    $$
+  </p>
+
+
+</div>
+        <div class="teorema-box">
+  <h1 class="title-practica">Teorema (Cambio de variable para vectores aleatorios)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Si $X:\Omega\to\mathbb{R}^{d}$ un vector aleatorio absolutamente continuo,
+    con función de densidad conjunta $f_X$ con soporte en $\mathcal{O}\subseteq\mathbb{R}^{d}$ un conjunto abierto y sea 
+    $\mathcal{O}'\subseteq\mathbb{R}^{d}$ otro conjunto abierto tal que $\varphi:\mathcal{O}\to\mathcal{O}'$ 
+    es biyectiva, diferenciable con derivadas continuas, su inversa $\varphi^{-1}:\mathcal{O}'\to\mathcal{O}$
+    también es diferenciable con derivadas continuas, entonces el vector aleatorio 
+    $$Y:=\varphi(X).$$
+    es absolutamente continuo y su función de densidad conjunta está dada por
+    $$f_Y(y) =
+    f_X\bigl(\varphi^{-1}(y)\bigr)
+    \left|\det J\varphi^{-1}(y)\right|,
+    \qquad y\in\mathcal{O}'.$$
+  </p>
+
+  <p>
+    Equivalentemente, si se extiende $f_Y$ a todo $\mathbb{R}^{d}$, entonces
+    $$f_Y(y)
+    =
+    f_X\bigl(\varphi^{-1}(y)\bigr)
+    \left|\det J\varphi^{-1}(y)\right|
+    \mathbf{1}_{\mathcal{O}'}(y),
+    \qquad y\in\mathbb{R}^{d}.$$
+  </p>
+
+</div>
+
+ <div class="nota-box">
+  <h1 class="title-practica"> Observación</h1>
+  
+  <p>La función  de densidad en el Teorema anterios puede ser expresada en términos del jacobiano de la transformación directa,
+    si $y=\varphi(x)$, entonces
+    $$J\varphi^{-1}(y)=\bigl(J\varphi(x)\bigr)^{-1},$$
+    y por tanto
+    $$\left|\det J\varphi^{-1}(y)\right|
+    =
+    \frac{1}{\left|\det J\varphi(x)\right|}.$$
+  </p>
+
+  <p>
+    En consecuencia, también puede escribirse
+    $$f_Y(\varphi(x))
+    =
+    \frac{f_X(x)}
+    {\left|\det J\varphi(x)\right|},
+    \qquad x\in\mathcal{O}.$$
+  </p>
+
+  <p>
+    Si denotamos por
+    $$J_{\varphi^{-1}}(y):=\det J\varphi^{-1}(y),$$
+    entonces la fórmula anterior toma la forma compacta
+    $$f_Y(y)
+    =
+    f_X\bigl(\varphi^{-1}(y)\bigr)
+    \left|J_{\varphi^{-1}}(y)\right|
+    \mathbf{1}_{\mathcal{O}'}(y).$$
+  </p>
+
+ </div>
+  </body>
+
+
+</html>
