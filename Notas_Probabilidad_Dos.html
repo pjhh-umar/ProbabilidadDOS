@@ -123,46 +123,45 @@
       <div class="definicion-box">
   <h1 class="title-practica">Definición (Matriz jacobiana de una transformación)</h1>
 
-  <p>
-    Sea $U\subseteq \mathbb{R}^{n}$ un conjunto abierto y sea $\varphi:U\to\mathbb{R}^{m}$ una transformación dada por
-    $$\varphi(x)=\bigl(\varphi_1(x),\varphi_2(x),\ldots,\varphi_m(x)\bigr),$$
-    donde cada función componente $\varphi_i:U\to\mathbb{R},\qquad i=1,\ldots,m,$ es una función real de $n$ variables.
-    Para $x=(x_1,\ldots,x_n)\in U$, supóngase que existen todas las derivadas parciales 
-    $$\frac{\partial \varphi_i}{\partial x_j}(x),
-    \qquad i=1,\ldots,m,\quad j=1,\ldots,n.$$
+  <p>Sea $U\subseteq \mathbb{R}^{n}$ un conjunto abierto y sea $\varphi:U\to\mathbb{R}^{m}$ una transformación dada por
+    $$\varphi(\vec{x})=\bigl(\varphi_1(\vec{x}),\varphi_2(\vec{x}),\ldots,\varphi_m(\vec{x})\bigr),$$
+    donde $ \vec{x} = (x_{1}, \ldots, x_{n}) \in \mathbb{R}^{n}$ y cada función componente $\varphi_i:U\to\mathbb{R}, i=1,\ldots,m,$ 
+    es una función real de $n$ variables.
+    Supongamos que para todo $\vec{x}=(x_1,\ldots,x_n)\in U$ y cualesquiera $i \in \{1,\ldots,m\},j\in \{1,\ldots,n\}$, existe la derivada parcial
+    $$\frac{\partial \varphi_i}{\partial x_j}(\vec{x}).$$
   </p>
 
   <p>
-    La <strong>matriz jacobiana</strong> de $\varphi$ en el punto $x$ se define como la matriz de tamaño $m\times n$ dada por
+    Se define la <strong>matriz jacobiana</strong> de $\varphi$ en el punto $x$ como la matriz de tamaño $m\times n$ dada por
     $$
-    J_{\varphi}(x)
+    J_{\varphi}(\vec{x})
     =
     \begin{pmatrix}
-    \dfrac{\partial \varphi_1}{\partial x_1}(x) &
-    \dfrac{\partial \varphi_1}{\partial x_2}(x) &
+    \dfrac{\partial \varphi_1}{\partial x_1}(\vec{x}) &
+    \dfrac{\partial \varphi_1}{\partial x_2}(\vec{x}) &
     \cdots &
-    \dfrac{\partial \varphi_1}{\partial x_n}(x)
+    \dfrac{\partial \varphi_1}{\partial x_n}(\vec{x})
     \\[6pt]
-    \dfrac{\partial \varphi_2}{\partial x_1}(x) &
-    \dfrac{\partial \varphi_2}{\partial x_2}(x) &
+    \dfrac{\partial \varphi_2}{\partial x_1}(\vec{x}) &
+    \dfrac{\partial \varphi_2}{\partial x_2}(\vec{x}) &
     \cdots &
-    \dfrac{\partial \varphi_2}{\partial x_n}(x)
+    \dfrac{\partial \varphi_2}{\partial x_n}(\vec{x})
     \\[6pt]
     \vdots & \vdots & \ddots & \vdots
     \\[6pt]
-    \dfrac{\partial \varphi_m}{\partial x_1}(x) &
-    \dfrac{\partial \varphi_m}{\partial x_2}(x) &
+    \dfrac{\partial \varphi_m}{\partial x_1}(\vec{x}) &
+    \dfrac{\partial \varphi_m}{\partial x_2}(\vec{x}) &
     \cdots &
-    \dfrac{\partial \varphi_m}{\partial x_n}(x)
+    \dfrac{\partial \varphi_m}{\partial x_n}(\vec{x})
     \end{pmatrix}.$$
   </p>
 
   <p>
     Es decir, la entrada ubicada en el renglón $i$ y la columna $j$ de la matriz jacobiana está dada por
     $$
-    \bigl(J_{\varphi}(x)\bigr)_{ij}
+    \bigl(J_{\varphi}(\vec{x})\bigr)_{ij}
     =
-    \frac{\partial \varphi_i}{\partial x_j}(x),
+    \frac{\partial \varphi_i}{\partial x_j}(\vec{x}),
     \qquad i=1,\ldots,m,\quad j=1,\ldots,n.
     $$
   </p>
@@ -173,27 +172,19 @@
   <h1 class="title-practica">Teorema (Cambio de variable para vectores aleatorios)</h1>
 
   <p>
-    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Si $X:\Omega\to\mathbb{R}^{d}$ un vector aleatorio absolutamente continuo,
-    con función de densidad conjunta $f_X$ con soporte en $\mathcal{O}\subseteq\mathbb{R}^{d}$ un conjunto abierto y sea 
-    $\mathcal{O}'\subseteq\mathbb{R}^{d}$ otro conjunto abierto tal que $\varphi:\mathcal{O}\to\mathcal{O}'$ 
-    es biyectiva, diferenciable con derivadas continuas, su inversa $\varphi^{-1}:\mathcal{O}'\to\mathcal{O}$
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Si $X:\Omega\to\mathbb{R}^{n}$ un vector aleatorio absolutamente continuo,
+    con función de densidad conjunta $f_X$ con soporte en un conjunto abierto $U\subseteq\mathbb{R}^{n}$ y sea 
+    $U^{'}\subseteq\mathbb{R}^{m}$ otro conjunto abierto tal que $\varphi:U\to U^{'}$ 
+    es biyectiva, diferenciable con derivadas continuas, su inversa $\varphi^{-1}:U \to U^{'}$
     también es diferenciable con derivadas continuas, entonces el vector aleatorio 
-    $$Y:=\varphi(X).$$
+    $$Y:=\varphi(\vec{x}).$$
     es absolutamente continuo y su función de densidad conjunta está dada por
-    $$f_Y(y) =
-    f_X\bigl(\varphi^{-1}(y)\bigr)
-    \left|\det J\varphi^{-1}(y)\right|,
-    \qquad y\in\mathcal{O}'.$$
+    $$f_Y(y) = f_X\bigl(\varphi^{-1}(y)\bigr)\left|\det J\varphi^{-1}(y)\right|,\qquad y\in U^{'}.$$
   </p>
 
   <p>
     Equivalentemente, si se extiende $f_Y$ a todo $\mathbb{R}^{d}$, entonces
-    $$f_Y(y)
-    =
-    f_X\bigl(\varphi^{-1}(y)\bigr)
-    \left|\det J\varphi^{-1}(y)\right|
-    \mathbf{1}_{\mathcal{O}'}(y),
-    \qquad y\in\mathbb{R}^{d}.$$
+    $$f_Y(y) = f_X\bigl(\varphi^{-1}(y)\bigr)\left|\det J\varphi^{-1}(y)\right|\mathbf{1}_{U^{'}}(y),\qquad y\in\mathbb{R}^{m}.$$
   </p>
 
 </div>
@@ -202,20 +193,20 @@
   <h1 class="title-practica"> Observación</h1>
   
   <p>La función  de densidad en el Teorema anterios puede ser expresada en términos del jacobiano de la transformación directa,
-    si $y=\varphi(x)$, entonces
-    $$J\varphi^{-1}(y)=\bigl(J\varphi(x)\bigr)^{-1},$$
+    si $y=\varphi(\vec{x})$, entonces
+    $$J\varphi^{-1}(y)=\bigl(J\varphi(\vec{x})\bigr)^{-1},$$
     y por tanto
     $$\left|\det J\varphi^{-1}(y)\right|
     =
-    \frac{1}{\left|\det J\varphi(x)\right|}.$$
+    \frac{1}{\left|\det J\varphi(\vec{x})\right|}.$$
   </p>
 
   <p>
     En consecuencia, también puede escribirse
-    $$f_Y(\varphi(x))
+    $$f_Y(\varphi(\vec{x}))
     =
-    \frac{f_X(x)}
-    {\left|\det J\varphi(x)\right|},
+    \frac{f_X(\vec{x})}
+    {\left|\det J\varphi(\vec{x})\right|},
     \qquad x\in\mathcal{O}.$$
   </p>
 
