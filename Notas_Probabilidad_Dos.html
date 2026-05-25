@@ -184,7 +184,7 @@
 
   <p>
     Equivalentemente, si se extiende $f_Y$ a todo $\mathbb{R}^{d}$, entonces
-    $$f_Y(\vec{y}) = f_X\bigl(\varphi^{-1}(\vec{y})\bigr)\left|\det J\varphi^{-1}(\vec{y})\right|\mathbf{1}_{U^{'}}(\vec{y}),\qquad \vec{y}\in\mathbb{R}^{m}.$$
+    $$f_Y(\vec{y}) = f_X\bigl(\varphi^{-1}(\vec{y})\bigr) \det \left(J\varphi^{-1}(\vec{y}) \right) \mathbf{1}_{U^{'}}(\vec{y}),\qquad \vec{y}\in\mathbb{R}^{m}.$$
   </p>
 
 </div>
@@ -192,13 +192,13 @@
  <div class="nota-box">
   <h1 class="title-practica"> Observación</h1>
   
-  <p>La función  de densidad en el Teorema anterios puede ser expresada en términos del jacobiano de la transformación directa,
+  <p>La función  de densidad en el Teorema anterior puede ser expresada en términos del jacobiano de la transformación directa,
     si $y=\varphi(\vec{x})$, entonces
     $$J\varphi^{-1}(\vec{y})=\bigl(J\varphi(\vec{x})\bigr)^{-1},$$
     y por tanto
     $$\left|\det J\varphi^{-1}(\vec{y})\right|
     =
-    \frac{1}{\left|\det J\varphi(\vec{x})\right|}.$$
+    \frac{1}{\det \left( J\varphi(\vec{x})\right)}.$$
   </p>
 
   <p>
@@ -207,7 +207,7 @@
     =
     \frac{f_X(\vec{x})}
     {\left|\det J\varphi(\vec{x})\right|},
-    \qquad x\in\mathcal{O}.$$
+    \qquad x\in U.$$
   </p>
 
   <p>
@@ -218,7 +218,7 @@
     =
     f_X\bigl(\varphi^{-1}(\vec{y})\bigr)
     \left|J_{\varphi^{-1}}(\vec{y})\right|
-    \mathbf{1}_{\mathcal{O}'}(\vec{y}).$$
+    \mathbf{1}_{U^{'}}(\vec{y}).$$
   </p>
 
  </div>
