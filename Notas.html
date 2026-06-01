@@ -175,7 +175,7 @@
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Si $X:\Omega\to\mathbb{R}^{n}$ un vector aleatorio absolutamente continuo,
     con función de densidad conjunta $f_X$ con soporte en un conjunto abierto $U\subseteq\mathbb{R}^{n}$ y sea 
     $U^{'}\subseteq\mathbb{R}^{m}$ otro conjunto abierto tal que $\varphi:U\to U^{'}$ 
-    es biyectiva, diferenciable con derivadas continuas, su inversa $\varphi^{-1}:U \to U^{'}$
+    es biyectiva, diferenciable con derivadas parciales continuas, su inversa $\varphi^{-1}:U \to U^{'}$
     también es diferenciable con derivadas continuas, entonces el vector aleatorio 
     $$Y:=\varphi(\vec{x}).$$
     es absolutamente continuo y su función de densidad conjunta está dada por
@@ -183,8 +183,8 @@
   </p>
 
   <p>
-    Equivalentemente, si se extiende $f_Y$ a todo $\mathbb{R}^{d}$, entonces
-    $$f_Y(\vec{y}) = f_X\bigl(\varphi^{-1}(\vec{y})\bigr) \det \left(J\varphi^{-1}(\vec{y}) \right) \mathbf{1}_{U^{'}}(\vec{y}),\qquad \vec{y}\in\mathbb{R}^{m}.$$
+    Equivalentemente, si se extiende $f_Y$ a todo $\mathbb{R}^{n}$, entonces
+    $$f_Y(\vec{y}) = f_X\bigl(\varphi^{-1}(\vec{y})\bigr) \left | \det \left(J\varphi^{-1}(\vec{y}) \right) \right|\mathbf{1}_{U^{'}}(\vec{y}),\qquad \vec{y}\in\mathbb{R}^{m}.$$
   </p>
 
 </div>
@@ -198,7 +198,7 @@
     y por tanto
     $$\left|\det J\varphi^{-1}(\vec{y})\right|
     =
-    \frac{1}{\det \left( J\varphi(\vec{x})\right)}.$$
+    \frac{1}{\left | \det \left( J\varphi(\vec{x})\right) \right|}.$$
   </p>
 
   <p>
@@ -222,6 +222,1591 @@
   </p>
 
  </div>
+
+
+ <div class="definicion-box">
+  <h1 class="title-practica">Definición (Distribución multinomial)</h1>
+
+  <p>
+    Sea $m\in\mathbb{N}$, con $m\geq 2$, y sea
+    $$p=(p_1,p_2,\ldots,p_m)$$
+    un vector de probabilidades, es decir,
+    $$p_i\geq 0,\qquad i=1,\ldots,m,$$
+    y
+    $$\sum_{i=1}^{m}p_i=1.$$
+  </p>
+
+  <p>
+    Sea $n\in\mathbb{N}$. Consideremos un experimento aleatorio que se repite $n$ veces de manera independiente, bajo las siguientes condiciones:
+  </p>
+
+  <ul>
+    <li>
+      En cada ensayo ocurre exactamente una de $m$ categorías posibles.
+    </li>
+    <li>
+      Las categorías son mutuamente excluyentes.
+    </li>
+    <li>
+      La probabilidad de observar la categoría $i$ en cualquier ensayo es $p_i$, para $i=1,\ldots,m$.
+    </li>
+    <li>
+      Las probabilidades $p_1,\ldots,p_m$ permanecen constantes en todos los ensayos.
+    </li>
+  </ul>
+
+  <p>
+    Definimos el vector aleatorio
+    $$X=(X_1,X_2,\ldots,X_m),$$
+    donde $X_i$ representa el número de veces que ocurre la categoría $i$ en los $n$ ensayos.
+  </p>
+
+  <p>
+    Entonces
+    $$X_i\in\mathbb{N}_{0},\qquad i=1,\ldots,m,$$
+    y necesariamente se cumple que
+    $$X_1+X_2+\cdots+X_m=n.$$
+  </p>
+
+  <p>
+    Decimos que el vector aleatorio $X=(X_1,\ldots,X_m)$ tiene <strong>distribución multinomial</strong> con parámetros $n$ y $(p_1,\ldots,p_m)$ si su función de probabilidad está dada por
+    $$
+  p_X(x_1,\ldots,x_m)
+  =
+  \mathbb{P}(X_1=x_1,\ldots,X_m=x_m)
+  =
+  \begin{cases}
+  \displaystyle{
+  \frac{n!}{x_1!x_2!\cdots x_m!}
+  p_1^{x_1}p_2^{x_2}\cdots p_m^{x_m}},
+  & \text{si } (x_1,\ldots,x_m)\in\mathbb{N}_{0}^{m}
+  \text{ y } x_1+\cdots+x_m=n, \\[12pt]
+  0,
+  & \text{en otro caso.}
+  \end{cases}
+  $$
+  </p>
+
+  <p>
+    En este caso escribimos
+    $$
+    X=(X_1,\ldots,X_m)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_m).
+    $$
+    También puede escribirse de forma compacta como
+    $$
+    X\sim \operatorname{Multinomial}(n,p),
+    $$
+    donde $p=(p_1,\ldots,p_m)$.
+  </p>
+
+</div>
+
+
+<!-- <div class="nota-box">
+  <h1 class="title-practica">Observación (Soporte de la distribución multinomial)</h1>
+
+  <p>
+    El conjunto de valores posibles del vector aleatorio $X=(X_1,\ldots,X_m)$ está dado por
+    $$
+    S_n=
+    \left\{
+    (x_1,\ldots,x_m)\in\mathbb{N}_{0}^{m}:
+    x_1+\cdots+x_m=n
+    \right\}.
+    $$
+  </p>
+
+  <p>
+    Por tanto, la distribución multinomial no está concentrada en todo $\mathbb{N}_{0}^{m}$, sino únicamente en el conjunto $S_n$.
+    Esto significa que las componentes $X_1,\ldots,X_m$ no pueden tomar valores arbitrarios de manera independiente, pues siempre deben satisfacer la restricción
+    $$
+    X_1+\cdots+X_m=n.
+    $$
+  </p>
+
+  <p>
+    Equivalentemente, la función de probabilidad puede escribirse como
+    $$
+    p_X(x_1,\ldots,x_m)
+    =
+    \frac{n!}{x_1!\cdots x_m!}
+    p_1^{x_1}\cdots p_m^{x_m}
+    \mathbf{1}_{S_n}(x_1,\ldots,x_m),
+    $$
+    para $(x_1,\ldots,x_m)\in\mathbb{N}_{0}^{m}$.
+  </p>
+
+</div> -->
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Interpretación del coeficiente multinomial)</h1>
+
+  <p>
+    El coeficiente
+    $$
+    \frac{n!}{x_1!x_2!\cdots x_m!}
+    $$
+    se llama <strong>coeficiente multinomial</strong>.
+  </p>
+
+  <p>
+    Este coeficiente representa el número de formas distintas en que pueden ordenarse $x_1$ ocurrencias de la categoría $1$, $x_2$ ocurrencias de la categoría $2$, y así sucesivamente, hasta $x_m$ ocurrencias de la categoría $m$, dentro de una secuencia de $n$ ensayos.
+  </p>
+<!-- 
+  <p>
+    Por ejemplo, una secuencia particular con $x_i$ ocurrencias de la categoría $i$, para $i=1,\ldots,m$, tiene probabilidad
+    $$
+    p_1^{x_1}p_2^{x_2}\cdots p_m^{x_m}.
+    $$
+  </p>
+
+  <p>
+    Como existen
+    $$
+    \frac{n!}{x_1!x_2!\cdots x_m!}
+    $$
+    secuencias distintas con esas mismas frecuencias, se obtiene la fórmula
+    $$
+    \mathbb{P}(X_1=x_1,\ldots,X_m=x_m)
+    =
+    \frac{n!}{x_1!\cdots x_m!}
+    p_1^{x_1}\cdots p_m^{x_m}.
+    $$
+  </p> -->
+
+</div>
+
+<!-- 
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Construcción mediante variables indicadoras)</h1>
+
+  <p>
+    Una forma formal de construir una distribución multinomial es la siguiente.
+    Sean
+    $$Y_1,Y_2,\ldots,Y_n$$
+    variables aleatorias independientes e idénticamente distribuidas con valores en el conjunto $\{1,\ldots,m\}$, tales que
+    $$
+    \mathbb{P}(Y_j=i)=p_i,
+    \qquad i=1,\ldots,m,\quad j=1,\ldots,n.
+    $$
+  </p>
+
+  <p>
+    Para cada categoría $i$, definimos
+    $$
+    X_i=\sum_{j=1}^{n}\mathbf{1}_{\{Y_j=i\}},
+    \qquad i=1,\ldots,m.
+    $$
+  </p>
+
+  <p>
+    La variable aleatoria $X_i$ cuenta cuántas veces aparece la categoría $i$ entre los $n$ ensayos. Por lo tanto,
+    $$
+    X=(X_1,\ldots,X_m)
+    $$
+    tiene distribución multinomial con parámetros $n$ y $(p_1,\ldots,p_m)$, es decir,
+    $$
+    (X_1,\ldots,X_m)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_m).
+    $$
+  </p>
+
+</div> -->
+
+
+<div class="teorema-box">
+  <h1 class="title-practica"> Proposición </h1>
+
+  <p>
+    <!-- <p>
+    En efecto, si $m=2$, entonces
+    $$
+    (X_1,X_2)\sim \operatorname{Multinomial}(n;p,1-p).
+    $$
+  </p>
+
+  <p>
+    Como
+    $$
+    X_1+X_2=n,
+    $$
+    se tiene que
+    $$
+    X_2=n-X_1.
+    $$
+  </p>
+
+  <p>
+    Por tanto, basta conocer una de las dos componentes. En este caso,
+    $$
+    X_1\sim \operatorname{Binomial}(n,p).
+    $$
+  </p> -->
+
+  
+    Si $(X_1,\ldots,X_m)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_m),$
+    entonces, para cada $i=1,\ldots,m$,
+    $$X_i\sim \operatorname{Binomial}(n,p_i).
+    $$
+  </p>
+  <p>
+    En este sentido, la distribución multinomial generaliza a la distribución binomial.
+  </p>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Dependencia entre las componentes)</h1>
+
+  <p>
+    Aunque cada componente $X_i$ tiene distribución binomial con parámetros $n$ y $p_i$, las variables aleatorias
+    $$
+    X_1,\ldots,X_m
+    $$
+    no son independientes.
+  </p>
+
+  <p>
+    La razón es que siempre se cumple la restricción
+    $$
+    X_1+\cdots+X_m=n.
+    $$
+  </p>
+
+  <p>
+    En particular, si se conocen $m-1$ componentes del vector, la última queda completamente determinada:
+    $$
+    X_m=n-X_1-\cdots-X_{m-1}.
+    $$
+  </p>
+
+  <!-- <p>
+    Esta restricción produce dependencia negativa entre categorías distintas. Intuitivamente, si una categoría ocurre muchas veces, quedan menos ensayos disponibles para las demás categorías.
+  </p> -->
+
+</div>
+
+
+<!-- <div class="teorema-box">
+  <h1 class="title-practica">Propiedades básicas de la distribución multinomial</h1>
+
+  <p>
+    Sea
+    $$
+    X=(X_1,\ldots,X_m)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_m).
+    $$
+    Entonces, para cada $i=1,\ldots,m$, se tiene
+    $$
+    \mathbb{E}[X_i]=np_i.
+    $$
+  </p>
+
+  <p>
+    Además,
+    $$
+    \operatorname{Var}(X_i)=np_i(1-p_i),
+    \qquad i=1,\ldots,m.
+    $$
+  </p>
+
+  <p>
+    Si $i\neq j$, entonces
+    $$
+    \operatorname{Cov}(X_i,X_j)=-np_ip_j.
+    $$
+  </p>
+
+  <p>
+    En forma matricial, si $p=(p_1,\ldots,p_m)^{\mathsf{T}}$, entonces la matriz de covarianzas de $X$ está dada por
+    $$
+    \operatorname{Cov}(X)
+    =
+    n\left(\operatorname{diag}(p)-pp^{\mathsf{T}}\right).
+    $$
+  </p>
+
+</div> -->
+
+<!-- <div class="definicion-box">
+  <h1 class="title-practica">Definición (Esperanza matemática)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria real.
+  </p>
+
+  <p>
+    Decimos que $X$ es <strong>integrable</strong> si
+    $$
+    \mathbb{E}[|X|]<\infty.
+    $$
+    En este caso, se define la <strong>esperanza matemática</strong> o <strong>valor esperado</strong> de $X$ como
+    $$
+    \mathbb{E}[X]=\int_{\Omega}X(\omega)\,d\mathbb{P}(\omega).
+    $$
+  </p>
+
+  <p>
+    La esperanza $\mathbb{E}[X]$ representa el valor promedio teórico de la variable aleatoria $X$ respecto a la medida de probabilidad $\mathbb{P}$.
+  </p>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Esperanza en los casos discreto y continuo)</h1>
+
+  <p>
+    Si $X$ es una variable aleatoria discreta que toma valores en un conjunto numerable $S\subseteq\mathbb{R}$, entonces
+    $$
+    \mathbb{E}[X]
+    =
+    \sum_{x\in S}x\,\mathbb{P}(X=x),
+    $$
+    siempre que
+    $$
+    \sum_{x\in S}|x|\,\mathbb{P}(X=x)<\infty.
+    $$
+  </p>
+
+  <p>
+    Si $X$ es una variable aleatoria absolutamente continua con función de densidad $f_X$, entonces
+    $$
+    \mathbb{E}[X]
+    =
+    \int_{-\infty}^{\infty}x f_X(x)\,dx,
+    $$
+    siempre que
+    $$
+    \int_{-\infty}^{\infty}|x|f_X(x)\,dx<\infty.
+    $$
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Propiedades básicas de la esperanza</h1>
+
+  <p>
+    Sean $X,Y$ variables aleatorias integrables y sean $a,b\in\mathbb{R}$. Entonces:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Linealidad:</strong>
+      $$
+      \mathbb{E}[aX+bY]=a\mathbb{E}[X]+b\mathbb{E}[Y].
+      $$
+    </li>
+
+    <li>
+      <strong>Esperanza de una constante:</strong> si $c\in\mathbb{R}$, entonces
+      $$
+      \mathbb{E}[c]=c.
+      $$
+    </li>
+
+    <li>
+      <strong>Monotonía:</strong> si $X\leq Y$ casi seguramente, entonces
+      $$
+      \mathbb{E}[X]\leq \mathbb{E}[Y].
+      $$
+    </li>
+
+    <li>
+      <strong>Positividad:</strong> si $X\geq 0$ casi seguramente, entonces
+      $$
+      \mathbb{E}[X]\geq 0.
+      $$
+    </li>
+
+    <li>
+      <strong>Producto bajo independencia:</strong> si $X$ y $Y$ son independientes e integrables, entonces, bajo condiciones de integrabilidad adecuadas,
+      $$
+      \mathbb{E}[XY]=\mathbb{E}[X]\mathbb{E}[Y].
+      $$
+    </li>
+  </ul>
+
+</div> -->
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Esperanza de un vector aleatorio)</h1>
+
+  <p>
+    Sea
+    $$
+    X=(X_1,\ldots,X_n)
+    $$
+    un vector aleatorio con valores en $\mathbb{R}^{n}$.
+  </p>
+
+  <p>
+    Si cada componente $X_i$ es integrable, es decir,
+    $$
+    \mathbb{E}[|X_i|]<\infty,\qquad i=1,\ldots,n,
+    $$
+    entonces se define la <strong>esperanza</strong> de $X$ componente a componente como
+    $$
+    \mathbb{E}[X]
+    =
+    \begin{pmatrix}
+    \mathbb{E}[X_1]\\
+    \mathbb{E}[X_2]\\
+    \vdots\\
+    \mathbb{E}[X_n]
+    \end{pmatrix}.
+    $$
+  </p>
+
+  <p>
+    Al vector
+    $$
+    \mu=\mathbb{E}[X]
+    $$
+    se le llama <strong>vector de medias</strong> de $X$.
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Propiedades de la esperanza de un vector aleatorio</h1>
+
+  <p>
+    Sea $X$ un vector aleatorio con valores en $\mathbb{R}^{n}$ tal que $\mathbb{E}[X]$ existe. Si $A$ es una matriz real de tamaño $k\times n$ y $b\in\mathbb{R}^{k}$, entonces
+    $$
+    \mathbb{E}[AX+b]=A\mathbb{E}[X]+b.
+    $$
+  </p>
+
+  <p>
+    En particular, para todo $a\in\mathbb{R}^{n}$,
+    $$
+    \mathbb{E}[a^{\mathsf{T}}X]
+    =
+    a^{\mathsf{T}}\mathbb{E}[X].
+    $$
+  </p>
+
+</div>
+
+<!-- 
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Varianza)</h1>
+
+  <p>
+    Sea $X$ una variable aleatoria real tal que
+    $$
+    \mathbb{E}[X^2]<\infty.
+    $$
+  </p>
+
+  <p>
+    Se define la <strong>varianza</strong> de $X$ como
+    $$
+    \operatorname{Var}(X)
+    =
+    \mathbb{E}\left[(X-\mathbb{E}[X])^2\right].
+    $$
+  </p>
+
+  <p>
+    Si denotamos
+    $$
+    \mu=\mathbb{E}[X],
+    $$
+    entonces
+    $$
+    \operatorname{Var}(X)
+    =
+    \mathbb{E}\left[(X-\mu)^2\right].
+    $$
+  </p>
+
+  <p>
+    La varianza mide la dispersión de $X$ alrededor de su esperanza.
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Propiedades básicas de la varianza</h1>
+
+  <p>
+    Sea $X$ una variable aleatoria real con segundo momento finito. Entonces:
+  </p>
+
+  <ul>
+    <li>
+      <strong>No negatividad:</strong>
+      $$
+      \operatorname{Var}(X)\geq 0.
+      $$
+    </li>
+
+    <li>
+      <strong>Fórmula alternativa:</strong>
+      $$
+      \operatorname{Var}(X)
+      =
+      \mathbb{E}[X^2]-\bigl(\mathbb{E}[X]\bigr)^2.
+      $$
+    </li>
+
+    <li>
+      <strong>Varianza de una transformación afín:</strong> si $a,b\in\mathbb{R}$, entonces
+      $$
+      \operatorname{Var}(aX+b)
+      =
+      a^2\operatorname{Var}(X).
+      $$
+    </li>
+
+    <li>
+      <strong>Caracterización de varianza cero:</strong>
+      $$
+      \operatorname{Var}(X)=0
+      $$
+      si y sólo si existe una constante $c\in\mathbb{R}$ tal que
+      $$
+      \mathbb{P}(X=c)=1.
+      $$
+    </li>
+  </ul>
+
+</div> -->
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Covarianza)</h1>
+
+  <p>
+    Sean $X$ y $Y$ variables aleatorias reales tales que
+    $$
+    \mathbb{E}[X^2]<\infty
+    \qquad \text{y} \qquad
+    \mathbb{E}[Y^2]<\infty.
+    $$
+  </p>
+
+  <p>
+    Se define la <strong>covarianza</strong> entre $X$ y $Y$ como
+    $$
+    \operatorname{Cov}(X,Y)
+    =
+    \mathbb{E}\left[
+    \bigl(X-\mathbb{E}[X]\bigr)
+    \bigl(Y-\mathbb{E}[Y]\bigr)
+    \right].
+    $$
+  </p>
+
+  <p>
+    La covarianza mide el grado de variación conjunta lineal entre $X$ y $Y$.
+  </p>
+
+  <p>
+    Si denotamos
+    $$
+    \mu_X=\mathbb{E}[X],
+    \qquad
+    \mu_Y=\mathbb{E}[Y],
+    $$
+    entonces
+    $$
+    \operatorname{Cov}(X,Y)
+    =
+    \mathbb{E}\left[(X-\mu_X)(Y-\mu_Y)\right].
+    $$
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Propiedades básicas de la covarianza</h1>
+
+  <p>
+    Sean $X,Y,Z$ variables aleatorias reales con segundos momentos finitos y sean $a,b,c,d\in\mathbb{R}$. Entonces:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Simetría:</strong>
+      $$
+      \operatorname{Cov}(X,Y)=\operatorname{Cov}(Y,X).
+      $$
+    </li>
+
+    <li>
+      <strong>Relación con la varianza:</strong>
+      $$
+      \operatorname{Cov}(X,X)=\operatorname{Var}(X).
+      $$
+    </li>
+
+    <li>
+      <strong>Fórmula alternativa:</strong>
+      $$
+      \operatorname{Cov}(X,Y)
+      =
+      \mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y].
+      $$
+    </li>
+
+    <li>
+      <strong>Bilinealidad:</strong>
+      $$
+      \operatorname{Cov}(aX+bY,Z)
+      =
+      a\operatorname{Cov}(X,Z)
+      +
+      b\operatorname{Cov}(Y,Z).
+      $$
+    </li>
+
+    <li>
+      <strong>Transformaciones afines:</strong>
+      $$
+      \operatorname{Cov}(aX+b,cY+d)
+      =
+      ac\,\operatorname{Cov}(X,Y).
+      $$
+    </li>
+
+    <li>
+      <strong>Varianza de una suma:</strong>
+      $$
+      \operatorname{Var}(X+Y)
+      =
+      \operatorname{Var}(X)
+      +
+      \operatorname{Var}(Y)
+      +
+      2\operatorname{Cov}(X,Y).
+      $$
+    </li>
+
+    <li>
+      <strong>Independencia implica covarianza cero:</strong> si $X$ y $Y$ son independientes, entonces
+      $$
+      \operatorname{Cov}(X,Y)=0.
+      $$
+    </li>
+  </ul>
+
+  <p>
+    El recíproco no es cierto en general: que
+    $$
+    \operatorname{Cov}(X,Y)=0
+    $$
+    no implica necesariamente que $X$ y $Y$ sean independientes.
+  </p>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Desigualdad de Cauchy-Schwarz para la covarianza)</h1>
+
+  <p>
+    Si $X$ y $Y$ tienen segundos momentos finitos, entonces
+    $$
+    |\operatorname{Cov}(X,Y)|
+    \leq
+    \sqrt{\operatorname{Var}(X)}
+    \sqrt{\operatorname{Var}(Y)}.
+    $$
+  </p>
+
+  <p>
+    Esta desigualdad garantiza que la covarianza no puede ser arbitrariamente grande en valor absoluto, pues está acotada por el producto de las desviaciones estándar de $X$ y $Y$.
+  </p>
+
+</div>
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Coeficiente de correlación)</h1>
+
+  <p>
+    Sean $X$ y $Y$ variables aleatorias reales con segundos momentos finitos y varianzas positivas:
+    $$
+    \operatorname{Var}(X)>0,
+    \qquad
+    \operatorname{Var}(Y)>0.
+    $$
+  </p>
+
+  <p>
+    Se define el <strong>coeficiente de correlación lineal</strong> entre $X$ y $Y$ como
+    $$
+    \rho_{X,Y}
+    =
+    \frac{\operatorname{Cov}(X,Y)}
+    {\sqrt{\operatorname{Var}(X)}\sqrt{\operatorname{Var}(Y)}}.
+    $$
+  </p>
+
+  <p>
+    Equivalentemente, si
+    $$
+    \sigma_X=\sqrt{\operatorname{Var}(X)}
+    \qquad \text{y} \qquad
+    \sigma_Y=\sqrt{\operatorname{Var}(Y)},
+    $$
+    entonces
+    $$
+    \rho_{X,Y}
+    =
+    \frac{\operatorname{Cov}(X,Y)}{\sigma_X\sigma_Y}.
+    $$
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Propiedades básicas del coeficiente de correlación</h1>
+
+  <p>
+    Sean $X$ y $Y$ variables aleatorias reales con segundos momentos finitos y varianzas positivas. Entonces:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Acotación:</strong>
+      $$
+      -1\leq \rho_{X,Y}\leq 1.
+      $$
+    </li>
+
+    <li>
+      <strong>Simetría:</strong>
+      $$
+      \rho_{X,Y}=\rho_{Y,X}.
+      $$
+    </li>
+
+    <li>
+      <strong>Invarianza ante cambios de escala positivos:</strong> si $a,c>0$, entonces
+      $$
+      \rho_{aX+b,cY+d}=\rho_{X,Y}.
+      $$
+    </li>
+
+    <li>
+      <strong>Cambio de signo ante escalas negativas:</strong> si $a,c\neq 0$, entonces
+      $$
+      \rho_{aX+b,cY+d}
+      =
+      \operatorname{sgn}(ac)\rho_{X,Y}.
+      $$
+    </li>
+
+    <li>
+      <strong>Independencia implica correlación cero:</strong> si $X$ y $Y$ son independientes, entonces
+      $$
+      \rho_{X,Y}=0.
+      $$
+    </li>
+  </ul>
+
+  <p>
+    El recíproco no es cierto en general: que
+    $$
+    \rho_{X,Y}=0
+    $$
+    no implica necesariamente que $X$ y $Y$ sean independientes.
+  </p>
+
+  <p>
+    Cuando
+    $$
+    \rho_{X,Y}=0,
+    $$
+    se dice que $X$ y $Y$ son <strong>no correlacionadas</strong>.
+  </p>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Interpretación del coeficiente de correlación)</h1>
+
+  <p>
+    El coeficiente de correlación mide la intensidad y la dirección de la relación lineal entre dos variables aleatorias.
+  </p>
+
+  <ul>
+    <li>
+      Si $\rho_{X,Y}>0$, existe asociación lineal positiva.
+    </li>
+
+    <li>
+      Si $\rho_{X,Y}<0$, existe asociación lineal negativa.
+    </li>
+
+    <li>
+      Si $\rho_{X,Y}=0$, no existe asociación lineal, aunque puede existir otro tipo de dependencia no lineal.
+    </li>
+
+    <li>
+      Si $|\rho_{X,Y}|=1$, entonces existe una relación lineal exacta entre $X$ y $Y$ casi seguramente.
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Matriz de covarianzas)</h1>
+
+  <p>
+    Sea
+    $$
+    X=(X_1,\ldots,X_n)
+    $$
+    un vector aleatorio con valores en $\mathbb{R}^{n}$ tal que
+    $$
+    \mathbb{E}[X_i^2]<\infty,
+    \qquad i=1,\ldots,n.
+    $$
+  </p>
+
+  <p>
+    Sea
+    $$
+    \mu=\mathbb{E}[X]
+    =
+    \begin{pmatrix}
+    \mathbb{E}[X_1]\\
+    \vdots\\
+    \mathbb{E}[X_n]
+    \end{pmatrix}.
+    $$
+  </p>
+
+  <p>
+    Se define la <strong>matriz de covarianzas</strong> de $X$ como
+    $$
+    \operatorname{Cov}(X)
+    =
+    \Sigma
+    =
+    \mathbb{E}\left[
+    (X-\mu)(X-\mu)^{\mathsf{T}}
+    \right].
+    $$
+  </p>
+
+  <p>
+    De manera explícita,
+    $$
+    \Sigma
+    =
+    \begin{pmatrix}
+    \operatorname{Var}(X_1) & \operatorname{Cov}(X_1,X_2) & \cdots & \operatorname{Cov}(X_1,X_n)\\
+    \operatorname{Cov}(X_2,X_1) & \operatorname{Var}(X_2) & \cdots & \operatorname{Cov}(X_2,X_n)\\
+    \vdots & \vdots & \ddots & \vdots\\
+    \operatorname{Cov}(X_n,X_1) & \operatorname{Cov}(X_n,X_2) & \cdots & \operatorname{Var}(X_n)
+    \end{pmatrix}.
+    $$
+  </p>
+
+  <p>
+    Es decir, la entrada $(i,j)$ de $\Sigma$ está dada por
+    $$
+    \sigma_{ij}
+    =
+    \operatorname{Cov}(X_i,X_j),
+    \qquad i,j=1,\ldots,n.
+    $$
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Propiedades básicas de la matriz de covarianzas</h1>
+
+  <p>
+    Sea $X=(X_1,\ldots,X_n)$ un vector aleatorio con segundos momentos finitos y sea
+    $$
+    \Sigma=\operatorname{Cov}(X).
+    $$
+    Entonces:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Simetría:</strong>
+      $$
+      \Sigma^{\mathsf{T}}=\Sigma.
+      $$
+    </li>
+
+    <li>
+      <strong>Semidefinida positiva:</strong> para todo $a\in\mathbb{R}^{n}$,
+      $$
+      a^{\mathsf{T}}\Sigma a\geq 0.
+      $$
+    </li>
+
+    <li>
+      <strong>Varianza de una combinación lineal:</strong> para todo $a\in\mathbb{R}^{n}$,
+      $$
+      \operatorname{Var}(a^{\mathsf{T}}X)
+      =
+      a^{\mathsf{T}}\Sigma a.
+      $$
+    </li>
+
+    <li>
+      <strong>Diagonal principal:</strong>
+      $$
+      \sigma_{ii}=\operatorname{Var}(X_i),
+      \qquad i=1,\ldots,n.
+      $$
+    </li>
+
+    <li>
+      <strong>Entradas fuera de la diagonal:</strong>
+      $$
+      \sigma_{ij}=\operatorname{Cov}(X_i,X_j),
+      \qquad i\neq j.
+      $$
+    </li>
+
+    <li>
+      <strong>Transformaciones afines:</strong> si $A$ es una matriz real de tamaño $k\times n$ y $b\in\mathbb{R}^{k}$, entonces
+      $$
+      \operatorname{Cov}(AX+b)=A\Sigma A^{\mathsf{T}}.
+      $$
+    </li>
+  </ul>
+
+</div>
+
+<!-- 
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Matriz de covarianzas diagonal)</h1>
+
+  <p>
+    Si las componentes $X_1,\ldots,X_n$ son independientes, entonces
+    $$
+    \operatorname{Cov}(X_i,X_j)=0,
+    \qquad i\neq j.
+    $$
+  </p>
+
+  <p>
+    Por lo tanto, la matriz de covarianzas $\Sigma$ es diagonal:
+    $$
+    \Sigma=
+    \begin{pmatrix}
+    \operatorname{Var}(X_1) & 0 & \cdots & 0\\
+    0 & \operatorname{Var}(X_2) & \cdots & 0\\
+    \vdots & \vdots & \ddots & \vdots\\
+    0 & 0 & \cdots & \operatorname{Var}(X_n)
+    \end{pmatrix}.
+    $$
+  </p>
+
+  <p>
+    Sin embargo, en general, que la matriz de covarianzas sea diagonal no implica que las componentes sean independientes.
+  </p>
+
+  <p>
+    En el caso particular de un vector gaussiano multivariado, si
+    $$
+    X\sim N_n(\mu,\Sigma),
+    $$
+    entonces las componentes $X_1,\ldots,X_n$ son independientes si y sólo si $\Sigma$ es diagonal.
+  </p>
+
+</div>
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Matriz de correlaciones)</h1>
+
+  <p>
+    Sea $X=(X_1,\ldots,X_n)$ un vector aleatorio con segundos momentos finitos y varianzas positivas:
+    $$
+    \operatorname{Var}(X_i)>0,
+    \qquad i=1,\ldots,n.
+    $$
+  </p>
+
+  <p>
+    La <strong>matriz de correlaciones</strong> de $X$ es la matriz
+    $$
+    R=
+    (\rho_{ij})_{i,j=1}^{n},
+    $$
+    donde
+    $$
+    \rho_{ij}
+    =
+    \frac{\operatorname{Cov}(X_i,X_j)}
+    {\sqrt{\operatorname{Var}(X_i)}\sqrt{\operatorname{Var}(X_j)}}.
+    $$
+  </p>
+
+  <p>
+    En particular,
+    $$
+    \rho_{ii}=1,
+    \qquad i=1,\ldots,n.
+    $$
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Propiedades básicas de la matriz de correlaciones</h1>
+
+  <p>
+    Sea $R$ la matriz de correlaciones de un vector aleatorio $X=(X_1,\ldots,X_n)$. Entonces:
+  </p>
+
+  <ul>
+    <li>
+      $R$ es simétrica:
+      $$
+      R^{\mathsf{T}}=R.
+      $$
+    </li>
+
+    <li>
+      Las entradas diagonales son iguales a $1$:
+      $$
+      \rho_{ii}=1,
+      \qquad i=1,\ldots,n.
+      $$
+    </li>
+
+    <li>
+      Las entradas fuera de la diagonal satisfacen:
+      $$
+      -1\leq \rho_{ij}\leq 1,
+      \qquad i\neq j.
+      $$
+    </li>
+
+    <li>
+      $R$ es semidefinida positiva:
+      $$
+      a^{\mathsf{T}}Ra\geq 0,
+      \qquad \text{para todo } a\in\mathbb{R}^{n}.
+      $$
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Relación con la distribución gaussiana multivariada)</h1>
+
+  <p>
+    Si
+    $$
+    X\sim N_n(\mu,\Sigma),
+    $$
+    entonces $\mu$ es el vector de medias de $X$ y $\Sigma$ es su matriz de covarianzas.
+  </p>
+
+  <p>
+    Además, para cada $a\in\mathbb{R}^{n}$,
+    $$
+    a^{\mathsf{T}}X
+    \sim
+    N\left(a^{\mathsf{T}}\mu,\;a^{\mathsf{T}}\Sigma a\right).
+    $$
+  </p>
+
+  <p>
+    Por esta razón, la matriz de covarianzas $\Sigma$ determina la varianza de cualquier combinación lineal de las componentes de $X$.
+  </p>
+
+  <p>
+    En particular, si $\Sigma$ es diagonal, entonces las componentes de $X$ son independientes. Esta equivalencia es una propiedad especial de los vectores gaussianos.
+  </p>
+
+</div>
+
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Distribución gaussiana multivariada)</h1>
+
+  <p>
+    Sea $d\in\mathbb{N}$ y sea
+    $$X=(X_1,\ldots,X_n)$$
+    un vector aleatorio con valores en $\mathbb{R}^{n}$.
+  </p>
+
+  <p>
+    Decimos que $X$ tiene <strong>distribución gaussiana multivariada</strong> o <strong>distribución normal multivariada</strong> si para todo vector
+    $$a=(a_1,\ldots,a_n)\in\mathbb{R}^{n},$$
+    la combinación lineal
+    $$
+    a^{\mathsf{T}}X
+    =
+    a_1X_1+\cdots+a_nX_n
+    $$
+    tiene distribución normal univariada.
+  </p>
+
+  <p>
+    Es decir, $X$ es un vector aleatorio gaussiano si toda proyección lineal de $X$ sobre una dirección $a\in\mathbb{R}^{n}$ es una variable aleatoria normal.
+  </p>
+
+  <p>
+    Si
+    $$
+    \mu=\mathbb{E}[X]\in\mathbb{R}^{n}
+    $$
+    es el vector de medias y
+    $$
+    \Sigma=\operatorname{Cov}(X)
+    $$
+    es la matriz de covarianzas de $X$, entonces escribimos
+    $$
+    X\sim N_n(\mu,\Sigma).
+    $$
+  </p>
+
+  <p>
+    Aquí
+    $$
+    \mu=
+    \begin{pmatrix}
+    \mu_1\\
+    \mu_2\\
+    \vdots\\
+    \mu_n
+    \end{pmatrix},
+    \qquad
+    \Sigma=
+    \begin{pmatrix}
+    \sigma_{11} & \sigma_{12} & \cdots & \sigma_{1d}\\
+    \sigma_{21} & \sigma_{22} & \cdots & \sigma_{2d}\\
+    \vdots & \vdots & \ddots & \vdots\\
+    \sigma_{d1} & \sigma_{d2} & \cdots & \sigma_{dd}
+    \end{pmatrix},
+    $$
+    donde
+    $$
+    \mu_i=\mathbb{E}[X_i],
+    \qquad
+    \sigma_{ij}=\operatorname{Cov}(X_i,X_j),
+    \qquad i,j=1,\ldots,n.
+    $$
+  </p>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Parámetros de la distribución gaussiana multivariada)</h1>
+
+  <p>
+    En la distribución gaussiana multivariada
+    $$
+    X\sim N_n(\mu,\Sigma),
+    $$
+    el parámetro $\mu$ representa el <strong>vector de medias</strong>, mientras que $\Sigma$ representa la <strong>matriz de covarianzas</strong>.
+  </p>
+
+  <p>
+    La matriz $\Sigma$ debe ser simétrica y semidefinida positiva, es decir,
+    $$
+    \Sigma^{\mathsf{T}}=\Sigma
+    $$
+    y
+    $$
+    a^{\mathsf{T}}\Sigma a\geq 0,
+    \qquad \text{para todo } a\in\mathbb{R}^{n}.
+    $$
+  </p>
+
+  <p>
+    La condición anterior es necesaria porque
+    $$
+    a^{\mathsf{T}}\Sigma a
+    =
+    \operatorname{Var}(a^{\mathsf{T}}X),
+    $$
+    y la varianza de una variable aleatoria siempre es no negativa.
+  </p>
+
+</div>
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Distribución gaussiana multivariada no degenerada)</h1>
+
+  <p>
+    Sea $d\in\mathbb{N}$, sea $\mu\in\mathbb{R}^{n}$ y sea $\Sigma$ una matriz de tamaño $d\times n$ simétrica y definida positiva.
+  </p>
+
+  <p>
+    Decimos que el vector aleatorio
+    $$
+    X=(X_1,\ldots,X_n)
+    $$
+    tiene <strong>distribución gaussiana multivariada no degenerada</strong> con vector de medias $\mu$ y matriz de covarianzas $\Sigma$ si $X$ es absolutamente continuo y su función de densidad conjunta está dada por
+    $$
+    f_X(x)
+    =
+    \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}
+    \exp\left\{
+    -\frac{1}{2}(x-\mu)^{\mathsf{T}}\Sigma^{-1}(x-\mu)
+    \right\},
+    \qquad x\in\mathbb{R}^{n}.
+    $$
+  </p>
+
+  <p>
+    En este caso escribimos
+    $$
+    X\sim N_n(\mu,\Sigma).
+    $$
+  </p>
+
+  <p>
+    De manera equivalente, si $x=(x_1,\ldots,x_n)^{\mathsf{T}}$, entonces
+    $$
+    f_X(x_1,\ldots,x_n)
+    =
+    \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}
+    \exp\left\{
+    -\frac{1}{2}
+    \bigl(x-\mu\bigr)^{\mathsf{T}}
+    \Sigma^{-1}
+    \bigl(x-\mu\bigr)
+    \right\}.
+    $$
+  </p>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Papel de la matriz de covarianzas)</h1>
+
+  <p>
+    La matriz de covarianzas
+    $$
+    \Sigma=
+    \operatorname{Cov}(X)
+    $$
+    contiene las varianzas de las componentes de $X$ en su diagonal principal y las covarianzas entre componentes distintas fuera de la diagonal.
+  </p>
+
+  <p>
+    Es decir,
+    $$
+    \Sigma=
+    \begin{pmatrix}
+    \operatorname{Var}(X_1) & \operatorname{Cov}(X_1,X_2) & \cdots & \operatorname{Cov}(X_1,X_n)\\
+    \operatorname{Cov}(X_2,X_1) & \operatorname{Var}(X_2) & \cdots & \operatorname{Cov}(X_2,X_n)\\
+    \vdots & \vdots & \ddots & \vdots\\
+    \operatorname{Cov}(X_n,X_1) & \operatorname{Cov}(X_n,X_2) & \cdots & \operatorname{Var}(X_n)
+    \end{pmatrix}.
+    $$
+  </p>
+
+  <p>
+    Por lo tanto,
+    $$
+    \sigma_{ii}=\operatorname{Var}(X_i),
+    \qquad i=1,\ldots,n,
+    $$
+    y
+    $$
+    \sigma_{ij}=\operatorname{Cov}(X_i,X_j),
+    \qquad i\neq j.
+    $$
+  </p>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Caso degenerado y no degenerado)</h1>
+
+  <p>
+    Si $\Sigma$ es definida positiva, entonces
+    $$
+    |\Sigma|>0,
+    $$
+    la matriz $\Sigma^{-1}$ existe y la distribución gaussiana multivariada tiene densidad conjunta respecto a la medida de Lebesgue en $\mathbb{R}^{n}$.
+  </p>
+
+  <p>
+    En este caso se dice que la distribución es <strong>no degenerada</strong>.
+  </p>
+
+  <p>
+    Si $\Sigma$ es semidefinida positiva pero no definida positiva, entonces
+    $$
+    |\Sigma|=0,
+    $$
+    y la distribución se dice <strong>degenerada</strong>.
+  </p>
+
+  <p>
+    En el caso degenerado, el vector aleatorio $X$ no tiene densidad conjunta respecto a la medida de Lebesgue en todo $\mathbb{R}^{n}$, pues su distribución queda concentrada en un subespacio afín de dimensión menor que $n$.
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Caracterización mediante combinaciones lineales</h1>
+
+  <p>
+    Sea $X=(X_1,\ldots,X_n)$ un vector aleatorio con valores en $\mathbb{R}^{n}$.
+  </p>
+
+  <p>
+    Entonces $X$ tiene distribución gaussiana multivariada si y sólo si para todo vector
+    $$
+    a\in\mathbb{R}^{n},
+    $$
+    la variable aleatoria
+    $$
+    a^{\mathsf{T}}X
+    $$
+    tiene distribución normal univariada.
+  </p>
+
+  <p>
+    Si
+    $$
+    X\sim N_n(\mu,\Sigma),
+    $$
+    entonces, para todo $a\in\mathbb{R}^{n}$,
+    $$
+    a^{\mathsf{T}}X
+    \sim
+    N\left(a^{\mathsf{T}}\mu,\; a^{\mathsf{T}}\Sigma a\right).
+    $$
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Función característica de la distribución gaussiana multivariada</h1>
+
+  <p>
+    Sea
+    $$
+    X\sim N_n(\mu,\Sigma).
+    $$
+  </p>
+
+  <p>
+    Entonces la función característica de $X$ está dada por
+    $$
+    \varphi_X(t)
+    =
+    \mathbb{E}\left[e^{i t^{\mathsf{T}}X}\right]
+    =
+    \exp\left\{
+    i t^{\mathsf{T}}\mu
+    -
+    \frac{1}{2}t^{\mathsf{T}}\Sigma t
+    \right\},
+    \qquad t\in\mathbb{R}^{n}.
+    $$
+  </p>
+
+  <p>
+    Esta expresión caracteriza completamente a la distribución gaussiana multivariada.
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Proposición (Distribuciones marginales)</h1>
+
+  <p>
+    Sea
+    $$
+    X=(X_1,\ldots,X_n)\sim N_n(\mu,\Sigma).
+    $$
+  </p>
+
+  <p>
+    Entonces cada componente $X_i$ tiene distribución normal univariada. En particular,
+    $$
+    X_i\sim N(\mu_i,\sigma_{ii}),
+    \qquad i=1,\ldots,n.
+    $$
+  </p>
+
+  <p>
+    Más generalmente, cualquier subvector de un vector gaussiano multivariado también tiene distribución gaussiana multivariada.
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Proposición (Transformaciones lineales)</h1>
+
+  <p>
+    Sea
+    $$
+    X\sim N_n(\mu,\Sigma).
+    $$
+  </p>
+
+  <p>
+    Sea $A$ una matriz real de tamaño $k\times n$ y sea $b\in\mathbb{R}^{k}$.
+  </p>
+
+  <p>
+    Entonces el vector aleatorio
+    $$
+    Y=AX+b
+    $$
+    tiene distribución gaussiana multivariada en $\mathbb{R}^{k}$ y
+    $$
+    Y\sim N_k(A\mu+b,\; A\Sigma A^{\mathsf{T}}).
+    $$
+  </p>
+
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Proposición (Independencia en el caso gaussiano)</h1>
+
+  <p>
+    Sea
+    $$
+    X=(X_1,\ldots,X_n)\sim N_n(\mu,\Sigma).
+    $$
+  </p>
+
+  <p>
+    Entonces las componentes $X_1,\ldots,X_n$ son independientes si y sólo si la matriz de covarianzas $\Sigma$ es diagonal.
+  </p>
+
+  <p>
+    Equivalentemente, las componentes son independientes si y sólo si
+    $$
+    \operatorname{Cov}(X_i,X_j)=0,
+    \qquad i\neq j.
+    $$
+  </p>
+
+  <p>
+    Esta propiedad es particular de la distribución gaussiana multivariada. En general, para otros vectores aleatorios, covarianza cero no implica independencia.
+  </p>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Caso estándar)</h1>
+
+  <p>
+    Se dice que $X$ tiene distribución gaussiana multivariada estándar si
+    $$
+    X\sim N_n(0,I_n),
+    $$
+    donde $0$ es el vector cero de $\mathbb{R}^{n}$ e $I_n$ es la matriz identidad de tamaño $d\times n$.
+  </p>
+
+  <p>
+    En este caso,
+    $$
+    \mathbb{E}[X]=0,
+    \qquad
+    \operatorname{Cov}(X)=I_n.
+    $$
+  </p>
+
+  <p>
+    Además, sus componentes son independientes y
+    $$
+    X_i\sim N(0,1),
+    \qquad i=1,\ldots,n.
+    $$
+  </p>
+
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Resumen</h1>
+
+  <p>
+    La distribución gaussiana multivariada describe el comportamiento conjunto de un vector aleatorio cuyas combinaciones lineales son normales.
+  </p>
+
+  <p>
+    Sus elementos esenciales son:
+  </p>
+
+  <ul>
+    <li>
+      Un vector aleatorio $X=(X_1,\ldots,X_n)$ con valores en $\mathbb{R}^{n}$.
+    </li>
+    <li>
+      Un vector de medias $\mu\in\mathbb{R}^{n}$.
+    </li>
+    <li>
+      Una matriz de covarianzas $\Sigma$ simétrica y semidefinida positiva.
+    </li>
+    <li>
+      La propiedad de que toda combinación lineal $a^{\mathsf{T}}X$ tiene distribución normal univariada.
+    </li>
+  </ul>
+
+  <p>
+    En forma compacta,
+    $$
+    X\sim N_n(\mu,\Sigma)
+    $$
+    significa que $X$ es un vector gaussiano con vector de medias $\mu$ y matriz de covarianzas $\Sigma$.
+  </p>
+
+  <p>
+    En el caso no degenerado, es decir, cuando $\Sigma$ es definida positiva, su densidad conjunta está dada por
+    $$
+    f_X(x)
+    =
+    \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}
+    \exp\left\{
+    -\frac{1}{2}(x-\mu)^{\mathsf{T}}\Sigma^{-1}(x-\mu)
+    \right\},
+    \qquad x\in\mathbb{R}^{n}.
+    $$
+  </p>
+
+</div>
+
+
+
+ -->
+
+
   </body>
 
 
