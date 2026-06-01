@@ -123,8 +123,8 @@
       <div class="definicion-box">
   <h1 class="title-practica">Definición (Matriz jacobiana de una transformación)</h1>
 
-  <p>Sea $U\subseteq \mathbb{R}^{n}$ un conjunto abierto y sea $\varphi:U\to\mathbb{R}^{m}$ una transformación dada por
-    $$\varphi(\vec{x})=\bigl(\varphi_1(\vec{x}),\varphi_2(\vec{x}),\ldots,\varphi_m(\vec{x})\bigr),$$
+  <p>Sea $U\subseteq \mathbb{R}^{n}$ un conjunto abierto y sea $\varphi:U\to\mathbb{R}^{k}$ una transformación dada por
+    $$\varphi(\vec{x})=\bigl(\varphi_1(\vec{x}),\varphi_2(\vec{x}),\ldots,\varphi_k(\vec{x})\bigr),$$
     donde $ \vec{x} = (x_{1}, \ldots, x_{n}) \in \mathbb{R}^{n}$ y cada función componente $\varphi_i:U\to\mathbb{R}, i=1,\ldots,m,$ 
     es una función real de $n$ variables.
     Supongamos que para todo $\vec{x}=(x_1,\ldots,x_n)\in U$ y cualesquiera $i \in \{1,\ldots,m\},j\in \{1,\ldots,n\}$, existe la derivada parcial
@@ -149,10 +149,10 @@
     \\[6pt]
     \vdots & \vdots & \ddots & \vdots
     \\[6pt]
-    \dfrac{\partial \varphi_m}{\partial x_1}(\vec{x}) &
-    \dfrac{\partial \varphi_m}{\partial x_2}(\vec{x}) &
+    \dfrac{\partial \varphi_k}{\partial x_1}(\vec{x}) &
+    \dfrac{\partial \varphi_k}{\partial x_2}(\vec{x}) &
     \cdots &
-    \dfrac{\partial \varphi_m}{\partial x_n}(\vec{x})
+    \dfrac{\partial \varphi_k}{\partial x_n}(\vec{x})
     \end{pmatrix}.$$
   </p>
 
@@ -174,7 +174,7 @@
   <p>
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Si $X:\Omega\to\mathbb{R}^{n}$ un vector aleatorio absolutamente continuo,
     con función de densidad conjunta $f_X$ con soporte en un conjunto abierto $U\subseteq\mathbb{R}^{n}$ y sea 
-    $U^{'}\subseteq\mathbb{R}^{m}$ otro conjunto abierto tal que $\varphi:U\to U^{'}$ 
+    $U^{'}\subseteq\mathbb{R}^{k}$ otro conjunto abierto tal que $\varphi:U\to U^{'}$ 
     es biyectiva, diferenciable con derivadas parciales continuas, su inversa $\varphi^{-1}:U \to U^{'}$
     también es diferenciable con derivadas continuas, entonces el vector aleatorio 
     $$Y:=\varphi(\vec{x}).$$
@@ -184,7 +184,7 @@
 
   <p>
     Equivalentemente, si se extiende $f_Y$ a todo $\mathbb{R}^{n}$, entonces
-    $$f_Y(\vec{y}) = f_X\bigl(\varphi^{-1}(\vec{y})\bigr) \left | \det \left(J\varphi^{-1}(\vec{y}) \right) \right|\mathbf{1}_{U^{'}}(\vec{y}),\qquad \vec{y}\in\mathbb{R}^{m}.$$
+    $$f_Y(\vec{y}) = f_X\bigl(\varphi^{-1}(\vec{y})\bigr) \left | \det \left(J\varphi^{-1}(\vec{y}) \right) \right|\mathbf{1}_{U^{'}}(\vec{y}),\qquad \vec{y}\in\mathbb{R}^{k}.$$
   </p>
 
 </div>
@@ -229,11 +229,11 @@
 
   <p>
     Sea $m\in\mathbb{N}$, con $m\geq 2$, y sea
-    $$p=(p_1,p_2,\ldots,p_m)$$
+    $$p=(p_1,p_2,\ldots,p_k)$$
     un vector de probabilidades, es decir,
     $$p_i\geq 0,\qquad i=1,\ldots,m,$$
     y
-    $$\sum_{i=1}^{m}p_i=1.$$
+    $$\sum_{i=1}^{k}p_i=1.$$
   </p>
 
   <p>
@@ -251,13 +251,13 @@
       La probabilidad de observar la categoría $i$ en cualquier ensayo es $p_i$, para $i=1,\ldots,m$.
     </li>
     <li>
-      Las probabilidades $p_1,\ldots,p_m$ permanecen constantes en todos los ensayos.
+      Las probabilidades $p_1,\ldots,p_k$ permanecen constantes en todos los ensayos.
     </li>
   </ul>
 
   <p>
     Definimos el vector aleatorio
-    $$X=(X_1,X_2,\ldots,X_m),$$
+    $$X=(X_1,X_2,\ldots,X_k),$$
     donde $X_i$ representa el número de veces que ocurre la categoría $i$ en los $n$ ensayos.
   </p>
 
@@ -265,22 +265,22 @@
     Entonces
     $$X_i\in\mathbb{N}_{0},\qquad i=1,\ldots,m,$$
     y necesariamente se cumple que
-    $$X_1+X_2+\cdots+X_m=n.$$
+    $$X_1+X_2+\cdots+X_k=n.$$
   </p>
 
   <p>
-    Decimos que el vector aleatorio $X=(X_1,\ldots,X_m)$ tiene <strong>distribución multinomial</strong> con parámetros $n$ y $(p_1,\ldots,p_m)$ si su función de probabilidad está dada por
+    Decimos que el vector aleatorio $X=(X_1,\ldots,X_k)$ tiene <strong>distribución multinomial</strong> con parámetros $n$ y $(p_1,\ldots,p_k)$ si su función de probabilidad está dada por
     $$
-  p_X(x_1,\ldots,x_m)
+  p_X(x_1,\ldots,x_k)
   =
-  \mathbb{P}(X_1=x_1,\ldots,X_m=x_m)
+  \mathbb{P}(X_1=x_1,\ldots,X_k=x_k)
   =
   \begin{cases}
   \displaystyle{
-  \frac{n!}{x_1!x_2!\cdots x_m!}
-  p_1^{x_1}p_2^{x_2}\cdots p_m^{x_m}},
-  & \text{si } (x_1,\ldots,x_m)\in\mathbb{N}_{0}^{m}
-  \text{ y } x_1+\cdots+x_m=n, \\[12pt]
+  \frac{n!}{x_1!x_2!\cdots x_k!}
+  p_1^{x_1}p_2^{x_2}\cdots p_k^{x_k}},
+  & \text{si } (x_1,\ldots,x_k)\in\mathbb{N}_{0}^{k}
+  \text{ y } x_1+\cdots+x_k=n, \\[12pt]
   0,
   & \text{en otro caso.}
   \end{cases}
@@ -290,13 +290,13 @@
   <p>
     En este caso escribimos
     $$
-    X=(X_1,\ldots,X_m)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_m).
+    X=(X_1,\ldots,X_k)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_k).
     $$
     También puede escribirse de forma compacta como
     $$
     X\sim \operatorname{Multinomial}(n,p),
     $$
-    donde $p=(p_1,\ldots,p_m)$.
+    donde $p=(p_1,\ldots,p_k)$.
   </p>
 
 </div>
@@ -306,34 +306,34 @@
   <h1 class="title-practica">Observación (Soporte de la distribución multinomial)</h1>
 
   <p>
-    El conjunto de valores posibles del vector aleatorio $X=(X_1,\ldots,X_m)$ está dado por
+    El conjunto de valores posibles del vector aleatorio $X=(X_1,\ldots,X_k)$ está dado por
     $$
     S_n=
     \left\{
-    (x_1,\ldots,x_m)\in\mathbb{N}_{0}^{m}:
-    x_1+\cdots+x_m=n
+    (x_1,\ldots,x_k)\in\mathbb{N}_{0}^{k}:
+    x_1+\cdots+x_k=n
     \right\}.
     $$
   </p>
 
   <p>
-    Por tanto, la distribución multinomial no está concentrada en todo $\mathbb{N}_{0}^{m}$, sino únicamente en el conjunto $S_n$.
-    Esto significa que las componentes $X_1,\ldots,X_m$ no pueden tomar valores arbitrarios de manera independiente, pues siempre deben satisfacer la restricción
+    Por tanto, la distribución multinomial no está concentrada en todo $\mathbb{N}_{0}^{k}$, sino únicamente en el conjunto $S_n$.
+    Esto significa que las componentes $X_1,\ldots,X_k$ no pueden tomar valores arbitrarios de manera independiente, pues siempre deben satisfacer la restricción
     $$
-    X_1+\cdots+X_m=n.
+    X_1+\cdots+X_k=n.
     $$
   </p>
 
   <p>
     Equivalentemente, la función de probabilidad puede escribirse como
     $$
-    p_X(x_1,\ldots,x_m)
+    p_X(x_1,\ldots,x_k)
     =
-    \frac{n!}{x_1!\cdots x_m!}
-    p_1^{x_1}\cdots p_m^{x_m}
-    \mathbf{1}_{S_n}(x_1,\ldots,x_m),
+    \frac{n!}{x_1!\cdots x_k!}
+    p_1^{x_1}\cdots p_k^{x_k}
+    \mathbf{1}_{S_n}(x_1,\ldots,x_k),
     $$
-    para $(x_1,\ldots,x_m)\in\mathbb{N}_{0}^{m}$.
+    para $(x_1,\ldots,x_k)\in\mathbb{N}_{0}^{k}$.
   </p>
 
 </div> -->
@@ -345,33 +345,33 @@
   <p>
     El coeficiente
     $$
-    \frac{n!}{x_1!x_2!\cdots x_m!}
+    \frac{n!}{x_1!x_2!\cdots x_k!}
     $$
     se llama <strong>coeficiente multinomial</strong>.
   </p>
 
   <p>
-    Este coeficiente representa el número de formas distintas en que pueden ordenarse $x_1$ ocurrencias de la categoría $1$, $x_2$ ocurrencias de la categoría $2$, y así sucesivamente, hasta $x_m$ ocurrencias de la categoría $m$, dentro de una secuencia de $n$ ensayos.
+    Este coeficiente representa el número de formas distintas en que pueden ordenarse $x_1$ ocurrencias de la categoría $1$, $x_2$ ocurrencias de la categoría $2$, y así sucesivamente, hasta $x_k$ ocurrencias de la categoría $m$, dentro de una secuencia de $n$ ensayos.
   </p>
 <!-- 
   <p>
     Por ejemplo, una secuencia particular con $x_i$ ocurrencias de la categoría $i$, para $i=1,\ldots,m$, tiene probabilidad
     $$
-    p_1^{x_1}p_2^{x_2}\cdots p_m^{x_m}.
+    p_1^{x_1}p_2^{x_2}\cdots p_k^{x_k}.
     $$
   </p>
 
   <p>
     Como existen
     $$
-    \frac{n!}{x_1!x_2!\cdots x_m!}
+    \frac{n!}{x_1!x_2!\cdots x_k!}
     $$
     secuencias distintas con esas mismas frecuencias, se obtiene la fórmula
     $$
-    \mathbb{P}(X_1=x_1,\ldots,X_m=x_m)
+    \mathbb{P}(X_1=x_1,\ldots,X_k=x_k)
     =
-    \frac{n!}{x_1!\cdots x_m!}
-    p_1^{x_1}\cdots p_m^{x_m}.
+    \frac{n!}{x_1!\cdots x_k!}
+    p_1^{x_1}\cdots p_k^{x_k}.
     $$
   </p> -->
 
@@ -403,11 +403,11 @@
   <p>
     La variable aleatoria $X_i$ cuenta cuántas veces aparece la categoría $i$ entre los $n$ ensayos. Por lo tanto,
     $$
-    X=(X_1,\ldots,X_m)
+    X=(X_1,\ldots,X_k)
     $$
-    tiene distribución multinomial con parámetros $n$ y $(p_1,\ldots,p_m)$, es decir,
+    tiene distribución multinomial con parámetros $n$ y $(p_1,\ldots,p_k)$, es decir,
     $$
-    (X_1,\ldots,X_m)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_m).
+    (X_1,\ldots,X_k)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_k).
     $$
   </p>
 
@@ -444,7 +444,7 @@
   </p> -->
 
   
-    Si $(X_1,\ldots,X_m)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_m),$
+    Si $(X_1,\ldots,X_k)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_k),$
     entonces, para cada $i=1,\ldots,m$,
     $$X_i\sim \operatorname{Binomial}(n,p_i).
     $$
@@ -462,7 +462,7 @@
   <p>
     Aunque cada componente $X_i$ tiene distribución binomial con parámetros $n$ y $p_i$, las variables aleatorias
     $$
-    X_1,\ldots,X_m
+    X_1,\ldots,X_k
     $$
     no son independientes.
   </p>
@@ -470,14 +470,14 @@
   <p>
     La razón es que siempre se cumple la restricción
     $$
-    X_1+\cdots+X_m=n.
+    X_1+\cdots+X_k=n.
     $$
   </p>
 
   <p>
     En particular, si se conocen $m-1$ componentes del vector, la última queda completamente determinada:
     $$
-    X_m=n-X_1-\cdots-X_{m-1}.
+    X_k=n-X_1-\cdots-X_{m-1}.
     $$
   </p>
 
@@ -494,7 +494,7 @@
   <p>
     Sea
     $$
-    X=(X_1,\ldots,X_m)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_m).
+    X=(X_1,\ldots,X_k)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_k).
     $$
     Entonces, para cada $i=1,\ldots,m$, se tiene
     $$
@@ -518,7 +518,7 @@
   </p>
 
   <p>
-    En forma matricial, si $p=(p_1,\ldots,p_m)^{\mathsf{T}}$, entonces la matriz de covarianzas de $X$ está dada por
+    En forma matricial, si $p=(p_1,\ldots,p_k)^{\mathsf{T}}$, entonces la matriz de covarianzas de $X$ está dada por
     $$
     \operatorname{Cov}(X)
     =
