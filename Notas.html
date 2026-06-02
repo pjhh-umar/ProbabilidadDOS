@@ -125,9 +125,9 @@
 
   <p>Sea $U\subseteq \mathbb{R}^{n}$ un conjunto abierto y sea $\varphi:U\to\mathbb{R}^{k}$ una transformación dada por
     $$\varphi(\vec{x})=\bigl(\varphi_1(\vec{x}),\varphi_2(\vec{x}),\ldots,\varphi_k(\vec{x})\bigr),$$
-    donde $ \vec{x} = (x_{1}, \ldots, x_{n}) \in \mathbb{R}^{n}$ y cada función componente $\varphi_i:U\to\mathbb{R}, i=1,\ldots,m,$ 
+    donde $ \vec{x} = (x_{1}, \ldots, x_{n}) \in \mathbb{R}^{n}$ y cada función componente $\varphi_i:U\to\mathbb{R}, i=1,\ldots,k,$ 
     es una función real de $n$ variables.
-    Supongamos que para todo $\vec{x}=(x_1,\ldots,x_n)\in U$ y cualesquiera $i \in \{1,\ldots,m\},j\in \{1,\ldots,n\}$, existe la derivada parcial
+    Supongamos que para todo $\vec{x}=(x_1,\ldots,x_n)\in U$ y cualesquiera $i \in \{1,\ldots,k\},j\in \{1,\ldots,n\}$, existe la derivada parcial
     $$\frac{\partial \varphi_i}{\partial x_j}(\vec{x}).$$
   </p>
 
@@ -162,7 +162,7 @@
     \bigl(J_{\varphi}(\vec{x})\bigr)_{ij}
     =
     \frac{\partial \varphi_i}{\partial x_j}(\vec{x}),
-    \qquad i=1,\ldots,m,\quad j=1,\ldots,n.
+    \qquad i=1,\ldots,k,\quad j=1,\ldots,n.
     $$
   </p>
 
@@ -229,9 +229,9 @@
 
   <p>
     Sea $m\in\mathbb{N}$, con $m\geq 2$, y sea
-    $$p=(p_1,p_2,\ldots,p_k)$$
+    $$\vec{p}=(p_1,p_2,\ldots,p_k)$$
     un vector de probabilidades, es decir,
-    $$p_i\geq 0,\qquad i=1,\ldots,m,$$
+    $$p_i\geq 0,\qquad i=1,\ldots,k,$$
     y
     $$\sum_{i=1}^{k}p_i=1.$$
   </p>
@@ -242,13 +242,13 @@
 
   <ul>
     <li>
-      En cada ensayo ocurre exactamente una de $m$ categorías posibles.
+      En cada ensayo ocurre exactamente una de $k$ categorías posibles.
     </li>
     <li>
       Las categorías son mutuamente excluyentes.
     </li>
     <li>
-      La probabilidad de observar la categoría $i$ en cualquier ensayo es $p_i$, para $i=1,\ldots,m$.
+      La probabilidad de observar la categoría $i$ en cualquier ensayo es $p_i$, para $i=1,\ldots,k$.
     </li>
     <li>
       Las probabilidades $p_1,\ldots,p_k$ permanecen constantes en todos los ensayos.
@@ -257,21 +257,21 @@
 
   <p>
     Definimos el vector aleatorio
-    $$X=(X_1,X_2,\ldots,X_k),$$
+    $$\vec{X}=(X_1,X_2,\ldots,X_k),$$
     donde $X_i$ representa el número de veces que ocurre la categoría $i$ en los $n$ ensayos.
   </p>
 
   <p>
     Entonces
-    $$X_i\in\mathbb{N}_{0},\qquad i=1,\ldots,m,$$
+    $$X_i\in\mathbb{N}_{0},\qquad i=1,\ldots,k,$$
     y necesariamente se cumple que
     $$X_1+X_2+\cdots+X_k=n.$$
   </p>
 
   <p>
-    Decimos que el vector aleatorio $X=(X_1,\ldots,X_k)$ tiene <strong>distribución multinomial</strong> con parámetros $n$ y $(p_1,\ldots,p_k)$ si su función de probabilidad está dada por
+    Decimos que el vector aleatorio $\vec{X}=(X_1,\ldots,X_k)$ tiene <strong>distribución multinomial</strong> con parámetros $n$ y $(p_1,\ldots,p_k)$ si su función de probabilidad está dada por
     $$
-  p_X(x_1,\ldots,x_k)
+  p_{\vec{X}}(x_1,\ldots,x_k)
   =
   \mathbb{P}(X_1=x_1,\ldots,X_k=x_k)
   =
@@ -290,13 +290,13 @@
   <p>
     En este caso escribimos
     $$
-    X=(X_1,\ldots,X_k)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_k).
+    \vec{X}=(X_1,\ldots,X_k)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_k).
     $$
     También puede escribirse de forma compacta como
     $$
-    X\sim \operatorname{Multinomial}(n,p),
+    \vec{X}\sim \operatorname{Multinomial}(n,\vec{p}),
     $$
-    donde $p=(p_1,\ldots,p_k)$.
+    donde $\vec{p}=(p_1,\ldots,p_k)$.
   </p>
 
 </div>
@@ -306,7 +306,7 @@
   <h1 class="title-practica">Observación (Soporte de la distribución multinomial)</h1>
 
   <p>
-    El conjunto de valores posibles del vector aleatorio $X=(X_1,\ldots,X_k)$ está dado por
+    El conjunto de valores posibles del vector aleatorio $\vec{X}=(X_1,\ldots,X_k)$ está dado por
     $$
     S_n=
     \left\{
@@ -351,11 +351,11 @@
   </p>
 
   <p>
-    Este coeficiente representa el número de formas distintas en que pueden ordenarse $x_1$ ocurrencias de la categoría $1$, $x_2$ ocurrencias de la categoría $2$, y así sucesivamente, hasta $x_k$ ocurrencias de la categoría $m$, dentro de una secuencia de $n$ ensayos.
+    Este coeficiente representa el número de formas distintas en que pueden ordenarse $x_1$ ocurrencias de la categoría $1$, $x_2$ ocurrencias de la categoría $2$, y así sucesivamente, hasta $x_k$ ocurrencias de la categoría $k$, dentro de una secuencia de $n$ ensayos.
   </p>
 <!-- 
   <p>
-    Por ejemplo, una secuencia particular con $x_i$ ocurrencias de la categoría $i$, para $i=1,\ldots,m$, tiene probabilidad
+    Por ejemplo, una secuencia particular con $x_i$ ocurrencias de la categoría $i$, para $i=1,\ldots,k$, tiene probabilidad
     $$
     p_1^{x_1}p_2^{x_2}\cdots p_k^{x_k}.
     $$
@@ -385,10 +385,10 @@
     Una forma formal de construir una distribución multinomial es la siguiente.
     Sean
     $$Y_1,Y_2,\ldots,Y_n$$
-    variables aleatorias independientes e idénticamente distribuidas con valores en el conjunto $\{1,\ldots,m\}$, tales que
+    variables aleatorias independientes e idénticamente distribuidas con valores en el conjunto $\{1,\ldots,k\}$, tales que
     $$
     \mathbb{P}(Y_j=i)=p_i,
-    \qquad i=1,\ldots,m,\quad j=1,\ldots,n.
+    \qquad i=1,\ldots,k,\quad j=1,\ldots,n.
     $$
   </p>
 
@@ -396,7 +396,7 @@
     Para cada categoría $i$, definimos
     $$
     X_i=\sum_{j=1}^{n}\mathbf{1}_{\{Y_j=i\}},
-    \qquad i=1,\ldots,m.
+    \qquad i=1,\ldots,k.
     $$
   </p>
 
@@ -445,7 +445,7 @@
 
   
     Si $(X_1,\ldots,X_k)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_k),$
-    entonces, para cada $i=1,\ldots,m$,
+    entonces, para cada $i=1,\ldots,k$,
     $$X_i\sim \operatorname{Binomial}(n,p_i).
     $$
   </p>
@@ -475,9 +475,9 @@
   </p>
 
   <p>
-    En particular, si se conocen $m-1$ componentes del vector, la última queda completamente determinada:
+    En particular, si se conocen $k-1$ componentes del vector, la última queda completamente determinada:
     $$
-    X_k=n-X_1-\cdots-X_{m-1}.
+    X_k=n-X_1-\cdots-X_{k-1}.
     $$
   </p>
 
@@ -496,7 +496,7 @@
     $$
     X=(X_1,\ldots,X_k)\sim \operatorname{Multinomial}(n;p_1,\ldots,p_k).
     $$
-    Entonces, para cada $i=1,\ldots,m$, se tiene
+    Entonces, para cada $i=1,\ldots,k$, se tiene
     $$
     \mathbb{E}[X_i]=np_i.
     $$
@@ -506,7 +506,7 @@
     Además,
     $$
     \operatorname{Var}(X_i)=np_i(1-p_i),
-    \qquad i=1,\ldots,m.
+    \qquad i=1,\ldots,k.
     $$
   </p>
 
