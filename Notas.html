@@ -637,21 +637,17 @@
   <h1 class="title-practica">Definición (Esperanza de un vector aleatorio)</h1>
 
   <p>
-    Sea
-    $$
+    Sea $
     \vec{X}=(X_1,\ldots,X_n)
-    $$
-    un vector aleatorio con valores en $\mathbb{R}^{n}$.
-  </p>
-
-  <p>
-    Si cada componente $X_i$ es integrable, es decir,
+     \colon \Omega \to \mathbb{R}^{n}
+    $
+    un vector aleatorio. Si cada componente $X_i$ es Lebesgue integrable con respecto a la medida de probabilidad $\mathbb{P}$, es decir,
     $$
     \mathbb{E}[|X_i|]<\infty,\qquad i=1,\ldots,n,
     $$
     entonces se define la <strong>esperanza</strong> de $\vec{X}$ componente a componente como
     $$
-    \mathbb{E}[X]
+    \mathbb{E}[\vec{X}]
     =
     \begin{pmatrix}
     \mathbb{E}[X_1]\\
@@ -918,11 +914,12 @@
 
 
 <div class="teorema-box">
-  <h1 class="title-practica">Observación (Desigualdad de Cauchy-Schwarz para la covarianza)</h1>
+  <h1 class="title-practica">Proposición (Desigualdad de Cauchy-Schwarz para la covarianza)</h1>
 
   <p>
-    Si $X$ y $Y$ tienen segundos momentos finitos, entonces
-    $$
+    Si $X, Y \colon \Omega \to \mathbb{R}$ son variables aleatorias tales que $\mathbb{E}[X^2]<\infty$ 
+    y $\mathbb{E}[Y^2]<\infty$, entonces
+    $$ £
     |\operatorname{Cov}(X,Y)|
     \leq
     \sqrt{\operatorname{Var}(X)}
