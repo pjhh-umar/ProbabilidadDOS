@@ -674,22 +674,23 @@
 
 
 <div class="teorema-box">
-  <h1 class="title-practica">Propiedades de la esperanza de un vector aleatorio</h1>
+  <h1 class="title-practica">Proposición (Propiedades de la esperanza de un vector aleatorio)</h1>
 
   <p>
-    Sea $X$ un vector aleatorio con valores en $\mathbb{R}^{n}$ tal que $\mathbb{E}[X]$ existe. 
-    Si $A$ es una matriz real de tamaño $k\times n$ y $b\in\mathbb{R}^{k}$, entonces
+    Sea $\vec{X} \colon \Omega \to \mathbb{R}^{n}$ un vector aleatorio tal que $\mathbb{E}[\vec{X}]$ tal que 
+    $\mathbb{E}[\vec{X}]$ existe. Si $A \in \mathbb{M}_{k \times n}(\mathbb{R})$ y
+    $\vec{b}\in\mathbb{R}^{k}$, entonces $\mathbb{E}[A\vec{X}+b]$ existe y se cumple que
     $$
-    \mathbb{E}[AX+b]=A\mathbb{E}[X]+b.
+    \mathbb{E}[A\vec{X} + \vec{b}]=A\mathbb{E}[\vec{X}]+\vec{b}.
     $$
   </p>
 
   <p>
-    En particular, para todo $a\in\mathbb{R}^{n}$,
+    En particular, para todo $\vec{a}\in\mathbb{R}^{n}$,
     $$
-    \mathbb{E}[a^{\mathsf{T}}X]
+    \mathbb{E}[\vec{a}^{\mathsf{T}}\vec{X}]
     =
-    a^{\mathsf{T}}\mathbb{E}[X].
+    \vec{a}^{\mathsf{T}}\mathbb{E}[\vec{X}].
     $$
   </p>
 
@@ -787,16 +788,8 @@
   <h1 class="title-practica">Definición (Covarianza)</h1>
 
   <p>
-    Sean $X$ y $Y$ variables aleatorias reales tales que
-    $$
-    \mathbb{E}[X^2]<\infty
-    \qquad \text{y} \qquad
-    \mathbb{E}[Y^2]<\infty.
-    $$
-  </p>
-
-  <p>
-    Se define la <strong>covarianza</strong> entre $X$ y $Y$ como
+    Sean $X, Y \colon \Omega \to \mathbb{R}$ variables aleatorias  tales que $\mathbb{E}[X^2]<\infty$ 
+    y $\mathbb{E}[Y^2]<\infty$, i.e. $X$ y $Y$  tienen segundo momento finito. Se define la <strong>covarianza</strong> entre $X$ y $Y$ como
     $$
     \operatorname{Cov}(X,Y)
     =
@@ -806,23 +799,13 @@
     \right].
     $$
   </p>
-
-  <p>
-    La covarianza mide el grado de variación conjunta lineal entre $X$ y $Y$.
-  </p>
-
-  <p>
-    Si denotamos
-    $$
-    \mu_X=\mathbb{E}[X],
-    \qquad
-    \mu_Y=\mathbb{E}[Y],
-    $$
-    entonces
-    $$
-    \operatorname{Cov}(X,Y)
+  <p>Si denotamos $\mu_X=\mathbb{E}[X]$ y
+    $\mu_Y=\mathbb{E}[Y]$, entonces la covarianza puede escribirse como
+    $$\operatorname{Cov}(X,Y)
     =
-    \mathbb{E}\left[(X-\mu_X)(Y-\mu_Y)\right].
+    \mathbb{E}\left[
+    (X-\mu_X)(Y-\mu_Y)
+    \right].
     $$
   </p>
 
@@ -830,10 +813,12 @@
 
 
 <div class="teorema-box">
-  <h1 class="title-practica">Propiedades básicas de la covarianza</h1>
+  <h1 class="title-practica">Proposición (Propiedades de la covarianza)</h1>
 
   <p>
-    Sean $X,Y,Z$ variables aleatorias reales con segundos momentos finitos y sean $a,b,c,d\in\mathbb{R}$. Entonces:
+    Sean $X,Y,Z\colon \Omega \to \mathbb{R}$ tales que 
+    $\mathbb{E}[X^2]<\infty$, $\mathbb{E}[Y^2]<\infty$ y $\mathbb{E}[Z^2]<\infty$, y 
+    sean $a,b,c,d\in\mathbb{R}$. Entonces
   </p>
 
   <ul>
@@ -899,6 +884,7 @@
       \operatorname{Cov}(X,Y)=0.
       $$
     </li>
+    <li></li>
   </ul>
 
   <p>
@@ -911,8 +897,27 @@
 
 </div>
 
+<div class="teorema-box">
+  <h1 class="title-practica">Teorema (Interpretación de la covarianza) </h1>
 
-<div class="nota-box">
+  <p>La covarianza mide la relación lineal entre $X$ y $Y$. 
+    <ul>
+      <li>
+        Si $\operatorname{Cov}(X,Y)>0$, entonces $X$ y $Y$ tienden a aumentar o disminuir juntos.
+      </li><br>
+      <li>
+        Si $\operatorname{Cov}(X,Y) < 0$, entonces $X$ y $Y$ tienden a moverse en direcciones opuestas.
+      </li><br>
+      <li>
+        Si $\operatorname{Cov}(X,Y)=0$, entonces no hay una relación lineal entre $X$ y $Y$, aunque podrían estar relacionados de manera no lineal.
+      </li>
+    </ul>
+  </p>
+  
+</div>
+
+
+<div class="teorema-box">
   <h1 class="title-practica">Observación (Desigualdad de Cauchy-Schwarz para la covarianza)</h1>
 
   <p>
