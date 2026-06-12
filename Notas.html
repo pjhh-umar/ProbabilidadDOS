@@ -522,7 +522,7 @@
     $$
     \operatorname{Cov}(X)
     =
-    n\left(\operatorname{diag}(p)-pp^{T}\right).
+    n\left(\operatorname{niag}(p)-pp^{T}\right).
     $$
   </p>
 
@@ -1345,7 +1345,7 @@
     \sigma_{11} & \sigma_{12} & \cdots & \sigma_{1d}\\
     \sigma_{21} & \sigma_{22} & \cdots & \sigma_{2d}\\
     \vdots & \vdots & \ddots & \vdots\\
-    \sigma_{d1} & \sigma_{d2} & \cdots & \sigma_{dd}
+    \sigma_{n1} & \sigma_{n2} & \cdots & \sigma_{nd}
     \end{pmatrix},
     $$
     donde
@@ -1365,44 +1365,45 @@
   <h1 class="title-practica">Definición (Distribución gaussiana multivariada no degenerada)</h1>
 
   <p>
-    Sea $d\in\mathbb{N}$, sea $\mu\in\mathbb{R}^{n}$ y sea $\Sigma$ una matriz de tamaño $d\times n$ simétrica y definida positiva.
+    Sea $n\in\mathbb{N}$, sea $\mu\in\mathbb{R}^{n}$ y sea $\Sigma$ una matriz de tamaño $n\times n$ simétrica y definida positiva.
   </p>
 
   <p>
     Decimos que el vector aleatorio
     $$
-    X=(X_1,\ldots,X_n)
+    \vec{X}=(X_1,\ldots,X_n)
     $$
-    tiene <strong>distribución gaussiana multivariada no degenerada</strong> con vector de medias $\mu$ y matriz de covarianzas $\Sigma$ si $X$ es absolutamente continuo y su función de densidad conjunta está dada por
+    tiene <strong>distribución gaussiana multivariada no degenerada</strong> con vector de medias $\mu$ y matriz de covarianzas $\Sigma$ 
+    si $\vec{X}$ es absolutamente continuo y su función de densidad conjunta está dada por
     $$
-    f_X(x)
+    f_\vec{X}(x)
     =
-    \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}
+    \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}
     \exp\left\{
-    -\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)
+    -\frac{1}{2}(\vec{x}-\mu)^{T}\Sigma^{-1}(\vec{x}-\mu)
     \right\},
-    \qquad x\in\mathbb{R}^{n}.
+    \qquad \vec{x}\in\mathbb{R}^{n}.
     $$
   </p>
 
   <p>
     En este caso escribimos
     $$
-    X\sim N_n(\mu,\Sigma).
+    \vec{X}\sim N_n(\mu,\Sigma).
     $$
   </p>
 
   <p>
-    De manera equivalente, si $x=(x_1,\ldots,x_n)^{T}$, entonces
+    De manera equivalente, si $\vec{x}=(x_1,\ldots,x_n)^{T}$, entonces
     $$
-    f_X(x_1,\ldots,x_n)
+    f_\vec{X}(x_1,\ldots,x_n)
     =
-    \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}
+    \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}
     \exp\left\{
     -\frac{1}{2}
-    \bigl(x-\mu\bigr)^{T}
+    \bigl(\vec{x}-\mu\bigr)^{T}
     \Sigma^{-1}
-    \bigl(x-\mu\bigr)
+    \bigl(\vec{x}-\mu\bigr)
     \right\}.
     $$
   </p>
@@ -1416,9 +1417,9 @@
   <p>
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea
     $$
-    X=(X_1,\ldots,X_d)
+    \vec{X}=(X_1,\ldots,X_n)
     $$
-    un vector aleatorio con valores en $\mathbb{R}^{d}$.
+    un vector aleatorio con valores en $\mathbb{R}^{n}$.
   </p>
 
   <p>
@@ -1427,16 +1428,16 @@
 
   <ol>
     <li>
-      Si $X$ es un vector gaussiano, entonces cada componente $X_i$ es una variable aleatoria gaussiana, para todo
+      Si $\vec{X}$ es un vector gaussiano, entonces cada componente $X_i$ es una variable aleatoria gaussiana, para todo
       $$
       i=1,\ldots,d.
       $$
     </li>
 
     <li>
-      Si $X_1,\ldots,X_d$ son variables aleatorias gaussianas y son mutuamente independientes, entonces el vector aleatorio
+      Si $X_1,\ldots,X_n$ son variables aleatorias gaussianas y son mutuamente independientes, entonces el vector aleatorio
       $$
-      X=(X_1,\ldots,X_d)
+      \vec{X}=(X_1,\ldots,X_n)
       $$
       es un vector gaussiano.
     </li>
@@ -1445,36 +1446,36 @@
 </div>
 
 <div class="teorema-box">
-  <h1 class="title-practica">Proposición (Combinaciones lineales de un vector gaussiano)</h1>
+  <h1 class="title-practica">Proposición </h1>
 
   <p>
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea
     $$
-    X=(X_1,\ldots,X_d)
+    \vec{X}=(X_1,\ldots,X_n)
     $$
-    un vector gaussiano con vector de medias $\mu\in\mathbb{R}^{d}$ y matriz de covarianzas
-    $\Sigma_X$.
+    un vector gaussiano con vector de medias $\mu\in\mathbb{R}^{n}$ y matriz de covarianzas
+    $\Sigma$.
   </p>
 
   <p>
     Sea
     $$
-    \alpha=(\alpha_1,\ldots,\alpha_d)\in\mathbb{R}^{d}.
+    \alpha=(\alpha_1,\ldots,\alpha_n)\in\mathbb{R}^{n}.
     $$
     Definimos la combinación lineal
     $$
     Y
     =
-    \alpha_1X_1+\cdots+\alpha_dX_d
+    \alpha_1X_1+\cdots+\alpha_nX_n
     =
-    \alpha^{\mathsf{T}}X.
+    \alpha^{\mathsf{T}}\vec{X}.
     $$
   </p>
 
   <p>
     Entonces $Y$ es una variable aleatoria gaussiana y
     $$
-    Y\sim N\left(\alpha^{\mathsf{T}}\mu,\; \alpha^{\mathsf{T}}\Sigma_X\alpha\right).
+    Y\sim N\left(\alpha^{\mathsf{T}}\mu,\; \alpha^{\mathsf{T}}\Sigma\alpha\right).
     $$
   </p>
 
@@ -1780,7 +1781,7 @@
     $$
     X\sim N_n(0,I_n),
     $$
-    donde $0$ es el vector cero de $\mathbb{R}^{n}$ e $I_n$ es la matriz identidad de tamaño $d\times n$.
+    donde $0$ es el vector cero de $\mathbb{R}^{n}$ e $I_n$ es la matriz identidad de tamaño $n\times n$.
   </p>
 
   <p>
@@ -1842,7 +1843,7 @@
     $$
     f_X(x)
     =
-    \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}
+    \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}
     \exp\left\{
     -\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)
     \right\},
