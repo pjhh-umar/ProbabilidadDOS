@@ -518,11 +518,11 @@
   </p>
 
   <p>
-    En forma matricial, si $p=(p_1,\ldots,p_k)^{\mathsf{T}}$, entonces la matriz de covarianzas de $X$ está dada por
+    En forma matricial, si $p=(p_1,\ldots,p_k)^{T}$, entonces la matriz de covarianzas de $X$ está dada por
     $$
     \operatorname{Cov}(X)
     =
-    n\left(\operatorname{diag}(p)-pp^{\mathsf{T}}\right).
+    n\left(\operatorname{diag}(p)-pp^{T}\right).
     $$
   </p>
 
@@ -684,9 +684,9 @@
   <p>
     En particular, para todo $\vec{a}\in\mathbb{R}^{n}$,
     $$
-    \mathbb{E}[\vec{a}^{\mathsf{T}}\vec{X}]
+    \mathbb{E}[\vec{a}^{T}\vec{X}]
     =
-    \vec{a}^{\mathsf{T}}\mathbb{E}[\vec{X}].
+    \vec{a}^{T}\mathbb{E}[\vec{X}].
     $$
   </p>
 
@@ -886,6 +886,7 @@
     </li>
   </ul>
 
+
 </div>
 
 <div class="teorema-box">
@@ -907,7 +908,7 @@
   
 </div>
 
-
+  
 <div class="teorema-box">
   <h1 class="title-practica">Proposición (Desigualdad de Cauchy-Schwarz para la covarianza)</h1>
 
@@ -1065,7 +1066,7 @@
   <p>
     Sea
     $$
-    X=(X_1,\ldots,X_n)
+    \vec{X}=(X_1,\ldots,X_n)
     $$
     un vector aleatorio con valores en $\mathbb{R}^{n}$ tal que
     $$
@@ -1077,7 +1078,7 @@
   <p>
     Sea
     $$
-    \mu=\mathbb{E}[X]
+    \mu_{\vec{X}}=\mathbb{E}[\vec{X}]
     =
     \begin{pmatrix}
     \mathbb{E}[X_1]\\
@@ -1088,14 +1089,14 @@
   </p>
 
   <p>
-    Se define la <strong>matriz de covarianzas</strong> de $X$ como
+    Se define la <strong>matriz de covarianzas</strong> de $\vec{X}$ como
     $$
-    \operatorname{Cov}(X)
+    \operatorname{Cov}(\vec{X})
     =
     \Sigma
     =
     \mathbb{E}\left[
-    (X-\mu)(X-\mu)^{\mathsf{T}}
+    (\vec{X}-\mu)(\vec{X}-\mu)^{T}
     \right].
     $$
   </p>
@@ -1131,34 +1132,31 @@
   <h1 class="title-practica">Propiedades básicas de la matriz de covarianzas</h1>
 
   <p>
-    Sea $X=(X_1,\ldots,X_n)$ un vector aleatorio con segundos momentos finitos y sea
-    $$
-    \Sigma=\operatorname{Cov}(X).
-    $$
-    Entonces:
+    Sea $X=(X_1,\ldots,X_n)$ un vector aleatorio con segundos momentos finitos y sea $\Sigma=\operatorname{Cov}(\vec{X}).$
+    Entonces se cumplen las siguientes propiedades:
   </p>
 
   <ul>
     <li>
       <strong>Simetría:</strong>
       $$
-      \Sigma^{\mathsf{T}}=\Sigma.
+      \Sigma^{T}=\Sigma.
       $$
     </li>
 
     <li>
-      <strong>Semidefinida positiva:</strong> para todo $a\in\mathbb{R}^{n}$,
+      <strong>Semidefinida positiva:</strong> Para todo $\vec{a}\in\mathbb{R}^{n}$,
       $$
-      a^{\mathsf{T}}\Sigma a\geq 0.
+      \vec{a}^{T}\Sigma \vec{a}\geq 0.
       $$
     </li>
 
     <li>
-      <strong>Varianza de una combinación lineal:</strong> para todo $a\in\mathbb{R}^{n}$,
+      <strong>Varianza de una combinación lineal:</strong> para todo $\vec{a}\in\mathbb{R}^{n}$,
       $$
-      \operatorname{Var}(a^{\mathsf{T}}X)
+      \operatorname{Var}(\vec{a}^{T}X)
       =
-      a^{\mathsf{T}}\Sigma a.
+      \vec{a}^{T}\Sigma \vec{a}.
       $$
     </li>
 
@@ -1181,18 +1179,17 @@
     <li>
       <strong>Transformaciones afines:</strong> si $A$ es una matriz real de tamaño $k\times n$ y $b\in\mathbb{R}^{k}$, entonces
       $$
-      \operatorname{Cov}(AX+b)=A\Sigma A^{\mathsf{T}}.
+      \operatorname{Cov}(AX+b)=A\Sigma A^{T}.
       $$
     </li>
   </ul>
 
 </div>
 
-<!-- 
 <div class="nota-box">
-  <h1 class="title-practica">Observación (Matriz de covarianzas diagonal)</h1>
+  <h1 class="title-practica">Observación</h1> <!--  (Matriz de covarianzas diagonal)-->
 
-  <p>
+  <p>Sea $X=(X_1,\ldots,X_n)$ un vector aleatorio con segundos momentos finitos.
     Si las componentes $X_1,\ldots,X_n$ son independientes, entonces
     $$
     \operatorname{Cov}(X_i,X_j)=0,
@@ -1217,13 +1214,13 @@
     Sin embargo, en general, que la matriz de covarianzas sea diagonal no implica que las componentes sean independientes.
   </p>
 
-  <p>
+  <!-- <p>
     En el caso particular de un vector gaussiano multivariado, si
     $$
     X\sim N_n(\mu,\Sigma),
     $$
     entonces las componentes $X_1,\ldots,X_n$ son independientes si y sólo si $\Sigma$ es diagonal.
-  </p>
+  </p> -->
 
 </div>
 
@@ -1232,7 +1229,7 @@
   <h1 class="title-practica">Definición (Matriz de correlaciones)</h1>
 
   <p>
-    Sea $X=(X_1,\ldots,X_n)$ un vector aleatorio con segundos momentos finitos y varianzas positivas:
+    Sea $\vec{X}=(X_1,\ldots,X_n)$ un vector aleatorio con segundos momentos finitos y varianzas positivas:
     $$
     \operatorname{Var}(X_i)>0,
     \qquad i=1,\ldots,n.
@@ -1240,7 +1237,7 @@
   </p>
 
   <p>
-    La <strong>matriz de correlaciones</strong> de $X$ es la matriz
+    Se define y denota la <strong>matriz de correlaciones</strong> de $\vec{X}$  como:
     $$
     R=
     (\rho_{ij})_{i,j=1}^{n},
@@ -1255,7 +1252,7 @@
   </p>
 
   <p>
-    En particular,
+    En particular, observemos que:
     $$
     \rho_{ii}=1,
     \qquad i=1,\ldots,n.
@@ -1269,14 +1266,14 @@
   <h1 class="title-practica">Propiedades básicas de la matriz de correlaciones</h1>
 
   <p>
-    Sea $R$ la matriz de correlaciones de un vector aleatorio $X=(X_1,\ldots,X_n)$. Entonces:
+    Sea $R$ la matriz de correlaciones de un vector aleatorio $\vec{X}=(X_1,\ldots,X_n)$. Entonces:
   </p>
 
   <ul>
     <li>
       $R$ es simétrica:
       $$
-      R^{\mathsf{T}}=R.
+      R^{T}=R.
       $$
     </li>
 
@@ -1299,85 +1296,37 @@
     <li>
       $R$ es semidefinida positiva:
       $$
-      a^{\mathsf{T}}Ra\geq 0,
-      \qquad \text{para todo } a\in\mathbb{R}^{n}.
+      \vec{a}^{T}R \vec{a}\geq 0,
+      \qquad \text{para todo } \vec{a}\in\mathbb{R}^{n}.
       $$
     </li>
   </ul>
 
 </div>
 
-
-<div class="nota-box">
-  <h1 class="title-practica">Observación (Relación con la distribución gaussiana multivariada)</h1>
-
-  <p>
-    Si
-    $$
-    X\sim N_n(\mu,\Sigma),
-    $$
-    entonces $\mu$ es el vector de medias de $X$ y $\Sigma$ es su matriz de covarianzas.
-  </p>
-
-  <p>
-    Además, para cada $a\in\mathbb{R}^{n}$,
-    $$
-    a^{\mathsf{T}}X
-    \sim
-    N\left(a^{\mathsf{T}}\mu,\;a^{\mathsf{T}}\Sigma a\right).
-    $$
-  </p>
-
-  <p>
-    Por esta razón, la matriz de covarianzas $\Sigma$ determina la varianza de cualquier combinación lineal de las componentes de $X$.
-  </p>
-
-  <p>
-    En particular, si $\Sigma$ es diagonal, entonces las componentes de $X$ son independientes. Esta equivalencia es una propiedad especial de los vectores gaussianos.
-  </p>
-
-</div>
-
-
-
 <div class="definicion-box">
-  <h1 class="title-practica">Definición (Distribución gaussiana multivariada)</h1>
+  <h1 class="title-practica">Definición (Distribución Gaussiana Multivariada)</h1>
 
   <p>
-    Sea $d\in\mathbb{N}$ y sea
-    $$X=(X_1,\ldots,X_n)$$
-    un vector aleatorio con valores en $\mathbb{R}^{n}$.
-  </p>
-
-  <p>
-    Decimos que $X$ tiene <strong>distribución gaussiana multivariada</strong> o <strong>distribución normal multivariada</strong> si para todo vector
-    $$a=(a_1,\ldots,a_n)\in\mathbb{R}^{n},$$
+    Sea $n\in\mathbb{N}$ y sea $\vec{X}=(X_1,\ldots,X_n)$ un vector aleatorio con valores en $\mathbb{R}^{n}$.
+    Se dice que $X$ tiene <strong>distribución gaussiana multivariada</strong> o <strong>distribución normal multivariada</strong> si para todo vector
+    $$\vec{a}=(a_1,\ldots,a_n)\in\mathbb{R}^{n},$$
     la combinación lineal
     $$
-    a^{\mathsf{T}}X
+    \vec{a}^{T}\vec{X}
     =
     a_1X_1+\cdots+a_nX_n
     $$
     tiene distribución normal univariada.
   </p>
+<!-- 
+  <p>
+    Es decir, $\vec{X}$ es un vector aleatorio gaussiano si toda proyección lineal de $\vec{X}$ sobre una dirección $a\in\mathbb{R}^{n}$ es una variable aleatoria normal.
+  </p> -->
 
   <p>
-    Es decir, $X$ es un vector aleatorio gaussiano si toda proyección lineal de $X$ sobre una dirección $a\in\mathbb{R}^{n}$ es una variable aleatoria normal.
-  </p>
-
-  <p>
-    Si
-    $$
-    \mu=\mathbb{E}[X]\in\mathbb{R}^{n}
-    $$
-    es el vector de medias y
-    $$
-    \Sigma=\operatorname{Cov}(X)
-    $$
-    es la matriz de covarianzas de $X$, entonces escribimos
-    $$
-    X\sim N_n(\mu,\Sigma).
-    $$
+    Si $\mu=\mathbb{E}[\vec{X}]\in\mathbb{R}^{n}$ es el vector de medias y $\Sigma=\operatorname{Cov}(\vec{X})$
+    es la matriz de covarianzas de $\vec{X}$, entonces escribimos $\vec{X}\sim \mathcal{N}(\mu,\Sigma).$
   </p>
 
   <p>
@@ -1411,41 +1360,6 @@
 </div>
 
 
-<div class="nota-box">
-  <h1 class="title-practica">Observación (Parámetros de la distribución gaussiana multivariada)</h1>
-
-  <p>
-    En la distribución gaussiana multivariada
-    $$
-    X\sim N_n(\mu,\Sigma),
-    $$
-    el parámetro $\mu$ representa el <strong>vector de medias</strong>, mientras que $\Sigma$ representa la <strong>matriz de covarianzas</strong>.
-  </p>
-
-  <p>
-    La matriz $\Sigma$ debe ser simétrica y semidefinida positiva, es decir,
-    $$
-    \Sigma^{\mathsf{T}}=\Sigma
-    $$
-    y
-    $$
-    a^{\mathsf{T}}\Sigma a\geq 0,
-    \qquad \text{para todo } a\in\mathbb{R}^{n}.
-    $$
-  </p>
-
-  <p>
-    La condición anterior es necesaria porque
-    $$
-    a^{\mathsf{T}}\Sigma a
-    =
-    \operatorname{Var}(a^{\mathsf{T}}X),
-    $$
-    y la varianza de una variable aleatoria siempre es no negativa.
-  </p>
-
-</div>
-
 
 <div class="definicion-box">
   <h1 class="title-practica">Definición (Distribución gaussiana multivariada no degenerada)</h1>
@@ -1465,7 +1379,7 @@
     =
     \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}
     \exp\left\{
-    -\frac{1}{2}(x-\mu)^{\mathsf{T}}\Sigma^{-1}(x-\mu)
+    -\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)
     \right\},
     \qquad x\in\mathbb{R}^{n}.
     $$
@@ -1479,14 +1393,14 @@
   </p>
 
   <p>
-    De manera equivalente, si $x=(x_1,\ldots,x_n)^{\mathsf{T}}$, entonces
+    De manera equivalente, si $x=(x_1,\ldots,x_n)^{T}$, entonces
     $$
     f_X(x_1,\ldots,x_n)
     =
     \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}
     \exp\left\{
     -\frac{1}{2}
-    \bigl(x-\mu\bigr)^{\mathsf{T}}
+    \bigl(x-\mu\bigr)^{T}
     \Sigma^{-1}
     \bigl(x-\mu\bigr)
     \right\}.
@@ -1494,6 +1408,77 @@
   </p>
 
 </div>
+
+<!-- 
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Relación con la distribución gaussiana multivariada)</h1>
+
+  <p>
+    Si
+    $$
+    X\sim N_n(\mu,\Sigma),
+    $$
+    entonces $\mu$ es el vector de medias de $X$ y $\Sigma$ es su matriz de covarianzas.
+  </p>
+
+  <p>
+    Además, para cada $a\in\mathbb{R}^{n}$,
+    $$
+    a^{T}X
+    \sim
+    N\left(a^{T}\mu,\;a^{T}\Sigma a\right).
+    $$
+  </p>
+
+  <p>
+    Por esta razón, la matriz de covarianzas $\Sigma$ determina la varianza de cualquier combinación lineal de las componentes de $X$.
+  </p>
+
+  <p>
+    En particular, si $\Sigma$ es diagonal, entonces las componentes de $X$ son independientes. Esta equivalencia es una propiedad especial de los vectores gaussianos.
+  </p>
+
+</div>
+
+
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación (Parámetros de la distribución gaussiana multivariada)</h1>
+
+  <p>
+    En la distribución gaussiana multivariada
+    $$
+    X\sim N_n(\mu,\Sigma),
+    $$
+    el parámetro $\mu$ representa el <strong>vector de medias</strong>, mientras que $\Sigma$ representa la <strong>matriz de covarianzas</strong>.
+  </p>
+
+  <p>
+    La matriz $\Sigma$ debe ser simétrica y semidefinida positiva, es decir,
+    $$
+    \Sigma^{T}=\Sigma
+    $$
+    y
+    $$
+    a^{T}\Sigma a\geq 0,
+    \qquad \text{para todo } a\in\mathbb{R}^{n}.
+    $$
+  </p>
+
+  <p>
+    La condición anterior es necesaria porque
+    $$
+    a^{T}\Sigma a
+    =
+    \operatorname{Var}(a^{T}X),
+    $$
+    y la varianza de una variable aleatoria siempre es no negativa.
+  </p>
+
+</div>
+
 
 
 <div class="nota-box">
@@ -1581,7 +1566,7 @@
     $$
     la variable aleatoria
     $$
-    a^{\mathsf{T}}X
+    a^{T}X
     $$
     tiene distribución normal univariada.
   </p>
@@ -1593,9 +1578,9 @@
     $$
     entonces, para todo $a\in\mathbb{R}^{n}$,
     $$
-    a^{\mathsf{T}}X
+    a^{T}X
     \sim
-    N\left(a^{\mathsf{T}}\mu,\; a^{\mathsf{T}}\Sigma a\right).
+    N\left(a^{T}\mu,\; a^{T}\Sigma a\right).
     $$
   </p>
 
@@ -1617,12 +1602,12 @@
     $$
     \varphi_X(t)
     =
-    \mathbb{E}\left[e^{i t^{\mathsf{T}}X}\right]
+    \mathbb{E}\left[e^{i t^{T}X}\right]
     =
     \exp\left\{
-    i t^{\mathsf{T}}\mu
+    i t^{T}\mu
     -
-    \frac{1}{2}t^{\mathsf{T}}\Sigma t
+    \frac{1}{2}t^{T}\Sigma t
     \right\},
     \qquad t\in\mathbb{R}^{n}.
     $$
@@ -1681,7 +1666,7 @@
     $$
     tiene distribución gaussiana multivariada en $\mathbb{R}^{k}$ y
     $$
-    Y\sim N_k(A\mu+b,\; A\Sigma A^{\mathsf{T}}).
+    Y\sim N_k(A\mu+b,\; A\Sigma A^{T}).
     $$
   </p>
 
@@ -1770,7 +1755,7 @@
       Una matriz de covarianzas $\Sigma$ simétrica y semidefinida positiva.
     </li>
     <li>
-      La propiedad de que toda combinación lineal $a^{\mathsf{T}}X$ tiene distribución normal univariada.
+      La propiedad de que toda combinación lineal $a^{T}X$ tiene distribución normal univariada.
     </li>
   </ul>
 
@@ -1789,7 +1774,7 @@
     =
     \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}
     \exp\left\{
-    -\frac{1}{2}(x-\mu)^{\mathsf{T}}\Sigma^{-1}(x-\mu)
+    -\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)
     \right\},
     \qquad x\in\mathbb{R}^{n}.
     $$
@@ -1797,9 +1782,9 @@
 
 </div>
 
-
-
  -->
+
+
 
 
   </body>
