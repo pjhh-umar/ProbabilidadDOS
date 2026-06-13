@@ -137,8 +137,22 @@
   </p>
 </div> -->
 
+    <div class="ejercicio-box">
+      <h1 class="number-title-practica"> Ejercicio</h1>
+      <p> Si $X \sim \mathrm{Bin}(n_1,p)$ y $Y \sim \mathrm{Bin}(n_2,p)$
+         son variables aleatorias independientes, encuentra la función 
+         de masa de probabilidad condicional de $X$ dado que $X + Y = n$.   </p>
+    </div>
+
+      <div class="ejercicio-box">
+      <h1 class="number-title-practica"> Ejercicio</h1>
+      <p> Si $X \sim \mathrm{Poisson}(\lambda_1)$ y $X \sim \mathrm{Poisson}(\lambda_2,p)$
+         son variables aleatorias independientes, encuentra la función 
+         de densidad codicional de $X$ dado que $X + X = n$.   </p>
+    </div>
+
   <div class="ejercicio-box">
-  <h1 class="title-practica">Ejercicio</h1>
+  <h1 class="number-title-practica">Ejercicio</h1>
   <p>
     Se sabe que las variables aleatorias $X$ y $Y$ tienen una densidad conjunta dada por la función $f(x,y)$. Suponga que $\mathbb{P}(Y=0)=0$. 
     Encuentre las densidades de las siguientes variables en términos de la función $f$:
@@ -204,7 +218,7 @@
 </div>
 
   <div class="ejercicio-box">
-  <h1 class="title-practica">Ejemplo</h1>
+  <h1 class="number-title-practica">Ejemplo</h1>
   <p>
     Sean $X$ y $Y$ variables aleatorias independientes con distribución $\mathcal{N}(0,1)$. 
     Demuestre que $X+Y$ y $X-Y$ son variables aleatorias independientes con distribución $\mathcal{N}(0,2)$.
@@ -248,7 +262,7 @@
 </div>
 
 <div class="ejercicio-box">
-  <h1 class="title-practica">Ejemplo</h1>
+  <h1 class="number-title-practica">Ejercicio</h1>
   <p>
     Sean $X$ y $Y$ variables aleatorias independientes con distribución $\operatorname{Exp}(1)$. 
     Demuestre que $\displaystyle{\frac{X}{X+Y}}$ y $X+Y$ son independientes, y encuentre sus distribuciones.
@@ -285,9 +299,9 @@
     $$
     F_X(x)=\mathbb{P}(X\leq x)=
     \begin{cases}
-    0, & \text{si } x&lt;a,\\
+    0, & \text{si } x &lt;a,\\
     \displaystyle{\frac{x-a}{b-a}}, & \text{si } a\leq x\leq b,\\
-    1, & \text{si } x&gt;b.
+    1, & \text{si } x &gt;b.
     \end{cases}
     $$
   </p>
@@ -299,6 +313,45 @@
     \mathbb{P}(c\leq X\leq d)=\displaystyle{\frac{d-c}{b-a}},
     \qquad a\leq c\leq d\leq b.
     $$
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sean $X$ y $Y$ variables aleatorias independientes tales que
+    $X\sim \operatorname{Unif}(0,1)$ y $Y\sim \operatorname{Unif}(0,\alpha)$,
+    con $\alpha>0$. Encuentre la función de densidad de
+    $$Z=X+Y.$$
+  </p>
+
+  <p>
+    <b>Observación:</b> Note que existen dos casos: $\alpha\geq 1$ y $\alpha&lt;1$.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+
+  <p>
+    Sea $(X_1,X_2)$ un vector aleatorio con distribución multinomial de parámetros
+    $n\in\mathbb{N}$ y $p_1,p_2\in(0,1)$, con $p_1+p_2=1$. Es decir,
+    $$
+    (X_1,X_2)\sim \operatorname{Multinomial}(n;p_1,p_2).
+    $$
+  </p>
+
+  <p>
+    Demuestre que
+    $$
+    X_1\sim \operatorname{Binomial}(n,p_1)
+    \qquad \text{y} \qquad
+    X_2\sim \operatorname{Binomial}(n,p_2).
+    $$
+  </p>
+
+  <p>
+    Concluya que, en el caso $k=2$, la distribución multinomial se reduce al caso binomial.
   </p>
 </div>
 
@@ -371,6 +424,31 @@ de la cara $i$. Calcula
 </div>
 
 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+
+  <p>
+    Sea $(X,Y)$ un vector aleatorio tal que $X,Y\in L^2(\Omega,\mathcal{F},\mathbb{P})$. 
+    Se sabe que si $X$ y $Y$ son independientes, entonces
+    $$
+    \operatorname{Cov}(X,Y)=0.
+    $$
+  </p>
+
+  <p>
+    Demuestre que el recíproco no es cierto en general. Es decir, construya un ejemplo de dos variables aleatorias $X$ y $Y$ tales que
+    $$
+    \operatorname{Cov}(X,Y)=0,
+    $$
+    pero $X$ y $Y$ no sean independientes.
+  </p>
+
+  <p>
+    Concluya que, en el caso de dos variables aleatorias, covarianza cero no implica independencia.
+  </p>
+</div>
+
+
     <div class="ejercicio-box">
       <h1 class="number-title-practica">Ejercicio</h1>
       <p>Sean $n,m \in \mathbb{N}$ arbitrarios pero fijos. 
@@ -389,6 +467,16 @@ de la cara $i$. Calcula
         </p>
     </div> 
 
+    <div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+
+  <p>
+    Sea $X=(X_1,X_2)^T$ un vector aleatorio bidimensional tal que
+    $X_1,X_2 \in L^2(\Omega,\mathcal{F},\mathbb{P})$. Sea
+    $\Sigma$ su matriz de covarianzas. Demuestre que si $A$ es una matriz real de tamaño $2\times 2$ y $b\in\mathbb{R}^2$, entonces
+      $$\operatorname{Cov}(AX+b)=A\Sigma A^T.$$
+  </p>
+</div>
 
     <div class="ejercicio-box">
       <h1 class="number-title-practica">Ejercicio</h1>
@@ -480,19 +568,7 @@ de la cara $i$. Calcula
       </p>
     </div>
 
-    <div class="ejercicio-box">
-      <h1 class="number-title-practica"> Ejercicio</h1>
-      <p> Si $X \sim \mathrm{Bin}(n_1,p)$ y $Y \sim \mathrm{Bin}(n_2,p)$
-         son variables aleatorias independientes, encuentra la función 
-         de masa de probabilidad codicional de $X_1$ dado que $X + Y = n$.   </p>
-    </div>
 
-      <div class="ejercicio-box">
-      <h1 class="number-title-practica"> Ejercicio</h1>
-      <p> Si $X \sim \mathrm{Poisson}(\lambda_1)$ y $X \sim \mathrm{Poisson}(\lambda_2,p)$
-         son variables aleatorias independientes, encuentra la función 
-         de densidad codicional de $X$ dado que $X + X = n$.   </p>
-    </div>
 
     <!-- <div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
@@ -507,11 +583,92 @@ de la cara $i$. Calcula
   </p>
 </div> -->
 
+
 <div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
+
   <p>
-    Las variables aleatorias \( X \) y \( Y \) se dice que tienen una <b>distribución normal bivariada</b> 
-    si su función de densidad conjunta está dada por:
+    Sea $(X,Y)^T$ un vector aleatorio gaussiano bidimensional no degenerado. Suponga que
+    $$
+    \mathbb{E}[X]=\mu_x,\qquad \mathbb{E}[Y]=\mu_y,
+    $$
+    $$
+    \operatorname{Var}(X)=\sigma_x^2,\qquad \operatorname{Var}(Y)=\sigma_y^2,
+    $$
+    donde $\mu_x,\mu_y\in\mathbb{R}$ y $\sigma_x,\sigma_y>0$. Suponga además que el coeficiente de correlación entre $X$ y $Y$ es $\rho$, con $-1<\rho<1$.
+  </p>
+
+  <ol>
+    <li>
+      Determine el vector de medias y la matriz de covarianzas del vector aleatorio $(X,Y)^T$.
+    </li><br>
+
+    <li>
+      A partir del inciso anterior, demuestre que la función de densidad conjunta de $X$ y $Y$ está dada por
+      $$
+      \displaystyle{
+      f_{X,Y}(x,y)
+      =
+      \frac{1}{2\pi\sigma_x\sigma_y\sqrt{1-\rho^2}}
+      \exp\left\{
+      -\frac{1}{2(1-\rho^2)}
+      \left[
+      \left(\frac{x-\mu_x}{\sigma_x}\right)^2
+      -
+      \frac{2\rho(x-\mu_x)(y-\mu_y)}{\sigma_x\sigma_y}
+      +
+      \left(\frac{y-\mu_y}{\sigma_y}\right)^2
+      \right]
+      \right\},
+      }
+      $$
+      para $x,y\in\mathbb{R}$.
+    </li><br>
+
+    <li>
+      Demuestre que $X$ tiene distribución normal con media $\mu_x$ y varianza $\sigma_x^2$, y que $Y$ tiene distribución normal con media $\mu_y$ y varianza $\sigma_y^2$.
+    </li><br>
+
+    <!-- <li>
+      Demuestre que la densidad condicional de $X$ dado que $Y=y$ es normal con media
+      $$
+      \displaystyle{
+      \mu_x+\frac{\rho\sigma_x}{\sigma_y}(y-\mu_y)
+      }
+      $$
+      y varianza
+      $$
+      \displaystyle{
+      \sigma_x^2(1-\rho^2).
+      }
+      $$
+    </li><br>
+
+    <li>
+      Verifique que $\rho=\operatorname{Corr}(X,Y)$, es decir,
+      $$
+      \displaystyle{
+      \rho
+      =
+      \frac{\mathbb{E}[(X-\mu_x)(Y-\mu_y)]}{\sigma_x\sigma_y}
+      =
+      \frac{\operatorname{Cov}(X,Y)}{\sigma_x\sigma_y}.
+      }
+      $$
+    </li><br> -->
+  </ol>
+</div>
+
+
+<!-- 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea \( X, Y \) un vector aleatorio Gaussiano con media \( (\mu_x, \mu_y) \) y matriz de covarianzas dada por
+    \[ \Sigma = \begin{pmatrix} \sigma_x^2 & \rho \sigma_x \sigma_y \\ \rho \sigma_x \sigma_y & \sigma_y^2 \end{pmatrix} \]
+  </p>
+ <ol>
+      <li>
+  Demuestra que la función de densidad conjunta de \( X \) y \( Y \) está dada por
     <br><br>
     \[
     \displaystyle{
@@ -528,9 +685,9 @@ de la cara $i$. Calcula
     \]
     <br>
     donde \( \sigma_x,\sigma_y,\mu_x,\mu_y \), y \( \rho \) son constantes tales que \(  \sigma_x, \sigma_y \in \mathbb{R}^+  \),  \(\mu_y, \mu_y \in \mathbb{R} \) y \( -1 < \rho < 1 \) 
-    
-    <ol>
+    </li><br>
       <li>
+   
         Demuestre que \( X \) está distribuida normalmente con media \( \mu_x \) y varianza \( \sigma_x^2 \), y que \( Y \) está distribuida normalmente con media \( \mu_y \) y varianza \( \sigma_y^2 \).
       </li><br>
       <li>
@@ -550,8 +707,8 @@ de la cara $i$. Calcula
     </ol>
   </p>
 </div>
+ -->
 
-<hr>
 
 
 <div class="definicion-box"><h1 class="title-definicion"> Definición </h1>
@@ -568,6 +725,8 @@ La función $M_{X,Y}(t_1,t_2)$ así definida también es llamada <b>función gen
 las variables aleatorias $X$ e $Y$</b>.
 </p>
 </div>
+
+
 
 <div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
