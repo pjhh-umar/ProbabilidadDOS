@@ -113,7 +113,195 @@
 
 
 <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos Tercer Examen Parcial </h1>   
+
+  <!-- <div class="ejercicio-box">
+  <h1 class="title-practica">Ejercicio</h1>
+  <p>
+    Sean $X$ y $Y$ dos variables aleatorias continuas e independientes, definidas sobre un mismo espacio de probabilidad $(\Omega,\mathcal{F},\mathbb{P})$, con funciones de densidad $f_X$ y $f_Y$, respectivamente.
+    Determine, en términos de $f_X$ y $f_Y$, las funciones de densidad de las siguientes variables aleatorias:
+  </p>
+
+  <ol class="three-column">
+    <li>
+     $X-Y$
+    </li>
+    <li>$XY$
+    </li>
+
+    <li>$\displaystyle{\frac{X}{Y}}$ con $\mathbb{P}(Y=0)=0$.
+    </li>
+  </ol>
+
+  <p>
+    En cada caso, justifique cuidadosamente el cambio de variable utilizado e indique el dominio sobre el cual se integra.
+  </p>
+</div> -->
+
+  <div class="ejercicio-box">
+  <h1 class="title-practica">Ejercicio</h1>
+  <p>
+    Se sabe que las variables aleatorias $X$ y $Y$ tienen una densidad conjunta dada por la función $f(x,y)$. Suponga que $\mathbb{P}(Y=0)=0$. 
+    Encuentre las densidades de las siguientes variables en términos de la función $f$:
+  </p>
+  <ol class="four-column">
+    <li>$X+Y$</li>
+    <li>$X-Y$</li>
+    <li>$XY$</li>
+    <li>$\displaystyle{\frac{X}{Y}}$</li>
+  </ol>
   
+  <p>
+    En cada caso, justifique cuidadosamente el cambio de variable utilizado e indique el dominio sobre el cual se integra.
+  </p>
+</div>
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Distribución normal)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria. Se dice que $X$ tiene
+    <strong>distribución normal</strong> con media $\mu\in\mathbb{R}$ y varianza
+    $\sigma^2>0$ si $X$ es absolutamente continua y su función de densidad está dada por
+    $$
+    f_X(x)=\displaystyle{\frac{1}{\sigma\sqrt{2\pi}}}
+    \exp\left\{-\displaystyle{\frac{(x-\mu)^2}{2\sigma^2}}\right\},
+    \qquad x\in\mathbb{R}.
+    $$
+  </p>
+
+  <p>
+    En este caso se escribe
+    $$
+    X\sim \mathcal{N}(\mu,\sigma^2).
+    $$
+  </p>
+
+  <p>
+    Su función de distribución está dada por
+    $$
+    F_X(x)=\mathbb{P}(X\leq x)
+    =
+    \displaystyle{\int_{-\infty}^{x}
+    \frac{1}{\sigma\sqrt{2\pi}}
+    \exp\left\{-\frac{(t-\mu)^2}{2\sigma^2}\right\}\,dt},
+    \qquad x\in\mathbb{R}.
+    $$
+  </p>
+
+  <p>
+    En particular, cuando $\mu=0$ y $\sigma^2=1$, se dice que $X$ tiene
+    <strong>distribución normal estándar</strong> y se escribe
+    $$
+    X\sim \mathcal{N}(0,1).
+    $$
+    Su densidad es
+    $$
+    \varphi(x)=\displaystyle{\frac{1}{\sqrt{2\pi}}}e^{-x^2/2},
+    \qquad x\in\mathbb{R}.
+    $$
+  </p>
+</div>
+
+  <div class="ejercicio-box">
+  <h1 class="title-practica">Ejemplo</h1>
+  <p>
+    Sean $X$ y $Y$ variables aleatorias independientes con distribución $\mathcal{N}(0,1)$. 
+    Demuestre que $X+Y$ y $X-Y$ son variables aleatorias independientes con distribución $\mathcal{N}(0,2)$.
+  </p>
+</div>
+  
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Distribución exponencial)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria. Se dice que $X$ tiene
+    <strong>distribución exponencial</strong> con parámetro $\lambda>0$ si $X$
+    es absolutamente continua y su función de densidad está dada por
+    $$
+    f_X(x)=
+    \begin{cases}
+    \lambda e^{-\lambda x}, & \text{si } x>0,\\
+    0, & \text{si } x\leq 0.
+    \end{cases}
+    $$
+  </p>
+
+  <p>
+    En este caso se escribe
+    $$
+    X\sim \operatorname{Exp}(\lambda).
+    $$
+  </p>
+
+  <p>
+    Su función de distribución está dada por
+    $$
+    F_X(x)=\mathbb{P}(X\leq x)=
+    \begin{cases}
+    0, & \text{si } x\leq 0,\\
+    1-e^{-\lambda x}, & \text{si } x>0.
+    \end{cases}
+    $$
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="title-practica">Ejemplo</h1>
+  <p>
+    Sean $X$ y $Y$ variables aleatorias independientes con distribución $\operatorname{Exp}(1)$. 
+    Demuestre que $\displaystyle{\frac{X}{X+Y}}$ y $X+Y$ son independientes, y encuentre sus distribuciones.
+  </p>
+</div>
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Distribución uniforme continua)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria. Se dice que $X$ tiene
+    <strong>distribución uniforme continua</strong> en el intervalo $[a,b]$, con
+    $a,b\in\mathbb{R}$ y $a&lt;b$, si $X$ es absolutamente continua y su función de
+    densidad está dada por
+    $$
+    f_X(x)=
+    \begin{cases}
+    \displaystyle{\frac{1}{b-a}}, & \text{si } a\leq x\leq b,\\
+    0, & \text{en otro caso}.
+    \end{cases}
+    $$
+  </p>
+
+  <p>
+    En este caso se escribe
+    $$
+    X\sim \operatorname{Unif}(a,b).
+    $$
+  </p>
+
+  <p>
+    Su función de distribución está dada por
+    $$
+    F_X(x)=\mathbb{P}(X\leq x)=
+    \begin{cases}
+    0, & \text{si } x&lt;a,\\
+    \displaystyle{\frac{x-a}{b-a}}, & \text{si } a\leq x\leq b,\\
+    1, & \text{si } x&gt;b.
+    \end{cases}
+    $$
+  </p>
+
+  <p>
+    De manera equivalente, $X\sim \operatorname{Unif}(a,b)$ si la probabilidad de que
+    $X$ pertenezca a cualquier subintervalo $[c,d]\subseteq [a,b]$ es proporcional a su longitud:
+    $$
+    \mathbb{P}(c\leq X\leq d)=\displaystyle{\frac{d-c}{b-a}},
+    \qquad a\leq c\leq d\leq b.
+    $$
+  </p>
+</div>
+
 <div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
 Un dado justo se lanza de forma independiente 10 veces. Calcula la probabilidad de que las caras 
