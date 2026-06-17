@@ -1480,382 +1480,61 @@
   </p>
 
 </div>
-<!-- 
 
-<div class="nota-box">
-  <h1 class="title-practica">Observación (Relación con la distribución gaussiana multivariada)</h1>
-
-  <p>
-    Si
-    $$
-    X\sim N_n(\mu,\Sigma),
-    $$
-    entonces $\mu$ es el vector de medias de $X$ y $\Sigma$ es su matriz de covarianzas.
-  </p>
+ <div class="definicion-box">
+  <h1 class="title-practica">Definición (Función generadora de momentos)</h1>
 
   <p>
-    Además, para cada $a\in\mathbb{R}^{n}$,
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria. La <strong>función generadora de momentos</strong> de $X$ se define como
     $$
-    a^{T}X
-    \sim
-    N\left(a^{T}\mu,\;a^{T}\Sigma a\right).
-    $$
-  </p>
-
-  <p>
-    Por esta razón, la matriz de covarianzas $\Sigma$ determina la varianza de cualquier combinación lineal de las componentes de $X$.
-  </p>
-
-  <p>
-    En particular, si $\Sigma$ es diagonal, entonces las componentes de $X$ son independientes. Esta equivalencia es una propiedad especial de los vectores gaussianos.
-  </p>
-
-</div>
-
-
-
-
-<div class="nota-box">
-  <h1 class="title-practica">Observación (Parámetros de la distribución gaussiana multivariada)</h1>
-
-  <p>
-    En la distribución gaussiana multivariada
-    $$
-    X\sim N_n(\mu,\Sigma),
-    $$
-    el parámetro $\mu$ representa el <strong>vector de medias</strong>, mientras que $\Sigma$ representa la <strong>matriz de covarianzas</strong>.
-  </p>
-
-  <p>
-    La matriz $\Sigma$ debe ser simétrica y semidefinida positiva, es decir,
-    $$
-    \Sigma^{T}=\Sigma
-    $$
-    y
-    $$
-    a^{T}\Sigma a\geq 0,
-    \qquad \text{para todo } a\in\mathbb{R}^{n}.
-    $$
-  </p>
-
-  <p>
-    La condición anterior es necesaria porque
-    $$
-    a^{T}\Sigma a
+    M_X(t)
     =
-    \operatorname{Var}(a^{T}X),
+    \mathbb{E}\left[e^{tX}\right],
     $$
-    y la varianza de una variable aleatoria siempre es no negativa.
+    para todo $t\in\mathbb{R}$ tal que la esperanza anterior exista y sea finita.
   </p>
-
 </div>
 
-
-
-<div class="nota-box">
-  <h1 class="title-practica">Observación (Papel de la matriz de covarianzas)</h1>
-
-  <p>
-    La matriz de covarianzas
-    $$
-    \Sigma=
-    \operatorname{Cov}(X)
-    $$
-    contiene las varianzas de las componentes de $X$ en su diagonal principal y las covarianzas entre componentes distintas fuera de la diagonal.
-  </p>
-
-  <p>
-    Es decir,
-    $$
-    \Sigma=
-    \begin{pmatrix}
-    \operatorname{Var}(X_1) & \operatorname{Cov}(X_1,X_2) & \cdots & \operatorname{Cov}(X_1,X_n)\\
-    \operatorname{Cov}(X_2,X_1) & \operatorname{Var}(X_2) & \cdots & \operatorname{Cov}(X_2,X_n)\\
-    \vdots & \vdots & \ddots & \vdots\\
-    \operatorname{Cov}(X_n,X_1) & \operatorname{Cov}(X_n,X_2) & \cdots & \operatorname{Var}(X_n)
-    \end{pmatrix}.
-    $$
-  </p>
-
-  <p>
-    Por lo tanto,
-    $$
-    \sigma_{ii}=\operatorname{Var}(X_i),
-    \qquad i=1,\ldots,n,
-    $$
-    y
-    $$
-    \sigma_{ij}=\operatorname{Cov}(X_i,X_j),
-    \qquad i\neq j.
-    $$
-  </p>
-
-</div>
-
-
-<div class="nota-box">
-  <h1 class="title-practica">Observación (Caso degenerado y no degenerado)</h1>
-
-  <p>
-    Si $\Sigma$ es definida positiva, entonces
-    $$
-    |\Sigma|>0,
-    $$
-    la matriz $\Sigma^{-1}$ existe y la distribución gaussiana multivariada tiene densidad conjunta respecto a la medida de Lebesgue en $\mathbb{R}^{n}$.
-  </p>
-
-  <p>
-    En este caso se dice que la distribución es <strong>no degenerada</strong>.
-  </p>
-
-  <p>
-    Si $\Sigma$ es semidefinida positiva pero no definida positiva, entonces
-    $$
-    |\Sigma|=0,
-    $$
-    y la distribución se dice <strong>degenerada</strong>.
-  </p>
-
-  <p>
-    En el caso degenerado, el vector aleatorio $X$ no tiene densidad conjunta respecto a la medida de Lebesgue en todo $\mathbb{R}^{n}$, pues su distribución queda concentrada en un subespacio afín de dimensión menor que $n$.
-  </p>
-
-</div>
-
-
-<div class="teorema-box">
-  <h1 class="title-practica">Caracterización mediante combinaciones lineales</h1>
-
-  <p>
-    Sea $X=(X_1,\ldots,X_n)$ un vector aleatorio con valores en $\mathbb{R}^{n}$.
-  </p>
-
-  <p>
-    Entonces $X$ tiene distribución gaussiana multivariada si y sólo si para todo vector
-    $$
-    a\in\mathbb{R}^{n},
-    $$
-    la variable aleatoria
-    $$
-    a^{T}X
-    $$
-    tiene distribución normal univariada.
-  </p>
-
-  <p>
-    Si
-    $$
-    X\sim N_n(\mu,\Sigma),
-    $$
-    entonces, para todo $a\in\mathbb{R}^{n}$,
-    $$
-    a^{T}X
-    \sim
-    N\left(a^{T}\mu,\; a^{T}\Sigma a\right).
-    $$
-  </p>
-
-</div>
-
-
-<div class="teorema-box">
-  <h1 class="title-practica">Función característica de la distribución gaussiana multivariada</h1>
-
-  <p>
-    Sea
-    $$
-    X\sim N_n(\mu,\Sigma).
-    $$
-  </p>
-
-  <p>
-    Entonces la función característica de $X$ está dada por
-    $$
-    \varphi_X(t)
-    =
-    \mathbb{E}\left[e^{i t^{T}X}\right]
-    =
-    \exp\left\{
-    i t^{T}\mu
-    -
-    \frac{1}{2}t^{T}\Sigma t
-    \right\},
-    \qquad t\in\mathbb{R}^{n}.
-    $$
-  </p>
-
-  <p>
-    Esta expresión caracteriza completamente a la distribución gaussiana multivariada.
-  </p>
-
-</div>
-
-
-<div class="teorema-box">
-  <h1 class="title-practica">Proposición (Distribuciones marginales)</h1>
-
-  <p>
-    Sea
-    $$
-    X=(X_1,\ldots,X_n)\sim N_n(\mu,\Sigma).
-    $$
-  </p>
-
-  <p>
-    Entonces cada componente $X_i$ tiene distribución normal univariada. En particular,
-    $$
-    X_i\sim N(\mu_i,\sigma_{ii}),
-    \qquad i=1,\ldots,n.
-    $$
-  </p>
-
-  <p>
-    Más generalmente, cualquier subvector de un vector gaussiano multivariado también tiene distribución gaussiana multivariada.
-  </p>
-
-</div>
-
-
-<div class="teorema-box">
-  <h1 class="title-practica">Proposición (Transformaciones lineales)</h1>
-
-  <p>
-    Sea
-    $$
-    X\sim N_n(\mu,\Sigma).
-    $$
-  </p>
-
-  <p>
-    Sea $A$ una matriz real de tamaño $k\times n$ y sea $b\in\mathbb{R}^{k}$.
-  </p>
-
-  <p>
-    Entonces el vector aleatorio
-    $$
-    Y=AX+b
-    $$
-    tiene distribución gaussiana multivariada en $\mathbb{R}^{k}$ y
-    $$
-    Y\sim N_k(A\mu+b,\; A\Sigma A^{T}).
-    $$
-  </p>
-
-</div>
-
-
-<div class="teorema-box">
-  <h1 class="title-practica">Proposición (Independencia en el caso gaussiano)</h1>
-
-  <p>
-    Sea
-    $$
-    X=(X_1,\ldots,X_n)\sim N_n(\mu,\Sigma).
-    $$
-  </p>
-
-  <p>
-    Entonces las componentes $X_1,\ldots,X_n$ son independientes si y sólo si la matriz de covarianzas $\Sigma$ es diagonal.
-  </p>
-
-  <p>
-    Equivalentemente, las componentes son independientes si y sólo si
-    $$
-    \operatorname{Cov}(X_i,X_j)=0,
-    \qquad i\neq j.
-    $$
-  </p>
-
-  <p>
-    Esta propiedad es particular de la distribución gaussiana multivariada. En general, para otros vectores aleatorios, covarianza cero no implica independencia.
-  </p>
-
-</div>
-
-
-<div class="nota-box">
-  <h1 class="title-practica">Observación (Caso estándar)</h1>
-
-  <p>
-    Se dice que $X$ tiene distribución gaussiana multivariada estándar si
-    $$
-    X\sim N_n(0,I_n),
-    $$
-    donde $0$ es el vector cero de $\mathbb{R}^{n}$ e $I_n$ es la matriz identidad de tamaño $n\times n$.
-  </p>
-
-  <p>
-    En este caso,
-    $$
-    \mathbb{E}[X]=0,
-    \qquad
-    \operatorname{Cov}(X)=I_n.
-    $$
-  </p>
-
-  <p>
-    Además, sus componentes son independientes y
-    $$
-    X_i\sim N(0,1),
-    \qquad i=1,\ldots,n.
-    $$
-  </p>
-
-</div>
-
-
-<div class="nota-box">
-  <h1 class="title-practica">Resumen</h1>
-
-  <p>
-    La distribución gaussiana multivariada describe el comportamiento conjunto de un vector aleatorio cuyas combinaciones lineales son normales.
-  </p>
-
-  <p>
-    Sus elementos esenciales son:
-  </p>
-
+ <div class="nota-box">
+  <h1 class="title-definicion"> Observaciones </h1>
   <ul>
-    <li>
-      Un vector aleatorio $X=(X_1,\ldots,X_n)$ con valores en $\mathbb{R}^{n}$.
+    <li>El dominio de $M_X$ está dado por
+    $D_{M_{X}} = \left\{
+    t\in\mathbb{R}:
+    \mathbb{E}\left[e^{tX}\right]<\infty
+    \right\}.$
     </li>
-    <li>
-      Un vector de medias $\mu\in\mathbb{R}^{n}$.
+    <li>Diremos que $X$ tiene función generadora de momentos si existe $\varepsilon>0$ tal que
+    $$
+    (-\varepsilon,\varepsilon)\subseteq D_X.
+    $$
     </li>
-    <li>
-      Una matriz de covarianzas $\Sigma$ simétrica y semidefinida positiva.
-    </li>
-    <li>
-      La propiedad de que toda combinación lineal $a^{T}X$ tiene distribución normal univariada.
-    </li>
-  </ul>
+  
+    
+  </ol>
+ </div>
 
-  <p>
-    En forma compacta,
-    $$
-    X\sim N_n(\mu,\Sigma)
-    $$
-    significa que $X$ es un vector gaussiano con vector de medias $\mu$ y matriz de covarianzas $\Sigma$.
-  </p>
+<div class="definicion-box"><h1 class="title-definicion"> Definición </h1>
+  <p>Sean $X,Y$ variables aleatorias. Se define la <b>función generadora de momentos del vector aleatorio $(X,Y)$</b>, denotado por 
+    $M_{X,Y}(t_1, t_2)$ como:
+$$
+M_{X,Y}(t_1, t_2) = \mathbb{E}\left(e^{t_1X + t_2Y}\right), \,\text{ donde }\, (t_1, t_2)\in B_{r}((0,0)) \subseteq \mathbb{R}^2 \text{ para algún } r >0
+$$
 
-  <p>
-    En el caso no degenerado, es decir, cuando $\Sigma$ es definida positiva, su densidad conjunta está dada por
-    $$
-    f_X(x)
-    =
-    \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}
-    \exp\left\{
-    -\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)
-    \right\},
-    \qquad x\in\mathbb{R}^{n}.
-    $$
-  </p>
-
+</p>
 </div>
 
- -->
-
-
+<div class="nota-box">
+  <h1 class="title-definicion"> Observaciones </h1>
+  <p>Así, para el caso discreto y el continuo, tenemos, respectivamente:</p>
+  <ul>
+    <li>$$M_{X,Y}(t_1, t_2) = \sum_{x_i, y_j } e^{t_1x_i + t_2y_j} f_{X,Y}(x_i, y_j), \label{eq:fgm_conjunta_discreta} $$</li>
+    <li>$$M_{X,Y}(t_1, t_2) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{t_1x + t_2y} f_{X,Y}(x, y)dx\, dy. \label{eq:fgm_conjunta_continua} $$</li>
+  </ul>
+  <p></p>
+La función $M_{X,Y}(t_1,t_2)$ así definida también es llamada <b>función generadora de momentos conjunta de 
+las variables aleatorias $X$ e $Y$</b>.
 
 
   </body>
