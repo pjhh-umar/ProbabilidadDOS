@@ -1496,6 +1496,69 @@
   </p>
 </div>
 
+<div class="nota-box">
+  <h1 class="title-practica">Proposición</h1>
+
+  <p>
+    Sea $X\colon \Omega \to \mathbb{R}$ una variable aleatoria y supongamos que su función generadora de momentos
+    $M_X(t)=\mathbb{E}\left(e^{tX}\right)$ es finita para todo $t\in B_{\varepsilon}(0)$, para algún $\varepsilon > 0$. Entonces:
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        Todos los momentos de $X$ son finitos, es decir,
+        $$
+        \mathbb{E}\left(|X|^n\right)<\infty,
+        \qquad n\in\mathbb{N}.
+        $$
+      </p>
+    </li>
+
+    <li>
+      <p>
+        La función $M_X(t)$ tiene derivadas continuas de cualquier orden en $(-\varepsilon,\varepsilon)$ y, para cada
+        $n\in\mathbb{N}$,
+        $$
+        M_X^{(n)}(t)
+        =
+        \mathbb{E}\left(X^n e^{tX}\right),
+        \qquad t\in(-\varepsilon,\varepsilon).
+        $$
+        En particular,
+        $$
+        M_X^{(n)}(0)=\mathbb{E}\left(X^n\right).
+        $$
+      </p>
+    </li>
+
+    <li>
+      <p>
+        La función generadora de momentos admite la expansión
+        $$
+        M_X(t)
+        =
+        \sum_{n=0}^{\infty}
+        \frac{\mathbb{E}\left(X^n\right)}{n!}t^n,
+        \qquad |t|< \varepsilon.
+        $$
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Si $X$ y $Y$ son variables aleatorias independientes, entonces
+        $$
+        M_{X+Y}(t)=M_X(t)M_Y(t),
+        $$
+        para todo $t$ donde las funciones generadoras de momentos estén bien definidas.
+      </p>
+    </li>
+  </ol>
+</div>
+
+
+
  <div class="nota-box">
   <h1 class="title-definicion"> Observaciones </h1>
   <ul>
@@ -1510,6 +1573,11 @@
     (-\varepsilon,\varepsilon)\subseteq D_X.
     $$
     </li>
+    <li> En 2, la hipótesis importante es que $M_X(t)$ sea finita en una vecindad de $0$, no solamente en
+    el punto $t=0$. 
+    <!-- Bajo esta condición, la función generadora de momentos determina los momentos
+    de $X$ mediante sus derivadas evaluadas en cero. -->
+  </li>
 
   </ol>
  </div>
@@ -1534,6 +1602,46 @@ $$
   <p></p>
 La función $M_{X,Y}(t_1,t_2)$ así definida también es llamada <b>función generadora de momentos conjunta de 
 las variables aleatorias $X$ e $Y$</b>.
+</div>
+
+
+
+<div class="definicion-box">
+  <h1 class="title-definicion">Definición</h1>
+
+  <p>
+    Sean $X_1,\ldots,X_n$ variables aleatorias reales definidas sobre un mismo espacio de probabilidad.
+    Se define la <b>función generadora de momentos del vector aleatorio</b>
+    $$
+    \vec{X}=(X_1,\ldots,X_n),
+    $$
+    denotada por $M_{\vec{X}}(t_1,\ldots,t_n)$, como
+    $$
+    M_{\vec{X}}(t_1,\ldots,t_n)
+    =
+    \mathbb{E}\left(
+    e^{t_1X_1+\cdots+t_nX_n}
+    \right),
+    $$
+    para todo $(t_1,\ldots,t_n)\in B_r(\vec{0})\subseteq\mathbb{R}^n$, para algún $r>0$,
+    siempre que dicha esperanza exista y sea finita.
+  </p>
+
+  <p>
+    De manera equivalente, si $\vec{t}=(t_1,\ldots,t_n)$, entonces
+    $$
+    M_{\vec{X}}(\vec{t})
+    =
+    \mathbb{E}\left(e^{\langle \vec{t}, \vec{X} \rangle}\right),
+    \qquad
+    \vec{t}\in B_r(\vec{X})\subseteq\mathbb{R}^n.
+    $$
+  </p>
+</div>
+
+
+
+
 
 
   </body>
