@@ -190,27 +190,27 @@
 </div>
 
  <div class="nota-box">
-  <h1 class="title-practica"> Observación</h1>
-  
-  <p>La función  de densidad en el Teorema anterior puede ser expresada en términos del jacobiano de la transformación directa,
+  <h1 class="title-practica"> Observaciones</h1>
+  <ul>
+  <li>La función  de densidad en el Teorema anterior puede ser expresada en términos del jacobiano de la transformación directa,
     si $y=\varphi(\vec{x})$, entonces
     $$J\varphi^{-1}(\vec{y})=\bigl(J\varphi(\vec{x})\bigr)^{-1},$$
     y por tanto
     $$\left|\det J\varphi^{-1}(\vec{y})\right|
     =
     \frac{1}{\left | \det \left( J\varphi(\vec{x})\right) \right|}.$$
-  </p>
+  </li>
 
-  <p>
+  <li>
     En consecuencia, también puede escribirse
     $$f_Y(\varphi(\vec{x}))
     =
     \frac{f_X(\vec{x})}
     {\left|\det J\varphi(\vec{x})\right|},
     \qquad x\in U.$$
-  </p>
+  </li>
 
-  <p>
+  <li>
     Si denotamos por
     $$J_{\varphi^{-1}}(\vec{y}):=\det J\varphi^{-1}(\vec{y}),$$
     entonces la fórmula anterior toma la forma compacta
@@ -219,7 +219,9 @@
     f_X\bigl(\varphi^{-1}(\vec{y})\bigr)
     \left|J_{\varphi^{-1}}(\vec{y})\right|
     \mathbf{1}_{U^{'}}(\vec{y}).$$
-  </p>
+  </li>
+  
+  </ul>
 
  </div>
 
@@ -1672,12 +1674,721 @@ las variables aleatorias $X$ e $Y$</b>.
   </p>
 </div>
 
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Convergencia uniforme)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sea
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales,
+    $X_n:\Omega\to\mathbb{R}$, y sea $X:\Omega\to\mathbb{R}$ una variable aleatoria.
+  </p>
+
+  <p>
+    Se dice que la sucesión $(X_n)_{n\in\mathbb{N}}$ <strong>converge uniformemente</strong>
+    a $X$ si, para todo $\varepsilon>0$, existe $N_{\varepsilon}\in\mathbb{N}$ tal que si $n\geq N_{\varepsilon}$, entonces 
+    $$
+    \displaystyle{
+    |X_n(\omega)-X(\omega)|<\varepsilon,
+    \qquad \text{ para todo } \omega\in\Omega.
+    }
+    $$
+  </p>
+
+  <p>
+    En este caso se denota
+    $$
+    \displaystyle{
+    X_n \xrightarrow{\text{unif.}} X.
+    }
+    $$
+  </p>
+</div>
+
+
+<div class="nota-box">  <h1 class="title-practica">Observación</h1>  
+  <p>En la definición anterior, el número $N_{\varepsilon}$ es el mismo para todos los puntos
+  $\omega\in\Omega$. Esto es, $N_{\varepsilon}$ no depende de $\omega$.
+  Por esta razón, la convergencia ocurre de manera uniforme en todo el espacio $\Omega$.
+  </p> 
+
+  </div>
+
+  
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Convergencia puntual)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sea
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales,
+    $X_n:\Omega\to\mathbb{R}$, y sea $X:\Omega\to\mathbb{R}$ una variable aleatoria.
+    Se dice que la sucesión $(X_n)_{n\in\mathbb{N}}$ <strong>converge puntualmente</strong>
+    a $X$ si, para todo $\omega\in\Omega$ fijo y para todo $\varepsilon>0$, existe
+    $N_{\varepsilon}(\omega)\in\mathbb{N}$ tal que si $n\geq N_{\varepsilon}(\omega)$, entonces
+    $$
+    \displaystyle{
+    |X_n(\omega)-X(\omega)|<\varepsilon.
+    }
+    $$
+  </p>
+
+  <p>
+    En este caso se denota
+    $$
+    \displaystyle{
+    X_n \xrightarrow{\text{puntual}} X.
+    }
+    $$
+  </p>
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observaciones</h1>
+  <ul>
+  <li>
+    En la definición anterior, para cada punto fijo $\omega\in\Omega$, la sucesión numérica
+    $(X_n(\omega))_{n\in\mathbb{N}}$ converge al número real $X(\omega)$.
+  </li>
+
+  <li>
+    A diferencia de la convergencia uniforme, el índice $N_{\varepsilon}(\omega)$ puede depender
+    del punto $\omega$. Por lo tanto, algunos puntos de $\Omega$ pueden requerir un número mayor
+    de términos para que $X_n(\omega)$ esté suficientemente cerca de $X(\omega)$.
+  </li>
+
+  <li>
+    Sin embargo, la convergencia debe cumplirse para todo $\omega\in\Omega$. Si existe al menos
+    un punto de $\Omega$ donde la convergencia no ocurre, entonces la sucesión no converge
+    puntualmente a $X$.
+  </li>
+  </ul>
+</div>
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Norma en $L^p$)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea $p\geq 1$.
+    Para una variable aleatoria real $X:\Omega\to\mathbb{R}$ tal que
+    $$
+    \displaystyle{
+    \mathbb{E}[|X|^p]<\infty,
+    }
+    $$
+    se define la <strong>norma en $L^p$</strong> de $X$ como
+    $$
+    \displaystyle{
+    \|X\|_p
+    =
+    \left(\mathbb{E}[|X|^p]\right)^{1/p}
+    =
+    \left(\int_{\Omega}|X(\omega)|^p\,d\mathbb{P}(\omega)\right)^{1/p}.
+    }
+    $$
+  </p>
+
+  <p>
+    Si $X$ tiene función de distribución $F_X$, entonces también puede escribirse como
+    $$
+    \displaystyle{
+    \|X\|_p
+    =
+    \left(\int_{\mathbb{R}} |x|^p\,dF_X(x)\right)^{1/p}.
+    }
+    $$
+    En particular, si $X$ es absolutamente continua con función de densidad $f_X$, entonces
+    $$
+    \displaystyle{
+    \|X\|_p
+    =
+    \left(\int_{-\infty}^{\infty} |x|^p f_X(x)\,dx\right)^{1/p}.
+    }
+    $$
+  </p>
+</div>
+
+
+<!-- <div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    Para $p\geq 1$, el espacio $L^p(\Omega,\mathcal{F},\mathbb{P})$ es un espacio vectorial normado completo,
+    es decir, es un espacio de Banach. Desde el punto de vista probabilístico, la cantidad $\|X\|_p$
+    mide el tamaño promedio de la variable aleatoria $X$ mediante su momento absoluto de orden $p$.
+  </p>
+</div> -->
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (convergencia en media)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales
+    integrables y $X:\Omega\to\mathbb{R}$ una variable aleatoria integrable.
+  </p>
+
+  <p>
+    Se dice que $(X_n)_{n\in\mathbb{N}}$ converge en media a $X$ si
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}
+    \mathbb{E}\left(|X_n-X|\right)=0.
+    }
+    $$
+  </p>
+
+  <p>
+    A este tipo de convergencia también se le llama convergencia en $L^1$. En
+    este caso se denota
+    $$
+    \displaystyle{
+    X_n\xrightarrow{m}X
+    }
+    $$
+    o bien
+    $$
+    \displaystyle{
+    X_n\xrightarrow{L^1}X.
+    }
+    $$
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    La convergencia en media mide la cercanía entre $X_n$ y $X$ mediante el
+    valor esperado de la distancia absoluta $|X_n-X|$. Por ello, no basta con
+    comparar directamente las medias $\mathbb{E}(X_n)$ y $\mathbb{E}(X)$.
+  </p>
+</div>
+
+<div class="teorema-box">
+  <h1 class="title-practica">Proposición (convergencia de las medias)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales
+    integrables y $X:\Omega\to\mathbb{R}$ una variable aleatoria integrable. Si
+    $X_n\xrightarrow{L^1}X$, entonces
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}\mathbb{E}(X_n)=\mathbb{E}(X).
+    }
+    $$
+  </p>
+
+<!--   <p>
+    <b>Demostración.</b> Para cada $n\in\mathbb{N}$, por la linealidad de la
+    esperanza y la desigualdad triangular,
+    $$
+    \displaystyle{
+    \left|\mathbb{E}(X_n)-\mathbb{E}(X)\right|
+    =
+    \left|\mathbb{E}(X_n-X)\right|
+    \leq
+    \mathbb{E}\left(|X_n-X|\right).
+    }
+    $$
+    Como $X_n\xrightarrow{L^1}X$, se tiene
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}\mathbb{E}\left(|X_n-X|\right)=0.
+    }
+    $$
+    Por lo tanto,
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}
+    \left|\mathbb{E}(X_n)-\mathbb{E}(X)\right|=0,
+    }
+    $$
+    y en consecuencia
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}\mathbb{E}(X_n)=\mathbb{E}(X).
+    }
+    $$
+  </p> -->
+</div>
+
+<!-- <h1 class="title-practica">Convergencia en media cuadrática</h1>
+
+<p>
+  La convergencia en media cuadrática utiliza el segundo momento para medir la
+  cercanía entre dos variables aleatorias. En particular, se analiza el
+  comportamiento de $\mathbb{E}\left(|X_n-X|^2\right)$ cuando $n\to\infty$.
+</p> -->
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (convergencia en media cuadrática)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales tales
+    que $X_n\in L^2(\Omega)$ para todo $n\in\mathbb{N}$, y sea
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria tal que $X\in L^2(\Omega)$.
+  </p>
+
+  <p>
+    Se dice que $(X_n)_{n\in\mathbb{N}}$ <strong>converge en media cuadrática</strong> a $X$ si
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}
+    \mathbb{E}\left(|X_n-X|^2\right)=0.
+    }
+    $$
+  </p>
+
+  <p>
+    A este tipo de convergencia también se le llama convergencia en $L^2$. En
+    este caso se denota
+    $$
+    \displaystyle{
+    X_n\xrightarrow{L^2}X.
+    }
+    $$
+  </p>
+</div>
+
+<!-- <div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    En la convergencia en media cuadrática se presupone que tanto los elementos
+    de la sucesión como la variable aleatoria límite tienen segundo momento
+    finito. Es decir, pertenecen al espacio $L^2(\Omega)$.
+  </p>
+</div> -->
+
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Convergencia en $L^p$)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sea
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales,
+    $X_n:\Omega\to\mathbb{R}$, y sea $X:\Omega\to\mathbb{R}$ una variable aleatoria.
+    Sea $p>0$.
+  </p>
+
+  <p>
+    Suponga que
+    $$
+    \displaystyle{
+    \mathbb{E}[|X_n|^p]<\infty,
+    \qquad n\in\mathbb{N},
+    \qquad \text{y} \qquad
+    \mathbb{E}[|X|^p]<\infty.
+    }
+    $$
+  </p>
+
+  <p>
+    Se dice que la sucesión $(X_n)_{n\in\mathbb{N}}$ <strong>converge en $L^p$</strong>
+    a $X$ si
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}\mathbb{E}\left[|X_n-X|^p\right]=0.
+    }
+    $$
+  </p>
+
+  <p>
+    En este caso se denota
+    $$
+    \displaystyle{
+    X_n \xrightarrow{L^p} X.
+    }
+    $$
+  </p>
+</div>
 
 
 
+<div class="teorema-box">
+  <h1 class="title-practica">Proposición (monotonía de las normas $L^p$)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sea
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria. <!-- Para $p\geq 1$, se define
+    $$
+    \displaystyle{
+    \|X\|_{p}
+    =
+    \left(\mathbb{E}\left(|X|^{p}\right)\right)^{1/p}.
+    }
+    $$
+    Entonces la aplicación
+    $$
+    \displaystyle{
+    p\longmapsto \|X\|_{p}
+    }
+    $$
+    es no decreciente. Es decir,  -->
+    Si $1\leq p_{1} < p_{2}$, entonces
+    $$
+    \displaystyle{
+    \|X\|_{p_{1}}\leq \|X\|_{p_{2}}.
+    }
+    $$
+  </p>
+
+  <p>Por lo tanto,
+    $$
+    \displaystyle{
+    L^{1}(\Omega)\supseteq L^{2}(\Omega)\supseteq L^{3}(\Omega)\supseteq \cdots .
+    }
+    $$
+  </p>
+  <p>
+    En particular, si $X\in L^{q}(\Omega)$ para algún $q\geq 1$, entonces
+    $X\in L^{r}(\Omega)$ para todo $1\leq r\leq q$.
+  </p>
+
+  <!-- <p>
+    <b>Demostración.</b> Sean $1\leq p_{1}< p_{2}$. Considere la función
+    $$
+    \displaystyle{
+    f(x)=x^{p_{2}/p_{1}},\qquad x\geq 0.
+    }
+    $$
+    Como $\displaystyle{p_{2}/p_{1} > 1}$, la función $f$ es convexa en
+    $[0,\infty)$. Aplicando la desigualdad de Jensen a la variable aleatoria
+    no negativa $Y=|X|^{p_{1}}$, se obtiene
+    $$
+    \displaystyle{
+    \left(\mathbb{E}\left(|X|^{p_{1}}\right)\right)^{p_{2}/p_{1}}
+    \leq
+    \mathbb{E}\left(|X|^{p_{2}}\right).
+    }
+    $$
+    Al elevar ambos lados a la potencia $\displaystyle{1/p_{2}}$, se concluye que
+    $$
+    \displaystyle{
+    \left(\mathbb{E}\left(|X|^{p_{1}}\right)\right)^{1/p_{1}}
+    \leq
+    \left(\mathbb{E}\left(|X|^{p_{2}}\right)\right)^{1/p_{2}}.
+    }
+    $$
+    Por lo tanto,
+    $$
+    \displaystyle{
+    \|X\|_{p_{1}}\leq \|X\|_{p_{2}}.
+    }
+    $$
+  </p> -->
+</div>
+
+<div class="teorema-box">
+  <h1 class="title-practica">Corolario (convergencia en $L^p$ implica convergencia en $L^q$)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
+    $(X_n)_{n\in\mathbb{N}}$ y $X$ variables aleatorias reales. Si
+    $$
+    \displaystyle{
+    X_n \xrightarrow{L^p} X
+    }
+    $$
+    para algún $p\geq 1$, entonces, para todo $q$ tal que $1\leq q\leq p$,
+    $$
+    \displaystyle{
+    X_n \xrightarrow{L^q} X.
+    }
+    $$
+  </p>
+
+<!--   <p>
+    <b>Demostración.</b> Por la proposición anterior, aplicada a la variable
+    aleatoria $X_n-X$, se tiene
+    $$
+    \displaystyle{
+    \|X_n-X\|_{q}\leq \|X_n-X\|_{p}.
+    }
+    $$
+    Como $X_n \xrightarrow{L^p} X$, entonces
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}\|X_n-X\|_{p}=0.
+    }
+    $$
+    En consecuencia,
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}\|X_n-X\|_{q}=0.
+    }
+    $$
+    Por lo tanto,
+    $$
+    \displaystyle{
+    X_n \xrightarrow{L^q} X.
+    }
+    $$
+  </p> -->
+</div>
+
+<!-- <h1 class="title-practica">Convergencia en media</h1>
+
+<p>
+  En este tipo de convergencia se utiliza la esperanza para medir la cercanía
+  entre dos variables aleatorias. En particular, se analiza el comportamiento de
+  $\mathbb{E}\left(|X_n-X|\right)$ cuando $n\to\infty$.
+</p> -->
 
 
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (convergencia casi segura)</h1>
 
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales y
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria.
+  </p>
+
+  <p>
+    Se dice que $(X_n)_{n\in\mathbb{N}}$ converge casi seguramente a $X$ si existe
+    un conjunto $N\in\mathcal{F}$ tal que $\mathbb{P}(N)=0$ y, para todo
+    $\omega\in N^{c}$,
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}X_n(\omega)=X(\omega).
+    }
+    $$
+  </p>
+
+  <p>
+    Equivalentemente, $(X_n)_{n\in\mathbb{N}}$ converge casi seguramente a $X$ si,
+    para todo $\varepsilon>0$ y para todo $\omega\in N^{c}$, existe
+    $n_{\varepsilon}(\omega)\in\mathbb{N}$ tal que si
+    $n\geq n_{\varepsilon}(\omega)$, entonces
+    $$
+    \displaystyle{
+    |X_n(\omega)-X(\omega)|\leq \varepsilon.
+    }
+    $$
+  </p>
+
+  <p>
+    De manera equivalente,
+    $$
+    \displaystyle{
+    \mathbb{P}\left(
+    \left\{
+    \omega\in\Omega:
+    \lim_{n\to\infty}X_n(\omega)=X(\omega)
+    \right\}
+    \right)=1.
+    }
+    $$
+    En este caso se denota
+    $$
+    \displaystyle{
+    X_n\xrightarrow{\text{c.s.}}X
+    }
+    $$
+    
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    La convergencia casi segura exige que la convergencia puntual ocurra en un
+    conjunto de probabilidad uno. Los puntos donde la convergencia puede fallar
+    forman un conjunto nulo, es decir, un conjunto $N\in\mathcal{F}$ tal que
+    $\mathbb{P}(N)=0$.
+  </p>
+</div>
+
+<!-- <div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    En espacios de medida finita, en particular en espacios de probabilidad,
+    la convergencia casi uniforme y la convergencia casi segura están
+    estrechamente relacionadas. Esta relación se formaliza mediante el teorema
+    de Egorov.
+  </p>
+</div>
+
+<div class="teorema-box">
+  <h1 class="title-practica">Teorema (Egorov)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad y sean
+    $(X_n)_{n\in\mathbb{N}}$ y $X$ variables aleatorias reales. Entonces
+    $(X_n)_{n\in\mathbb{N}}$ converge casi uniformemente a $X$ si y solo si
+    $(X_n)_{n\in\mathbb{N}}$ converge casi seguramente a $X$.
+  </p>
+</div>
+ 
+<h1 class="title-practica">Convergencia en probabilidad</h1>
+
+<p>
+  La convergencia en probabilidad es un tipo de convergencia menos restrictiva
+  que la convergencia casi segura. Esta noción se define a partir del
+  comportamiento límite de las probabilidades de los eventos donde
+  $X_n$ se aleja de $X$ más de una cantidad fija $\varepsilon>0$.
+</p>
+-->
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (convergencia en probabilidad)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales y
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria.
+  </p>
+
+  <p>
+    Se dice que $(X_n)_{n\in\mathbb{N}}$ converge en probabilidad a $X$ si,
+    para todo $\varepsilon>0$,
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}
+    \mathbb{P}\left(
+    \left\{
+    \omega\in\Omega:
+    |X_n(\omega)-X(\omega)|>\varepsilon
+    \right\}
+    \right)=0.
+    }
+    $$
+  </p>
+
+  <p>
+    Equivalentemente, omitiendo el argumento $\omega$, se denota
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}
+    \mathbb{P}\left(|X_n-X|>\varepsilon\right)=0,
+    \qquad \text{para todo } \varepsilon>0.
+    }
+    $$
+    En este caso se denota
+    $$
+    \displaystyle{
+    X_n\xrightarrow{\mathbb{P}}X.
+    }
+    $$
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+  <ul>
+    
+  <li>
+    La convergencia en probabilidad no exige que $X_n(\omega)$ converja a
+    $X(\omega)$ para cada $\omega\in\Omega$. Únicamente exige que la probabilidad
+    de que $X_n$ se separe de $X$ más de cualquier $\varepsilon>0$ tienda a cero.
+  </li>
+  <li>
+    Si $X_n\xrightarrow{\mathbb{P}}X$ y $X_n\xrightarrow{\mathbb{P}}Y$, entonces
+    $X=Y$ casi seguramente. Por lo tanto, el límite en probabilidad es único casi
+    seguramente.
+  </li>
+  
+  </ul>
+</div>
+
+<!-- 
+
+<h1 class="title-practica">Convergencia en distribución</h1>
+
+<p>
+  La convergencia en distribución es el tipo de convergencia menos restrictiva
+  entre las nociones de convergencia estudiadas. En contextos más generales,
+  también se le conoce como convergencia débil.
+</p>
+ -->
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (convergencia en distribución)</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales y
+    $X:\Omega\to\mathbb{R}$ una variable aleatoria. Denotemos por $F_{X_n}$ y
+    $F_X$ las funciones de distribución de $X_n$ y $X$, respectivamente.
+  </p>
+
+  <p>
+    Se dice que $(X_n)_{n\in\mathbb{N}}$ converge en distribución a $X$ si, para
+    todo punto $x\in\mathbb{R}$ en el cual $F_X$ es continua, se cumple que
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}F_{X_n}(x)=F_X(x).
+    }
+    $$
+  </p>
+
+  <p>
+    En este caso se denota
+    $$
+    \displaystyle{
+    X_n\xrightarrow{d}X.
+    }
+    $$
+    También puede escribirse
+    $$
+    \displaystyle{
+    F_{X_n}\xrightarrow{d}F_X.
+    }
+    $$
+  </p>
+</div>
+<!-- 
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    En la convergencia en distribución se comparan únicamente las funciones de
+    distribución. Por esta razón, las variables aleatorias involucradas pueden
+    estar definidas en espacios de probabilidad distintos, siempre que sus
+    distribuciones estén bien definidas.
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    Si la distribución límite es la distribución normal estándar, entonces se
+    puede escribir
+    $$
+    \displaystyle{
+    X_n\xrightarrow{d}\mathcal{N}(0,1).
+    }
+    $$
+    Esta notación significa que las distribuciones de $X_n$ convergen a la
+    distribución normal estándar.
+  </p>
+</div> -->
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    El límite en distribución no es único en el sentido casi seguro, sino en el
+    sentido de igualdad de distribuciones. Es decir, si
+    $X_n\xrightarrow{d}X$ y $X_n\xrightarrow{d}Y$, entonces $X$ y $Y$ tienen la
+    misma distribución.
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+<center>
+<img src="./" alt="Convergencia" width="30%" height="auto">
+</center>
+</div>
   </body>
 
 
