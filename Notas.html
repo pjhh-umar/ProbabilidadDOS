@@ -1924,7 +1924,7 @@ las variables aleatorias $X$ e $Y$</b>.
 </p> -->
 
 <div class="definicion-box">
-  <h1 class="title-practica">Definición (convergencia en media cuadrática)</h1>
+  <h1 class="title-practica">Definición (Convergencia en Media Cuadrática)</h1>
 
   <p>
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
@@ -2084,7 +2084,7 @@ las variables aleatorias $X$ e $Y$</b>.
 </div>
 
 <div class="teorema-box">
-  <h1 class="title-practica">Corolario (convergencia en $L^p$ implica convergencia en $L^q$)</h1>
+  <h1 class="title-practica">Corolario (Convergencia en $L^p$ implica convergencia en $L^q$)</h1>
 
   <p>
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
@@ -2141,7 +2141,7 @@ las variables aleatorias $X$ e $Y$</b>.
 
 
 <div class="definicion-box">
-  <h1 class="title-practica">Definición (convergencia casi segura)</h1>
+  <h1 class="title-practica">Definición (Convergencia Casi Segura)</h1>
 
   <p>
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
@@ -2192,6 +2192,9 @@ las variables aleatorias $X$ e $Y$</b>.
     $$
     
   </p>
+  <p>
+    Llamada también convergencia con probabilidad 1 o convergencia casi en todas partes.
+  </p>
 </div>
 
 <div class="nota-box">
@@ -2238,17 +2241,14 @@ las variables aleatorias $X$ e $Y$</b>.
 -->
 
 <div class="definicion-box">
-  <h1 class="title-practica">Definición (convergencia en probabilidad)</h1>
+  <h1 class="title-practica">Definición (Convergencia en Probabilidad)</h1>
 
   <p>
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
-    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales y
-    $X:\Omega\to\mathbb{R}$ una variable aleatoria.
-  </p>
-
-  <p>
-    Se dice que $(X_n)_{n\in\mathbb{N}}$ converge en probabilidad a $X$ si,
-    para todo $\varepsilon>0$,
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales,
+    $X_n:\Omega\to\mathbb{R}$, y sea $X:\Omega\to\mathbb{R}$ una variable aleatoria.
+    Se dice que la sucesión $(X_n)_{n\in\mathbb{N}}$ <strong>converge en probabilidad</strong>
+    a $X$ si, para todo $\varepsilon>0$,
     $$
     \displaystyle{
     \lim_{n\to\infty}
@@ -2263,18 +2263,29 @@ las variables aleatorias $X$ e $Y$</b>.
   </p>
 
   <p>
-    Equivalentemente, omitiendo el argumento $\omega$, se denota
-    $$
-    \displaystyle{
-    \lim_{n\to\infty}
-    \mathbb{P}\left(|X_n-X|>\varepsilon\right)=0,
-    \qquad \text{para todo } \varepsilon>0.
-    }
-    $$
-    En este caso se denota
+    En este caso se escribe
     $$
     \displaystyle{
     X_n\xrightarrow{\mathbb{P}}X.
+    }
+    $$
+  </p>
+</div>
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Proposición</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
+    $(X_n)_{n\in\mathbb{N}}$ una sucesión de variables aleatorias reales,
+    $X_n:\Omega\to\mathbb{R}$, y sea $X:\Omega\to\mathbb{R}$ una variable aleatoria.
+    Entonces $(X_n)_{n\in\mathbb{N}}$ converge en probabilidad a $X$ si, y sólo si, para todo
+    $\varepsilon>0$,
+    $$
+    \displaystyle{
+    \lim_{n\to\infty}
+    \mathbb{P}\left(|X_n-X|>\varepsilon\right)=0.
     }
     $$
   </p>
@@ -2309,7 +2320,7 @@ las variables aleatorias $X$ e $Y$</b>.
 </p>
  -->
 <div class="definicion-box">
-  <h1 class="title-practica">Definición (convergencia en distribución)</h1>
+  <h1 class="title-practica">Definición (Convergencia en Distribución o Ley)</h1>
 
   <p>
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Sean
@@ -2332,14 +2343,12 @@ las variables aleatorias $X$ e $Y$</b>.
     En este caso se denota
     $$
     \displaystyle{
-    X_n\xrightarrow{d}X.
-    }
+    X_n\xrightarrow{d}X \qquad \text{ o } \qquad X_n\xrightarrow{\mathcal{L}}X.}
     $$
     También puede escribirse
     $$
     \displaystyle{
-    F_{X_n}\xrightarrow{d}F_X.
-    }
+        F_{X_n}\xrightarrow{d}F_{X} \qquad \text{ o } \qquad F_{X_n}\xrightarrow{\mathcal{L}} F_X.}
     $$
   </p>
 </div>
